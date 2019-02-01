@@ -1,90 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>ストライカーライセンスエディタ</title>
-<style>
-#sampleForm,
-#sampleOutput {
-    width: 600px;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid gray;
-    border-radius: 10px;
-}
-#sampleForm {
-    background-color: #ff009a;
-}
-#sampleForm  {
-    margin: 0 0 7px 0;
-    vertical-align: text-top;
-}
-#sampleOutputName {
-font-family:"游ゴシック","YuGothic",
-}
-#sampleOutputAge {
-font-family:"游ゴシック","YuGothic",
-}
-#sampleOutputComent {
-font-family:"游ゴシック","YuGothic",
-}
-</style>
-
-<h2>ストライカーライセンスエディタ</h2>
-
-<form name="edit" id="sampleForm" action="">
-    【入力】
-    <br />
-    <span>名前：</span><input type="text" name="formName" value="モンスト太郎" id="name" value=""></input>
-    <br />
-    <span>ID：</span><input type="text" name="formID" value="123 456 789" id="id" value=""></input>
-    <br />
-    <span>年齢：</span>
-        <select name="formAge" id="age" value="">
-            <option selected>10代</option>
-            <option>20代</option>
-            <option>30代</option>
-            <option>40代</option>
-            <option>50代</option>
-            <option>非公開</option>
-        </select>
-    <br />
-    <span>コメント：</span><textarea name="formComent" cols="25" id="coment" value="">よろしくお願いします</textarea>
-<br />
-<br />
-<br />
-</form>
-<canvas id="canvas" width="600" height="300" style="background-color: #ebedf0 ;></canvas>
+<meta charset="UTF-8" http-equiv="Refresh" content="5;URL=top.html">
 </head>
-
 <body>
-  <script language="javascript" type="text/javascript">
-  <!--
-  var element = document.getElementById( "canvas" );
-  var context = element.getContext( "2d" ).value;
-  var $NameResult = document.sampleForm.name.value;
-  var $AgeResult = document.sampleForm.age.value;
-  var $IdResult = document.sampleForm.id.value;
-  var $ComentResult = document.sampleForm.coment.value;
-  var $Text = "ユーザー名" + "$NameResult" + "\n" + "ID" + "$IdResult" + "\n" + " 年齢 " + "$AgeResult" + "\n" + "コメント" + "$ComentResult" ;
-  var fontSize = 35 ;	// フォントサイズ
-  var lineHeight = 1.0 ;	// 行の高さ (フォントサイズに対する倍率)
-  var x = 50 ;	// 水平位置
-  var y = 50 ;	// 垂直位置
-context.beginPath () ;
-context.font = "bold " + fontSize + "游ゴシック" ;
-for( var lines=$Text.split( "\n" ), i=0, l=lines.length; l>i; i++ ) {
-	var line = lines[i] ;
-	var addY = fontSize ;
-
-  // 2行目以降の水平位置は行数とlineHeightを考慮する
-  	if ( i ) addY += fontSize * lineHeight * i ;
-
-  	context.fillText( line, x + 0, y + addY ) ;
-}
-  -->
-  </script>
-
-
+<div align="center">
+<img src="img-1.png" alt="logo" >
+</div>
 </body>
 </html>
