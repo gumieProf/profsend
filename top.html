@@ -51,45 +51,37 @@ font-family:"游ゴシック","YuGothic",
     <br />
     <span>コメント：</span><textarea name="formComent" cols="25" id="coment" >よろしくお願いします</textarea>
 <br />
-<input type='button' id='addObj_button1' value='出力' onclick="output()"></input>
 <br />
 </form>
 <canvas id="canvas" width="600" height="300" style="background-color: #ebedf0 ;></canvas>
 </div>
 </head>
-
 <body>
   <script language="javascript" type="text/javascript">
   <!--
+    var element = document.getElementById( "canvas" );
+    var context = element.getContext( "2d" ).value;
+    var $NameResult = document.getElementById( "name" ).value ;
+    var $IdResult = document.getElementById( "id" ).value ;
+    var $AgeResult = document.getElementById( "age" ).value ;
+    var $ComentResult = document.getElementById( "coment" ).value ;
+    var $Text = "ユーザー名" + $NameResult + \n + "ID" + $IdResult + \n + " 年齢 " + $AgeResult + \n + "コメント" + $ComentResult ;
+    var fontSize = 35 ;	// フォントサイズ
+    var lineHeight = 1.0 ;	// 行の高さ (フォントサイズに対する倍率)
+    var x = 50 ;	// 水平位置
+    var y = 50 ;	// 垂直位置
 
-  var element = document.getElementById( "canvas" );
-  var context = element.getContext( "2d" ).value;
-  var $NameResult = document.sampleForm.name.value;
-  var $AgeResult = document.sampleForm.age.value;
-  var $IdResult = document.sampleForm.id.value;
-  var $ComentResult = document.sampleForm.coment.value;
-  var $Text = "ユーザー名" + $NameResult + \n + "ID" + $IdResult + \n + " 年齢 " + $AgeResult + \n + "コメント" + $ComentResult ;
-  var fontSize = 35 ;	// フォントサイズ
-  var lineHeight = 1.0 ;	// 行の高さ (フォントサイズに対する倍率)
-  var x = 50 ;	// 水平位置
-  var y = 50 ;	// 垂直位置
-
-var output = function () {
 context.beginPath () ;
 context.font = "bold " + fontSize + "游ゴシック" ;
 for( var lines=$Text.split( "\n" ), i=0, l=lines.length; l>i; i++ ) {
 	var line = lines[i] ;
 	var addY = fontSize ;
-
   // 2行目以降の水平位置は行数とlineHeightを考慮する
   	if ( i ) addY += fontSize * lineHeight * i ;
-
   	context.fillText( line, x + 0, y + addY ) ;
 }
 }
   -->
   </script>
-
-
 </body>
 </html>
