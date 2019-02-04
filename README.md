@@ -6,7 +6,7 @@
 ### html
 ### css
 ### javascript
-### electron(後日exeファイルをgitに入れる予定)
+### electron(後日zipファイルをリリースする予定)
 <br>
 <br>
 <br>
