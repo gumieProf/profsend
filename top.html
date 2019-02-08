@@ -9,12 +9,10 @@
     width: 600px;
     margin: 10px;
     padding: 10px;
-    border: 1px solid gray;
+    border: 10px solid black;
     border-radius: 10px;
 }
-#sampleForm {
-    background-color: #ff009a;
-}
+
 #sampleForm  {
     margin: 0 0 7px 0;
     vertical-align: text-top;
@@ -28,6 +26,14 @@ font-family:"游ゴシック","YuGothic",
 #sampleOutputComent {
 font-family:"游ゴシック","YuGothic",
 }
+.canvas-wrapper {
+    position: relative;
+}
+.canvas-wrapper canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}	
 </style>
 <div align="center">
 <img src="img-1.png" alt="logo" width="200px" height="200px">
@@ -53,7 +59,10 @@ font-family:"游ゴシック","YuGothic",
 <br />
 <br />
 </form>
-<canvas id="canvas" width="600" height="300" style="background-color: #ebedf0 ;></canvas>
+<canvas id="canvas1" width="600" height="300" ></canvas>
+<canvas id="canvas2" width="600" height="300" ></canvas>
+<canvas id="canvas3" width="600" height="300" ></canvas>
+<canvas id="canvas_result" width="600" height="300" ></canvas>	
 </div>
 </head>
 <body>
@@ -65,20 +74,47 @@ font-family:"游ゴシック","YuGothic",
     var $IdResult = document.getElementById( "id" ).value ;
     var $AgeResult = document.getElementById( "age" ).value ;
     var $ComentResult = document.getElementById( "coment" ).value ;
-    var $Text = "ユーザー名" + $NameResult + \n + "ID" + $IdResult + \n + " 年齢 " + $AgeResult + \n + "コメント" + $ComentResult ;
+    var $Text = "ユーザー名" + "\t" + $NameResult + "\n" + "ID" + "\t" + $IdResult + "\n" + " 年齢 " + "\t" + $AgeResult + "\n" + "コメント" + "\t" + $ComentResult ;
     var fontSize = 35 ;	// フォントサイズ
     var lineHeight = 1.0 ;	// 行の高さ (フォントサイズに対する倍率)
     var x = 50 ;	// 水平位置
     var y = 50 ;	// 垂直位置
+    const Ctxb = Canvas1.getContext("2d");
+    const Ctxc = Canvas2.getContext("2d");
+    const Ctxt = Canvas3.getContext("2d");	  
+    const resultCtx = resultCanvas.getContext("2d");
+	  
+	  
+const updateMask = () => {	
+const {width, height} = Canvas1;
+	
+const ImgDatab = Ctxb.getImageData(0, 0, width, height);
+const ImgDatac = Ctxc.getImageData(0, 0, width, height);	
+const ImgDatat = Ctxt.getImageData(0, 0, width, height);
 
-context.beginPath () ;
-context.font = "bold " + fontSize + "游ゴシック" ;
+const Datab = ImgDatab.data;	
+const Datac = ImgDatac.data;	
+const Datat = ImgDatat.data;		
+
+const resultImgData = resultCtx.createImageData(width, height);
+const resultData = resultImgData.data;	
+
+	
+resultCtx.putImageData(resultImgData, 0, 0);
+    };
+
+    //初回呼びだし
+    updateMask();
+});
+	  
+ctxt.beginPath () ;
+ctxt.font = "bold " + fontSize + "游ゴシック" ;
 for( var lines=$Text.split( "\n" ), i=0, l=lines.length; l>i; i++ ) {
 	var line = lines[i] ;
 	var addY = fontSize ;
   // 2行目以降の水平位置は行数とlineHeightを考慮する
   	if ( i ) addY += fontSize * lineHeight * i ;
-  	context.fillText( line, x + 0, y + addY ) ;
+  	ctxt.fillText( line, x + 0, y + addY ) ;
 }
 }
   -->
