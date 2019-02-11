@@ -7,11 +7,11 @@ var Canvas1 = document.getElementById("canvas1");
   var Ctx1 = Canvas1.getContext("2d");
   var Ctx2 = Canvas2.getContext("2d");
   var Ctx3 = Canvas3.getContext("2d");
-  var ResultCtx = canvas_result.getContext("2d");
-  var NameResult = document.editlicense.formName.value;
-  var IdResult = document.editlicense.formID.value;
-  var AgeResult = document.editlicense.formAge.value;
-  var ComentResult = document.editlicense.formComent.value;
+  var ResultCtx = Resultcanvas.getContext("2d");
+  var NameResult = document.edit.name.value;
+  var IdResult = document.edit.id.value;
+  var AgeResult = document.edit.age.value;
+  var ComentResult = document.edit.coment.value;
   var Text = "ユーザー名" + "\t" + NameResult + "\n" + "ID" + "\t" +IdResult + "\n" + " 年齢 " + "\t" + AgeResult + "\n" + "コメント" + "\t" + ComentResult ;
   var fontSize = 35 ;	// フォントサイズ
   var lineHeight = 1.0 ;	// 行の高さ (フォントサイズに対する倍率)
@@ -28,7 +28,6 @@ var addY = fontSize ;
   if ( i ) addY += fontSize * lineHeight * i ;
   Ctx3.fillText( line, x + 0, y + addY ) ;
 }
-  var ctx = Canvas2.getContext('2d');
   Ctx2.beginPath();
   Ctx2.fillStyle = '#a4a4a4';
   Ctx2.fillRect(20, 20, 550, 400);
@@ -61,7 +60,6 @@ canvas1.hidden = true;
 canvas2.hidden = true;
 canvas3.hidden = true;
 canvas_result.hidden = true;
-
 var base64 = canvas_result.toDataURL();
 	// 空のimgタグにcanvasで作成した画像を載せる。
 	// 以降は通常の画像と同じなので右クリックから保存できるようになる。
@@ -75,12 +73,10 @@ var base64 = canvas_result.toDataURL();
 	// ダウンロードファイル名を設定
 	document.getElementById("dlImg").download = fileName;
 
-
 document.getElementById("btnDownload").addEventListener("click", DownloadStart, false);
 
 function DownloadStart(){
 	if (canvas_result.getContext) {
-		var ResultCtx = canvas_result.getContext('2d');
 
 		// ダウンロード ファイル名
 		var fileName   = "license.png";

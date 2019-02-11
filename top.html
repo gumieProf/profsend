@@ -4,28 +4,18 @@
 <meta charset="UTF-8">
 <title>ストライカーライセンスエディタ</title>
 <style>
-#sampleForm,
-#sampleOutput {
-    width: 600px;
-    margin: 10px;
-    padding: 10px;
-    border: 10px solid black;
-    border-radius: 10px;
+body{
+  text-align: center;
+  width:500px;
+  margin-right: auto;
+  margin-left : auto;
+  border: 10px solid black;
+  border-radius: 10px;
 }
 
-#sampleForm  {
-    margin: 0 0 7px 0;
-    vertical-align: text-top;
-}
-#sampleOutputName {
-font-family:"游ゴシック","YuGothic",
-}
-#sampleOutputAge {
-font-family:"游ゴシック","YuGothic",
-}
-#sampleOutputComent {
-font-family:"游ゴシック","YuGothic",
-}
+  #editlicense,
+
+
 .canvas-wrapper {
     position: relative;
 }
@@ -33,14 +23,16 @@ font-family:"游ゴシック","YuGothic",
     position: absolute;
     top: 0;
     left: 0;
-}	
+}
 </style>
-<div align="center">
-<img src="img-1.png" alt="logo" width="200px" height="200px">
 
-<form name="edit" id="sampleForm" action="">
+<form name="edit" id="editlicense" action="">
+  <img src="img-1.png" alt="logo" width="200px" height="200px">
+
+<br>
     【入力】
-    <br />
+    <br>
+    <br>
     <span>名前：</span><input type="text" name="formName" value="モンスト太郎" id="name" ></input>
     <br />
     <span>ID：</span><input type="text" name="formID" value="123 456 789" id="id" ></input>
@@ -58,66 +50,20 @@ font-family:"游ゴシック","YuGothic",
     <span>コメント：</span><textarea name="formComent" cols="25" id="coment" >よろしくお願いします</textarea>
 <br />
 <br />
-</form>
+
+<div class="canvas-wrapper">
 <canvas id="canvas1" width="600" height="300" ></canvas>
 <canvas id="canvas2" width="600" height="300" ></canvas>
 <canvas id="canvas3" width="600" height="300" ></canvas>
-<canvas id="canvas_result" width="600" height="300" ></canvas>	
+<canvas id="canvas_result" width="600" height="300" ></canvas>
 </div>
+<div><img id="newImg"></div>
+    <a href="" id="dlImg">ダウンロード(edge・chrome・firefox等)</a>
+    <button id="btnDownload">ダウンロード(インターネットエクスプローラー)</button>
+
+</form>
 </head>
 <body>
-  <script language="javascript" type="text/javascript">
-  <!--
-    var element = document.getElementById( "canvas" );
-    var context = element.getContext( "2d" ).value;
-    var $NameResult = document.getElementById( "name" ).value ;
-    var $IdResult = document.getElementById( "id" ).value ;
-    var $AgeResult = document.getElementById( "age" ).value ;
-    var $ComentResult = document.getElementById( "coment" ).value ;
-    var $Text = "ユーザー名" + "\t" + $NameResult + "\n" + "ID" + "\t" + $IdResult + "\n" + " 年齢 " + "\t" + $AgeResult + "\n" + "コメント" + "\t" + $ComentResult ;
-    var fontSize = 35 ;	// フォントサイズ
-    var lineHeight = 1.0 ;	// 行の高さ (フォントサイズに対する倍率)
-    var x = 50 ;	// 水平位置
-    var y = 50 ;	// 垂直位置
-    const Ctxb = Canvas1.getContext("2d");
-    const Ctxc = Canvas2.getContext("2d");
-    const Ctxt = Canvas3.getContext("2d");	  
-    const resultCtx = resultCanvas.getContext("2d");
-	  
-	  
-const updateMask = () => {	
-const {width, height} = Canvas1;
-	
-const ImgDatab = Ctxb.getImageData(0, 0, width, height);
-const ImgDatac = Ctxc.getImageData(0, 0, width, height);	
-const ImgDatat = Ctxt.getImageData(0, 0, width, height);
-
-const Datab = ImgDatab.data;	
-const Datac = ImgDatac.data;	
-const Datat = ImgDatat.data;		
-
-const resultImgData = resultCtx.createImageData(width, height);
-const resultData = resultImgData.data;	
-
-	
-resultCtx.putImageData(resultImgData, 0, 0);
-    };
-
-    //初回呼びだし
-    updateMask();
-});
-	  
-ctxt.beginPath () ;
-ctxt.font = "bold " + fontSize + "游ゴシック" ;
-for( var lines=$Text.split( "\n" ), i=0, l=lines.length; l>i; i++ ) {
-	var line = lines[i] ;
-	var addY = fontSize ;
-  // 2行目以降の水平位置は行数とlineHeightを考慮する
-  	if ( i ) addY += fontSize * lineHeight * i ;
-  	ctxt.fillText( line, x + 0, y + addY ) ;
-}
-}
-  -->
-  </script>
+<script type="text/javascript" src="license.js"></script>
 </body>
 </html>
