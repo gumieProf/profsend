@@ -6,7 +6,6 @@
 #### html
 #### css
 #### javascript
-#### electron(後日zipファイルをリリースする予定)
 <br>
 <br>
 <br>
