@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => { //jQueryでいうところのready
 
-var Canvas1 = document.getElementById("canvas1");
+  var Canvas1 = document.getElementById("canvas1");
   var Canvas2 = document.getElementById("canvas2");
   var Canvas3 = document.getElementById("canvas3");
   var Resultcanvas = document.getElementById("canvas_result");
