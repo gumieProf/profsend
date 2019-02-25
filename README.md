@@ -24,12 +24,5 @@
 
 <br>
 
-### 参考になったサイト
-
-#### [Canvasをファイルに保存 | GHP（仮）](http://mclab.uunyan.com/lab/html/canvas004.htm)
-
-#### [Canvasあれこれ - レイヤー, マスク(省略)](https://qiita.com/TR246/items/4b84deadb26f1c450722)
-<br>
-<br>
 
 ## GUTSMINE
