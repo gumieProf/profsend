@@ -36,10 +36,33 @@ var addY = fontSize ;
   Ctx1.fillRect(0, 0, Canvas1.width, Canvas1.height);
 
 
+  var Canvas1 = document.getElementById("canvas1");
+  var Canvas2 = document.getElementById("canvas2");
+  var Canvas3 = document.getElementById("canvas3");
+  var Resultcanvas = document.getElementById("canvas_result");
+  var Ctx1 = Canvas1.getContext("2d");
+  var Ctx2 = Canvas2.getContext("2d");
+  var Ctx3 = Canvas3.getContext("2d");
+  var ResultCtx = Resultcanvas.getContext("2d");
+
+  const {width, height} = mainCanvas;
+  const Imgdata1 = Ctx1.getImageData(0, 0, width, height);
+  const Imgdata2 = Ctx2.getImageData(0, 0, width, height);
+  const Imgdata3 = Ctx3.getImageData(0, 0, width, height);
+
+  const Data1 = Imgdata1.data;
+  const Data2 = Imgdata2.data;
+  const Data3 = Imgdata3.data;
+
+  const ResultImgData = ResultCtx.createImageData(width, height);
+  const ResultData = ResultImgData.data;
+
+  ResultCtx.putImageData(ResultImgData, 0, 0);
+
+
 canvas1.hidden = true;
 canvas2.hidden = true;
 canvas3.hidden = true;
-canvas_result.hidden = true;
 var base64 = canvas_result.toDataURL();
 	// 空のimgタグにcanvasで作成した画像を載せる。
 	// 以降は通常の画像と同じなので右クリックから保存できるようになる。
@@ -89,4 +112,4 @@ function Base64toBlob(base64)
 	}
 	var blob = new Blob([buf], { type: mime });
 	return blob;
-}
+ }
