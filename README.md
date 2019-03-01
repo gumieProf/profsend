@@ -2,7 +2,7 @@
 
 <br>
 
-![エビフライトライアングル](img-1.png)
+![profsend rogo](img-1.png)
 
 <br>
 
