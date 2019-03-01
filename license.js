@@ -35,26 +35,6 @@ var addY = fontSize ;
   Ctx1.fillStyle = "#ffffff";
   Ctx1.fillRect(0, 0, Canvas1.width, Canvas1.height);
 
-const updateMask = () => {
-    //Canvasのサイズ
-    const {width, height} = Canvas1;
-
-const ImgData1 = Ctx1.getImageData(0, 0, width, height);
-const ImgData2 = Ctx2.getImageData(0, 0, width, height);
-const ImgData3 = Ctx3.getImageData(0, 0, width, height);
-const Data1 = ImgData1.data;
-const Data2 = ImgData2.data;
-const Data3 = ImgData3.data;
-
-const ResultImgData = ResultCtx.createImageData(width, height);
-const ResultData = ResultImgData.data;
-
-ResultCtx.putImageData(ResultImgData, 0, 0);
-};
-
-//初回呼びだし
-updateMask();
-});
 
 canvas1.hidden = true;
 canvas2.hidden = true;
