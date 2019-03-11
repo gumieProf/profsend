@@ -2,9 +2,6 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-  <link rel="manifest" href="manifest.json">
 <title>PROFSEND(プロフセンド)</title>
 <style>
 body{
@@ -62,23 +59,22 @@ body{
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.6/lity.css' />
 <script src='https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.6/lity.js'></script>
-
 <form name="edit" id="editlicense" action="">
-  <img src="img-1.png" alt="logo" width="200px" height="200px">
+  <img src="img-1.png" alt="logo" width="200px" height="200px" class="wrap">
 <br>
 <div id="nav">
 <abolt><p><a href="https://www.youtube.com/watch?v=777CTBZh_Y4&list=PLcsq2jjTfJ_r0q1zxNsKjcYl1-KhGeig" data-lity="data-lity">紹介映像</a></p><abolt>
-<sc><p><a href="https://github.com/gutsmine/profsend">ソースコード</a></p><sc>
+<sc><p><a href="https://github.com/gutsmine/profsend" class="wrap">ソースコード</a></p><sc>
 </div>
-    【入力】
+    <span>【入力】</span>
     <br>
     <br>
-    <span>名前：</span><input type="text" name="formName" value="ゲーム太郎" id="name" ></input>
+    <span>名前：</span><input type="text" name="formName" value="ゲーム太郎" id="name" class="wrap"></input>
     <br />
-    <span>ID：</span><input type="text" name="formID" value="123 456 789" id="id" ></input>
+    <span>ID：</span><input type="text" name="formID" value="123 456 789" id="id" class="wrap"></input>
     <br />
     <span>年齢：</span>
-        <select name="formAge" id="age" >
+        <select name="formAge" id="age">
             <option selected>10代</option>
             <option>20代</option>
             <option>30代</option>
@@ -87,7 +83,7 @@ body{
             <option>非公開</option>
         </select>
     <br />
-    <span>コメント：</span><textarea name="formComent" cols="25" id="coment" >よろしくお願いします</textarea>
+    <span>コメント：</span><textarea name="formComent" cols="25" id="coment" class="wrap">よろしくお願いします</textarea>
 <br />
 <br />
 <a href="" id="dlImg">ダウンロード(edge・chrome・firefox等)</a>
@@ -100,39 +96,17 @@ Tweet
 </div>
 
 <div class="canvas-wrapper">
-<canvas id="canvas1" width="600" height="300" ></canvas>
-<canvas id="canvas2" width="600" height="300" ></canvas>
-<canvas id="canvas3" width="600" height="300" ></canvas>
-<canvas id="canvas_result" width="600" height="300" ></canvas>
+<canvas id="canvas1" width="600" height="300"></canvas>
+<canvas id="canvas2" width="600" height="300"></canvas>
+<canvas id="canvas3" width="600" height="300"></canvas>
+<canvas id="canvas_result" width="600" height="300"></canvas>
 </div>
-<div><img id="newImg"></div>
+<div><img id="newImg"class="wrap"></div>
 
 </form>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
 <body>
 <script type="text/javascript" src="license.js"></script>
-<script>
-   <!-- service workerの登録関係 -->
-   if ('serviceWorker' in navigator) {
-   navigator.serviceWorker.register('service_worker.js').then(function(registration) {
-       console.log('ServiceWorker registration successful with scope: ', registration.scope);
-   }).catch(function(err) {
-       console.log('ServiceWorker registration failed: ', err);
-   });
-   }
-   <!-- vue.jsの設定関係 -->
-   var app = new Vue({
-     el: '#app',
-     data: {
-       message: 'Hello Vue!'
-     },
-     methods: {
-       reverseMessage: function () {
-         this.message = this.message.split('').reverse().join('')
-       }
-     }
-   });
-   </script>
 </body>
 </html>
