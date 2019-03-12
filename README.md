@@ -31,7 +31,8 @@
 
 #### adobe illustrator(ロゴ作成)
 
-#### adobe after effects(起動アニメーション)
+~~#### adobe after effects(起動アニメーション)~~
+#### 起動アニメーションは廃止となりました。
 
 <br>
 
