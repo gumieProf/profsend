@@ -45,7 +45,7 @@ var addY = fontSize ;
   var Ctx3 = Canvas3.getContext("2d");
   var ResultCtx = Resultcanvas.getContext("2d");
 
-  const {width, height} = mainCanvas;
+  const {width, height} = Canvas1;
   const Imgdata1 = Ctx1.getImageData(0, 0, width, height);
   const Imgdata2 = Ctx2.getImageData(0, 0, width, height);
   const Imgdata3 = Ctx3.getImageData(0, 0, width, height);
@@ -82,7 +82,7 @@ function DownloadStart(){
 	if (canvas_result.getContext) {
 
 		// ダウンロード ファイル名
-		var fileName   = "license.png";
+		var fileName   = "profile.png";
 
 		//  ダウンロード開始
 		if (window.navigator.msSaveBlob) {
