@@ -99,12 +99,15 @@ $(function(){
   <sc><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i> ソースコード</a></p><sc>
   <sc><p><a href="top.html" class="wrap"><i class="fas fa-arrow-left fa-2x back"></i> 通常版</a></p><sc>
   </div>
+  <div id="editor">
       <span>【入力】</span>
       <br>
       <br>
-      <span>名前：</span><input type="text" name="formName" value="ゲーム太郎" id="name" class="wrap"></input>
+      <span>名前：</span><input type="text" name="formName" id="name" class="wrap" maxlength="12"></input>
+
       <br />
-      <span>ID：</span><input type="text" name="formID" value="123 456 789" id="id" class="wrap"></input>
+
+      <span>ID：</span><input type="text" name="formID" id="id" class="wrap" maxlength="9"></input>
       <br />
       <span>年齢：</span>
           <select name="formAge" id="age">
@@ -116,15 +119,12 @@ $(function(){
               <option>非公開</option>
           </select>
       <br />
-      <span>コメント：</span><textarea name="formComent" cols="25" id="coment" class="wrap">よろしくお願いします</textarea>
-
+      <span>コメント：</span><textarea name="formComent" cols="25" id="coment" class="wrap"></textarea>
+</div>
   <br />
 
    <input type="button" value="書き込む" onclick='read()'></input>
 
-   <br>
-
-<input type="button" value="消す(再読み込み)" onclick="window.location.reload();" />
 
    <br>
 
@@ -132,13 +132,11 @@ $(function(){
 
 <br>
 
+<div id="text_read"></div>
 
-<br>
-
-  <canvas id="canvas" width="600" height="300"></canvas>
+  <canvas id="canvas" width="500" height="300"></canvas>
 </form>
 <script type="text/javascript">
-
 var NameResult = document.edit.name.value;
 var IdResult = document.edit.id.value;
 var AgeResult = document.edit.age.value;
@@ -148,11 +146,19 @@ var fontSize = 35 ;	// フォントサイズ
 var lineHeight = 1.0 ;	// 行の高さ (フォントサイズに対する倍率)
 var x = 50 ;	// 水平位置
 var y = 50 ;	// 垂直位置   //新規画像オブジェクト
-
-function read(){
 var Canvas = document.getElementById("canvas");
 var Context = Canvas.getContext("2d");
+
+Context.fillStyle = "#abb4b4";
+Context.fillRect(0, 0, 500, 300);
+
+
+function read(){
+Context.clearRect(0, 0, 500, 300);
 Context.beginPath () ;
+Context.fillStyle = "#abb4b4";
+Context.fillRect(0, 0, 500, 300);
+Context.fillStyle = "#000000";
 Context.font = "bold " + fontSize + "游ゴシック" ;
 for( var lines=Text.split( "\n" ), i=0, l=lines.length; l>i; i++ ) {
 var line = lines[i] ;
@@ -160,6 +166,14 @@ var addY = fontSize ;
 // 2行目以降の水平位置は行数とlineHeightを考慮する
 if ( i ) addY += fontSize * lineHeight * i ;
 Context.fillText( line, x + 0, y + addY ) ;
+
+var img = new Image();
+img.src = "toku_L.png";
+
+Context.drawImage(img, 200, 100, 300, 300);  //400x300に縮小表示
+
+  document.getElementById("text_read").innerText = "もう一回押すと画像がでます。";
+
 　}
 document.getElementById("download").onclick = (event) => {
     let canvas = document.getElementById("canvas");
@@ -169,7 +183,7 @@ document.getElementById("download").onclick = (event) => {
     link.download = "profsend.png";
     link.click();
 　}
-}
+ }
 </script>
 </body>
 </html>

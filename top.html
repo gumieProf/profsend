@@ -102,9 +102,9 @@ $(function(){
       <span>【入力】</span>
       <br>
       <br>
-      <span>名前：</span><input type="text" name="formName" value="ゲーム太郎" id="name" class="wrap"></input>
+      <span>名前：</span><input type="text" name="formName" value="" id="name" class="wrap"></input>
       <br />
-      <span>ID：</span><input type="text" name="formID" value="123 456 789" id="id" class="wrap"></input>
+      <span>ID：</span><input type="text" name="formID" value="" id="id" class="wrap"></input>
       <br />
       <span>年齢：</span>
           <select name="formAge" id="age">
@@ -116,21 +116,22 @@ $(function(){
               <option>非公開</option>
           </select>
       <br />
-      <span>コメント：</span><textarea name="formComent" cols="25" id="coment" class="wrap">よろしくお願いします</textarea>
+      <span>コメント：</span><textarea name="formComent" cols="25" id="coment" class="wrap"></textarea>
 
   <br />
 
-   <input type="button" value="書き込む" onclick='read()'></input>
+   <input type="button"  id="readb"value="書き込む" onclick='read()'></input>
 
-   <br>
-
-<input type="button" value="消す(再読み込み)" onclick="window.location.reload();" />
 
    <br>
 
 <input type="button" value="保存" id="download"></input>
 
+
 <br>
+
+<div id="text_read"></div>
+
 
 
 <br>
@@ -148,11 +149,21 @@ var fontSize = 35 ;	// フォントサイズ
 var lineHeight = 1.0 ;	// 行の高さ (フォントサイズに対する倍率)
 var x = 50 ;	// 水平位置
 var y = 50 ;	// 垂直位置   //新規画像オブジェクト
-
-function read(){
 var Canvas = document.getElementById("canvas");
 var Context = Canvas.getContext("2d");
+
+Context.fillStyle = "#abb4b4";
+Context.fillRect(0, 0, 600, 300);
+
+function read(){
+
+
+
+Context.clearRect(0, 0, 500, 300);
 Context.beginPath () ;
+Context.fillStyle = "#abb4b4";
+Context.fillRect(0, 0, 500, 300);
+Context.fillStyle = "#000000";
 Context.font = "bold " + fontSize + "游ゴシック" ;
 for( var lines=Text.split( "\n" ), i=0, l=lines.length; l>i; i++ ) {
 var line = lines[i] ;
@@ -160,7 +171,18 @@ var addY = fontSize ;
 // 2行目以降の水平位置は行数とlineHeightを考慮する
 if ( i ) addY += fontSize * lineHeight * i ;
 Context.fillText( line, x + 0, y + addY ) ;
-　}
+
+var img = new Image();
+
+img.src = "prof.png";
+
+Context.drawImage(img, 500, 200, 100, 100);  //400x300に縮小表示
+
+  document.getElementById("text_read").innerText = "もう一回押すと画像がでます。";
+
+}
+
+
 document.getElementById("download").onclick = (event) => {
     let canvas = document.getElementById("canvas");
 
