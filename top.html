@@ -65,54 +65,69 @@ color: #ff3715
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.6/lity.css' />
 <script src='https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.6/lity.js'></script>
-<form name="edit" id="editlicense" action="">
-  <img src="img-1.png" alt="logo" width="200px" height="200px" class="wrap">
-<br>
-<div id="nav">
-<abolt><p><a href="https://www.youtube.com/watch?v=777CTBZh_Y4&list=PLcsq2jjTfJ_r0q1zxNsKjcYl1-KhGeig" data-lity="data-lity"><i class="fab fa-youtube fa-2x video"></i> 紹介映像</a></p><abolt>
-<sc><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i> ソースコード</a></p><sc>
-</div>
-    <span>【入力】</span>
-    <br>
-    <br>
-    <span>名前：</span><input type="text" name="formName" value="ゲーム太郎" id="name" class="wrap"></input>
-    <br />
-    <span>ID：</span><input type="text" name="formID" value="123 456 789" id="id" class="wrap"></input>
-    <br />
-    <span>年齢：</span>
-        <select name="formAge" id="age">
-            <option selected>10代</option>
-            <option>20代</option>
-            <option>30代</option>
-            <option>40代</option>
-            <option>50代</option>
-            <option>非公開</option>
-        </select>
-    <br />
-    <span>コメント：</span><textarea name="formComent" cols="25" id="coment" class="wrap">よろしくお願いします</textarea>
-<br />
-<br />
-<a href="" id="dlImg">ダウンロード(edge・chrome・firefox等)</a>
-<br>
-<button id="btnDownload">ダウンロード(インターネットエクスプローラー)</button>
-<div class="twitter">
-　<a href="//twitter.com/share" class="twitter-share-button" data-url="https://github.com/gutsmine/profsend/" size=large data-lang="ja">
-Tweet
-</a>
-</div>
-
-<div class="canvas-wrapper">
-<canvas id="canvas1" width="600" height="300"></canvas>
-<canvas id="canvas2" width="600" height="300"></canvas>
-<canvas id="canvas3" width="600" height="300"></canvas>
-<canvas id="canvas_result" width="600" height="300"></canvas>
-</div>
-<div><img id="newImg"class="wrap"></div>
 
 </form>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 </head>
 <body>
-<script type="text/javascript" src="license.js"></script>
+  <form name="edit" id="editlicense" action="">
+    <img src="img-1.png" alt="logo" width="200px" height="200px" class="wrap">
+  <br>
+  <div id="nav">
+  <abolt><p><a href="https://www.youtube.com/watch?v=777CTBZh_Y4&list=PLcsq2jjTfJ_r0q1zxNsKjcYl1-KhGeig" data-lity="data-lity"><i class="fab fa-youtube fa-2x video"></i> 紹介映像</a></p><abolt>
+  <sc><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i> ソースコード</a></p><sc>
+  </div>
+      <span>【入力】</span>
+      <br>
+      <br>
+      <span>名前：</span><input type="text" name="formName" value="ゲーム太郎" id="name" class="wrap"></input>
+      <br />
+      <span>ID：</span><input type="text" name="formID" value="123 456 789" id="id" class="wrap"></input>
+      <br />
+      <span>年齢：</span>
+          <select name="formAge" id="age">
+              <option selected>10代</option>
+              <option>20代</option>
+              <option>30代</option>
+              <option>40代</option>
+              <option>50代</option>
+              <option>非公開</option>
+          </select>
+      <br />
+      <span>コメント：</span><textarea name="formComent" cols="25" id="coment" class="wrap">よろしくお願いします</textarea>
+  <br />
+   <input type="button" value="書き込む" onclick='read()'>
+  <br />
+
+
+
+  <canvas id="canvas" width="600" height="300"></canvas>
+
+<script type="text/javascript">
+
+var NameResult = document.edit.name.value;
+var IdResult = document.edit.id.value;
+var AgeResult = document.edit.age.value;
+var ComentResult = document.edit.coment.value;
+var Text = "ユーザー名" + "\t" + NameResult + "\n" + "ID" + "\t" +IdResult + "\n" + " 年齢 " + "\t" + AgeResult + "\n" + "コメント" + "\t" + ComentResult ;
+var fontSize = 35 ;	// フォントサイズ
+var lineHeight = 1.0 ;	// 行の高さ (フォントサイズに対する倍率)
+var x = 50 ;	// 水平位置
+var y = 50 ;	// 垂直位置   //新規画像オブジェクト
+
+function read(){
+var Canvas = document.getElementById("canvas");
+var Context = Canvas.getContext("2d");
+Context.beginPath () ;
+Context.font = "bold " + fontSize + "游ゴシック" ;
+for( var lines=Text.split( "\n" ), i=0, l=lines.length; l>i; i++ ) {
+var line = lines[i] ;
+var addY = fontSize ;
+// 2行目以降の水平位置は行数とlineHeightを考慮する
+if ( i ) addY += fontSize * lineHeight * i ;
+Context.fillText( line, x + 0, y + addY ) ;
+　}
+}
+</script>
 </body>
 </html>
