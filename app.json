@@ -15,6 +15,11 @@
     }
   },
   "name": "profsend",
+  "description": "game profile editor",
+  "repository": "https://github.com/gutsmine/profsend",
+  "logo": "prof.png",
+  "keywords": ["html, javascript, css,php, game, tool"]
+  }
   "scripts": {
   },
   "stack": "heroku-18"
