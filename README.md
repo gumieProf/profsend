@@ -31,8 +31,7 @@
 
 #### adobe illustrator(ロゴ作成)
 
-~~#### adobe after effects(起動アニメーション)~~
-#### 起動アニメーションは廃止となりました。
+#### adobe after effects(読み込みアニメーション)
 
 <br>
 
@@ -44,5 +43,10 @@ http://www.apache.org/licenses/LICENSE-2.0
 
 <br>
 
+<a href="https://heroku.com/deploy?template=https://github.com/gutsmine/profsend">
+  <img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy">
+</a>
+
+<br>
 
 ## Copyright (c) 2019 Gutsmine
