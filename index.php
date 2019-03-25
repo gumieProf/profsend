@@ -1,6 +1,6 @@
 <?php
 
-header('Location: /index.html');
+header('Location: /top.html');
 
 
 ?>
