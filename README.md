@@ -43,7 +43,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 
 <br>
 
-<a href="https://heroku.com/deploy?template=https://github.com/gutsmine/profsend">
+<a href="https://heroku.com/deploy?template=https://github.com/k-usk/heroku-php-basic">
   <img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy">
 </a>
 
