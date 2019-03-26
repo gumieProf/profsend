@@ -138,11 +138,6 @@ $(function(){
 </form>
 
 <script type="text/javascript">
-var NameResult = $('#name').val();
-var IdResult = $('#id').val();
-var AgeResult = $('#age').val();
-var ComentResult = $('#coment').val();
-var Text = "ユーザー名" + "\t" + NameResult + "\n" + "ID" + "\t" +IdResult + "\n" + " 年齢 " + "\t" + AgeResult + "\n" + "コメント" + "\t" + ComentResult ;
 var fontSize = 35 ;	// フォントサイズ
 var lineHeight = 1.0 ;	// 行の高さ (フォントサイズに対する倍率)
 var x = 50 ;	// 水平位置
@@ -155,6 +150,14 @@ Context.fillRect(0, 0, 500, 300);
 
 
 function read(){
+
+  var NameResult = $('#name').val();
+  var IdResult = $('#id').val();
+  var AgeResult = $('#age').val();
+  var ComentResult = $('#coment').val();
+  var Text = "ユーザー名" + "\t" + NameResult + "\n" + "ID" + "\t" +IdResult + "\n" + " 年齢 " + "\t" + AgeResult + "\n" + "コメント" + "\t" + ComentResult ;
+
+
 Context.clearRect(0, 0, 500, 300);
 Context.beginPath () ;
 Context.fillStyle = "#abb4b4";
@@ -173,7 +176,6 @@ img.src = "toku_L.png";
 
 Context.drawImage(img, 300, 200, 200, 200);  //400x300に縮小表示
 
-  document.getElementById("text_read").innerText = "もう一回押すと画像がでます。";
 
 　}200
 document.getElementById("download").onclick = (event) => {
