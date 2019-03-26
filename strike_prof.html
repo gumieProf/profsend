@@ -118,12 +118,22 @@ $(function(){
       <span>【入力】</span>
       <br>
       <br>
-      <span>名前：</span><input type="text" name="formName" id="name" class="wrap" maxlength="12"></input>
+      <span>名前(12文字以内)：</span><input type="text" name="formName" id="name" class="wrap" maxlength="12" onkeyup="document.getElementById('name-leng').value=this.value.length"></input>
 
       <br />
 
-      <span>ID：</span><input type="text" name="formID" id="id" class="wrap" maxlength="9"></input>
+現在の文字数 <input type="text" id="name-leng" readonly>
+
+<br>
+
+      <span>ID(9文字以内)：</span><input type="text" name="formID" id="id" class="wrap" maxlength="9" onkeyup="document.getElementById('id-leng').value=this.value.length"></input>
+
       <br />
+
+現在の文字数 <input type="text" id="id-leng" readonly>
+
+<br>
+
       <span>年齢：</span>
           <select name="formAge" id="age">
               <option selected>10代</option>
@@ -134,11 +144,17 @@ $(function(){
               <option>非公開</option>
           </select>
       <br />
-      <span>コメント：</span><textarea name="formComent" cols="25" id="coment" class="wrap"></textarea>
+      <span>コメント(30文字以内)：</span><textarea name="formComent" cols="25" id="coment" class="wrap" maxlength="30" onkeyup="document.getElementById('coment-leng').value=this.value.length"></textarea>
+
+<br>
+
+現在の文字数 <input type="text" id="coment-leng" readonly>
+
 </div>
+
   <br />
 
-   <input type="button" value="書き込む" onclick='read()' name="sub1"></input>
+  <input type="button"  id="readb" value="書き込む" onclick='read()'></input>
 
 
    <br>
@@ -158,18 +174,18 @@ var x = 50 ;	// 水平位置
 var y = 50 ;	// 垂直位置   //新規画像オブジェクト
 var Canvas = document.getElementById("canvas");
 var Context = Canvas.getContext("2d");
+var img = new Image();
+img.src = "toku.png";
 
-
-Context.fillStyle = "abb4b4";
-Context.fillRect(0, 0, 500, 300);
-
+Context.fillStyle = "#abb4b4";
+Context.fillRect(0, 0, 600, 300);
 
 function read(){
 
-  var NameResult = $('#name').val();
-  var IdResult = $('#id').val();
-  var AgeResult = $('#age').val();
-  var ComentResult = $('#coment').val();
+  var NameResult = document.edit.name.value;
+  var IdResult = document.edit.id.value;
+  var AgeResult = document.edit.age.value;
+  var ComentResult = document.edit.coment.value;
   var Text = "ユーザー名" + "\t" + NameResult + "\n" + "ID" + "\t" +IdResult + "\n" + " 年齢 " + "\t" + AgeResult + "\n" + "コメント" + "\t" + ComentResult ;
 
 
@@ -186,13 +202,12 @@ var addY = fontSize ;
 if ( i ) addY += fontSize * lineHeight * i ;
 Context.fillText( line, x + 0, y + addY ) ;
 
-var img = new Image();
-img.src = "toku_L.png";
 
-Context.drawImage(img, 300, 200, 200, 200);  //400x300に縮小表示
+Context.drawImage(img, 300, 100, 300, 300);  //400x300に縮小表示
 
 
-　}200
+}
+
 document.getElementById("download").onclick = (event) => {
     let canvas = document.getElementById("canvas");
 
