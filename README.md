@@ -44,4 +44,4 @@ http://www.apache.org/licenses/LICENSE-2.0
 <br>
 
 
-## Copyright (c) 2019 Gutsmine
+## Copyright [yyyy] [GUTSMINE]
