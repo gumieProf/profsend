@@ -18,6 +18,7 @@ limitations under the License.-->
 <head>
 <meta charset="UTF-8">
 <title>PROFSEND(プロフセンド)</title>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
 <style>
 body{
   text-align: center;
@@ -26,6 +27,9 @@ body{
   margin-left : auto;
   border: 10px solid #333;
   border-radius: 10px;
+}
+@font-face {
+font-family: 'Noto Sans JP', sans-serif;
 }
   #editlicense,
 
@@ -195,7 +199,7 @@ Context.beginPath () ;
 Context.fillStyle = "#abb4b4";
 Context.fillRect(0, 0, 500, 300);
 Context.fillStyle = "#000000";
-Context.font = "bold " + fontSize + "游ゴシック" ;
+Context.font = "bold " + fontSize + "Noto Sans JP" ;
 for( var lines=Text.split( "\n" ), i=0, l=lines.length; l>i; i++ ) {
 var line = lines[i] ;
 var addY = fontSize ;
