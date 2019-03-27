@@ -62,10 +62,10 @@ font-family: 'Noto Sans JP', sans-serif;
   font-weight: bold;
 }
 .source{
-color: #263100
+color: #263100;
 }
 .video{
-color: #ff3715
+color: #ff3715;
 }
 .loading {
 　position: fixed;
@@ -81,6 +81,9 @@ color: #ff3715
 　top: 50%;
 　left: 50%;
 　transform: translate(-50%,-50%);
+}
+.license{
+color: #a30000;
 }
 </style>
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
@@ -118,8 +121,9 @@ $(function(){
   <br>
   <div id="nav">
   <abolt><p><a href="https://www.youtube.com/watch?v=i2cCGUB8oU8&feature=youtu.be" data-lity="data-lity"><i class="fab fa-youtube fa-2x video"></i> 紹介映像</a></p><abolt>
-  <sc><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i> ソースコード</a></p><sc>
-  <sc><p><a href="top.html" class="wrap"><i class="fas fa-arrow-left fa-2x back"></i> 通常版</a></p><sc>
+  <sc><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i> ソースコード</a></p></sc>
+  <base><p><a href="top.html" class="wrap"><i class="fas fa-arrow-left fa-2x back"></i> 通常版</a></p></base>
+  <li><p><a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i class="fas fa-file fa-2x license"></i> Apache ライセンス</a></p></li>
   </div>
   <div id="editor">
       <span>【入力】</span>
@@ -172,6 +176,8 @@ $(function(){
 
 
   <canvas id="canvas" width="500" height="300"></canvas>
+
+<h3>Copyright [yyyy] [GUTSMINE]</h>
 </form>
 
 <script type="text/javascript">
