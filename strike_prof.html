@@ -206,6 +206,11 @@ img.src = "toku.png";
 Context.fillStyle = "#abb4b4";
 Context.fillRect(0, 0, 600, 300);
 
+Context.fillStyle = "#000";
+Context.rect( 15, 15, 470, 270 )
+Context.lineWidth = 8 ;
+Context.stroke() ;
+
 function read(){
 
   var NameResult = document.edit.name.value;
@@ -220,6 +225,11 @@ Context.beginPath () ;
 Context.fillStyle = "#abb4b4";
 Context.fillRect(0, 0, 500, 300);
 Context.fillStyle = "#000000";
+
+Context.rect( 15, 15, 470, 270 )
+Context.lineWidth = 8 ;
+Context.stroke() ;
+
 Context.font = "bold " + fontSize + "Noto Sans JP" ;
 for( var lines=Text.split( "\n" ), i=0, l=lines.length; l>i; i++ ) {
 var line = lines[i] ;
@@ -229,7 +239,7 @@ if ( i ) addY += fontSize * lineHeight * i ;
 Context.fillText( line, x + 0, y + addY ) ;
 
 
-Context.drawImage(img, 300, 100, 300, 300);  //400x300に縮小表示
+Context.drawImage(img, 250, 50, 200, 200);  //400x300に縮小表示
 
 
 }
