@@ -1,5 +1,5 @@
 
-<!--Copyright [yyyy] [GUTSMINE]
+<!--Copyright [yyyy] [name of copyright owner]
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.-->
+
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -75,10 +76,10 @@ font-family: 'Noto Sans JP', sans-serif;
   font-weight: bold;
 }
 .source{
-color: #263100;
+color: #263100
 }
 .video{
-color: #ff3715;
+color: #ff3715
 }
 .loading {
 　position: fixed;
@@ -105,10 +106,9 @@ color: #a30000;
 <script src='https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.6/lity.js'></script>
 <link rel="shortcut icon" href="prof.ico">
 
-
 <section id="loading" class="loading">
 　<div class="loading__img">
-　　<img src="prof_load_2.gif">
+　　<img src="prof_load_1.gif">
 　</div>
 </section>
 <!-- 適宜jQueryを</body>直前で読み込み　-->
@@ -134,15 +134,15 @@ $(function(){
   <br>
   <div id="nav">
   <abolt><p><a href="https://www.youtube.com/watch?v=i2cCGUB8oU8&feature=youtu.be" data-lity="data-lity"><i class="fab fa-youtube fa-2x video"></i> 紹介映像</a></p><abolt>
-  <sc><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i> ソースコード</a></p></sc>
-  <base><p><a href="top.html" class="wrap"><i class="fas fa-arrow-left fa-2x back"></i> 通常版</a></p></base>
+  <sc><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i> ソースコード</a></p><sc>
+  <sc><p><a href="strike_prof.html" class="wrap"><i class="fas fa-arrow-left fa-2x back"></i> ストライカー版</a></p><sc>
   <li><p><a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i class="fas fa-file fa-2x license"></i> Apache ライセンス</a></p></li>
   </div>
   <div id="editor">
       <span>【入力】</span>
       <br>
       <br>
-      <span>名前(12文字以内)：</span><input type="text" name="formName" id="name" class="wrap" maxlength="12" onkeyup="document.getElementById('name-leng').value=this.value.length"></input>
+      <span>名前</span><input type="text" name="formName" id="name" class="wrap"  onkeyup="document.getElementById('name-leng').value=this.value.length"></input>
 
       <br />
 
@@ -150,7 +150,7 @@ $(function(){
 
 <br>
 
-      <span>ID(12文字以内)：</span><input type="text" name="formID" id="id" class="wrap" maxlength="12" onkeyup="document.getElementById('id-leng').value=this.value.length"></input>
+      <span>ID：</span><input type="text" name="formID" id="id" class="wrap"  onkeyup="document.getElementById('id-leng').value=this.value.length"></input>
 
       <br />
 
@@ -178,33 +178,37 @@ $(function(){
 
   <br />
 
-  <input type="button"  id="readb" value="書き込む" onclick='read()'></input>
+   <input type="button"  id="readb" value="書き込む" onclick='read()'></input>
 
 
    <br>
 
-<input type="button" value="保存" id="download" name="sub1"></input>
+<input type="button" value="保存" id="download"></input>
+
 
 <br>
 
 <select name="select" onChange="location.href=value;">
   <option value="#">色を変える</option>
-  <option value="strike_prof.html">黒</option>
-  <option value="strike_prof_red.html">赤</option>
-  <option value="strike_prof_blue.html">青</option>
-  <option value="strike_prof_yelow.html">黄色</option>
-  <option value="strike_prof_green.html">緑</option>
-  <option value="strike_prof_purple.html">紫</option>
+  <option value="top.html">黒</option>
+  <option value="top_red.html">赤</option>
+  <option value="top_blue.html">青</option>
+  <option value="top_yelow.html">黄色</option>
+  <option value="top_green.html">緑</option>
+  <option value="top_purple.html">紫</option>
 </select>
 
 <br>
 
   <canvas id="canvas" width="500" height="300"></canvas>
 
-<h3>Copyright [yyyy] [GUTSMINE]</h>
-</form>
+<br>
 
+<h3>Copyright [yyyy] [GUTSMINE]</h>
+
+</form>
 <script type="text/javascript">
+
 var fontSize = 35 ;	// フォントサイズ
 var lineHeight = 1.0 ;	// 行の高さ (フォントサイズに対する倍率)
 var x = 50 ;	// 水平位置
@@ -212,12 +216,12 @@ var y = 50 ;	// 垂直位置   //新規画像オブジェクト
 var Canvas = document.getElementById("canvas");
 var Context = Canvas.getContext("2d");
 var img = new Image();
-img.src = "toku.png";
+img.src = "img-1.png";
 
-Context.fillStyle = "#abb4b4";
+Context.fillStyle = "#b02cff";
 Context.fillRect(0, 0, 600, 300);
 
-Context.fillStyle = "#000";
+Context.fillStyle = "#fff";
 Context.rect( 15, 15, 470, 270 )
 Context.lineWidth = 8 ;
 Context.stroke() ;
@@ -228,14 +232,14 @@ function read(){
   var IdResult = document.edit.id.value;
   var AgeResult = document.edit.age.value;
   var ComentResult = document.edit.coment.value;
-  var Text = "ユーザー名" + "\t" + NameResult + "\n" + "ID" + "\t" +IdResult + "\n" + " 年齢 " + "\t" + AgeResult + "\n" + "コメント" + "\t" + ComentResult ;
+  var Text = "ユーザー名:" + "\t" + NameResult + "\n" + "ID: " + "\t" +IdResult + "\n" + " 年齢: " + "\t" + AgeResult + "\n" + "コメント: " + "\t" + ComentResult ;
 
 
 Context.clearRect(0, 0, 500, 300);
 Context.beginPath () ;
-Context.fillStyle = "#abb4b4";
+Context.fillStyle = "#b02cff";
 Context.fillRect(0, 0, 500, 300);
-Context.fillStyle = "#000000";
+Context.fillStyle = "#fff";
 
 Context.rect( 15, 15, 470, 270 )
 Context.lineWidth = 8 ;
@@ -250,10 +254,11 @@ if ( i ) addY += fontSize * lineHeight * i ;
 Context.fillText( line, x + 0, y + addY ) ;
 
 
+
 Context.drawImage(img, 250, 50, 200, 200);  //400x300に縮小表示
 
-
 }
+
 
 document.getElementById("download").onclick = (event) => {
     let canvas = document.getElementById("canvas");
@@ -263,7 +268,8 @@ document.getElementById("download").onclick = (event) => {
     link.download = "profsend.png";
     link.click();
 　}
- }
+}
 </script>
 </body>
 </html>
+b02cff

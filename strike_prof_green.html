@@ -98,6 +98,9 @@ color: #ff3715;
 .license{
 color: #a30000;
 }
+.re{
+color: #7571ff;
+}
 </style>
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
@@ -137,6 +140,7 @@ $(function(){
   <sc><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i> ソースコード</a></p></sc>
   <base><p><a href="top.html" class="wrap"><i class="fas fa-arrow-left fa-2x back"></i> 通常版</a></p></base>
   <li><p><a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i class="fas fa-file fa-2x license"></i> Apache ライセンス</a></p></li>
+  <li><p><a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i class="fas fa-undo-alt fa-2x re"></i> 元の色に戻す</a></p></re>
   </div>
   <div id="editor">
       <span>【入力】</span>
@@ -214,7 +218,7 @@ var Context = Canvas.getContext("2d");
 var img = new Image();
 img.src = "toku.png";
 
-Context.fillStyle = "#abb4b4";
+Context.fillStyle = "#88ff82";
 Context.fillRect(0, 0, 600, 300);
 
 Context.fillStyle = "#000";
@@ -233,7 +237,7 @@ function read(){
 
 Context.clearRect(0, 0, 500, 300);
 Context.beginPath () ;
-Context.fillStyle = "#abb4b4";
+Context.fillStyle = "#88ff82";
 Context.fillRect(0, 0, 500, 300);
 Context.fillStyle = "#000000";
 
