@@ -202,6 +202,7 @@ $(function(){
   <canvas id="canvas" width="500" height="300"></canvas>
 
 <h3>Copyright [yyyy] [GUTSMINE]</h>
+<br>
 </form>
 
 <script type="text/javascript">
@@ -213,6 +214,25 @@ var Canvas = document.getElementById("canvas");
 var Context = Canvas.getContext("2d");
 var img = new Image();
 img.src = "toku.png";
+
+var msg = new Array();
+
+
+// 設定開始（メッセージの内容を設定してください）
+
+msg[0] = '<b>1級！</b>  まあ、がんばれ！周回が奇跡を起こす！';
+msg[1] = '<b>特級！</b>  まあまあいい感じ！もっとがんばれ！';
+msg[2] = '<b>特級M！</b>  あともう少し！この調子で神殿へ！';
+msg[3] = '<b>特級L！</b>  今日は運がとてもいい！特L確定だ！';
+
+// 設定終了
+
+
+var no = Math.floor(Math.random() * msg.length);
+
+// 表示開始
+document.write(msg[no]);
+// 表示終了
 
 Context.fillStyle = "#abb4b4";
 Context.fillRect(0, 0, 600, 300);
