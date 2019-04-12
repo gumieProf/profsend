@@ -37,9 +37,9 @@
 
 <br>
 
-このリポジトリはApache License Version 2.0（「本ライセンス」）に基づいてライセンスされます。あなたがこのファイルを使用するためには、本ライセンスに従わなければなりません。本ライセンスのコピーは下記の場所から入手できます。
+このリポジトリはMIT LICENSE (本ライセンス)に基づいてライセンスされます。あなたがこのファイルを使用するためには、本ライセンスに従わなければなりません。本ライセンスのコピーは下記の場所から入手できます。
 
-http://www.apache.org/licenses/LICENSE-2.0
+https://github.com/gutsmine/profsend/blob/master/LICENSE
 
 <br>
 
