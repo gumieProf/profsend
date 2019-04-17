@@ -170,10 +170,6 @@ $(function(){
 
 </div>
 
-  <br />
-
-  <input type="button"  id="readb" value="書き込む" onclick='read()'></input>
-
 
    <br>
 
@@ -199,6 +195,7 @@ $(function(){
 </form>
 
 <script type="text/javascript">
+$(document).ready(function(){
 var fontSize = 35 ;	// フォントサイズ
 var lineHeight = 1.0 ;	// 行の高さ (フォントサイズに対する倍率)
 var x = 50 ;	// 水平位置
@@ -216,7 +213,7 @@ Context.rect( 15, 15, 470, 270 )
 Context.lineWidth = 8 ;
 Context.stroke() ;
 
-function read(){
+  $("#name, #id, #age, #coment").keydown(function(){
 
   var NameResult = document.edit.name.value;
   var IdResult = document.edit.id.value;
@@ -246,8 +243,8 @@ Context.fillText( line, x + 0, y + addY ) ;
 
 Context.drawImage(img, 250, 50, 200, 200);  //400x300に縮小表示
 
-
-}
+ }
+})
 
 document.getElementById("download").onclick = (event) => {
     let canvas = document.getElementById("canvas");
@@ -256,8 +253,8 @@ document.getElementById("download").onclick = (event) => {
     link.href = canvas.toDataURL("image/png");
     link.download = "profsend.png";
     link.click();
-　}
- }
+  }
+ })
 </script>
 </body>
 </html>
