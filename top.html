@@ -94,6 +94,8 @@ color: #fff;
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.6/lity.css' />
 <script src='https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.6/lity.js'></script>
+<link rel="stylesheet" href="./dist/css/animsition.min.css">
+<script src="./dist/js/jquery.animsition.min.js"></script>
 <link rel="shortcut icon" href="prof.ico">
 
 <section id="loading" class="loading">
@@ -125,7 +127,7 @@ $(function(){
   <div id="nav">
   <abolt><p><a href="https://www.youtube.com/watch?v=i2cCGUB8oU8&feature=youtu.be" data-lity="data-lity"><i class="fab fa-youtube fa-2x video"></i> 紹介映像</a></p><abolt>
   <sc><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i> ソースコード</a></p><sc>
-  <sc><p><a href="strike_prof.html" class="wrap"><i class="fas fa-arrow-left fa-2x back"></i> ストライカー版</a></p><sc>
+  <sc><p><a href="strike_prof.html" class="animsition-link"><i class="fas fa-arrow-left fa-2x back"></i> ストライカー版</a></p><sc>
     <li><p><a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i class="fas fa-file fa-2x license"></i> MIT ライセンス</a></p></li>
   </div>
   <div id="editor">
@@ -174,7 +176,7 @@ $(function(){
 
 <br>
 
-<select name="select" onChange="location.href=value;">
+<select name="select" class="animsition-link" onChange="location.href=value;">
   <option value="#">色を変える</option>
   <option value="top.html">黒</option>
   <option value="top_red.html">赤</option>
