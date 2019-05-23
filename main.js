@@ -24,6 +24,7 @@ var Text = "ユーザー名:" + "\t" + NameResult + "\n" + "ID: " + "\t" +IdResu
 read();
 
   $("#name, #id, #age, #coment").on('keyup', read);
+  $("#name, #id, #age, #coment").on('change', read);
 
   $('#colors').change(function() {
    color = $(this).val();
