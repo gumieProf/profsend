@@ -2,7 +2,7 @@
 
 <br>
 
-![profsend rogo](img-1.png)
+![profsend rogo](prof.png)
 
 <br>
 
