@@ -90,7 +90,7 @@ color: #a30000;
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.6/lity.css' />
 <script src='https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.6/lity.js'></script>
-<link rel="shortcut icon" href="prof.ico">
+<link rel="shortcut icon" href="favicon.ico">
 
 
 <section id="loading" class="loading">
@@ -116,7 +116,7 @@ $(function(){
 <body>
   <form name="edit" id="editlicense" action="">
 
-    <img src="img-1.png" alt="logo" width="200px" height="200px" class="wrap">
+    <img src="prof.png" alt="logo" width="200px" height="200px" class="wrap">
 
     <br>
 
@@ -128,7 +128,6 @@ $(function(){
   <sc><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i> ソースコード</a></p></sc>
   <base><p><a href="top.html" class="wrap"><i class="fas fa-arrow-left fa-2x back"></i> 通常版</a></p></base>
   <li><p><a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i class="fas fa-file fa-2x license"></i> MIT ライセンス</a></p></li>
-  <li><p><a href="top.html" class="wrap"><i class="fas fa-undo-alt fa-2x re"></i> 元に戻す</a></p></re>
   </div>
   <div id="editor">
       <span>【入力】</span>
@@ -176,15 +175,14 @@ $(function(){
 
 <br>
 
-<select name="select" onChange="location.href=value;">
-  <option value="#">色を変える</option>
-  <option value="strike_prof.html">黒</option>
-  <option value="strike_prof_red.html">赤</option>
-  <option value="strike_prof_blue.html">青</option>
-  <option value="strike_prof_yelow.html">黄色</option>
-  <option value="strike_prof_green.html">緑</option>
-  <option value="strike_prof_purple.html">紫</option>
-</select>
+  <select name="colorselect" id="colors">
+    <option value="#999" selected>黒</option>
+    <option value="#ff4545">赤</option>
+    <option value="#8888ff">青</option>
+    <option value="#fbd945">黄色</option>
+    <option value="#88ff82">緑</option>
+    <option value="#b02cff">紫</option>
+  </select>
 
 <br>
 
@@ -193,7 +191,7 @@ $(function(){
 <br>
 </form>
 <script type="text/javascript">
-var color = "#abb4b4"
+var color =  "#999"
 var pic = "toku.png"
 var text = "#000000"
 </script>

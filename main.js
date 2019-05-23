@@ -16,7 +16,21 @@ Context.rect( 15, 15, 470, 270 )
 Context.lineWidth = 8 ;
 Context.stroke() ;
 
-  $("#name, #id, #age, #coment").keyup(function(){
+var NameResult = document.edit.name.value;
+var IdResult = document.edit.id.value;
+var AgeResult = document.edit.age.value;
+var ComentResult = document.edit.coment.value;
+var Text = "ユーザー名:" + "\t" + NameResult + "\n" + "ID: " + "\t" +IdResult + "\n" + " 年齢: " + "\t" + AgeResult + "\n" + "コメント: " + "\t" + ComentResult ;
+read();
+
+  $("#name, #id, #age, #coment").on('keyup', read);
+
+  $('#colors').change(function() {
+   color = $(this).val();
+  read();
+  });
+
+  function read(){
 
   var NameResult = document.edit.name.value;
   var IdResult = document.edit.id.value;
@@ -48,7 +62,7 @@ Context.fillText( line, x + 0, y + addY ) ;
 Context.drawImage(img, 250, 50, 200, 200);  //400x300に縮小表示
 
  }
-})
+}
 
 document.getElementById("download").onclick = (event) => {
     let canvas = document.getElementById("canvas");
@@ -58,4 +72,4 @@ document.getElementById("download").onclick = (event) => {
     link.download = "profsend.png";
     link.click();
   }
- })
+});

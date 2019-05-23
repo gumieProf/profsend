@@ -94,9 +94,7 @@ color: #fff;
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.6/lity.css' />
 <script src='https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.6/lity.js'></script>
-<link rel="stylesheet" href="./dist/css/animsition.min.css">
-<script src="./dist/js/jquery.animsition.min.js"></script>
-<link rel="shortcut icon" href="prof.ico">
+<link rel="shortcut icon" href="favicon.ico">
 
 <section id="loading" class="loading">
 　<div class="loading__img">
@@ -104,7 +102,6 @@ color: #fff;
 　</div>
 </section>
 <!-- 適宜jQueryを</body>直前で読み込み　-->
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 $(function(){
 　//ローディングエリアを取得
@@ -121,7 +118,7 @@ $(function(){
 <body>
   <form name="edit" id="editlicense" action="">
 
-    <img src="img-1.png" alt="logo" width="200px" height="200px" class="wrap">
+    <img src="prof.png" alt="logo" width="200px" height="200px" class="wrap">
 
   <br>
   <div id="nav">
@@ -168,22 +165,19 @@ $(function(){
 
 </div>
 
-
    <br>
 
-<input type="button" value="保存" id="download"></input>
-
+<input type="button" value="ダウンロード" id="download"></input>
 
 <br>
 
-<select name="select" class="animsition-link" onChange="location.href=value;">
-  <option value="#">色を変える</option>
-  <option value="top.html">黒</option>
-  <option value="top_red.html">赤</option>
-  <option value="top_blue.html">青</option>
-  <option value="top_yelow.html">黄色</option>
-  <option value="top_green.html">緑</option>
-  <option value="top_purple.html">紫</option>
+<select name="colorselect" id="colors">
+  <option value="#999" selected>黒</option>
+  <option value="#ff4545">赤</option>
+  <option value="#8888ff">青</option>
+  <option value="#fbd945">黄色</option>
+  <option value="#88ff82">緑</option>
+  <option value="#b02cff">紫</option>
 </select>
 
 <br>
@@ -191,13 +185,13 @@ $(function(){
   <canvas id="canvas" width="500" height="300"></canvas>
 
 <br>
-<h4>© 2019 GUTSMINE</h>
+<h4>2019 GUTSMINE ©</h>
 </form>
-<script type="text/javascript">
-var color = "#abb4b4"
-var pic = "img-1.png"
-var text = "#000000"
-</script>
 <script type="text/javascript" src="main.js"></script>
+<script type="text/javascript">
+var color =  "#999"
+var pic = "img-1.png";
+var text = "#000000";
+</script>
 </body>
 </html>
