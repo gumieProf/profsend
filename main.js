@@ -28,6 +28,8 @@ read();
 
   $('#colors').change(function() {
    color = $(this).val();
+   $('body').css({'border': '10px solid'+color});
+   $('.button').css({"background-color": ""+color});
   read();
   });
 
