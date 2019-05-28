@@ -6,6 +6,8 @@
 
 <br>
 
+![badge](https://img.shields.io/badge/dynamic/json.svg?label=version&colorB=5f9ea0&query=$.version&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fgutsmine-tech%2Fprofsend%2Fmaster%2Fpackage.json&prefix=v)
+
 ### このアプリはゲームのユーザーIDを
 ### SNS上で名刺のような写真を作成し
 ### 保存ができるアプリです
