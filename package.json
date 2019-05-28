@@ -1,0 +1,34 @@
+{
+ {
+  "name": profsend"
+  "version": "3.1"
+  "description": "プロフセンドは、ゲームのIDをSNSに送るためのプロフィールジェネレータです。"
+  "keywords": ["profsend", "gametool", "profile", "editor"]
+  }
+  {
+  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
+  "license": "UNLICENSED"
+ }
+ {
+ "homepage": "http://profsend.herokuapp.com"
+ }
+ {
+  "repository": { "type": "git", "url": "https://github.com/gutsmine-tech/profsend.git" },
+  "repository": "github:gutsmine-tech/profsend",
+}
+{
+  "author": {
+    "name": "gutsmine",
+    "email": "profsend_gm@yahoo.co.jp",
+    "url": "https://gutsmine.myportfolio.com"
+  },
+  "author": "gutsmine <profsend_gm@yahoo.co.jp> (https://gutsmine.myportfolio.com)"
+}
+{
+  "files": ["main.js", "strike_prof.html", "top.html", "prof_load_1.gif", "prof_load_2.gif", "prof.png", "toku.png", "index.php", "img-1.png", "favicon.ico", "composer.json"]
+}
+{
+  "main": "index.php"
+}
+}
