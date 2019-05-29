@@ -103,14 +103,6 @@ color: #a30000;
 .button:hover{
     box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
 }
-.pocket{
-color: #fff;
-}
-  #nav po a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-}    
 </style>
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
@@ -172,7 +164,6 @@ $(function(){
   <sc><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i> ソースコード</a></p></sc>
   <base><p><a href="top.html" class="wrap"><i class="fas fa-arrow-left fa-2x back"></i> 通常版</a></p></base>
   <li><p><a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i class="fas fa-file fa-2x license"></i> MIT ライセンス</a></p></li>
-<po><a href="http://getpocket.com/edit?url=https://profsend.herokuapp.com&title=profsend(プロフセンド)" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fab fa-get-pocket fa-2x pocket"></i>pocketに保存</a></po> 
   </div>
   <div id="editor">
       <span>【入力】</span>
@@ -232,6 +223,10 @@ $(function(){
 <br>
 
 <a id="send" class="button" onclick="location.href='mailto:profsend_gm@yahoo.co.jp?subject=profsend&body=画像を添付してください。'">ガッツマイン(モンストユーザー)に送る</a>
+
+<br>
+
+<input type="file" name="file" id="file"></div>
 
 <br>
 

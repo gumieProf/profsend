@@ -7,6 +7,7 @@ var Canvas = document.getElementById("canvas");
 var Context = Canvas.getContext("2d");
 var img = new Image();
 img.src = "" + pic;
+var file = document.getElementById('file');
 
 Context.fillStyle = "" + color;
 Context.fillRect(0, 0, 600, 300);
@@ -32,6 +33,33 @@ read();
    $('.button').css({"background-color": ""+color});
   read();
   });
+
+  function upload(e) {
+      // ファイル情報を取得
+      var fileData = e.target.files[0];
+
+      // 画像ファイル以外は処理を止める
+      if(!fileData.type.match('image.*')) {
+          alert('画像を選択してください');
+          return;
+      }
+
+      // FileReaderオブジェクトを使ってファイル読み込み
+      var reader = new FileReader();
+      // ファイル読み込みに成功したときの処理
+      reader.onload = function() {
+          // Canvas上に表示する
+          pic = reader.result;
+
+          read();
+
+      }
+      // ファイル読み込みを実行
+      reader.readAsDataURL(fileData);
+  }
+
+  // ファイルが指定された時にloadLocalImage()を実行
+  file.addEventListener('change', upload, false);
 
   function read(){
 
@@ -60,7 +88,8 @@ var addY = fontSize ;
 if ( i ) addY += fontSize * lineHeight * i ;
 Context.fillText( line, x + 0, y + addY ) ;
 
-
+var img = new Image();
+img.src = "" + pic;
 
 Context.drawImage(img, 250, 50, 200, 200);  //400x300に縮小表示
 
