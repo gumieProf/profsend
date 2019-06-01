@@ -46,4 +46,4 @@ https://github.com/gutsmine/profsend/blob/master/LICENSE
 <br>
 
 
-## © 2019 GUTSMINE
+## Copyright (c) 2019 gutsmine-tech
