@@ -1,10 +1,10 @@
 $(document).ready(function(){
-var fontSize = 35 ;	// フォントサイズ
-var lineHeight = 1.0 ;	// 行の高さ (フォントサイズに対する倍率)
-var x = 50 ;	// 水平位置
-var y = 50 ;	// 垂直位置   //新規画像オブジェクト
-var Canvas = document.getElementById("canvas");
-var Context = Canvas.getContext("2d");
+var fontSize = 35 ;
+var lineHeight = 1.0 ;
+var x = 50 ;
+var y = 50 ;
+var prof = document.getElementById("prof");
+var Context = prof.getContext("2d");
 var img = new Image();
 img.src = "" + pic;
 var file = document.getElementById('file');
@@ -35,30 +35,29 @@ read();
   });
 
   function upload(e) {
-      // ファイル情報を取得
+
       var fileData = e.target.files[0];
 
-      // 画像ファイル以外は処理を止める
+
       if(!fileData.type.match('image.*')) {
           alert('画像を選択してください');
           return;
       }
 
-      // FileReaderオブジェクトを使ってファイル読み込み
+
       var reader = new FileReader();
-      // ファイル読み込みに成功したときの処理
+
       reader.onload = function() {
-          // Canvas上に表示する
           pic = reader.result;
 
           read();
 
       }
-      // ファイル読み込みを実行
+
       reader.readAsDataURL(fileData);
   }
 
-  // ファイルが指定された時にloadLocalImage()を実行
+
   file.addEventListener('change', upload, false);
 
   function read(){
@@ -84,24 +83,24 @@ Context.font = "bold " + fontSize + "Noto Sans JP" ;
 for( var lines=Text.split( "\n" ), i=0, l=lines.length; l>i; i++ ) {
 var line = lines[i] ;
 var addY = fontSize ;
-// 2行目以降の水平位置は行数とlineHeightを考慮する
+
 if ( i ) addY += fontSize * lineHeight * i ;
 Context.fillText( line, x + 0, y + addY ) ;
 
 var img = new Image();
 img.src = "" + pic;
 
-Context.drawImage(img, 250, 50, 200, 200);  //400x300に縮小表示
+Context.drawImage(img, 250, 50, 200, 200);
 
  }
 }
 
-document.getElementById("download").onclick = (event) => {
-    let canvas = document.getElementById("canvas");
+$('#download').click(function() {
+    var prof = document.getElementById("prof");
 
-    let link = document.createElement("a");
-    link.href = canvas.toDataURL("image/png");
+    var link = document.createElement("a");
+    link.href = prof.toDataURL("image/png");
     link.download = "profsend.png";
     link.click();
-  }
+  });
 });
