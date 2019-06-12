@@ -28,9 +28,6 @@ body{
   height:100%;
   margin-right: auto;
   margin-left : auto;
-  border: 10px solid #333;
-  border-radius: 10px;
-  transition: .3s ease-out;/*変化を緩やかに*/
 }
   #editlicense,
 
@@ -66,21 +63,6 @@ color: #263100
 .video{
 color: #ff3715
 }
-.loading {
-　position: fixed;
-　z-index: 100;
-　top: 0;
-　right: 0;
-　bottom: 0;
-　left: 0;
-　background: #fff;
-}
-.loading__img {
-　position: absolute;
-　top: 50%;
-　left: 50%;
-　transform: translate(-50%,-50%);
-}
 .license{
 color: #a30000;
 }
@@ -108,31 +90,15 @@ color: #fff;
     box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
 }
 </style>
-<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="drower/drawer.css"><link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
+<script src='drower/iscroll.js'></script>
+<script src='drower/drawer.js'></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.6/lity.css' />
 <script src='https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.6/lity.js'></script>
 <link rel="shortcut icon" href="favicon.ico">
 
-<section id="loading" class="loading">
-　<div class="loading__img">
-　　<img src="prof_load_1.gif">
-　</div>
-</section>
 <!-- 適宜jQueryを</body>直前で読み込み　-->
-<script type="text/javascript">
-$(function(){
-　//ローディングエリアを取得
-　var loading = $("#loading");
-　//ローディングエリアを隠す処理
-　var isHidden = function(){
-　　loading.slideUp(1000); //1000ミリ秒かけてフェードアウト
-　};
-　//1000ミリ秒後にloadingFunc開始
-　setTimeout(isHidden,1000);
-});
-</script>
-
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137150029-1"></script>
 <script>
@@ -145,7 +111,7 @@ $(function(){
 
 
 </head>
-<body>
+<body class="drawer drawer--left">
 
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTS3K8T"
@@ -157,13 +123,21 @@ $(function(){
     <img src="prof.png" alt="logo" width="200px" height="200px" class="wrap">
 
   <br>
-  <div id="nav">
-  <abolt><p><a href="https://www.youtube.com/watch?v=Wq_0F9fSlKk&feature=youtu.be" data-lity="data-lity"><i class="fab fa-youtube fa-2x video"></i> 紹介映像</a></p><abolt>
-  <sc><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i> ソースコード</a></p><sc>
-  <sc><p><a href="strike_prof.html" class="animsition-link"><i class="fas fa-arrow-left fa-2x back"></i> ストライカー版</a></p><sc>
-    <li><p><a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i class="fas fa-file fa-2x license"></i> MIT ライセンス</a></p></li>
-  </div>
-  <div id="editor">
+
+  <button type="button" class="drawer-toggle drawer-hamburger">
+      <span class="sr-only">toggle navigation</span>
+      <span class="drawer-hamburger-icon"></span>
+  </button>
+
+  <nav class="drawer-nav">
+    <ul class="drawer-menu">
+      <about><li><p><a href="https://www.youtube.com/watch?v=Wq_0F9fSlKk&feature=youtu.be" data-lity="data-lity"><i class="fab fa-youtube fa-2x video"></i> 紹介映像</a></p></li></about>
+      <sc><li><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i> ソースコード</a></p></li></sc>
+      <st><li><p><a href="strike_prof.html" class="animsition-link"><i class="fas fa-arrow-left fa-2x back"></i> ストライカー版</a></p></li></st>
+        <mit><li><p><a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i class="fas fa-file fa-2x license"></i> MIT ライセンス</a></p></li></mit>
+    </ul>
+</nav>
+   <div id="editor">
       <span>【入力】</span>
       <br>
       <br>
@@ -229,6 +203,11 @@ $(function(){
 <h4>2019 GUTSMINE ©</h>
 </form>
 <script type="text/javascript" src="dist/main.js"></script>
+<script>
+$(function() {
+    $('.drawer').drawer();
+});
+</script>
 <script type="text/javascript">
 var color =  "#999"
 var pic = "img-1.png";
