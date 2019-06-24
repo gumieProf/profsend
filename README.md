@@ -35,6 +35,8 @@
 
 #### adobe after effects(読み込みアニメーション)
 
+#### heroku (サーバー)
+
 <br>
 
 <br>
