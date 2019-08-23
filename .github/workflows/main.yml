@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
+- name: GitHub Action for Heroku
+  uses: actions/heroku@1.0.0
       run: echo Hello, world!
     - name: Run a multi-line script
       run: |
