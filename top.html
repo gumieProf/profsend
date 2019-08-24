@@ -20,7 +20,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" href="drower/drawer.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
+<script src='jquery.js'></script>
 <script src='drower/iscroll.js'></script>
 <script src='drower/drawer.js'></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.6/lity.css' />
@@ -64,18 +64,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <ul class="drawer-menu">
       <li><img src="prof.png" width="200" height="200" ></li>
       <toku><a href="#" onclick="pic = 'toku.png';" id="toku"><img src="toku.png" width="50" height="50" id="toku"></a></toku>
-      <li><img src="https://img.shields.io/badge/dynamic/json.svg?label=version&colorB=5f9ea0&query=$.version&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fgutsmine-tech%2Fprofsend%2Fmaster%2Fpackage.json&prefix=v" alt="badge"class="wrap"></li>
+      <li><img src="https://img.shields.io/badge/dynamic/json.svg?label=version&colorB=5f9ea0&query=$.version&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fgutsmine-tech%2Fprofsend%2Fmaster%2Fpackage.json&prefix=v" alt="badge" class="wrap"></li>
 		<li>	<a href="about.html">profsendについて</a></li>	
       <sc><li><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i> ソースコード</a></p></li></sc>
         <mit><li><p><a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i class="fas fa-file fa-2x license"></i> MIT ライセンス</a></p></li></mit>
-        <copy><li><h4>2019 GUTSMINE c</h></p></copy>
+        <copy><li><h4>2019 GUTSMINE c</h4></li></copy>
     </ul>
 </nav>
    <div id="editor">
       <span>【入力】</span>
       <br>
       <br>
-      <span>名前</span><input type="text" name="formName" id="name" class="wrap"  onkeyup="document.getElementById('name-leng').value=this.value.length"></input>
+      <span>名前</span><input type="text" name="formName" id="name" class="wrap"  onkeyup="document.getElementById('name-leng').value=this.value.length">
 
       <br />
 
@@ -84,7 +84,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <br>
 <div id="idtext">
 
-      <span>ID：</span><input type="text" name="formID" id="id" class="wrap"  maxlength="25" onkeyup="document.getElementById('name-leng').value=this.value.length"></input>
+      <span>ID：</span><input type="text" name="formID" id="id" class="wrap"  maxlength="25" onkeyup="document.getElementById('name-leng').value=this.value.length">
 
 </div>
 
@@ -122,7 +122,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <br>
 
-<input type="file" name="file" id="file"></div>
+<input type="file" name="file" id="file">
+
 
 <br>
 
@@ -149,11 +150,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <br>
 
 <canvas id="prof" width="400" height="200"></canvas>
-  <img id="prof2"></img>
 
 
 <br>
-<h4>2019 GUTSMINE c</h>
+<h4>2019 GUTSMINE c</h4>
 
 </form>
 <script type="text/javascript" src="dist/main.js"></script>
