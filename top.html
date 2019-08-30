@@ -26,6 +26,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.6/lity.css' />
 <script src='https://cdnjs.cloudflare.com/ajax/libs/lity/1.6.6/lity.js'></script>
 <link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 <!-- 適宜jQueryを</body>直前で読み込み　-->
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -63,38 +67,60 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <nav class="drawer-nav">
     <ul class="drawer-menu">
       <li><img src="prof.png" width="200" height="200" ></li>
-      <toku><a href="#" onclick="pic = 'toku.png';" id="toku"><img src="toku.png" width="50" height="50" id="toku"></a></toku>
+      <li><toku><a href="#" onclick="pic = 'toku.png';" id="toku"><img src="toku.png" width="50" height="50" id="toku"></a></toku></li>
       <li><img src="https://img.shields.io/badge/dynamic/json.svg?label=version&colorB=5f9ea0&query=$.version&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fgutsmine-tech%2Fprofsend%2Fmaster%2Fpackage.json&prefix=v" alt="badge" class="wrap"></li>
-		<li>	<a href="about.html">profsendについて</a></li>	
-      <sc><li><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i> ソースコード</a></p></li></sc>
-        <mit><li><p><a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i class="fas fa-file fa-2x license"></i> MIT ライセンス</a></p></li></mit>
-        <copy><li><h4>2019 GUTSMINE c</h4></li></copy>
+		<li><abolt><a href="about.html"><i class="fas fa-question fa-2x about"></i>profsendについて</a></abolt></li>	
+     <li> <sc><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i> ソースコード</a></p></sc></li>
+        <li><mit><p><a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i class="fas fa-file fa-2x license"></i> MIT ライセンス</a></p></mit></li>
+        <li><copy><h5>2019 GUTSMINE c</h5></copy></li>
     </ul>
 </nav>
    <div id="editor">
-      <span>【入力】</span>
+
+      <label for="nyuryoku">【入力】</label>
       <br>
       <br>
-      <span>名前</span><input type="text" name="formName" id="name" class="wrap"  onkeyup="document.getElementById('name-leng').value=this.value.length">
+ <div class="row">
+<div class="input-field col s12">
+<input type="text" name="formName" id="name" class="wrap"  onkeyup="document.getElementById('name-leng').value=this.value.length">
+      <label for="namae">名前</label>
+
+  </div>
+ </div>
 
       <br />
+ <div class="row">
+<div class="input-field col s12">
 
-現在の文字数 <input type="text" id="name-leng" readonly>
+<input type="text" id="name-leng" readonly>
+<label for="genzainomojisuA">現在の文字数</label> 
+
+  </div>
+ </div>
 
 <br>
 <div id="idtext">
 
-      <span>ID：</span><input type="text" name="formID" id="id" class="wrap"  maxlength="25" onkeyup="document.getElementById('name-leng').value=this.value.length">
+ <div class="row">
+<div class="input-field col s12">
 
+<input type="text" name="formID" id="id" class="wrap"  maxlength="25" onkeyup="document.getElementById('name-leng').value=this.value.length">
+      <label for="id">ID：</label>
+  </div>
+ </div>
 </div>
-
+ <div class="row">
+<div class="input-field col s12">
       <br />
 
-現在の文字数 <input type="text" id="id-leng" readonly>
-
+ <input type="text" id="id-leng" readonly>
+<label for="genzainomojisuB">現在の文字数</label>
+  </div>
+ </div>
+ <div class="row">
+<div class="input-field col s6">
 <br>
 
-      <span>年齢：</span>
           <select name="formAge" id="age">
               <option selected>10代</option>
               <option>20代</option>
@@ -103,12 +129,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <option>50代</option>
               <option>非公開</option>
           </select>
+      <label>年齢：</label>
+  </div>
+ </div>
+ <div class="row">
+<div class="input-field col s12">
       <br />
-      <span>コメント(30文字以内)：</span><textarea name="formComent" cols="25" id="coment" class="wrap" maxlength="30" onkeyup="document.getElementById('coment-leng').value=this.value.length"></textarea>
+<input name="formComent" cols="25" id="coment" class="wrap" maxlength="30" onkeyup="document.getElementById('coment-leng').value=this.value.length">
+      <label for="coment">コメント(30文字以内)：</label>
+  </div>
+ </div>
 
 <br>
-
-現在の文字数 <input type="text" id="coment-leng" readonly>
+ <div class="row">
+<div class="input-field col s12">
+<input type="text" id="coment-leng" readonly>
+<label for="genzainomojisuC">現在の文字数<label> 
+  </div>
+ </div>
 
 </div>
 
@@ -127,6 +165,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <br>
 
+ <div class="row">
+<div class="input-field col s6">
+
 <select name="colorselect" id="colors">
   <option value="#999" selected>黒</option>
   <option value="#ff4545">赤</option>
@@ -136,7 +177,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <option value="#b02cff">紫</option>
 </select>
 
-<div id="idleng">現在のid桁数は25です。</div>
+<label>プロフィールの色</label>
+
+  </div>
+ </div>
+
+ <div class="row">
+<div class="input-field col s12">
 
 <select name="idtype" id="idtype">
   <option value="25" selected>ゲーム未設定</option>
@@ -144,6 +191,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <option value="9">パズドラ</option>
   <option value="10">ドッカンバトル</option>
 </select>
+
+<label>idのゲーム</label>
+
+<h5><div id="idleng">現在のid桁数は25です。</div></h5>
+
+
+  </div>
+ </div>
+
 
 <a class="button" id="idset">決定</a>
 
@@ -166,6 +222,13 @@ $(function() {
 var color =  "#999"
 var pic = "img-1.png";
 var text = "#000000";
+</script>
+<script type="text/javascript">
+  $(function() {
+    $(document).ready(function() {
+      $('select').material_select();
+    });
+  });
 </script>
 </body>
 </html>

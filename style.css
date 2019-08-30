@@ -24,7 +24,7 @@ body{
 }
   #nav abolt a {
   text-decoration: none;
-  color: #fff;
+  color: #000;
   font-weight: bold;
 }
 #nav sc{
@@ -35,9 +35,21 @@ body{
 }
   #nav sc a {
   text-decoration: none;
-  color: #fff;
+  color: #000;
   font-weight: bold;
 }
+#nav mit{
+  background-color: #000;
+  float: left;
+  width: 140px;
+  text-align: center;
+}
+  #nav mit a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
 .source{
 color: #263100
 }
@@ -48,8 +60,10 @@ color: #ff3715
 color: #a30000;
 }
 .copy{
-background-color: #000;
 color: #fff;
+}
+.about{
+color: #000
 }
 .button{
   display: inline-block;
