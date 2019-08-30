@@ -32,9 +32,6 @@
 #### atom(テキストエディター)
 
 #### adobe illustrator(ロゴ作成)
-
-#### adobe after effects(読み込みアニメーション)
-
 #### heroku (サーバー)
 
 <br>
