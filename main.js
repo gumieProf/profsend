@@ -15,21 +15,21 @@
     var t = navigator.userAgent;
     0 < t.indexOf("iPhone") || 0 < t.indexOf("Android") && 0 < t.indexOf("Mobile") ? ($("body").width("360px"),
     $("#dlbutton").html('<a id="dlbutton" class="button" href="#" onclick="dlimg();">画像を変換</a>')) : (0 < t.indexOf("iPad") || 0 < t.indexOf("Android")) && $("body").width("1024px");
-    document.edit.name.value,
-    document.edit.id.value,
-    document.edit.age.value,
-    document.edit.coment.value;
+    $("#name").val(),
+    $("#id").val(),
+    $("#age").val(),
+    $("#coment").val();
     function i() {
-        var age = document.edit.age.value;
-        var coment = document.edit.coment.value;
+        var age =    $("#age").val();
+        var coment = $("#coment").val();
         if(age == null || age == undefined || age == "" && coment == null || coment == undefined || coment == ""){
-        var e = "ユーザー名:\t" + document.edit.name.value + "\nID: \t" + document.edit.id.value;
+        var e = "ユーザー名:\t" + $("#name").val()+ "\nID: \t" + $("#id").val();
         } else if(age == null || age == undefined || age == ""){
-        var e = "ユーザー名:\t" + document.edit.name.value + "\nID: \t" + document.edit.id.value + "\nコメント: \t" + document.edit.coment.value;
+        var e = "ユーザー名:\t" + $("#name").val() + "\nID: \t" + $("#id").val() + "\nコメント: \t" + $("#coment").val();
         } else if(coment == null || coment == undefined || coment == ""){
-        var e = "ユーザー名:\t" + document.edit.name.value + "\nID: \t" + document.edit.id.value + "\n 年齢: \t" + document.edit.age.value;
+        var e = "ユーザー名:\t" + $("#name").val() + "\nID: \t" + $("#id").val() + "\n 年齢: \t" + $("#age").val();
         } else {
-        var e = "ユーザー名:\t" + document.edit.name.value + "\nID: \t" + document.edit.id.value + "\n 年齢: \t" + document.edit.age.value + "\nコメント: \t" + document.edit.coment.value;
+        var e = "ユーザー名:\t" + $("#name").val()+ "\nID: \t" + $("#id").val() + "\n 年齢: \t" + $("#age").val() + "\nコメント: \t" + $("#coment").val();
         }
         
         m.clearRect(0, 0, 500, 300),
