@@ -12,8 +12,31 @@
     m.rect(15, 15, 370, 170),
     m.lineWidth = 8,
     m.stroke();
-    var t = navigator.userAgent;
-    0 < t.indexOf("iPhone") || 0 < t.indexOf("Android") && 0 < t.indexOf("Mobile") ? ($("body").width("360px"),
+    var t = navigator.userAgent.toLowerCase();
+    if (t.indexOf('ipod touch') >= 0 || t.indexOf('iphone') >= 0 || t.indexOf('ipad') >= 0){
+
+	// バージョンを取得
+	var version = t.split('os ')[1].split(' ')[0];
+
+	// 枝番がある場合
+	if (version.indexOf('_') >= 0){
+
+		// メジャーバージョンのみ取得
+		version = parseInt(version.split('_')[0]);
+
+	}
+
+	// iOS11以上のSafari
+	if (version >= 12 && t.indexOf('version/') >= 0 || version >= 11 && t.indexOf('version/') >= 0 || version >= 10 && t.indexOf('version/') >= 0){
+
+	alert('このサイトはパソコンもしくはandroidスマートフォンに適したサイトです');
+	alert('そのため、ios13未満で閲覧する場合はプロフィールをダウンロードできない可能性があります。');
+
+
+	}
+
+}
+    0 < t.indexOf("iphone") || 0 < t.indexOf("android") && 0 < t.indexOf("mobile") ? ($("body").width("360px"),
     $("#dlbutton").html('<a id="dlbutton" class="button" href="#" onclick="dlimg();">画像を変換</a>')) : (0 < t.indexOf("iPad") || 0 < t.indexOf("Android")) && $("body").width("1024px");
     $("#name").val(),
     $("#id").val(),
