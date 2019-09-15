@@ -152,7 +152,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
    <br>
 
-<a id="download" class="waves-effect waves-light btn">ダウンロード</a>
+ <a class="waves-effect waves-light btn" id="download">ダウンロード</a>
 
 <a id="picdel" class="waves-effect waves-light btn" onclick="pic = '';">画像を非表示</a>
 
@@ -206,13 +206,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <br>
 
 <canvas id="prof" width="400" height="200"></canvas>
+    <div><img id="newImg"></div>
 
-
+<div id="result"></div>
 <br>
 <h4>2019 GUTSMINE c</h4>
 
 </form>
 <script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="download.js"></script>
 <script>
 $(function() {
     $('.drawer').drawer();
