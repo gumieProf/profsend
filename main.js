@@ -26,9 +26,9 @@
 		version = parseInt(version.split('_')[0]);
 
 	}
-
-	// iOS11以上のSafari
-	if (version >= 12 && u.indexOf('version/') >= 0 || version >= 11 && u.indexOf('version/') >= 0 || version >= 10 && u.indexOf('version/') >= 0){
+        if(version >= 13 && u.indexOf('version/') >= 0){
+        ;
+        } else if (version >= 12 && u.indexOf('version/') >= 0 || version >= 11 && u.indexOf('version/') >= 0 || version >= 10 && u.indexOf('version/') >= 0){
 
 	alert('このサイトはパソコンもしくはandroidスマートフォンに適したサイトです');
 	alert('そのため、ios13未満で閲覧する場合はプロフィールをダウンロードできない可能性があります。');
