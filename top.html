@@ -39,6 +39,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('config', 'UA-137150029-1');
 </script>
 
+<script>
+$(function(){
+   // #で始まるアンカーをクリックした場合に処理
+   $('a[href^=#]').click(function() {
+      // スクロールの速度
+      var speed = 400; // ミリ秒
+      // アンカーの値取得
+      var href= $(this).attr("href");
+      // 移動先を取得
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      // 移動先を数値で取得
+      var position = target.offset().top;
+      // スムーススクロール
+      $('body,html').animate({scrollTop:position}, speed, 'swing');
+      return false;
+   });
+});
+</script>
 
 </head>
 <body>
@@ -52,7 +70,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <img src="prof.png" alt="logo" width="300px" height="300px" class="wrap">
 
-
+<div class="low">
 
   <br>
 <header>
@@ -72,14 +90,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
   </div>
 </header>
-   <div id="editor">
 
+<div class="low">
+<a href="13update.html">
+<h4>
+ios13アップデートに関わる大切なお知らせ
+</h4>
+</a>
+</div>
+
+
+   <div id="editor">
       <label for="nyuryoku">【入力】</label>
       <br>
       <br>
  <div class="row">
 <div class="input-field col s12">
-<input type="text" name="formName" id="name" class="wrap">
+<input type="text" name="formName" id="name" class="wrap" placeholder="">
       <label for="namae">名前</label>
 
   </div>
@@ -91,7 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
  <div class="row">
 <div class="input-field col s12">
 
-<input type="text" name="formID" id="id" class="wrap"  maxlength="25" onkeyup="document.getElementById('id-leng').value=this.value.length">
+<input type="text" name="formID" id="id" class="wrap"  maxlength="25" onkeyup="document.getElementById('id-leng').value=this.value.length" placeholder="">
       <label for="id">ID：</label>
   </div>
  </div>
@@ -122,7 +149,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
  <div class="row">
 <div class="input-field col s12">
       <br />
-<input name="formComent" cols="25" id="coment" class="wrap" maxlength="30">
+<input name="formComent" cols="25" id="coment" class="wrap" maxlength="30" placeholder="">
       <label for="coment">コメント(30文字以内)：</label>
   </div>
  </div>
@@ -183,8 +210,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <a class="waves-effect waves-light btn" id="idset">決定</a>
 
 <br>
-
+<div id="sec1">
 <canvas id="prof" width="400" height="200"></canvas>
+</div>
     <div><img id="newImg"></div>
 
 <div id="result"></div>

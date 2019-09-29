@@ -13,33 +13,9 @@
     m.rect(15, 15, 370, 170),
     m.lineWidth = 8,
     m.stroke();
-    var u = navigator.userAgent.toLowerCase();
-    if (u.indexOf('ipod touch') >= 0 || u.indexOf('iphone') >= 0 || u.indexOf('ipad') >= 0){
-
-	// バージョンを取得
-	var version = u.split('os ')[1].split(' ')[0];
-
-	// 枝番がある場合
-	if (version.indexOf('_') >= 0){
-
-		// メジャーバージョンのみ取得
-		version = parseInt(version.split('_')[0]);
-
-	}
-        if(version >= 13 && u.indexOf('version/') >= 0){
-        ;
-        } else if (version >= 12 && u.indexOf('version/') >= 0 || version >= 11 && u.indexOf('version/') >= 0 || version >= 10 && u.indexOf('version/') >= 0){
-
-	alert('このサイトはパソコンもしくはandroidスマートフォンに適したサイトです');
-	alert('そのため、ios13未満で閲覧する場合はプロフィールをダウンロードできない可能性があります。');
-	alert('ios13のアップデートを行うか、パソコン、androidで開いてください。');
-
-
-	}
-
-}
-    0 < u.indexOf("iphone") || 0 < u.indexOf("android") && 0 < u.indexOf("mobile") ? ($("body").width("360px"),
-    $("#dlbutton").html('<a id="dlbutton" class="button" href="#" onclick="dlimg();">画像を変換</a>')) : (0 < u.indexOf("iPad") || 0 < u.indexOf("Android")) && $("body").width("1024px");
+    var ua = navigator.userAgent.toLowerCase();
+    0 < ua.indexOf("iphone") || 0 < ua.indexOf("android") && 0 < ua.indexOf("mobile") ? ($("body").width("360px"),
+    $("#dlbutton").html('<a id="dlbutton" class="button" href="#" onclick="dlimg();">画像を変換</a>')) : (0 < ua.indexOf("iPad") || 0 < ua.indexOf("Android")) && $("body").width("1024px");
     $("#name").val(),
     $("#id").val(),
     $("#age").val(),
@@ -110,5 +86,5 @@ for( var lines=e.split( "\n" ), i=0, l=lines.length; l>i; i++ ) {
             n.readAsDataURL(t)
         } else
             alert("画像を選択してください")
-    }, !1)
+    });
 });
