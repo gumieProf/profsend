@@ -7,8 +7,6 @@
 	  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700" rel="stylesheet">
 	  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 	  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
-	  <link rel="stylesheet" href="drower/drawer.css">
-	  <script src='drower/iscroll.js'></script>
 <script src='drower/drawer.js'></script>
 	  
     <title>profsendについて</title>
@@ -19,22 +17,25 @@
     @import url("style.css");
     </style>
   </head>
-<body class="drawer drawer--left">
+<body>
 	  
-	    <button type="button" class="drawer-toggle drawer-hamburger">
-      <span class="sr-only">toggle navigation</span>
-      <span class="drawer-hamburger-icon"></span>
-  </button>
-
-  <nav class="drawer-nav">
-    <ul class="drawer-menu">
-      <li><a href="top.html"><img src="prof.png" width="200" height="200" ></a></li>
-      <li> <img src="https://img.shields.io/badge/dynamic/json.svg?label=version&colorB=5f9ea0&query=$.version&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fgutsmine-tech%2Fprofsend%2Fmaster%2Fpackage.json&prefix=v" alt="badge"class="wrap">
-      <sc><li><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i> ソースコード</a></p></li></sc>
-        <mit><li><p><a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i class="fas fa-file fa-2x license"></i> MIT ライセンス</a></p></li></mit>
-        <copy><li><h4>2019 GUTSMINE c</h></p></copy>
+<header>
+  <div id="nav-drawer">
+      <input id="nav-input" type="checkbox" class="nav-unshown">
+      <label id="nav-open" for="nav-input"><span></span></label>
+      <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+ <div id="nav-content">
+      <li><img src="prof.png" width="200" height="200" ></li>
+      <li><toku><a href="#" onclick="pic = 'toku.png';" id="toku"><img src="toku.png" width="50" height="50" id="toku"></a></toku></li>
+      <li><img src="https://img.shields.io/badge/dynamic/json.svg?label=version&colorB=5f9ea0&query=$.version&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fgutsmine-tech%2Fprofsend%2Fmaster%2Fpackage.json&prefix=v" alt="badge" class="wrap"></li>
+		<li><abolt><a href="about.html"><i class="fas fa-question fa-2x about"></i>profsendについて</a></abolt></li>	
+     <li> <sc><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i> ソースコード</a></p></sc></li>
+        <li><mit><p><a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i class="fas fa-file fa-2x license"></i> MIT ライセンス</a></p></mit></li>
+        <li><copy><h5>2019 GUTSMINE c</h5></copy></li>
     </ul>
-</nav>
+</div>
+  </div>
+</header>
 
 	       <img src="prof.png" width="300" height="300">
 
