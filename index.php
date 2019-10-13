@@ -2,5 +2,4 @@
 
 header('Location: /top.html');
 
-
 ?>
