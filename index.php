@@ -1,5 +1,1 @@
-<?php
-
-header('Location: /top.html');
-
-?>
+<?php include_once("index.html"); ?>
