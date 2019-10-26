@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
 
 
 	  
-    <title><%=_("about")%></title>
+    <title>プロフセンドについて</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.3.1.css" rel="stylesheet">
@@ -23,7 +23,7 @@
     </style>
   </head>
 <body>
-    <a href="top.html"><img src="image/prof.png" alt="logo" width="300px" height="300px" class="wrap"></a>
+    <a href="top.html"><img src="image/ja_prof.png" alt="logo" width="300px" height="300px" class="wrap"></a>
 
 <header>
   <div id="nav-drawer">
@@ -31,22 +31,49 @@
       <label id="nav-open" for="nav-input"><span></span></label>
       <label class="nav-unshown" id="nav-close" for="nav-input"></label>
  <div id="nav-content">
-      <li>    <a href="top.html"> <%- _('img') %> </a></li>
+      <li>    <a href="top.html"><img src="image/ja_prof.png" alt="logo" width="100px" height="100px" class="wrap"></a></li>
       <li><toku><a href="#" onclick="pic = 'image/toku.png';" id="toku"><img src="image/toku.png" width="50" height="50" id="toku"></a></toku></li>
       <li><img src="https://img.shields.io/badge/dynamic/json.svg?label=version&colorB=5f9ea0&query=$.version&uri=https://raw.githubusercontent.com/gutsmine-tech/profsend-v2/master/package.json&prefix=v" alt="badge" class="wrap"></li>
-		<li><abolt><a href="about.html"><i class="fas fa-question fa-2x about"></i><%=_("about")%></a></abolt></li>	
-     <li> <sc><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i><%=_("source")%></a></p></sc></li>
-        <li><mit><p><a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i class="fas fa-file fa-2x license"></i><%=_("mit")%></a></p></mit></li>
-        <li><a href="http://profsend-v1.herokuapp.com"><p><%=_("v1")%></p></a></li>
+		<li><abolt><a href="about.html"><i class="fas fa-question fa-2x about"></i>プロフセンドについて</a></abolt></li>	
+     <li> <sc><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i>ソースコード</a></p></sc></li>
+        <li><mit><p><a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i class="fas fa-file fa-2x license"></i>ライセンス</a></p></mit></li>
+        <li><a href="http://profsend-v1.herokuapp.com"><p>v1に戻す</p></a></li>
         <li><copy><h5>2019 GUTSMINE c</h5></copy></li>
     </ul>
 </div>
   </div>
 </header>
 
-<%-("about2")%>
+<h1>profsendのについて</h1>
+	  
+	 <br>
+	  
+	  <h3>profsendとは</h3>
+	  <h5>profsendは、ゲームのプロフィールを作り、</h5>
+		  <h4>SNSなどに投稿することができる、</h4>
+	  <h3>プロフィール編集サービスです。</h3>
+	  
+	  <br>
+	  
+	  <h3>使い方</h3>
+	  <h5>① ユーザーネーム、ID、年齢、コメントを入力。<h5>
+		<h4>② 色や画像を変える<h4>  
+		<h4>③ 書き出す（png形式）</h4>	
 			
-			<a href="top.html" class="waves-effect waves-light btn"><%=("about3")%></a>
+			<br>
+			
+			<h3>プリセットについて</h3>
+			<h5>プリセットはprofsendに入れるIDの文字数を指定できます。</h5>
+			
+			<br>
+			
+			<h3>指定可能プリセット</h3>
+			<h5>モンスト・スイッチ（12文字）</h5>
+			<h5>ドッカンバトル（10文字）</h5>
+			<h5>パズドラ（9文字）
+			
+<br>
+			<a href="top.html" class="waves-effect waves-light btn">トップページに戻る</a>
 			
 		    
 	  
