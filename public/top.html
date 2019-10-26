@@ -5,7 +5,8 @@
 <meta name="keywords" content="ゲーム,プロフィール,ウェブアプリ,プロフセンド,profsend">
 <meta name="description" content="プロフセンドは、ゲームのIDをSNSに送るためのプロフィールジェネレータです。">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>PROFSEND(プロフセンド)</title>
+<title><%=_("tyt")%>
+</title>
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -49,7 +50,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <form name="edit" id="editlicense" action="">
 
-    <a href="top.html"><img src="image/prof.png" alt="logo" width="300px" height="300px" class="wrap"></a>
+    <a href="top.html"> <%- _('img') %> </a>
 
 <div class="low">
 
@@ -60,13 +61,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <label id="nav-open" for="nav-input"><span></span></label>
       <label class="nav-unshown" id="nav-close" for="nav-input"></label>
  <div id="nav-content">
-      <li><a href="top.html"><img src="image/prof.png" width="200" height="200" ></li>
+      <li>    <a href="top.html"> <%- _('img') %> </a></li>
       <li><toku><a href="#" onclick="pic = 'image/toku.png';" id="toku"><img src="image/toku.png" width="50" height="50" id="toku"></a></toku></li>
       <li><img src="https://img.shields.io/badge/dynamic/json.svg?label=version&colorB=5f9ea0&query=$.version&uri=https://raw.githubusercontent.com/gutsmine-tech/profsend-v2/master/package.json&prefix=v" alt="badge" class="wrap"></li>
-		<li><abolt><a href="about.html"><i class="fas fa-question fa-2x about"></i>profsendについて</a></abolt></li>	
-     <li> <sc><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i> ソースコード</a></p></sc></li>
-        <li><mit><p><a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i class="fas fa-file fa-2x license"></i> MIT ライセンス</a></p></mit></li>
-        <li><a href="http://profsend-v1.herokuapp.com"><p>v1に戻す</p></a></li>
+		<li><abolt><a href="about.html"><i class="fas fa-question fa-2x about"></i><%=_("about")%></a></abolt></li>	
+     <li> <sc><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i><%=_("source")%></a></p></sc></li>
+        <li><mit><p><a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i class="fas fa-file fa-2x license"></i><%=_("mit")%></a></p></mit></li>
+        <li><a href="http://profsend-v1.herokuapp.com"><p><%=_("v1")%></p></a></li>
         <li><copy><h5>2019 GUTSMINE c</h5></copy></li>
     </ul>
 </div>
@@ -76,20 +77,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="low">
 <a href="13update.html">
 <h4>
-ios13アップデートに関わる大切なお知らせ
+<%=_("13u")%>
 </h4>
 </a>
 </div>
 
 
    <div id="editor">
-      <label for="nyuryoku">【入力】</label>
-      <br>
       <br>
  <div class="row">
 <div class="input-field col s12">
 <input type="text" name="formName" id="name" class="wrap" placeholder="">
-      <label for="namae">名前</label>
+      <label for="namae"><%=_("nm")%></label>
 
   </div>
  </div>
@@ -110,7 +109,7 @@ ios13アップデートに関わる大切なお知らせ
       <br />
 
  <input type="text" id="id-leng" readonly>
-<label for="genzainomojisuB">現在の文字数</label>
+<label for="genzainomojisuB"><%=_("num1")%></label>
   </div>
  </div>
  <div class="row">
@@ -118,21 +117,21 @@ ios13アップデートに関わる大切なお知らせ
 <br>
 
           <select name="formAge" id="age">
-              <option>10代</option>
-              <option>20代</option>
-              <option>30代</option>
-              <option>40代</option>
-              <option>50代</option>
-              <option value="" selected>非公開</option>
+              <option>10<%=_("age")%></option>
+              <option>20<%=_("age")%></option>
+              <option>30<%=_("age")%></option>
+              <option>40<%=_("age")%></option>
+              <option>50<%=_("age")%></option>
+              <option value="" selected><%=_("private")%></option>
           </select>
-      <label>年齢：</label>
+      <label><%=_("ag")%></label>
   </div>
  </div>
  <div class="row">
 <div class="input-field col s12">
       <br />
 <input name="formComent" cols="25" id="coment" class="wrap" maxlength="30" placeholder="">
-      <label for="coment">コメント(30文字以内)：</label>
+      <label for="coment"><%=_("cm")%>：</label>
   </div>
  </div>
 
@@ -140,11 +139,11 @@ ios13アップデートに関わる大切なお知らせ
 
    <br>
 
- <a class="waves-effect waves-light btn" id="download">ダウンロード</a>
+ <a class="waves-effect waves-light btn" id="download"><%=_("dl")%></a>
 
-<a id="picdel" class="waves-effect waves-light btn" onclick="pic = '';">画像を非表示</a>
+<a id="picdel" class="waves-effect waves-light btn" onclick="pic = '';"><%=_("hi")%>示</a>
 
-<a id="reset" class="waves-effect waves-light btn" onclick="pic = 'image/img-1.png';">デフォルトに戻す</a>
+<a id="reset" class="waves-effect waves-light btn" onclick="pic = 'image/img-1.png';"><%=_("ri")%></a>
 
 <br>
 
@@ -157,15 +156,15 @@ ios13アップデートに関わる大切なお知らせ
 <div class="input-field col s6">
 
 <select name="colorselect" id="colors">
-  <option value="#999" selected>黒</option>
-  <option value="#ff4545">赤</option>
-  <option value="#8888ff">青</option>
-  <option value="#fbd945">黄色</option>
-  <option value="#88ff82">緑</option>
-  <option value="#b02cff">紫</option>
+  <option value="#999" selected><%=_("bl")%></option>
+  <option value="#ff4545"><%=_("rd")%></option>
+  <option value="#8888ff"><%=_("be")%></option>
+  <option value="#fbd945"><%=_("yl")%></option>
+  <option value="#88ff82"><%=_("gr")%></option>
+  <option value="#b02cff"><%=_("pu")%></option>
 </select>
 
-<label>プロフィールの色</label>
+<label><%=("pc")%></label>
 
   </div>
  </div>
@@ -173,23 +172,18 @@ ios13アップデートに関わる大切なお知らせ
  <div class="row">
 <div class="input-field col s12">
 
-<select name="idtype" id="idtype">
-  <option value="25" selected>ゲーム未設定</option>
-  <option value="12">モンスト・スイッチ</option>
-  <option value="9">パズドラ</option>
-  <option value="10">ドッカンバトル</option>
-</select>
-
-<label>idのゲーム</label>
-
-<h5><div id="idleng">現在のid桁数は25です。</div></h5>
 
 
   </div>
  </div>
 
+<%=_n("idt", 1)%>
 
-<a class="waves-effect waves-light btn" id="idset">決定</a>
+<%=_n("idt", 2)%>
+
+<%=_n("idt", 3)%>
+
+<%=_n("idt", 4)%>
 
 <br>
 <div id="sec1">

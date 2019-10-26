@@ -69,7 +69,7 @@ for( var lines=e.split( "\n" ), i=0, l=lines.length; l>i; i++ ) {
         var e = document.getElementById("idtype").value;
         $("#idtext").html('<span>ID：</span><input type="text" name="formID" id="id" class="wrap" maxlength="' + e + '"></input>'),
         i(),
-        $("#idleng").html("<p>現在のid桁数は" + e + "です。</p>")
+        $("#idleng").html("<p><%=_("num2")%>" + e + "<%=_("num3")%></p>")
     }),
     e.addEventListener("change", function(e) {
         var t = e.target.files[0];
