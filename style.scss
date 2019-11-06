@@ -3,8 +3,11 @@
 }
 body {
   font-family: 'Noto Sans JP', sans-serif;
-  text-align: center;  width: 100%;  height: 100%;
-  margin-right: auto;  margin-left: auto;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 header {
     padding: 10px;  background: #000;
@@ -24,7 +27,7 @@
            span {
     position: absolute;
     height: 3px;
-    width: 25px; 
+    width: 25px;
     border-radius: 3px;
                  background: #fff;
                      display: block;
@@ -42,7 +45,7 @@
     }
                                                                                 &:before {
                                                                                         bottom: -8px;
-    }    
+    }
                                                                                       &:after {
                                                                                              bottom: -16px;
                                                                                                }
@@ -60,7 +63,7 @@
   opacity: 0;
                                                                                                              transition: .3s ease-in-out;
 }
-#nav-content {  
+#nav-content {
                                                                                                              overflow: auto;
                                                                                                                position: fixed;
   top: 0;
@@ -75,7 +78,7 @@
                                                                                                                      }
 #nav-input:checked ~ {
                                                                                                                          #nav-close {
-    display: block; 
+    display: block;
                                                                                                                                   opacity: .5;
   }
   #nav-content {
@@ -100,7 +103,7 @@
       text-decoration: none;
                                                                                                                                                                       color: #000;
       font-weight: bold;
-    }  
+    }
                                                                                                                                                                   }
                                                                                                                                                                    mit {
                                                                                                                                                                          background-color: #000;
@@ -137,7 +140,7 @@
 #toku:hover {
                                                                                                                                                                                                                        animation: r1 1s linear infinite;
 }
-@keyframes r1 
+@keyframes r1
                                                                                                                                                                                                                      {
   0% {
                                                                                                                                                                                                                              transform: rotate(0deg);
@@ -148,7 +151,11 @@
 }
 nam {
   font-size: 100px;
-                                                                                                                                                                                                                               }
+}
 nof {
   font-size: 30px;
-                                                                                                                                                                                                                               }
+}
+.link{
+border: solid 5px #636bff;
+border-radius: 5px 5px 5px 5px / 5px 5px 5px 5px
+}
