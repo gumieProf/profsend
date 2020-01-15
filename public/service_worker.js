@@ -5,7 +5,7 @@ const STATIC_DATA = [
     'script/main.js',
     'script/jquery.js',
     'script/download.js',
-    'image/ard-img.png',
+    'image/card-img.png',
     'image/favicon.ico',
     'image/image.png',
     'image/image.png',
