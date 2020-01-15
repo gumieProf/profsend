@@ -1,29 +1,37 @@
-// キャッシュファイルの指定
-var CACHE_NAME = 'pwa-profsend-caches';
-var urlsToCache = [
-    '/profsend.herokuapp.com/',
-];
-
-// インストール処理
-self.addEventListener('install', function(event) {
-    event.waitUntil(
-        caches
-            .open(CACHE_NAME)
-            .then(function(cache) {
-                return cache.addAll(urlsToCache);
-            })
-    );
-    console.log("キャッシュのインストール完了");
-});
-
-// リソースフェッチ時のキャッシュロード処理
-self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        caches
-            .match(event.request)
-            .then(function(response) {
-                return response ? response : fetch(event.request);
-            })
-    );
-    console.log("キャッシュのロード完了")
-});
+const STATIC_DATA = [
+    'top.html',
+    '/css/style.css',
+    '/css/style.css',
+    '/script/main.js',
+    '/script/jquery.js',
+    '/script/download.js',
+    '/image/ard-img.png',
+    '/image/favicon.ico',
+    '/image/image.png',
+    '/image/image.png',
+    '/image/img-1.png',
+    '/image/ja-prof.png',
+    '/image/prof.png',
+    '/image/toku.png',
+    '13update.html',
+    '404.html',
+    'about.html'
+  ];
+  
+  self.addEventListener('install', function(e) {
+   e.waitUntil(
+     caches.open('profsend-v1').then(function(cache) {
+       return cache.addAll(STATIC_DATA);
+     })
+   );
+  });
+  
+  self.addEventListener('fetch', function(event) {
+   console.log(event.request.url);
+  
+   event.respondWith(
+     caches.match(event.request).then(function(response) {
+       return response || fetch(event.request);
+     })
+   );
+  });
