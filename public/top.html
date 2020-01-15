@@ -51,7 +51,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script>
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service_worker.js').then(function(registration) {
+    navigator.serviceWorker.register('sw.js').then(function(registration) {
         console.log('サービスワーカーの登録が完了しました: ', registration.scope);
     }).catch(function(err) {
         console.log('サービスワーカーの登録に失敗しました: ', err);

@@ -2,6 +2,8 @@
 var CACHE_NAME = 'profsend-pwa-v1';
 var urlsToCache = [
     'https://profsend.herokuapp.com/',
+    'css/style.css',
+    
 ];
 
 // インストール処理
