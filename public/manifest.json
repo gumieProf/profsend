@@ -1,0 +1,13 @@
+{
+    "short_name": "profsend",
+    "name": "profsend v2 pwa",
+    "display": "standalone",
+    "start_url": "top.html",
+    "icons": [
+        {
+            "src": "image/image.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}

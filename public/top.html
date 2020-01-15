@@ -5,6 +5,7 @@
 <meta name="keywords" content="ゲーム,プロフィール,ウェブアプリ,プロフセンド,profsend">
 <meta name="description" content="プロフセンドは、ゲームのIDをSNSに送るためのプロフィールジェネレータです。">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="manifest" href="manifest.json">
 <title>プロフセンド
 </title>
 
@@ -47,7 +48,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTS3K8T"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+<script>
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service_worker.js').then(function(registration) {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }).catch(function(err) {
+        console.log('ServiceWorker registration failed: ', err);
+    });
+    }
+
+</script>
   <form name="edit" id="editlicense" action="">
 
     <a href="top.html"><img src="image/ja_prof.png" alt="logo" width="200px" height="200px" class="wrap"></a>
