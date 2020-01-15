@@ -13,6 +13,7 @@ self.addEventListener('install', function(event) {
                 return cache.addAll(urlsToCache);
             })
     );
+    console.log("キャッシュのインストール完了");
 });
 
 // リソースフェッチ時のキャッシュロード処理
@@ -24,4 +25,5 @@ self.addEventListener('fetch', function(event) {
                 return response ? response : fetch(event.request);
             })
     );
+    console.log("キャッシュのロード完了")
 });
