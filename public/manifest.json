@@ -1,6 +1,6 @@
 {
     "short_name": "profsend",
-    "name": "profsend v2 pwa",
+    "name": "profsend pwa v1",
     "display": "standalone",
     "start_url": "top.html",
     "icons": [
