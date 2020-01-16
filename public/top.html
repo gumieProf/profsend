@@ -12,13 +12,13 @@
 
 
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<link href="css/all.css" rel="stylesheet">
-<script src='script/jquery.js'></script>
+<script src="https://kit.fontawesome.com/31d4cf3320.js" crossorigin="anonymous"></script>
 <link rel="shortcut icon" href="image/favicon.ico">
-<link rel="stylesheet" href="css/materialize.css">
-<script src="script/materialize.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src='script/jquery.js'></script>
 
-</head>
+  </head>
 <body>
 
 <script>
@@ -47,7 +47,7 @@ if ('serviceWorker' in navigator) {
  <div id="nav-content">
       <li>    <a href="top.html"><img src="image/ja_prof.png" alt="logo" width="100px" height="100px" class="wrap"></a></li>
       <li><toku><a href="#" onclick="pic = 'image/toku.png';" id="toku"><img src="image/toku.png" width="50" height="50" id="toku"></a></toku></li>
-		<li><abolt><a href="about.html" class="link"><i class="fas fa-question about"></i  class="link">プロフセンドについて</a></abolt></li>
+		<li><abolt><a href="about.html" class="link">プロフセンドについて</a></abolt></li>
         <li><copy><h5>2019 GUTSMINE c</h5></copy></li>
     </ul>
 </div>
@@ -65,7 +65,6 @@ if ('serviceWorker' in navigator) {
 
    <div id="editor">
       <br>
- <div class="row">
 <div class="input-field col s12">
 <input type="text" name="formName" id="name" class="wrap" placeholder="">
       <label for="namae">名前</label>
@@ -76,7 +75,6 @@ if ('serviceWorker' in navigator) {
 <br>
 <div id="idtext">
 
- <div class="row">
 <div class="input-field col s12">
 
 <input type="text" name="formID" id="id" class="wrap"  maxlength="25" onkeyup="document.getElementById('id-leng').value=this.value.length" placeholder="">
@@ -84,7 +82,6 @@ if ('serviceWorker' in navigator) {
   </div>
  </div>
 </div>
- <div class="row">
 <div class="input-field col s12">
       <br />
 
@@ -92,8 +89,7 @@ if ('serviceWorker' in navigator) {
 <label for="genzainomojisuB">現在の文字数</label>
   </div>
  </div>
- <div class="row">
-<div class="input-field col s6">
+<div class="input-field col s12">
 <br>
 
           <select name="formAge" id="age">
@@ -102,12 +98,11 @@ if ('serviceWorker' in navigator) {
               <option>30代</option>
               <option>40代</option>
               <option>50代</option>
-              <option value="" selected>非公開</option>
+              <option value="" selected disabled>非公開</option>
           </select>
       <label>年齢</label>
   </div>
  </div>
- <div class="row">
 <div class="input-field col s12">
       <br />
 <input name="formComent" cols="25" id="coment" class="wrap" maxlength="30" placeholder="">
@@ -131,40 +126,31 @@ if ('serviceWorker' in navigator) {
 
 
 <br>
-
- <div class="row">
-<div class="input-field col s6">
-
-<select name="colorselect" id="colors">
-  <option value="#999" selected>ブラック</option>
-  <option value="#ff4545">レッド</option>
-  <option value="#8888ff">ブルー</option>
-  <option value="#fbd945">イエロー</option>
-  <option value="#88ff82">グリーン</option>
-  <option value="#b02cff">パープル</option>
-</select>
-
-<label>プロフィールの背景色</label>
-
-  </div>
- </div>
-
- <div class="row">
 <div class="input-field col s12">
 
-
-
+  <div class="input-field col s12">
+    <select>
+      <option value="" disabled selected>非公開</option>
+      <option value="1">10代</option>
+      <option value="2">20代</option>
+      <option value="3">30代</option>
+    </select>
+    <label>年齢</label>
   </div>
- </div>
+</div>
 
-<select name="idtype" id="idtype">
-  <option value="25" selected>ゲーム未設定</option>
-  <option value="12">モンスト・スイッチ</option>
-  <option value="9">パズドラ</option>
-  <option value="10">ドッカンバトル</option>
-</select>
+<div class="input-field col s12">
 
-<label>ゲームタイトル</label>
+  <select id="idtype">
+    <option value="25" selected>ゲーム未設定</option>
+    <option value="12">モンスト・スイッチ</option>
+    <option value="9">パズドラ</option>
+    <option value="10">ドッカンバトル</option>
+  </select>
+  <label> ゲームタイトル</label>
+   </div>
+
+<br>
 
 <a class="waves-effect waves-light btn" id="idset">桁数決定</a>
 
@@ -188,12 +174,15 @@ var color =  "#999"
 var pic = "image/img-1.png";
 var text = "#000000";
 </script>
-<script type="text/javascript">
-  $(function() {
-    $(document).ready(function() {
-      $('select').material_select();
-    });
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
   });
+
+        
+
 </script>
 </body>
 </html>
