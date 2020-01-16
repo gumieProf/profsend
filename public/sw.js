@@ -6,7 +6,6 @@ var urlsToCache = [
     'image/card-img.png',
     'image/en_prof.png',
     'image/favicon.ico',
-    'image/image.png',
     'image/img-1.png',
     'image/ja_prof.png',
     'image/prof.png',
