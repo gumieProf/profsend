@@ -15,12 +15,13 @@ var urlsToCache = [
     'script/download.js',
     'script/jquery.js',
     'script/main.js',
-    'css/materialize.css',
-    'js/materialize.js',
-    'css/all.css',
     'about.html',
     '13update.html',
-    '404.html'
+    '404.html',
+    'font/fa-solid-900.ttf',
+    'font/fa-solid-900.woff',
+    'font/fa-solid-900.woff2',
+    'css/all.min.css'
 ];
 
 // インストール処理
