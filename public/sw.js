@@ -8,7 +8,7 @@ var urlsToCache = [
     'image/favicon.ico',
     'image/image.png',
     'image/img-1.png',
-    'image/ja.prof.png',
+    'image/ja_prof.png',
     'image/prof.png',
     'image/toku.png',
     'script/download.js',
