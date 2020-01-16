@@ -21,7 +21,9 @@ var urlsToCache = [
     'font/fa-solid-900.ttf',
     'font/fa-solid-900.woff',
     'font/fa-solid-900.woff2',
-    'css/all.min.css'
+    'css/all.min.css',
+    'script/materialize.js',
+    'css/materialize.css'   
 ];
 
 // インストール処理
