@@ -1,6 +1,6 @@
 var CACHE_NAME = 'profsend-pwa-v1';
 var urlsToCache = [
-    'top.html',
+    'top.pwa.html',
     'css/style.css',
     'css/bootstrap-4.3.1.css',
     'image/card-img.png',
@@ -13,9 +13,9 @@ var urlsToCache = [
     'script/download.js',
     'script/jquery.js',
     'script/main.js',
-    'about.html',
-    '13update.html',
-    '404.html',
+    'about.pwa.html',
+    '13update.pwa.html',
+    '404.pwa.html',
     'font/fa-solid-900.ttf',
     'font/fa-solid-900.woff',
     'font/fa-solid-900.woff2',
