@@ -15,7 +15,6 @@ var urlsToCache = [
     'script/main.js',
     'about.pwa.html',
     '13update.pwa.html',
-    '404.pwa.html',
     'font/fa-solid-900.ttf',
     'font/fa-solid-900.woff',
     'font/fa-solid-900.woff2',
