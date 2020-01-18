@@ -2,7 +2,7 @@
     "short_name": "profsend",
     "name": "profsend",
     "display": "standalone",
-    "start_url": ".",
+    "start_url": "./top.pwa",
     "icons": [
         {
             "src": "image/icon-72.png",
