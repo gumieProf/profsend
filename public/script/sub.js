@@ -1,6 +1,6 @@
 $(function() {
   $("#snsDataBtn").click(function() {
-    var div = $("#snsdata");
+    var div = $("#snsData");
     var elems =
       '<div class="input-field col s12">' +
       "<br />" +
