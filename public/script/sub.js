@@ -12,6 +12,10 @@ $(function() {
       '<label for="genzainomojisuB">現在の文字数</label>' +
       "</div>" +
       "</div>";
-    div.html(elems);
+    if ($("#sns")) {
+      div.empty();
+    } else {
+      div.html(elems);
+    }
   });
 });
