@@ -12,7 +12,7 @@ $(function() {
       '<label for="genzainomojisuB">現在の文字数</label>' +
       "</div>" +
       "</div>";
-    if ($("#sns")) {
+    if ($("#sns")[0]) {
       div.empty();
     } else {
       div.html(elems);
