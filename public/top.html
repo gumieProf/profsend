@@ -6,6 +6,11 @@
 <meta name="description" content="プロフセンドは、ゲームのIDをSNSに送るためのプロフィールジェネレータです。">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="manifest" href="manifest.json">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="profsend" />
+<meta name="twitter:description" content="profsendで画像を投稿しました！" />
+<meta name="twitter:image" content="【シェアするページのアイコン画像(絶対パス)】" />
+<meta name="twitter:url" content="【シェアするページのURL】" />
 <title>プロフセンド
 </title>
 
@@ -113,7 +118,7 @@ if ('serviceWorker' in navigator) {
       <label for="coment">コメント：</label>
   </div>
  </div>
-
+ <div id="snsData"></div>
 </div>
 
    <br>
@@ -124,6 +129,8 @@ if ('serviceWorker' in navigator) {
 
 <a id="reset" class="waves-effect waves-light btn" onclick="pic = 'image/img-1.png';">エンブレムをリセット</a>
 
+
+<a id="snsDataBtn" class="waves-effect waves-light btn">sns情報欄を追加</a>
 <br>
 
 <input type="file" name="file" id="file">
@@ -173,6 +180,7 @@ if ('serviceWorker' in navigator) {
 </form>
 <script type="text/javascript" src="script/main.js"></script>
 <script type="text/javascript" src="script/download.js"></script>
+<script type="text/javascript" src="script/sub.js"></script>
 <script type="text/javascript">
 var color =  "#999"
 var pic = "image/img-1.png";
