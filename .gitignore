@@ -2,3 +2,4 @@ node_modules/
 yarn.lock
 package-lock.json
 prepros-6.config
+yarn-error.log
