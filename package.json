@@ -1,11 +1,14 @@
 {
   "name": "profsend",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "game profile editor",
   "main": "index.php",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gutsmine-tech/profsend.git"
+  },
+  "scripts": {
+    "eslint": "eslint ./public/script/**' >js.lint.log"
   },
   "author": "",
   "license": "MIT",
