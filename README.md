@@ -4,9 +4,6 @@
 
 ![profsend rogo](prof.png)
 
-<br>
-
-![badge](https://img.shields.io/badge/dynamic/json.svg?label=version&colorB=5f9ea0&query=$.version&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fgutsmine-tech%2Fprofsend%2Fmaster%2Fpackage.json&prefix=v)
 
 ### このアプリはゲームのユーザーIDを
 ### SNS上で名刺のような写真を作成し
@@ -18,7 +15,7 @@
 
 ### このアプリに使用しているプログラミング言語
 #### html
-#### css
+#### scss
 #### javascript
 
 <br>
@@ -29,8 +26,9 @@
 
 ### 使用ツール
 
-#### atom(テキストエディター)
-
+#### vscode(テキストエディター)
+#### webpack(バンドル化)
+#### prepros(scssのcss化)
 #### adobe illustrator(ロゴ作成)
 #### heroku (サーバー)
 
@@ -45,4 +43,4 @@ https://github.com/gutsmine/profsend/blob/master/LICENSE
 <br>
 
 
-## Copyright (c) 2019 gutsmine-tech
+## Copyright (c) 2020 gutsmine
