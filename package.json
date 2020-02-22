@@ -18,10 +18,6 @@
   "homepage": "https://gutsmine.myportfolio.com",
   "dependencies": {
     "animate.css": "^3.7.2",
-    "eslint": "^6.8.0",
-    "eslint-plugin-jquery": "^1.5.1",
-    "htmllint": "^0.8.0",
-    "htmllint-cli": "^0.0.7",
     "jquery": "^3.4.1"
   },
   "devDependencies": {
