@@ -21,8 +21,7 @@ var urlsToCache = [
   "css/all.min.css",
   "script/materialize.js",
   "css/materialize.css",
-  "script/bundle.js",
-  "manifest.json"
+  "script/bundle.js"
 ];
 
 self.addEventListener("install", function(event) {
