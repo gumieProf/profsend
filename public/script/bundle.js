@@ -105,7 +105,7 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n * jQ
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main */ \"./public/script/main.js\");\n/* harmony import */ var _sub__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sub */ \"./public/script/sub.js\");\n/* harmony import */ var _download__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./download */ \"./public/script/download.js\");\n\n\n\n\nvar Main = new _main__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\nvar Sub = new _sub__WEBPACK_IMPORTED_MODULE_1__[\"default\"]();\nvar dl = new _download__WEBPACK_IMPORTED_MODULE_2__[\"default\"]();\n\n\n//# sourceURL=webpack:///./public/script/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main */ \"./public/script/main.js\");\n/* harmony import */ var _sub__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sub */ \"./public/script/sub.js\");\n/* harmony import */ var _download__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./download */ \"./public/script/download.js\");\n\n\n\n\nObject(_main__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\nObject(_sub__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\nObject(_download__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n\n\n//# sourceURL=webpack:///./public/script/app.js?");
 
 /***/ }),
 
