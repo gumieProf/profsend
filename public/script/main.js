@@ -6,7 +6,7 @@
       u = 30,
       x,
       textMode = "left",
-      imageMode = "left";
+      imageMode = "right";
     y;
     (prof = document.getElementById("prof")), (m = prof.getContext("2d"));
     new Image().src = "" + pic;
@@ -136,9 +136,9 @@
         }
         var a = new Image();
 
-        if (imageMode === "left") {
+        if (imageMode === "right") {
           (a.src = "" + pic), m.drawImage(a, 200, 70, 100, 100);
-        } else if (imageMode === "right") {
+        } else if (imageMode === "left") {
           (a.src = "" + pic), m.drawImage(a, 0, 70, 100, 100);
         }
       }
