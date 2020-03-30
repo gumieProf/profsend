@@ -1,192 +1,294 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="keywords" content="ゲーム,プロフィール,ウェブアプリ,プロフセンド,profsend">
-<meta name="description" content="プロフセンドは、ゲームのIDをSNSに送るためのプロフィールジェネレータです。">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="manifest" href="manifest.json">
-<title>プロフセンド</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="keywords"
+      content="ゲーム,プロフィール,ウェブアプリ,プロフセンド,profsend"
+    />
+    <meta
+      name="description"
+      content="プロフセンドは、ゲームのIDをSNSに送るためのプロフィールジェネレータです。"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <link rel="manifest" href="manifest.json" />
+    <title>プロフセンド</title>
 
-
-
-<link rel="stylesheet" type="text/css" href="/css/style.css">
-<script src="https://kit.fontawesome.com/31d4cf3320.js" crossorigin="anonymous"></script>
-<link rel="shortcut icon" href="/image/favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/31d4cf3320.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="shortcut icon" href="/image/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src='/script/jquery.js'></script>
-
+    <script src="/script/jquery.js"></script>
   </head>
-<body>
+  <body>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then(function(registration) {
+            console.log(
+              "サービスワーカーの登録が完了しました: ",
+              registration.scope
+            );
+          })
+          .catch(function(err) {
+            console.log("サービスワーカーの登録に失敗しました: ", err);
+          });
+      }
+    </script>
+    <form name="edit" id="editlicense" action="">
+      <a href="top.html"
+        ><img
+          src="/image/ja_prof.png"
+          alt="logo"
+          width="200px"
+          height="200px"
+          class="wrap"
+      /></a>
 
-<script>
+      <div class="low">
+        <br />
+        <header>
+          <div id="nav-drawer">
+            <input id="nav-input" type="checkbox" class="nav-unshown" />
+            <label id="nav-open" for="nav-input"><span></span></label>
+            <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+            <div id="nav-content">
+              <ul>
+                <li>
+                  <a href="top.html"
+                    ><img
+                      src="/image/ja_prof.png"
+                      alt="logo"
+                      width="100px"
+                      height="100px"
+                      class="wrap"
+                  /></a>
+                </li>
+                <li>
+                  <toku
+                    ><a href="#" onclick="pic = '/image/toku.png';" id="toku"
+                      ><img
+                        src="/image/toku.png"
+                        width="50"
+                        height="50"
+                        id="toku"/></a
+                  ></toku>
+                </li>
+                <li>
+                  <img
+                    src="https://img.shields.io/badge/dynamic/json.svg?label=version&colorB=5f9ea0&query=$.version&uri=https://raw.githubusercontent.com/gutsmine-tech/profsend-v2/master/package.json&prefix=v"
+                    alt="badge"
+                    class="wrap"
+                  />
+                </li>
+                <li>
+                  <abolt
+                    ><a href="about.html"
+                      ><i class="fas fa-question fa-2x about"></i
+                      >プロフセンドについて</a
+                    ></abolt
+                  >
+                </li>
+                <li>
+                  <sc
+                    ><p>
+                      <a
+                        href="https://github.com/gutsmine/profsend"
+                        class="wrap"
+                        ><i class="fab fa-github fa-2x source"></i
+                        >ソースコード</a
+                      >
+                    </p></sc
+                  >
+                </li>
+                <li>
+                  <mit
+                    ><p>
+                      <a
+                        href="https://github.com/gutsmine/profsend/blob/master/LICENSE"
+                        class="wrap"
+                        ><i class="fas fa-file fa-2x license"></i>ライセンス</a
+                      >
+                    </p></mit
+                  >
+                </li>
+                <li>
+                  <copy><h5>2019 GUTSMINE c</h5></copy>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </header>
 
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').then(function(registration) {
-        console.log('サービスワーカーの登録が完了しました: ', registration.scope);
-    }).catch(function(err) {
-        console.log('サービスワーカーの登録に失敗しました: ', err);
-    });
-    }
+        <div class="low">
+          <a href="13update.html">
+            <h4 class="link">
+              13アップデートに関わる大切なお知らせ
+            </h4>
+          </a>
+        </div>
 
-</script>
-  <form name="edit" id="editlicense" action="">
+        <div id="editor">
+          <br />
+          <div class="input-field col s12">
+            <input
+              type="text"
+              name="formName"
+              id="name"
+              class="profelem"
+              placeholder=""
+            />
+            <label for="namae">名前</label>
+          </div>
+        </div>
 
-    <a href="top.html"><img src="/image/ja_prof.png" alt="logo" width="200px" height="200px" class="wrap"></a>
+        <br />
+        <div id="idtext">
+          <div class="input-field col s12">
+            <input
+              type="text"
+              name="formID"
+              id="id"
+              class="profelem"
+              maxlength="25"
+              onkeyup="document.getElementById('id-leng').value=this.value.length"
+              placeholder=""
+            />
+            <label for="id">ID：</label>
+          </div>
+        </div>
+      </div>
+      <div class="input-field col s12">
+        <br />
 
-<div class="low">
+        <input type="text" id="id-leng" readonly />
+        <label for="genzainomojisuB">現在の文字数</label>
+      </div>
+      <div class="input-field col s12">
+        <br />
 
-  <br>
-	<header>
-		<div id="nav-drawer">
-			<input id="nav-input" type="checkbox" class="nav-unshown">
-			<label id="nav-open" for="nav-input"><span></span></label>
-			<label class="nav-unshown" id="nav-close" for="nav-input"></label>
-	   <div id="nav-content">
-			<li>    <a href="top.html"><img src="/image/ja_prof.png" alt="logo" width="100px" height="100px" class="wrap"></a></li>
-			<li><toku><a href="#" onclick="pic = '/image/toku.png';" id="toku"><img src="/image/toku.png" width="50" height="50" id="toku"></a></toku></li>
-			<li><img src="https://img.shields.io/badge/dynamic/json.svg?label=version&colorB=5f9ea0&query=$.version&uri=https://raw.githubusercontent.com/gutsmine-tech/profsend-v2/master/package.json&prefix=v" alt="badge" class="wrap"></li>
-			  <li><abolt><a href="about.html"><i class="fas fa-question fa-2x about"></i>プロフセンドについて</a></abolt></li>	
-		   <li> <sc><p><a href="https://github.com/gutsmine/profsend" class="wrap"><i class="fab fa-github fa-2x source"></i>ソースコード</a></p></sc></li>
-			  <li><mit><p><a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i class="fas fa-file fa-2x license"></i>ライセンス</a></p></mit></li>
-			  <li><a href="http://profsend-v1.herokuapp.com"><p>v1に戻す</p></a></li>
-			  <li><copy><h5>2019 GUTSMINE c</h5></copy></li>
-		  </ul>
-	  </div>
-		</div>
-	  </header>
+        <select name="formAge" id="age" class="profelem">
+          <option>10代</option>
+          <option>20代</option>
+          <option>30代</option>
+          <option>40代</option>
+          <option>50代</option>
+          <option value="" selected disabled>非公開</option>
+        </select>
+        <label>年齢</label>
+      </div>
+      <div class="input-field col s12">
+        <br />
+        <input
+          name="formComent"
+          cols="25"
+          id="coment"
+          class="profelem"
+          maxlength="30"
+          placeholder=""
+        />
+        <label for="coment">コメント：</label>
+      </div>
+      <div id="snsData"></div>
 
-<div class="low">
-<a href="13update.html">
-<h4 class="link">
-13アップデートに関わる大切なお知らせ
-</h4>
-</a>
-</div>
-
-
-   <div id="editor">
-      <br>
-<div class="input-field col s12">
-<input type="text" name="formName" id="name" class="profelem" placeholder="">
-      <label for="namae">名前</label>
-
-  </div>
- </div>
-
-<br>
-<div id="idtext">
-
-<div class="input-field col s12">
-
-<input type="text" name="formID" id="id" class="profelem"  maxlength="25" onkeyup="document.getElementById('id-leng').value=this.value.length" placeholder="">
-      <label for="id">ID：</label>
-  </div>
- </div>
-</div>
-<div class="input-field col s12">
       <br />
 
- <input type="text" id="id-leng" readonly>
-<label for="genzainomojisuB">現在の文字数</label>
-  </div>
- </div>
-<div class="input-field col s12">
-<br>
+      <a class="waves-effect waves-light btn" id="download"
+        >プロフィールを保存</a
+      >
 
-          <select name="formAge" id="age" class="profelem">
-              <option>10代</option>
-              <option>20代</option>
-              <option>30代</option>
-              <option>40代</option>
-              <option>50代</option>
-              <option value="" selected disabled>非公開</option>
+      <a id="picdel" class="waves-effect waves-light btn" onclick="pic = '';"
+        >エンブレムを非表示</a
+      >
+
+      <a
+        id="reset"
+        class="waves-effect waves-light btn"
+        onclick="pic = '/image/img-1.png';"
+        >エンブレムをリセット</a
+      >
+
+      <a id="snsDataBtn" class="waves-effect waves-light btn"
+        >sns情報欄を追加</a
+      >
+      <br />
+
+      <input type="file" name="file" id="file" />
+
+      <br />
+      <div class="input-field col s12">
+        <div class="input-field col s12">
+          <select>
+            <option value="" disabled selected>非公開</option>
+            <option value="1">10代</option>
+            <option value="2">20代</option>
+            <option value="3">30代</option>
           </select>
-      <label>年齢</label>
-  </div>
- </div>
-<div class="input-field col s12">
+          <label>年齢</label>
+        </div>
+      </div>
+
+      <div class="input-field col s12">
+        <select id="idtype">
+          <option value="25" selected>ゲーム未設定</option>
+          <option value="12">モンスト・スイッチ</option>
+          <option value="9">パズドラ</option>
+          <option value="10">ドッカンバトル</option>
+        </select>
+        <label> ゲームタイトル</label>
+      </div>
+      <div id="textmodes">
+        <input name="textmode" checked="checked" type="radio" value="left" />
+        <span>f036</span>
+
+        <input name="textmode" type="radio" value="right" />
+        <span>f038</span>
+      </div>
+      <div id="imageModes">
+        <input name="imageMode" type="radio" value="left" />
+        <span>f104</span>
+
+        <input name="imageMode" checked="checked" type="radio" value="right" />
+        <span>f105</span>
+      </div>
       <br />
-<input name="formComent" cols="25" id="coment" class="profelem" maxlength="30" placeholder="">
-      <label for="coment">コメント：</label>
-  </div>
- </div>
- <div id="snsData"></div>
-</div>
 
-   <br>
+      <a class="waves-effect waves-light btn" id="idset">桁数決定</a>
 
- <a class="waves-effect waves-light btn" id="download">プロフィールを保存</a>
+      <h5><div id="idleng">現在のid桁数は25です。</div></h5>
 
-<a id="picdel" class="waves-effect waves-light btn" onclick="pic = '';">エンブレムを非表示</a>
+      <br />
+      <div id="sec1">
+        <canvas id="prof" width="400" height="200"></canvas>
+      </div>
+      <div><img id="newImg" /></div>
 
-<a id="reset" class="waves-effect waves-light btn" onclick="pic = '/image/img-1.png';">エンブレムをリセット</a>
-
-
-<a id="snsDataBtn" class="waves-effect waves-light btn">sns情報欄を追加</a>
-<br>
-
-<input type="file" name="file" id="file">
-
-
-<br>
-<div class="input-field col s12">
-
-  <div class="input-field col s12">
-    <select>
-      <option value="" disabled selected>非公開</option>
-      <option value="1">10代</option>
-      <option value="2">20代</option>
-      <option value="3">30代</option>
-    </select>
-    <label>年齢</label>
-  </div>
-</div>
-
-<div class="input-field col s12">
-
-  <select id="idtype">
-    <option value="25" selected>ゲーム未設定</option>
-    <option value="12">モンスト・スイッチ</option>
-    <option value="9">パズドラ</option>
-    <option value="10">ドッカンバトル</option>
-  </select>
-  <label> ゲームタイトル</label>
-   </div>
-
-<br>
-
-<a class="waves-effect waves-light btn" id="idset">桁数決定</a>
-
-<h5><div id="idleng">現在のid桁数は25です。</div></h5>
-
-<br>
-<div id="sec1">
-<canvas id="prof" width="400" height="200"></canvas>
-</div>
-    <div><img id="newImg"></div>
-
-<div id="result"></div>
-<br>
-<h4>2019 GUTSMINE c</h4>
-
-</form>
-<script type="text/javascript" src="/script/bundle.js"></script>
-<script type="text/javascript">
-var color =  "#999"
-var pic = "/image/img-1.png";
-var text = "#000000";
-</script>
-<script>
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems);
-  });
-
-        
-
-</script>
-</body>
+      <div id="result"></div>
+      <br />
+      <h4>2019 GUTSMINE c</h4>
+    </form>
+    <script type="text/javascript" src="/script/bundle.js"></script>
+    <script type="text/javascript">
+      var color = "#999";
+      var pic = "/image/img-1.png";
+      var text = "#000000";
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var elems = document.querySelectorAll("select");
+        var instances = M.FormSelect.init(elems);
+      });
+    </script>
+  </body>
 </html>
