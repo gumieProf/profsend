@@ -4,8 +4,11 @@
       c = 1,
       r = 30,
       u = 30,
-      prof = document.getElementById("prof"),
-      m = prof.getContext("2d");
+      x,
+      textMode = "left",
+      imageMode = "left";
+    y;
+    (prof = document.getElementById("prof")), (m = prof.getContext("2d"));
     new Image().src = "" + pic;
     var e = document.getElementById("file");
     var i = function() {
@@ -98,19 +101,46 @@
       m.stroke();
       var fontSize = 24; // フォントサイズ
       var lineHeight = 1.1618; // 行の高さ (フォントサイズに対する倍率)
-      var x = 50; // 水平位置
-      var y = 30; // 垂直位置
-      m.font = "bold " + o + "YuGothic";
-      for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
-        var line = lines[i];
-        var addY = fontSize;
+      if (textMode === "left") {
+        var x = 50; // 水平位置
+        var y = 30; // 垂直位置
+        m.font = "bold " + o + "YuGothic";
+        for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
+          var line = lines[i];
+          var addY = fontSize;
 
-        // 2行目以降の水平位置は行数とlineHeightを考慮する
-        if (i) addY += fontSize * lineHeight * i;
+          // 2行目以降の水平位置は行数とlineHeightを考慮する
+          if (i) addY += fontSize * lineHeight * i;
 
-        m.fillText(line, x + 0, y + addY);
+          m.fillText(line, x + 0, y + addY);
+          var a = new Image();
+          (a.src = "" + pic), m.drawImage(a, 200, 70, 100, 100);
+        }
+      } else if (textMode === "right") {
+        var x = 50; // 水平位置
+        var y = 30; // 垂直位置
+        m.font = "bold " + o + "YuGothic";
+        for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
+          var line = lines[i];
+          var addY = fontSize;
+          var lineLeng = line.length;
+          if (lineLeng > 10) {
+            x = x + 20;
+          } else if (lineLeng > 5) {
+            x = x + 10;
+          }
+
+          if (i) addY += fontSize * lineHeight * i;
+
+          m.fillText(line, x + 0, y + addY);
+        }
         var a = new Image();
-        (a.src = "" + pic), m.drawImage(a, 200, 70, 100, 100);
+
+        if (imageMode === "left") {
+          (a.src = "" + pic), m.drawImage(a, 200, 70, 100, 100);
+        } else if (imageMode === "right") {
+          (a.src = "" + pic), m.drawImage(a, 0, 70, 100, 100);
+        }
       }
     };
     window.i = i;
