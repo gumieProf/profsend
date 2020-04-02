@@ -4,3 +4,5 @@ package-lock.json
 prepros-6.config
 yarn-error.log
 js.lint.log
+style.css
+style.css.map

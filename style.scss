@@ -6,143 +6,101 @@ body {
   height: 100%;
 
   margin-right: auto;
-
-
 }
-
 
 header {
-
-    padding: 10px;
+  padding: 10px;
   background: #000;
-
- }
-
+}
 
 #nav-drawer {
-
   position: relative;
-
- }
-
-
-
+}
 
 .nav-unshown {
-
   display: none;
-
 }
- #nav-open {
+#nav-open {
+  display: inline-block;
 
-     display: inline-block;
+  width: 30px;
 
-       width: 30px;
-
-         height: 22px;
+  height: 22px;
 
   vertical-align: middle;
 
-
-           span {
-
+  span {
     position: absolute;
 
     height: 3px;
 
-
-
     width: 25px;
-
-
 
     border-radius: 3px;
 
-                 background: #fff;
+    background: #fff;
 
-                     display: block;
+    display: block;
 
-                        content: '';
+    content: "";
 
-                            cursor: pointer;
+    cursor: pointer;
 
+    &:before,
+    &:after {
+      position: absolute;
 
-                                &:before, &:after {
+      height: 3px;
 
-                                        position: absolute;
+      width: 25px;
 
-                                             height: 3px;
+      border-radius: 3px;
 
+      background: #fff;
 
-                                                   width: 25px;
+      display: block;
 
+      content: "";
 
-                                                            border-radius: 3px;
-
-                                                                background: #fff;
-
-                                                                     display: block;
-
-                                                                          content: '';
-
-                                                                              cursor: pointer;
-
+      cursor: pointer;
     }
 
-
-                                                                                &:before {
-
-                                                                                        bottom: -8px;
-
+    &:before {
+      bottom: -8px;
     }
 
-
-                                                                                      &:after {
-
-                                                                                             bottom: -16px;
-
-                                                                                               }
-
-                                                                                             }
-
+    &:after {
+      bottom: -16px;
+    }
+  }
 }
 
-
-
-
 #nav-close {
+  display: none;
 
-                                                                                                   display: none;
+  position: fixed;
 
+  z-index: 99;
 
-                                                                                                    position: fixed;
-
-                                                                                                      z-index: 99;
-
-                                                                                                       top: 0;
-
-
+  top: 0;
 
   left: 0;
 
   width: 100%;
 
-                                                                                                         height: 100%;
+  height: 100%;
 
-                                                                                                           background: black;
+  background: black;
 
   opacity: 0;
 
-                                                                                                             transition: .3s ease-in-out;
-
+  transition: 0.3s ease-in-out;
 }
 
-
 #nav-content {
+  overflow: auto;
 
-                                                                                                             overflow: auto;
-
-                                                                                                               position: fixed;
+  position: fixed;
 
   top: 0;
 
@@ -152,555 +110,478 @@ header {
 
   width: 90%;
 
-
-
   max-width: 250px;
 
   height: 100%;
   background: #fff;
 
+  transition: 0.3s ease-in-out;
 
-                                                                                                                 transition: .3s ease-in-out;
+  -webkit-transform: translateX(-105%);
 
-
-                                                                                                                     -webkit-transform: translateX(-105%);
-
-                                                                                                                       transform: translateX(-105%);
-
-                                                                                                                     }
-
+  transform: translateX(-105%);
+}
 
 #nav-input:checked ~ {
-
-                                                                                                                         #nav-close {
-
+  #nav-close {
     display: block;
 
-
-                                                                                                                                  opacity: .5;
-
+    opacity: 0.5;
   }
-
 
   #nav-content {
+    -webkit-transform: translateX(0%);
 
-                                                                                                                                      -webkit-transform: translateX(0%);
-
-                                                                                                                                          transform: translateX(0%);
-
-
+    transform: translateX(0%);
 
     box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
-
   }
+}
 
-                                                                                                                                      }
+#editlicense {
+  list-style: none;
 
+  overflow: hidden;
+}
 
-                                                                                                                                      #editlicense {
-
+#nav {
   list-style: none;
 
   overflow: hidden;
 
-}
-
-
-#nav {
-
-  list-style: none;
-
-                                                                                                                                          overflow: hidden;
-
-
-                                                                                                                                            abolt, sc {
-
-                                                                                                                                                  background-color: #777;
+  abolt,
+  sc {
+    background-color: #777;
 
     float: left;
 
-                                                                                                                                                      width: 140px;
+    width: 140px;
 
-                                                                                                                                                          text-align: center;
+    text-align: center;
 
-
-                                                                                                                                                              a {
-
+    a {
       text-decoration: none;
 
-                                                                                                                                                                      color: #000;
+      color: #000;
 
       font-weight: bold;
-
     }
-
-                                                                                                                                                                  }
-
-
-                                                                                                                                                                   mit {
-
-                                                                                                                                                                         background-color: #000;
-
-                                                                                                                                                                             float: left;
-
-                                                                                                                                                                                 width: 140px;
-
-                                                                                                                                                                                     text-align: center;
-
-
-                                                                                                                                                                                         a {
-
-                                                                                                                                                                                                 text-decoration: none;
-
-                                                                                                                                                                                                       color: #000;
-
-                                                                                                                                                                                                             font-weight: bold;
-
-    }
-
   }
 
-}
+  mit {
+    background-color: #000;
 
+    float: left;
+
+    width: 140px;
+
+    text-align: center;
+
+    a {
+      text-decoration: none;
+
+      color: #000;
+
+      font-weight: bold;
+    }
+  }
+}
 
 .source {
-
-                                                                                                                                                                                                           color: #263100;
-
-                                                                                                                                                                                                         }
-
+  color: #263100;
+}
 
 .video {
-
   color: #ff3715;
-
-                                                                                                                                                                                                         }
-
+}
 
 .license {
-
-                                                                                                                                                                                                             color: #a30000;
-
-                                                                                                                                                                                                           }
-
+  color: #a30000;
+}
 
 .copy {
-
   color: #fff;
-
 }
-
 
 .about {
-
-                                                                                                                                                                                                               color: #000;
-
-                                                                                                                                                                                                             }
-
+  color: #000;
+}
 
 .button:hover {
-
-                                                                                                                                                                                                                 box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
-                                                                                                                                                                                                                  0 1px 7px 0 rgba(0, 0, 0, 0.12),
-                                                                                                                                                                                                                   0 3px 1px -1px rgba(0, 0, 0, 0.2);
-
-
-
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -1px rgba(0, 0, 0, 0.2);
 }
-
 
 #toku:hover {
-
-                                                                                                                                                                                                                       animation: r1 1s linear infinite;
-
+  animation: r1 1s linear infinite;
 }
 
-
-@keyframes r1
-                                                                                                                                                                                                                     {
-
+@keyframes r1 {
   0% {
-
-                                                                                                                                                                                                                             transform: rotate(0deg);
-
-                                                                                                                                                                                                                             }
-
-
-  100% {
-
-                                                                                                                                                                                                                                   transform: rotate(360deg);
-
+    transform: rotate(0deg);
   }
 
+  100% {
+    transform: rotate(360deg);
+  }
 }
-
 
 nam {
-
   font-size: 100px;
-
 }
-
 
 nof {
-
   font-size: 30px;
 
-body {
+  body {
+    font-family: "Noto Sans JP", sans-serif;
 
-  font-family: 'Noto Sans JP', sans-serif;
+    text-align: center;
 
-  text-align: center;
+    width: 100%;
 
-  width: 100%;
+    height: 100%;
 
-  height: 100%;
+    margin-right: auto;
 
-  margin-right: auto;
+    margin-left: auto;
+  }
 
-  margin-left: auto;
-
-}
-
-
-header {
-
+  header {
     padding: 10px;
-  background: #000;
-
- }
-
-
-#nav-drawer {
-
-  position: relative;
-
- }
-
-
-
-
-.nav-unshown {
-
-  display: none;
-
-}
- #nav-open {
-
-     display: inline-block;
-
-       width: 30px;
-
-         height: 22px;
-
-  vertical-align: middle;
-
-
-           span {
-
-    position: absolute;
-
-    height: 3px;
-
-
-
-    width: 25px;
-
-
-
-    border-radius: 3px;
-
-                 background: #fff;
-
-                     display: block;
-
-                        content: '';
-
-                            cursor: pointer;
-
-
-                                &:before, &:after {
-
-                                        position: absolute;
-
-                                             height: 3px;
-
-
-                                                   width: 25px;
-
-
-                                                            border-radius: 3px;
-
-                                                                background: #fff;
-
-                                                                     display: block;
-
-                                                                          content: '';
-
-                                                                              cursor: pointer;
-
-    }
-
-
-                                                                                &:before {
-
-                                                                                        bottom: -8px;
-
-    }
-
-
-                                                                                      &:after {
-
-                                                                                             bottom: -16px;
-
-                                                                                               }
-
-                                                                                             }
-
-}
-
-
-
-
-#nav-close {
-
-                                                                                                   display: none;
-
-
-                                                                                                    position: fixed;
-
-                                                                                                      z-index: 99;
-
-                                                                                                       top: 0;
-
-
-
-  left: 0;
-
-  width: 100%;
-
-                                                                                                         height: 100%;
-
-                                                                                                           background: black;
-
-  opacity: 0;
-
-                                                                                                             transition: .3s ease-in-out;
-
-}
-
-
-#nav-content {
-
-                                                                                                             overflow: auto;
-
-                                                                                                               position: fixed;
-
-  top: 0;
-
-  left: 0;
-
-  z-index: 9999;
-
-  width: 90%;
-
-
-
-  max-width: 250px;
-
-  height: 100%;
-  background: #fff;
-
-
-                                                                                                                 transition: .3s ease-in-out;
-
-
-                                                                                                                     -webkit-transform: translateX(-105%);
-
-                                                                                                                       transform: translateX(-105%);
-
-                                                                                                                     }
-
-
-#nav-input:checked ~ {
-
-                                                                                                                         #nav-close {
-
-    display: block;
-
-
-                                                                                                                                  opacity: .5;
-
+    background: #000;
   }
 
+  #nav-drawer {
+    position: relative;
+  }
+
+  .nav-unshown {
+    display: none;
+  }
+  #nav-open {
+    display: inline-block;
+
+    width: 30px;
+
+    height: 22px;
+
+    vertical-align: middle;
+
+    span {
+      position: absolute;
+
+      height: 3px;
+
+      width: 25px;
+
+      border-radius: 3px;
+
+      background: #fff;
+
+      display: block;
+
+      content: "";
+
+      cursor: pointer;
+
+      &:before,
+      &:after {
+        position: absolute;
+
+        height: 3px;
+
+        width: 25px;
+
+        border-radius: 3px;
+
+        background: #fff;
+
+        display: block;
+
+        content: "";
+
+        cursor: pointer;
+      }
+
+      &:before {
+        bottom: -8px;
+      }
+
+      &:after {
+        bottom: -16px;
+      }
+    }
+  }
+
+  #nav-close {
+    display: none;
+
+    position: fixed;
+
+    z-index: 99;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: black;
+
+    opacity: 0;
+
+    transition: 0.3s ease-in-out;
+  }
 
   #nav-content {
+    overflow: auto;
 
-                                                                                                                                      -webkit-transform: translateX(0%);
+    position: fixed;
 
-                                                                                                                                          transform: translateX(0%);
+    top: 0;
 
+    left: 0;
 
+    z-index: 9999;
 
-    box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
+    width: 90%;
 
+    max-width: 250px;
+
+    height: 100%;
+    background: #fff;
+
+    transition: 0.3s ease-in-out;
+
+    -webkit-transform: translateX(-105%);
+
+    transform: translateX(-105%);
   }
 
-                                                                                                                                      }
+  #nav-input:checked ~ {
+    #nav-close {
+      display: block;
 
-
-                                                                                                                                      #editlicense {
-
-  list-style: none;
-
-  overflow: hidden;
-
-}
-
-
-#nav {
-
-  list-style: none;
-
-                                                                                                                                          overflow: hidden;
-
-
-                                                                                                                                            abolt, sc {
-
-                                                                                                                                                  background-color: #777;
-
-    float: left;
-
-                                                                                                                                                      width: 140px;
-
-                                                                                                                                                          text-align: center;
-
-
-                                                                                                                                                              a {
-
-      text-decoration: none;
-
-                                                                                                                                                                      color: #000;
-
-      font-weight: bold;
-
+      opacity: 0.5;
     }
 
-                                                                                                                                                                  }
+    #nav-content {
+      -webkit-transform: translateX(0%);
 
+      transform: translateX(0%);
 
-                                                                                                                                                                   mit {
+      box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
+    }
+  }
 
-                                                                                                                                                                         background-color: #000;
+  #editlicense {
+    list-style: none;
 
-                                                                                                                                                                             float: left;
+    overflow: hidden;
+  }
 
-                                                                                                                                                                                 width: 140px;
+  #nav {
+    list-style: none;
 
-                                                                                                                                                                                     text-align: center;
+    overflow: hidden;
 
+    abolt,
+    sc {
+      background-color: #777;
 
-                                                                                                                                                                                         a {
+      float: left;
 
-                                                                                                                                                                                                 text-decoration: none;
+      width: 140px;
 
-                                                                                                                                                                                                       color: #000;
+      text-align: center;
 
-                                                                                                                                                                                                             font-weight: bold;
+      a {
+        text-decoration: none;
 
+        color: #000;
+
+        font-weight: bold;
+      }
     }
 
+    mit {
+      background-color: #000;
+
+      float: left;
+
+      width: 140px;
+
+      text-align: center;
+
+      a {
+        text-decoration: none;
+
+        color: #000;
+
+        font-weight: bold;
+      }
+    }
   }
 
-}
-
-
-.source {
-
-                                                                                                                                                                                                           color: #263100;
-
-                                                                                                                                                                                                         }
-
-
-.video {
-
-  color: #ff3715;
-
-                                                                                                                                                                                                         }
-
-
-.license {
-
-                                                                                                                                                                                                             color: #a30000;
-
-                                                                                                                                                                                                           }
-
-
-.copy {
-
-  color: #fff;
-
-}
-
-
-.about {
-
-                                                                                                                                                                                                               color: #000;
-
-                                                                                                                                                                                                             }
-
-
-.button:hover {
-
-                                                                                                                                                                                                                 box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14),
-                                                                                                                                                                                                                  0 1px 7px 0 rgba(0, 0, 0, 0.12),
-                                                                                                                                                                                                                   0 3px 1px -1px rgba(0, 0, 0, 0.2);
-
-
-
-}
-
-
-#toku:hover {
-
-                                                                                                                                                                                                                       animation: r1 1s linear infinite;
-
-}
-
-
-@keyframes r1
-                                                                                                                                                                                                                     {
-
-  0% {
-
-                                                                                                                                                                                                                             transform: rotate(0deg);
-
-                                                                                                                                                                                                                             }
-
-
-  100% {
-
-                                                                                                                                                                                                                                   transform: rotate(360deg);
-
+  .source {
+    color: #263100;
   }
 
+  .video {
+    color: #ff3715;
+  }
+
+  .license {
+    color: #a30000;
+  }
+
+  .copy {
+    color: #fff;
+  }
+
+  .about {
+    color: #000;
+  }
+
+  .button:hover {
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12),
+      0 3px 1px -1px rgba(0, 0, 0, 0.2);
+  }
+
+  #toku:hover {
+    animation: r1 1s linear infinite;
+  }
+
+  @keyframes r1 {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  nam {
+    font-size: 100px;
+  }
+
+  nof {
+    font-size: 30px;
+  }
+  .link {
+    border: solid 5px #636bff;
+    border-radius: 5px 5px 5px 5px / 5px 5px 5px 5px;
+  }
+}
+* {
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", sans-serif;
 }
 
+$primary-color: #000;
 
-nam {
-
-  font-size: 100px;
-
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
+.radio-tile-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
-nof {
+  //set dimensions for invisible container
+  .input-container {
+    position: relative;
+    height: 7rem;
+    width: 7rem;
+    margin: 0.5rem;
 
-  font-size: 30px;
+    //make actual radio input invisible
+    // + stretch to fill container
+    .radio-button {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      cursor: pointer;
+    }
 
+    //default tile styles
+    .radio-tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      border: 2px solid $primary-color;
+      border-radius: 5px;
+      padding: 1rem;
+      transition: transform 300ms ease;
+    }
+    .icon svg {
+      fill: white;
+      width: 3rem;
+      height: 3rem;
+    }
+    .radio-tile-label {
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: white;
+    }
+
+    //active tile styles
+    .radio-button:checked + .radio-tile {
+      background-color: $primary-color;
+      border: 2px solid $primary-color;
+      color: white;
+      transform: scale(1.1, 1.1);
+
+      .icon svg {
+        fill: white;
+        background-color: white;
+      }
+      .radio-tile-label {
+        color: white;
+        background-color: white;
+      }
+    }
+  }
 }
-.link{
-border: solid 5px #636bff;
-border-radius: 5px 5px 5px 5px / 5px 5px 5px 5px
+.left-icon {
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  color: #ccc;
+  content: f104;
 }
+.right-icon {
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  color: #ccc;
+  content: f105;
+}
+.leftTX-icon {
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  color: #ccc;
+  content: f060;
+}
+.rightTX-icon {
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  color: #ccc;
+  content: f061;
 }
