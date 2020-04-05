@@ -5,13 +5,21 @@
       r = 30,
       u = 30,
       x,
-      textMode = "left",
-      imageMode = "right";
-    y;
+      re,
+      y;
     (prof = document.getElementById("prof")), (m = prof.getContext("2d"));
     new Image().src = "" + pic;
     var e = document.getElementById("file");
     var i = function() {
+      if (typeof re === undefined || re === null) {
+        var id = $("#id").val();
+      } else {
+        var id1 = $("#id").val();
+        if (re == 12) {
+          var id2 = id1.split("{4}");
+          id = id2[0] + " " + id2[1] + " " + id2[2];
+        }
+      }
       var age = $("#age").val();
       var coment = $("#coment").val();
       var sns = $("#snsText").val();
@@ -21,14 +29,13 @@
       var ageif = age == null || typeof age == "undefined" || age == "";
 
       if (comentif && snsif && ageif) {
-        var e =
-          "ユーザー名:\t" + $("#name").val() + "\nID: \t" + $("#id").val();
+        var e = "ユーザー名:\t" + $("#name").val() + "\nID: \t" + id;
       } else if (comentif && snsif) {
         var e =
           "ユーザー名:\t" +
           $("#name").val() +
           "\nID: \t" +
-          $("#id").val() +
+          id +
           "\n 年齢: \t" +
           age;
       } else if (ageif && snsif) {
@@ -36,7 +43,7 @@
           "ユーザー名:\t" +
           $("#name").val() +
           "\nID: \t" +
-          $("#id").val() +
+          id +
           "\nコメント: \t" +
           $("#coment").val();
       } else if (ageif && comentif) {
@@ -44,7 +51,7 @@
           "ユーザー名:\t" +
           $("#name").val() +
           "\nID: \t" +
-          $("#id").val() +
+          id +
           "\nSNS: \t" +
           $("#snsText").val();
       } else if (ageif) {
@@ -52,7 +59,7 @@
           "ユーザー名:\t" +
           $("#name").val() +
           "\nID: \t" +
-          $("#id").val() +
+          id +
           "\nコメント: \t" +
           $("#coment").val() +
           "\nSNS: \t" +
@@ -62,7 +69,7 @@
           "ユーザー名:\t" +
           $("#name").val() +
           "\nID: \t" +
-          $("#id").val() +
+          id +
           "\n 年齢: \t" +
           age +
           "\nSNS: \t" +
@@ -72,7 +79,7 @@
           "ユーザー名:\t" +
           $("#name").val() +
           "\nID: \t" +
-          $("#id").val() +
+          id +
           "\n 年齢: \t" +
           age +
           "\nコメント: \t" +
@@ -82,7 +89,7 @@
           "ユーザー名:\t" +
           $("#name").val() +
           "\nID: \t" +
-          $("#id").val() +
+          id +
           "\n 年齢: \t" +
           age +
           "\nコメント: \t" +
@@ -101,46 +108,22 @@
       m.stroke();
       var fontSize = 24; // フォントサイズ
       var lineHeight = 1.1618; // 行の高さ (フォントサイズに対する倍率)
-      if (textMode === "left") {
-        var x = 50; // 水平位置
-        var y = 30; // 垂直位置
-        m.font = "bold " + o + "YuGothic";
-        for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
-          var line = lines[i];
-          var addY = fontSize;
+      var x = 50; // 水平位置
+      var y = 30; // 垂直位置
+      m.font = "bold " + o + "YuGothic";
+      for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
+        var line = lines[i];
+        var addY = fontSize;
 
-          // 2行目以降の水平位置は行数とlineHeightを考慮する
-          if (i) addY += fontSize * lineHeight * i;
+        // 2行目以降の水平位置は行数とlineHeightを考慮する
+        if (i) addY += fontSize * lineHeight * i;
 
-          m.fillText(line, x + 0, y + addY);
-          var a = new Image();
-          (a.src = "" + pic), m.drawImage(a, 200, 70, 100, 100);
-        }
-      } else if (textMode === "right") {
-        var x = 50; // 水平位置
-        var y = 30; // 垂直位置
-        m.font = "bold " + o + "YuGothic";
-        for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
-          var line = lines[i];
-          var addY = fontSize;
-          var lineLeng = line.length;
-          if (lineLeng > 10) {
-            x = x + 20;
-          } else if (lineLeng > 5) {
-            x = x + 10;
-          }
-
-          if (i) addY += fontSize * lineHeight * i;
-
-          m.fillText(line, x + 0, y + addY);
-        }
+        m.fillText(line, x + 0, y + addY);
+        var a = new Image();
+        (a.src = "" + pic), m.drawImage(a, 200, 70, 100, 100);
         var a = new Image();
 
-        if (imageMode === "right") {
-          (a.src = "" + pic), m.drawImage(a, 200, 70, 100, 100);
-        } else if (imageMode === "left") {
-          (a.src = "" + pic), m.drawImage(a, 0, 70, 100, 100);
-        }
+        (a.src = "" + pic), m.drawImage(a, 200, 70, 100, 100);
       }
     };
     window.i = i;
@@ -158,14 +141,15 @@
       (color = $(this).val()), i();
     }),
       $("#idset").click(function() {
-        var e = document.getElementById("idtype").value;
+        var idtypeVal = $("#idtype").val();
         $("#idtext").html(
           '<span>ID：</span><input type="text" name="formID" id="id" class="wrap" maxlength="' +
-            e +
+            idtypeVal +
             '"></input>'
-        ),
-          i(),
-          $("#idleng").html("<h5>現在の桁数は" + e + "です</h5>");
+        );
+        re = idtypeVal;
+        i();
+        $("#idleng").html("<h5>現在の桁数は" + e + "です</h5>");
       }),
       e.addEventListener("change", function(e) {
         var t = e.target.files[0];
