@@ -6,9 +6,9 @@
       u = 30,
       x,
       re,
-      y,
-      prof = document.getElementById("prof"),
-      m = prof.getContext("2d");
+      y;
+    var prof = document.getElementById("prof");
+    var m = prof.getContext("2d");
     new Image().src = "" + pic;
     var e = document.getElementById("file");
     var i = function () {
