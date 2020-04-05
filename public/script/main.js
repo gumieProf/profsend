@@ -1,16 +1,17 @@
 ﻿export default function main() {
-  $(function() {
+  $(function () {
     var o = 35,
       c = 1,
       r = 30,
       u = 30,
       x,
       re,
-      y;
-    (prof = document.getElementById("prof")), (m = prof.getContext("2d"));
+      y,
+      prof = document.getElementById("prof"),
+      m = prof.getContext("2d");
     new Image().src = "" + pic;
     var e = document.getElementById("file");
-    var i = function() {
+    var i = function () {
       if (typeof re === undefined || re === null) {
         var id = $("#id").val();
       } else {
@@ -137,10 +138,10 @@
     $("#snsText").val();
     i(), $(".profelem").keyup(i);
     $(".profelem").change(i);
-    $("#colors").change(function() {
+    $("#colors").change(function () {
       (color = $(this).val()), i();
     }),
-      $("#idset").click(function() {
+      $("#idset").click(function () {
         var idtypeVal = $("#idtype").val();
         $("#idtext").html(
           '<span>ID：</span><input type="text" name="formID" id="id" class="wrap" maxlength="' +
@@ -151,11 +152,11 @@
         i();
         $("#idleng").html("<h5>現在の桁数は" + e + "です</h5>");
       }),
-      e.addEventListener("change", function(e) {
+      e.addEventListener("change", function (e) {
         var t = e.target.files[0];
         if (t.type.match("image.*")) {
           var n = new FileReader();
-          (n.onload = function() {
+          (n.onload = function () {
             (pic = n.result), i();
           }),
             n.readAsDataURL(t);
