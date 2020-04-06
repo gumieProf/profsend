@@ -260,10 +260,6 @@ nof {
     border: solid 5px #636bff;
     border-radius: 5px 5px 5px 5px / 5px 5px 5px 5px; }
 
-* {
-  box-sizing: border-box;
-  font-family: "Helvetica Neue", sans-serif; }
-
 .dataBtn {
   display: block;
   height: 70px;
