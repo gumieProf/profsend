@@ -486,7 +486,6 @@ nof {
   height: 70px;
   width: 70%;
   background-color: #777;
-  margin: auto;
   strong {
     color: #fff;
     font-size: 10px;
@@ -495,7 +494,9 @@ nof {
     font-size: 5px;
     color: #000;
   }
-  angle {
+  .angle {
+    position: relative;
+    top: 3px;
     color: #fff;
   }
 }

@@ -268,13 +268,14 @@ nof {
   display: block;
   height: 70px;
   width: 70%;
-  background-color: #777;
-  margin: auto; }
+  background-color: #777; }
   .dataBtn strong {
     color: #fff;
     font-size: 10px; }
   .dataBtn span {
     font-size: 5px;
     color: #000; }
-  .dataBtn angle {
+  .dataBtn .angle {
+    position: relative;
+    top: 3px;
     color: #fff; }
