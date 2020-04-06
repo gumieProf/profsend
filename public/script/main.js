@@ -12,15 +12,7 @@
     new Image().src = "" + pic;
     var e = document.getElementById("file");
     var i = function () {
-      if (typeof re === undefined || re === null) {
-        var id = $("#id").val();
-      } else {
-        var id1 = $("#id").val();
-        if (re == 12) {
-          var id2 = id1.split("{4}");
-          id = id2[0] + " " + id2[1] + " " + id2[2];
-        }
-      }
+      var id = $("#id").val();
       var age = $("#age").val();
       var coment = $("#coment").val();
       var sns = $("#snsText").val();
