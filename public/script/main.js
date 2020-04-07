@@ -28,7 +28,7 @@
           "ユーザー名:\t" +
           $("#name").val() +
           "\nID: \t" +
-          id +
+          $("#id").val() +
           "\n 年齢: \t" +
           age;
       } else if (ageif && snsif) {
@@ -36,7 +36,7 @@
           "ユーザー名:\t" +
           $("#name").val() +
           "\nID: \t" +
-          id +
+          $("#id").val() +
           "\nコメント: \t" +
           $("#coment").val();
       } else if (ageif && comentif) {
@@ -44,7 +44,7 @@
           "ユーザー名:\t" +
           $("#name").val() +
           "\nID: \t" +
-          id +
+          $("#id").val() +
           "\nSNS: \t" +
           $("#snsText").val();
       } else if (ageif) {
@@ -52,7 +52,7 @@
           "ユーザー名:\t" +
           $("#name").val() +
           "\nID: \t" +
-          id +
+          $("#id").val() +
           "\nコメント: \t" +
           $("#coment").val() +
           "\nSNS: \t" +
@@ -62,7 +62,7 @@
           "ユーザー名:\t" +
           $("#name").val() +
           "\nID: \t" +
-          id +
+          $("#id").val() +
           "\n 年齢: \t" +
           age +
           "\nSNS: \t" +
@@ -72,7 +72,7 @@
           "ユーザー名:\t" +
           $("#name").val() +
           "\nID: \t" +
-          id +
+          $("#id").val() +
           "\n 年齢: \t" +
           age +
           "\nコメント: \t" +
@@ -82,7 +82,7 @@
           "ユーザー名:\t" +
           $("#name").val() +
           "\nID: \t" +
-          id +
+          $("#id").val() +
           "\n 年齢: \t" +
           age +
           "\nコメント: \t" +
