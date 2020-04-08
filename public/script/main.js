@@ -6,12 +6,15 @@
     var data3hide = 0;
     $(".delete1").click(function () {
       $("#name").val("");
+      i();
     });
     $(".delete1").click(function () {
       $("#id").val("");
+      i();
     });
     $(".delete1").click(function () {
       $("#coment").val("");
+      i();
     });
 
     $("#data1Btn").click(function () {
