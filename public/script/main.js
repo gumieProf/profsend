@@ -164,7 +164,7 @@
 
         m.fillText(line, x + 0, y + addY);
         var a = new Image();
-        (a.src = "" + pic), m.drawImage(a, 250, 70, 100, 100);
+        (a.src = "" + pic), m.drawImage(a, 3500, 100, 50, 50);
       }
     };
     window.i = i;
