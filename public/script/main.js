@@ -1,5 +1,18 @@
 ﻿export default function main() {
   $(function () {
+    $(function () {
+      $("#data1, #data2, #data3").hide();
+    });
+    $("#data1Btn").click(function () {
+      $("#data1").fadeIn(100);
+    });
+    $("#data2Btn").click(function () {
+      $("#data2").fadeIn(100);
+    });
+    $("#data3Btn").click(function () {
+      $("#data3").fadeIn(100);
+    });
+
     var o = 35,
       c = 1,
       r = 30,
