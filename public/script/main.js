@@ -171,6 +171,9 @@
     $("#colors").change(function () {
       (color = $(this).val()), i();
     }),
+      $("#textColor").change(function () {
+        (text = $(this).val()), i();
+      }),
       $("#idset").click(function () {
         var idtypeVal = $("#idtype").val();
         $("#idtext").html(

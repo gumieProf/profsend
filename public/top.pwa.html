@@ -197,11 +197,6 @@
       </div>
       <br />
       <div id="data3" class="datas">
-        <br />
-
-        <input type="file" name="file" id="file" />
-
-        <br />
         <div class="input-field col s12">
           <select id="idtype">
             <option value="25" selected>ゲーム未設定</option>
@@ -212,11 +207,31 @@
           <label> ゲームタイトル</label>
         </div>
 
-        <br />
-
         <a class="waves-effect waves-light btn" id="idset">桁数決定</a>
 
         <h5><div id="idleng">現在のid桁数は25です。</div></h5>
+
+        <div class="input-field col s12">
+          <select id="colors">
+            <option value="#999" selected>グレー</option>
+            <option value="#ff0000">レッド</option>
+            <option value="#0010bf">ブルー</option>
+            <option value="#f8fc5e">イエロー</option>
+            <option value="#04b700">グリーン</option>
+            <option value="#e719e4">パープル</option>
+          </select>
+          <label>背景の色</label>
+        </div>
+
+        <div class="input-field col s12">
+          <select id="textColor">
+            <option value="#000" selected>ブラック</option>
+            <option value="#fff">ホワイト</option>
+            <option value="#888">グレー</option>
+          </select>
+          <label>背景の色</label>
+        </div>
+
         <a id="picdel" class="waves-effect waves-light btn" onclick="pic = '';"
           >エンブレムを非表示</a
         >
@@ -227,6 +242,8 @@
           onclick="pic = '/image/img-1.png';"
           >エンブレムをリセット</a
         >
+        <strong>エンブレム画像のアップロード</strong>
+        <input type="file" name="file" id="file" />
       </div>
       <a class="waves-effect waves-light btn" id="download"
         >プロフィールを保存</a
