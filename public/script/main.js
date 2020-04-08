@@ -152,7 +152,7 @@
       m.stroke();
       var fontSize = 24; // フォントサイズ
       var lineHeight = 1.1618; // 行の高さ (フォントサイズに対する倍率)
-      var x = 50; // 水平位置
+      var x = 30; // 水平位置
       var y = 30; // 垂直位置
       m.font = "bold " + o + "YuGothic";
       for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
@@ -164,10 +164,7 @@
 
         m.fillText(line, x + 0, y + addY);
         var a = new Image();
-        (a.src = "" + pic), m.drawImage(a, 200, 70, 100, 100);
-        var a = new Image();
-
-        (a.src = "" + pic), m.drawImage(a, 200, 70, 100, 100);
+        (a.src = "" + pic), m.drawImage(a, 250, 70, 100, 100);
       }
     };
     window.i = i;
