@@ -4,6 +4,16 @@
     var data1hide = 0;
     var data2hide = 0;
     var data3hide = 0;
+    $(".delete1").click(function () {
+      $("#name").val("");
+    });
+    $(".delete1").click(function () {
+      $("#id").val("");
+    });
+    $(".delete1").click(function () {
+      $("#coment").val("");
+    });
+
     $("#data1Btn").click(function () {
       $(".datas").hide();
 
