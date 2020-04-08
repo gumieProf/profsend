@@ -481,13 +481,15 @@ nof {
   display: block;
   height: 70px;
   width: 70%;
+  margin-top: 10px;
+  margin-bottom: 10px;
   background-color: #777;
   span {
     color: #fff;
-    font-size: 10px;
+    font-size: 35px;
   }
   p {
-    font-size: 5px;
+    font-size: 20px;
     color: #000;
   }
   .angle {
