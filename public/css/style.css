@@ -274,7 +274,10 @@ nof {
     font-size: 10px;
     color: #000; }
   .dataBtn .angle {
-    color: #fff; }
+    color: #fff;
+    position: relative;
+    bottom: 30px;
+    left: 40%; }
 
 .dataBtns {
   margin: auto; }
