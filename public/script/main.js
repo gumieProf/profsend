@@ -5,6 +5,8 @@
     var data2hide = 0;
     var data3hide = 0;
     $("#data1Btn").click(function () {
+      $(".datas").hide();
+
       if (data1hide === 1) {
         $("#data1").hide();
         data1hide = 0;
@@ -14,6 +16,8 @@
       }
     });
     $("#data2Btn").click(function () {
+      $(".datas").hide();
+
       if (data2hide === 1) {
         $("#data2").hide();
         data2hide = 0;
@@ -23,6 +27,8 @@
       }
     });
     $("#data3Btn").click(function () {
+      $(".datas").hide();
+
       if (data3hide === 1) {
         $("#data3").hide();
         data3hide = 0;

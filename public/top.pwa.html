@@ -113,26 +113,20 @@
           <canvas id="prof" width="400" height="200"></canvas>
         </div>
         <div><img id="newImg" /></div>
-        <a href="#"
-          ><div class="dataBtn" id="data1Btn">
-            <span>基本情報</span>
-            <p>ID、ユーザー名</p>
-          </div>
-        </a>
+        <div class="dataBtn" id="data1Btn">
+          <a href="#"><span>基本情報</span> </a>
+          <p>ID、ユーザー名</p>
+        </div>
 
-        <a href="#"
-          ><div class="dataBtn" id="data2Btn">
-            <span>その他情報</span>
-            <p>コメント、SNS情報</p>
-          </div>
-        </a>
+        <div class="dataBtn" id="data2Btn">
+          <a href="#"> <span>その他情報</span> </a>
+          <p>コメント、SNS情報</p>
+        </div>
 
-        <a href="#"
-          ><div class="dataBtn" id="data3Btn">
-            <span>デザイン</span>
-            <p>テキスト・背景の色・画像の変更・非表示</p>
-          </div>
-        </a>
+        <div class="dataBtn" id="data3Btn">
+          <a href="#"> <span>デザイン</span> </a>
+          <p>テキスト・背景の色・画像の変更・非表示</p>
+        </div>
 
         <br />
         <div id="data1" class="datas">
@@ -159,6 +153,9 @@
                 placeholder=""
               />
               <label for="id">ID：</label>
+
+              <input type="text" id="id-leng" readonly />
+              <label for="genzainomojisuB">現在の文字数</label>
             </div>
           </div>
         </div>
@@ -167,9 +164,6 @@
       <div id="data2" class="datas">
         <div class="input-field col s12">
           <br />
-
-          <input type="text" id="id-leng" readonly />
-          <label for="genzainomojisuB">現在の文字数</label>
         </div>
         <div class="input-field col s12">
           <br />
