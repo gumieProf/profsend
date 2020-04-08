@@ -1,7 +1,7 @@
 ﻿export default function main() {
   $(function () {
     $(function () {
-      $("#data1, #data2, #data3").hide();
+      $(".datas").hide();
     });
     $("#data1Btn").click(function () {
       $("#data1").fadeIn(100);
