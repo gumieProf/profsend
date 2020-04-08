@@ -1,16 +1,35 @@
 ﻿export default function main() {
   $(function () {
-    $(function () {
-      $(".datas").hide();
-    });
+    $(".datas").hide();
+    var data1hide = 0;
+    var data2hide = 0;
+    var data3hide = 0;
     $("#data1Btn").click(function () {
-      $("#data1").fadeIn(100);
+      if (data1hide === 1) {
+        $("#data1").hide();
+        data1hide = 0;
+      } else {
+        $("#data1").fadeIn();
+        data1hide = 1;
+      }
     });
     $("#data2Btn").click(function () {
-      $("#data2").fadeIn(100);
+      if (data2hide === 1) {
+        $("#data2").hide();
+        data2hide = 0;
+      } else {
+        $("#data2").fadeIn();
+        data2hide = 1;
+      }
     });
     $("#data3Btn").click(function () {
-      $("#data3").fadeIn(100);
+      if (data3hide === 1) {
+        $("#data3").hide();
+        data3hide = 0;
+      } else {
+        $("#data3").fadeIn();
+        data3hide = 1;
+      }
     });
 
     var o = 35,
