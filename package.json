@@ -18,7 +18,8 @@
   "homepage": "https://gutsmine.myportfolio.com",
   "dependencies": {
     "animate.css": "^3.7.2",
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "js-cookie": "^2.2.1"
   },
   "devDependencies": {
     "webpack": "^4.41.5",
