@@ -78,40 +78,43 @@
       ) {
         var id = Cookie.get("id");
         Cookies.remove("id");
-        Cookie.set("id", id2);
       }
+      Cookie.set("id", id2);
+
       if (
         Cookies.get("name") === null ||
         typeof Cookies.get("name") === undefined
       ) {
         var id = Cookie.get("name");
         Cookies.remove("name");
-        Cookie.set("name", name2);
       }
+      Cookie.set("name", name2);
+
       if (
         Cookies.get("age") === null ||
         typeof Cookies.get("age") === undefined
       ) {
         var id = Cookie.get("age");
         Cookies.remove("age");
-        Cookie.set("age", age2);
       }
+      Cookie.set("age", age2);
+
       if (
         Cookies.get("coment") === null ||
         typeof Cookies.get("coment") === undefined
       ) {
         var id = Cookie.get("coment");
         Cookies.remove("coment");
-        Cookie.set("coment", coment2);
       }
+      Cookie.set("coment", coment2);
       if (
         Cookies.get("sns") === null ||
         typeof Cookies.get("sns") === undefined
       ) {
         var id = Cookie.get("sns");
         Cookies.remove("sns");
-        Cookie.set("sns", sns2);
       }
+      Cookie.set("sns", sns2);
 
       var comentif =
         coment == null || typeof coment == "undefined" || coment == "";
