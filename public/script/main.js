@@ -1,5 +1,5 @@
 ﻿export default function main() {
-  var Cookie = require("js-cookie");
+  var Cookies = require("js-cookie");
   $(function () {
     $(".datas").hide();
     var data1hide = 0;
@@ -76,45 +76,45 @@
         Cookies.get("id") === null ||
         typeof Cookies.get("id") === undefined
       ) {
-        var id = Cookie.get("id");
+        var id = Cookies.get("id");
         Cookies.remove("id");
       }
-      Cookie.set("id", id2);
+      Cookies.set("id", id2);
 
       if (
         Cookies.get("name") === null ||
         typeof Cookies.get("name") === undefined
       ) {
-        var id = Cookie.get("name");
+        var id = Cookies.get("name");
         Cookies.remove("name");
       }
-      Cookie.set("name", name2);
+      Cookies.set("name", name2);
 
       if (
         Cookies.get("age") === null ||
         typeof Cookies.get("age") === undefined
       ) {
-        var id = Cookie.get("age");
+        var id = Cookies.get("age");
         Cookies.remove("age");
       }
-      Cookie.set("age", age2);
+      Cookies.set("age", age2);
 
       if (
         Cookies.get("coment") === null ||
         typeof Cookies.get("coment") === undefined
       ) {
-        var id = Cookie.get("coment");
+        var id = Cookies.get("coment");
         Cookies.remove("coment");
       }
-      Cookie.set("coment", coment2);
+      Cookies.set("coment", coment2);
       if (
         Cookies.get("sns") === null ||
         typeof Cookies.get("sns") === undefined
       ) {
-        var id = Cookie.get("sns");
+        var id = Cookies.get("sns");
         Cookies.remove("sns");
       }
-      Cookie.set("sns", sns2);
+      Cookies.set("sns", sns2);
 
       var comentif =
         coment == null || typeof coment == "undefined" || coment == "";
