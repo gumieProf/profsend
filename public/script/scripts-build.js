@@ -1,0 +1,137 @@
+﻿/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./public/script/app.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./public/script/app.js":
+/*!******************************!*\
+  !*** ./public/script/app.js ***!
+  \******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main */ \"./public/script/main.js\");\n/* harmony import */ var _sub__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sub */ \"./public/script/sub.js\");\n/* harmony import */ var _download__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./download */ \"./public/script/download.js\");\n\n\n\n\nObject(_main__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\nObject(_sub__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\nObject(_download__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n\n\n//# sourceURL=webpack:///./public/script/app.js?");
+
+/***/ }),
+
+/***/ "./public/script/download.js":
+/*!***********************************!*\
+  !*** ./public/script/download.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return download; });\nfunction download() {\n  $(function() {\n    $(\"#download\").click(function() {\n      var name = $(\"#name\").val();\n      var id = $(\"#id\").val();\n      $(\"#name, #id, #age, #coment\").on(\"keyup\", function() {\n        var name = $(\"#name\").val();\n        var id = $(\"#id\").val();\n      });\n\n      if (name == null || (name == \"\" && id == null) || id == \"\") {\n        alert(\"名前とIDが抜けています。\");\n      } else if (name == null || name == \"\" || id == null || name == \"\") {\n        alert(\"名前とIDのいずれかが抜けています。\");\n      } else {\n        let canvas = document.getElementById(\"prof\");\n\n        let link = document.createElement(\"a\");\n        link.href = canvas.toDataURL(\"image/png\");\n        link.download = \"prof.png\";\n        link.click();\n      }\n    });\n  });\n}\n\n\n//# sourceURL=webpack:///./public/script/download.js?");
+
+/***/ }),
+
+/***/ "./public/script/main.js":
+/*!*******************************!*\
+  !*** ./public/script/main.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return main; });\n﻿function main() {\n  $(function () {\n    $(\".datas\").hide();\n    var data1hide = 0;\n    var data2hide = 0;\n    var data3hide = 0;\n    $(\".delete1\").click(function () {\n      $(\"#name\").val(\"\");\n      i();\n    });\n    $(\".delete1\").click(function () {\n      $(\"#id\").val(\"\");\n      i();\n    });\n    $(\".delete1\").click(function () {\n      $(\"#coment\").val(\"\");\n      i();\n    });\n\n    $(\"#data1Btn\").click(function () {\n      $(\".datas\").hide();\n\n      if (data1hide === 1) {\n        $(\"#data1\").hide();\n        data1hide = 0;\n      } else {\n        $(\"#data1\").fadeIn();\n        data1hide = 1;\n      }\n    });\n    $(\"#data2Btn\").click(function () {\n      $(\".datas\").hide();\n\n      if (data2hide === 1) {\n        $(\"#data2\").hide();\n        data2hide = 0;\n      } else {\n        $(\"#data2\").fadeIn();\n        data2hide = 1;\n      }\n    });\n    $(\"#data3Btn\").click(function () {\n      $(\".datas\").hide();\n\n      if (data3hide === 1) {\n        $(\"#data3\").hide();\n        data3hide = 0;\n      } else {\n        $(\"#data3\").fadeIn();\n        data3hide = 1;\n      }\n    });\n\n    var o = 35,\n      c = 1,\n      r = 30,\n      u = 30,\n      x,\n      re,\n      y;\n    var prof = document.getElementById(\"prof\");\n    var m = prof.getContext(\"2d\");\n    new Image().src = \"\" + pic;\n    var e = document.getElementById(\"file\");\n    var i = function () {\n      var id = $(\"#id\").val();\n      var age = $(\"#age\").val();\n      var coment = $(\"#coment\").val();\n      var sns = $(\"#snsText\").val();\n      var id2 = id;\n      var age2 = age;\n      var coment2 = coment;\n      var sns2 = sns;\n      if (\n        Cookies.get(\"id\") === null ||\n        typeof Cookies.get(\"id\") === undefined\n      ) {\n        var id = Cookies.get(\"id\");\n        Cookies.remove(\"id\");\n      }\n      Cookies.set(\"id\", id2);\n\n      if (\n        Cookies.get(\"name\") === null ||\n        typeof Cookies.get(\"name\") === undefined\n      ) {\n        var id = Cookies.get(\"name\");\n        Cookies.remove(\"name\");\n      }\n      Cookies.set(\"name\", name2);\n\n      if (\n        Cookies.get(\"age\") === null ||\n        typeof Cookies.get(\"age\") === undefined\n      ) {\n        var id = Cookies.get(\"age\");\n        Cookies.remove(\"age\");\n      }\n      Cookies.set(\"age\", age2);\n\n      if (\n        Cookies.get(\"coment\") === null ||\n        typeof Cookies.get(\"coment\") === undefined\n      ) {\n        var id = Cookies.get(\"coment\");\n        Cookies.remove(\"coment\");\n      }\n      Cookies.set(\"coment\", coment2);\n      if (\n        Cookies.get(\"sns\") === null ||\n        typeof Cookies.get(\"sns\") === undefined\n      ) {\n        var id = Cookies.get(\"sns\");\n        Cookies.remove(\"sns\");\n      }\n      Cookies.set(\"sns\", sns2);\n\n      var comentif =\n        coment == null || typeof coment == \"undefined\" || coment == \"\";\n      var snsif = sns == null || typeof sns == \"undefined\" || sns == \"\";\n      var ageif = age == null || typeof age == \"undefined\" || age == \"\";\n\n      if (comentif && snsif && ageif) {\n        var e = \"ユーザー名:\\t\" + $(\"#name\").val() + \"\\nID: \\t\" + id;\n      } else if (comentif && snsif) {\n        var e =\n          \"ユーザー名:\\t\" +\n          $(\"#name\").val() +\n          \"\\nID: \\t\" +\n          $(\"#id\").val() +\n          \"\\n 年齢: \\t\" +\n          age;\n      } else if (ageif && snsif) {\n        var e =\n          \"ユーザー名:\\t\" +\n          $(\"#name\").val() +\n          \"\\nID: \\t\" +\n          $(\"#id\").val() +\n          \"\\nコメント: \\t\" +\n          $(\"#coment\").val();\n      } else if (ageif && comentif) {\n        var e =\n          \"ユーザー名:\\t\" +\n          $(\"#name\").val() +\n          \"\\nID: \\t\" +\n          $(\"#id\").val() +\n          \"\\nSNS: \\t\" +\n          $(\"#snsText\").val();\n      } else if (ageif) {\n        var e =\n          \"ユーザー名:\\t\" +\n          $(\"#name\").val() +\n          \"\\nID: \\t\" +\n          $(\"#id\").val() +\n          \"\\nコメント: \\t\" +\n          $(\"#coment\").val() +\n          \"\\nSNS: \\t\" +\n          $(\"#snsText\").val();\n      } else if (comentif) {\n        var e =\n          \"ユーザー名:\\t\" +\n          $(\"#name\").val() +\n          \"\\nID: \\t\" +\n          $(\"#id\").val() +\n          \"\\n 年齢: \\t\" +\n          age +\n          \"\\nSNS: \\t\" +\n          $(\"#snsText\").val();\n      } else if (snsif) {\n        var e =\n          \"ユーザー名:\\t\" +\n          $(\"#name\").val() +\n          \"\\nID: \\t\" +\n          $(\"#id\").val() +\n          \"\\n 年齢: \\t\" +\n          age +\n          \"\\nコメント: \\t\" +\n          $(\"#coment\").val();\n      } else {\n        var e =\n          \"ユーザー名:\\t\" +\n          $(\"#name\").val() +\n          \"\\nID: \\t\" +\n          $(\"#id\").val() +\n          \"\\n 年齢: \\t\" +\n          age +\n          \"\\nコメント: \\t\" +\n          $(\"#coment\").val() +\n          \"\\nSNS: \\t\" +\n          $(\"#snsText\").val();\n      }\n\n      m.clearRect(0, 0, 500, 300);\n      m.beginPath();\n      m.fillStyle = \"\" + color;\n      m.fillRect(0, 0, 500, 300);\n      m.fillStyle = \"\" + text;\n      m.rect(15, 15, 370, 170);\n      m.lineWidth = 8;\n      m.stroke();\n      var fontSize = 24; // フォントサイズ\n      var lineHeight = 1.1618; // 行の高さ (フォントサイズに対する倍率)\n      var x = 30; // 水平位置\n      var y = 30; // 垂直位置\n      m.font = \"bold \" + o + \"YuGothic\";\n      for (var lines = e.split(\"\\n\"), i = 0, l = lines.length; l > i; i++) {\n        var line = lines[i];\n        var addY = fontSize;\n\n        // 2行目以降の水平位置は行数とlineHeightを考慮する\n        if (i) addY += fontSize * lineHeight * i;\n\n        m.fillText(line, x + 0, y + addY);\n        var a = new Image();\n        (a.src = \"\" + pic), m.drawImage(a, 320, 130, 50, 50);\n      }\n    };\n    window.i = i;\n    (m.fillStyle = \"\" + color),\n      m.fillRect(0, 0, 450, 300),\n      (m.fillStyle = \"\" + text),\n      m.rect(15, 15, 370, 170),\n      (m.lineWidth = 8),\n      m.stroke();\n    $(\"#name\").val(), $(\"#id\").val(), $(\"#age\").val(), $(\"#coment\").val();\n    $(\"#snsText\").val();\n    i(), $(\".profelem\").keyup(i);\n    $(\".profelem\").change(i);\n    $(\"#colors\").change(function () {\n      (color = $(this).val()), i();\n    }),\n      $(\"#textColor\").change(function () {\n        (text = $(this).val()), i();\n      }),\n      $(\"#idset\").click(function () {\n        var idtypeVal = $(\"#idtype\").val();\n        $(\"#idtext\").html(\n          '<span>ID：</span><input type=\"text\" name=\"formID\" id=\"id\" class=\"wrap\" maxlength=\"' +\n            idtypeVal +\n            '\"></input>'\n        );\n        re = idtypeVal;\n        i();\n        $(\"#idleng\").html(\"<h5>現在の桁数は\" + e + \"です</h5>\");\n      }),\n      e.addEventListener(\"change\", function (e) {\n        var t = e.target.files[0];\n        if (t.type.match(\"image.*\")) {\n          var n = new FileReader();\n          (n.onload = function () {\n            (pic = n.result), i();\n          }),\n            n.readAsDataURL(t);\n        } else alert(\"画像を選択してください\");\n      });\n  });\n}\n\n\n//# sourceURL=webpack:///./public/script/main.js?");
+
+/***/ }),
+
+/***/ "./public/script/sub.js":
+/*!******************************!*\
+  !*** ./public/script/sub.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return sub; });\nfunction sub() {\n  $(function() {\n    $(\"#snsDataBtn\").click(function() {\n      var div = $(\"#snsData\");\n      var elems =\n        '<div class=\"input-field col s12\">' +\n        '<input type=\"text\" name=\"formSNS\" id=\"snsText\" class=\"profelem\"  maxlength=\"25\" placeholder=\"\">' +\n        '<label for=\"snsText\">SNS情報：</label>' +\n        \"</div>\";\n      if (document.getElementById(\"snsText\") != null) {\n        div.empty();\n      } else {\n        div.html(elems);\n      }\n      $(document).on(\"keyup\", \"#snsText\", i);\n      $(document).on(\"change\", \"#snsText\", i);\n    });\n  });\n}\n\n\n//# sourceURL=webpack:///./public/script/sub.js?");
+
+/***/ })
+
+/******/ });
