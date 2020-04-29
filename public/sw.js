@@ -21,22 +21,32 @@ var urlsToCache = [
   "css/all.min.css",
   "script/materialize.js",
   "css/materialize.css",
-  "script/bundle.js"
+  "script/bundle.js",
+  "font/NotoSerifJP-Medium-Canv.otf",
+  "image/icon-128.png",
+  "image/icon-144.png",
+  "image/icon-192.png",
+  "image/icon-384.png",
+  "image/icon-512.png",
+  "image/icon-72.png",
+  "image/icon-96.png",
 ];
 
-self.addEventListener("install", function(event) {
+self.addEventListener("install", function (event) {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
+    caches.open(CACHE_NAME).then(function (cache) {
       return cache.addAll(
-        urlsToCache.map(url => new Request(url, { credentials: "same-origin" }))
+        urlsToCache.map(
+          (url) => new Request(url, { credentials: "same-origin" })
+        )
       );
     })
   );
 });
 
-self.addEventListener("fetch", function(event) {
+self.addEventListener("fetch", function (event) {
   event.respondWith(
-    caches.match(event.request).then(function(response) {
+    caches.match(event.request).then(function (response) {
       return response ? response : fetch(event.request);
     })
   );
