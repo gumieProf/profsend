@@ -1,4 +1,5 @@
 ﻿export default function main() {
+  var Cookies = require("js-cookie");
   $(function () {
     $(".datas").hide();
     var data1hide = 0;
