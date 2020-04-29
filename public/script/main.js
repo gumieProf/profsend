@@ -71,6 +71,7 @@
       var age2 = age;
       var coment2 = coment;
       var sns2 = sns;
+      var name2 = $("#name").val();
       if (
         Cookies.get("id") === null ||
         typeof Cookies.get("id") === undefined
