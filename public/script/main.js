@@ -67,11 +67,12 @@
       var age = $("#age").val();
       var coment = $("#coment").val();
       var sns = $("#snsText").val();
+      var name = $("#name").val();
       var id2 = id;
       var age2 = age;
       var coment2 = coment;
       var sns2 = sns;
-      var name2 = $("#name").val();
+      var name2 = name;
       if (
         Cookies.get("id") === null ||
         typeof Cookies.get("id") === undefined
@@ -122,73 +123,56 @@
       var ageif = age == null || typeof age == "undefined" || age == "";
 
       if (comentif && snsif && ageif) {
-        var e = "ユーザー名:\t" + $("#name").val() + "\nID: \t" + id;
+        var e = "ユーザー名:\t" + name + "\nID: \t" + id;
       } else if (comentif && snsif) {
-        var e =
-          "ユーザー名:\t" +
-          $("#name").val() +
-          "\nID: \t" +
-          $("#id").val() +
-          "\n 年齢: \t" +
-          age;
+        var e = "ユーザー名:\t" + name + "\nID: \t" + id + "\n 年齢: \t" + age;
       } else if (ageif && snsif) {
         var e =
-          "ユーザー名:\t" +
-          $("#name").val() +
-          "\nID: \t" +
-          $("#id").val() +
-          "\nコメント: \t" +
-          $("#coment").val();
+          "ユーザー名:\t" + name + "\nID: \t" + id + "\nコメント: \t" + age;
       } else if (ageif && comentif) {
-        var e =
-          "ユーザー名:\t" +
-          $("#name").val() +
-          "\nID: \t" +
-          $("#id").val() +
-          "\nSNS: \t" +
-          $("#snsText").val();
+        var e = "ユーザー名:\t" + name + "\nID: \t" + id + "\nSNS: \t" + sns;
       } else if (ageif) {
         var e =
           "ユーザー名:\t" +
-          $("#name").val() +
+          name +
           "\nID: \t" +
-          $("#id").val() +
+          id +
           "\nコメント: \t" +
-          $("#coment").val() +
+          coment +
           "\nSNS: \t" +
-          $("#snsText").val();
+          sns;
       } else if (comentif) {
         var e =
           "ユーザー名:\t" +
-          $("#name").val() +
+          name +
           "\nID: \t" +
-          $("#id").val() +
+          id +
           "\n 年齢: \t" +
           age +
           "\nSNS: \t" +
-          $("#snsText").val();
+          sns;
       } else if (snsif) {
         var e =
           "ユーザー名:\t" +
-          $("#name").val() +
+          name +
           "\nID: \t" +
-          $("#id").val() +
+          id +
           "\n 年齢: \t" +
           age +
           "\nコメント: \t" +
-          $("#coment").val();
+          coment;
       } else {
         var e =
           "ユーザー名:\t" +
-          $("#name").val() +
+          name +
           "\nID: \t" +
-          $("#id").val() +
+          id +
           "\n 年齢: \t" +
           age +
           "\nコメント: \t" +
-          $("#coment").val() +
+          coment +
           "\nSNS: \t" +
-          $("#snsText").val();
+          sns;
       }
 
       m.clearRect(0, 0, 500, 300);
