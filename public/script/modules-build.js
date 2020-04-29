@@ -115,7 +115,7 @@ eval("var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n * 
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("$ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\r\nCookies = __webpack_require__(/*! js-cookie */ \"./node_modules/js-cookie/src/js.cookie.js\");\r\n\n\n//# sourceURL=webpack:///./public/script/modules.js?");
+eval("window.$ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\r\nwindow.Cookies = __webpack_require__(/*! js-cookie */ \"./node_modules/js-cookie/src/js.cookie.js\");\r\n\n\n//# sourceURL=webpack:///./public/script/modules.js?");
 
 /***/ })
 

@@ -430,4 +430,8 @@ nof .link {
   bottom: 30px;
   left: 40%;
 }
+
+.download {
+  float: right;
+}
 /*# sourceMappingURL=style.css.map */
