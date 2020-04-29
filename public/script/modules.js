@@ -1,2 +1,2 @@
 window.$ = require("jquery");
-window.Cookies = require("js-cookie");
+window.Cookies = require("jquery.cookie");

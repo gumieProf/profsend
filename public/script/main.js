@@ -73,49 +73,37 @@
       var coment2 = coment;
       var sns2 = sns;
       var name2 = name;
-      if (
-        Cookies.get("id") === null ||
-        typeof Cookies.get("id") === undefined
-      ) {
-        var id = Cookies.get("id");
-        Cookies.remove("id");
+      if ($.cookie("id") === null || typeof $.cookie("id") === undefined) {
+        var id = $.cookie("id");
+        $.remove("id");
       }
-      Cookies.set("id", id2);
+      $.cookie("id", id2);
+
+      if ($.cookie("name") === null || typeof $.cookie("name") === undefined) {
+        var id = $.cookie("name");
+        $.remove("name");
+      }
+      $.cookie("name", name2);
+
+      if ($.cookie("age") === null || typeof $.cookie("age") === undefined) {
+        var id = $.cookie("age");
+        $.remove("age");
+      }
+      $.cookie("age", age2);
 
       if (
-        Cookies.get("name") === null ||
-        typeof Cookies.get("name") === undefined
+        $.cookie("coment") === null ||
+        typeof $.cookie("coment") === undefined
       ) {
-        var id = Cookies.get("name");
-        Cookies.remove("name");
+        var id = $.cookie("coment");
+        $.remove("coment");
       }
-      Cookies.set("name", name2);
-
-      if (
-        Cookies.get("age") === null ||
-        typeof Cookies.get("age") === undefined
-      ) {
-        var id = Cookies.get("age");
-        Cookies.remove("age");
+      $.cookie("coment", coment2);
+      if ($.cookie("sns") === null || typeof $.cookie("sns") === undefined) {
+        var id = $.cookie("sns");
+        $.remove("sns");
       }
-      Cookies.set("age", age2);
-
-      if (
-        Cookies.get("coment") === null ||
-        typeof Cookies.get("coment") === undefined
-      ) {
-        var id = Cookies.get("coment");
-        Cookies.remove("coment");
-      }
-      Cookies.set("coment", coment2);
-      if (
-        Cookies.get("sns") === null ||
-        typeof Cookies.get("sns") === undefined
-      ) {
-        var id = Cookies.get("sns");
-        Cookies.remove("sns");
-      }
-      Cookies.set("sns", sns2);
+      $.cookie("sns", sns2);
 
       var comentif =
         coment == null || typeof coment == "undefined" || coment == "";
