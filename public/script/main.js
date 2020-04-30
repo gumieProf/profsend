@@ -226,7 +226,7 @@
             '"></input>'
         );
         i();
-        $("#idleng").html("<h5>現在の桁数は" + e + "です</h5>");
+        $("#idleng").html("<h5>現在の桁数は" + idtypeVal + "です</h5>");
       }),
       e.addEventListener("change", function (e) {
         var t = e.target.files[0];

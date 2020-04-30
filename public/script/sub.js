@@ -6,7 +6,7 @@ export default function sub() {
       '<input type="text" name="formSNS" id="snsText" class="profelem"  maxlength="25" placeholder="">' +
       '<label for="snsText">SNS情報：</label>' +
       "</div>";
-    div.html(elem);
+    div.html(elems);
     div.hide();
     $(document).on("keyup", "#snsText", i);
     $(document).on("change", "#snsText", i);
