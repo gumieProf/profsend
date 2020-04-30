@@ -87,7 +87,7 @@
 
       if ($.cookie("age")) {
         var age = $.cookie("age");
-        $("age"), val(age);
+        $("age").val(age);
       }
       $.cookie("age", age2);
 
