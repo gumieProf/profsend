@@ -219,13 +219,12 @@
         (text = $(this).val()), i();
       }),
       $("#idset").click(function () {
-        var idtypeVal = $("#idtype").val();
+        var idtypeVal = Number($("#idtype").val());
         $("#idtext").html(
           '<span>ID：</span><input type="text" name="formID" id="id" class="wrap" maxlength="' +
             idtypeVal +
             '"></input>'
         );
-        re = idtypeVal;
         i();
         $("#idleng").html("<h5>現在の桁数は" + e + "です</h5>");
       }),
