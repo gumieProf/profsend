@@ -1,5 +1,44 @@
 ﻿export default function main() {
   $(function () {
+    var id = $("#id").val();
+    var age = $("#age").val();
+    var coment = $("#coment").val();
+    var sns = $("#snsText").val();
+    var name = $("#name").val();
+    var id2 = id;
+    var age2 = age;
+    var coment2 = coment;
+    var sns2 = sns;
+    var name2 = name;
+    if ($.cookie("id")) {
+      var id = $.cookie("id");
+      $("#id").val(id);
+    }
+    $.cookie("id", id2);
+
+    if ($.cookie("name")) {
+      var name = $.cookie("name");
+      $("#name").val(name);
+    }
+    $.cookie("name", name2);
+
+    if ($.cookie("age")) {
+      var age = $.cookie("age");
+      $("#age").val(age);
+    }
+    $.cookie("age", age2);
+
+    if ($.cookie("coment")) {
+      var coment = $.cookie("coment");
+      $("#coment").val(coment);
+    }
+    $.cookie("coment", coment2);
+    if ($.cookie("sns")) {
+      var sns = $.cookie("sns");
+      $("#sns").val(sns);
+    }
+    $.cookie("sns", sns2);
+
     $(".datas").hide();
     var data1hide = 0;
     var data2hide = 0;
@@ -73,33 +112,10 @@
       var coment2 = coment;
       var sns2 = sns;
       var name2 = name;
-      if ($.cookie("id")) {
-        var id = $.cookie("id");
-        $("#id").val(id);
-      }
       $.cookie("id", id2);
-
-      if ($.cookie("name")) {
-        var name = $.cookie("name");
-        $("#name").val(name);
-      }
       $.cookie("name", name2);
-
-      if ($.cookie("age")) {
-        var age = $.cookie("age");
-        $("#age").val(age);
-      }
       $.cookie("age", age2);
-
-      if ($.cookie("coment")) {
-        var coment = $.cookie("coment");
-        $("#coment").val(coment);
-      }
       $.cookie("coment", coment2);
-      if ($.cookie("sns")) {
-        var sns = $.cookie("sns");
-        $("#sns").val(sns);
-      }
       $.cookie("sns", sns2);
 
       var comentif =
