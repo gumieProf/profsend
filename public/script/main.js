@@ -47,11 +47,11 @@
       $("#name").val("");
       i();
     });
-    $(".delete1").click(function () {
+    $(".delete2").click(function () {
       $("#id").val("");
       i();
     });
-    $(".delete1").click(function () {
+    $(".delete3").click(function () {
       $("#coment").val("");
       i();
     });
