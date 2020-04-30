@@ -219,11 +219,14 @@
         (text = $(this).val()), i();
       }),
       $("#idset").click(function () {
+        var idvalue = $("#id").val();
         var idtypeVal = Number($("#idtype").val());
         $("#idtext").html(
-          '<label>ID：</label><input type="text" name="formID" id="id" class="wrap" maxlength="' +
+          '<input type="text" name="formID" id="id" class="wrap" maxlength="' +
             idtypeVal +
-            '"></input>'
+            '">' +
+            idvalue +
+            "</input><label for='id'>ID：</label>"
         );
         i();
         $("#idleng").html("<h5>現在の桁数は" + idtypeVal + "です</h5>");
