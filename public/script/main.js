@@ -79,21 +79,21 @@
       $.cookie("id", id2);
 
       if ($.cookie("name")) {
-        var id = $.cookie("name");
+        var name = $.cookie("name");
       }
       $.cookie("name", name2);
 
       if ($.cookie("age")) {
-        var id = $.cookie("age");
+        var age = $.cookie("age");
       }
       $.cookie("age", age2);
 
       if ($.cookie("coment")) {
-        var id = $.cookie("coment");
+        var coment = $.cookie("coment");
       }
       $.cookie("coment", coment2);
       if ($.cookie("sns")) {
-        var id = $.cookie("sns");
+        var sns = $.cookie("sns");
       }
       $.cookie("sns", sns2);
 
