@@ -75,30 +75,25 @@
       var name2 = name;
       if ($.cookie("id")) {
         var id = $.cookie("id");
-        $.remove("id");
       }
       $.cookie("id", id2);
 
       if ($.cookie("name")) {
         var id = $.cookie("name");
-        $.remove("name");
       }
       $.cookie("name", name2);
 
       if ($.cookie("age")) {
         var id = $.cookie("age");
-        $.remove("age");
       }
       $.cookie("age", age2);
 
       if ($.cookie("coment")) {
         var id = $.cookie("coment");
-        $.remove("coment");
       }
       $.cookie("coment", coment2);
       if ($.cookie("sns")) {
         var id = $.cookie("sns");
-        $.remove("sns");
       }
       $.cookie("sns", sns2);
 
