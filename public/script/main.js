@@ -73,33 +73,30 @@
       var coment2 = coment;
       var sns2 = sns;
       var name2 = name;
-      if ($.cookie("id") === null || typeof $.cookie("id") === undefined) {
+      if ($.cookie("id")) {
         var id = $.cookie("id");
         $.remove("id");
       }
       $.cookie("id", id2);
 
-      if ($.cookie("name") === null || typeof $.cookie("name") === undefined) {
+      if ($.cookie("name")) {
         var id = $.cookie("name");
         $.remove("name");
       }
       $.cookie("name", name2);
 
-      if ($.cookie("age") === null || typeof $.cookie("age") === undefined) {
+      if ($.cookie("age")) {
         var id = $.cookie("age");
         $.remove("age");
       }
       $.cookie("age", age2);
 
-      if (
-        $.cookie("coment") === null ||
-        typeof $.cookie("coment") === undefined
-      ) {
+      if ($.cookie("coment")) {
         var id = $.cookie("coment");
         $.remove("coment");
       }
       $.cookie("coment", coment2);
-      if ($.cookie("sns") === null || typeof $.cookie("sns") === undefined) {
+      if ($.cookie("sns")) {
         var id = $.cookie("sns");
         $.remove("sns");
       }
