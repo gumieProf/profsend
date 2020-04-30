@@ -221,13 +221,13 @@
       $("#idset").click(function () {
         var idtypeVal = Number($("#idtype").val());
         $("#idtext").html(
-          '<input type="text" name="formID" id="id" class="wrap" maxlength="' +
+          '<label>ID：</label><input type="text" name="formID" id="id" class="wrap" maxlength="' +
             idtypeVal +
-            '"></input><label>ID：</label>'
+            '"></input>'
         );
         i();
         $("#idleng").html("<h5>現在の桁数は" + idtypeVal + "です</h5>");
-        $(document).on("click", "#id", i());
+        $(document).on("keyup", "#id", i());
       }),
       e.addEventListener("change", function (e) {
         var t = e.target.files[0];
