@@ -48,6 +48,8 @@
       }
     </script>
     <form name="edit" id="editlicense" action="">
+      <span style="font-family: 'ProfSend-sans';" class="canvRead">sans</span>
+      <span style="font-family: 'ProfSend-serif';" class="canvRead">serif</span>
       <div class="low">
         <br />
         <header>
@@ -247,7 +249,14 @@
             <option value="#fff">ホワイト</option>
             <option value="#888">グレー</option>
           </select>
-          <label>背景の色</label>
+          <label>テキストの色</label>
+        </div>
+        <div class="input-field col s12">
+          <select name="textType" id="textType" class="profelem">
+            <option value="serif">セルフ体</option>
+            <option value="sans" selected disabled>サンセルフ体</option>
+          </select>
+          <label>年齢</label>
         </div>
 
         <a id="picdel" class="waves-effect waves-light btn" onclick="pic = '';"

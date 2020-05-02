@@ -1,5 +1,6 @@
 ﻿export default function main() {
   $(function () {
+    $(".canvRead").hide();
     var id = $("#id").val();
     var age = $("#age").val();
     var coment = $("#coment").val();
@@ -10,6 +11,7 @@
     var coment2 = coment;
     var sns2 = sns;
     var name2 = name;
+    var textType;
     if ($.cookie("id")) {
       var id = $.cookie("id");
       $("#id").val(id);
@@ -38,6 +40,12 @@
       $("#sns").val(sns);
     }
     $.cookie("sns", sns2);
+
+    if ($.cookie("age")) {
+      var age = $.cookie("age");
+      $("#age").val(age);
+    }
+    $.cookie("age", age2);
 
     $(".datas").hide();
     var data1hide = 0;
@@ -107,16 +115,19 @@
       var coment = $("#coment").val();
       var sns = $("#snsText").val();
       var name = $("#name").val();
+      textType = $("#textType").val();
       var id2 = id;
       var age2 = age;
       var coment2 = coment;
       var sns2 = sns;
       var name2 = name;
+      var age2 = age;
       $.cookie("id", id2);
       $.cookie("name", name2);
       $.cookie("age", age2);
       $.cookie("coment", coment2);
       $.cookie("sns", sns2);
+      $.cookie("age", age2);
 
       var comentif =
         coment == null || typeof coment == "undefined" || coment == "";
@@ -188,7 +199,11 @@
       var lineHeight = 1.1618; // 行の高さ (フォントサイズに対する倍率)
       var x = 30; // 水平位置
       var y = 30; // 垂直位置
-      m.font = "bold " + o + "YuGothic";
+      if (textType === "serif") {
+        m.font = "ProfSend-serif";
+      } else if (textType === "sans") {
+        m.font = "ProfSend-sans";
+      }
       for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
         var line = lines[i];
         var addY = fontSize;
@@ -243,5 +258,11 @@
             n.readAsDataURL(t);
         } else alert("画像を選択してください");
       });
+    $("#cookieClear").click(function () {
+      $.removeCookie("name");
+      $.removeCookie("id");
+      $.removeCookie("coment");
+      $.removeCookie("sns");
+    });
   });
 }

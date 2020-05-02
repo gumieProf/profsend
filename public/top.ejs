@@ -48,6 +48,9 @@
       }
     </script>
     <form name="edit" id="editlicense" action="">
+      <span style="font-family: 'ProfSend-sans';" class="canvRead">sans</span>
+      <span style="font-family: 'ProfSend-serif';" class="canvRead">serif</span>
+
       <div class="low">
         <br />
         <header>
@@ -171,6 +174,10 @@
             <i class="fas fa-angle-right fa-2x angle"></i>
           </div>
         </div>
+        <a class="waves-effect waves-light btn" id="cookieClear"
+          >保存情報の削除</a
+        >
+
         <div id="editor">
           <div id="sec1">
             <canvas id="prof" width="400" height="200"></canvas>
@@ -217,6 +224,19 @@
                 <label for="genzainomojisuB">現在の文字数</label>
               </div>
             </div>
+            <div class="input-field col s12">
+              <select id="idtype">
+                <option value="25" selected>ゲーム未設定</option>
+                <option value="12">モンスト・スイッチ</option>
+                <option value="9">パズドラ</option>
+                <option value="10">ドッカンバトル</option>
+              </select>
+              <label> ゲームタイトル</label>
+            </div>
+
+            <a class="waves-effect waves-light btn" id="idset">桁数決定</a>
+
+            <h5><div id="idleng">現在の桁数は25です。</div></h5>
           </div>
         </div>
         <div class="input-field col s12">
@@ -261,20 +281,6 @@
 
       <div id="data3" class="datas">
         <div class="input-field col s12">
-          <select id="idtype">
-            <option value="25" selected>ゲーム未設定</option>
-            <option value="12">モンスト・スイッチ</option>
-            <option value="9">パズドラ</option>
-            <option value="10">ドッカンバトル</option>
-          </select>
-          <label> ゲームタイトル</label>
-        </div>
-
-        <a class="waves-effect waves-light btn" id="idset">桁数決定</a>
-
-        <h5><div id="idleng">現在の桁数は25です。</div></h5>
-
-        <div class="input-field col s12">
           <select id="colors">
             <option value="#999" selected>グレー</option>
             <option value="#ff0000">レッド</option>
@@ -292,7 +298,14 @@
             <option value="#fff">ホワイト</option>
             <option value="#888">グレー</option>
           </select>
-          <label>背景の色</label>
+          <label>テキストの色</label>
+        </div>
+        <div class="input-field col s12">
+          <select name="textType" id="textType" class="profelem">
+            <option value="serif">セルフ体</option>
+            <option value="sans" selected disabled>サンセルフ体</option>
+          </select>
+          <label>年齢</label>
         </div>
 
         <a id="picdel" class="waves-effect waves-light btn" onclick="pic = '';"
