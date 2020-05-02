@@ -227,6 +227,7 @@
     $("#snsText").val();
     i(), $(".profelem").keyup(i);
     $(".profelem").change(i);
+    $("#textType").change(i);
     $("#colors").change(function () {
       (color = $(this).val()), i();
     }),
