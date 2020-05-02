@@ -11,7 +11,6 @@
     var coment2 = coment;
     var sns2 = sns;
     var name2 = name;
-    var textType;
     if ($.cookie("id")) {
       var id = $.cookie("id");
       $("#id").val(id);
@@ -98,13 +97,6 @@
       }
     });
 
-    var o = 35,
-      c = 1,
-      r = 30,
-      u = 30,
-      x,
-      re,
-      y;
     var prof = document.getElementById("prof");
     var m = prof.getContext("2d");
     new Image().src = "" + pic;
@@ -115,7 +107,7 @@
       var coment = $("#coment").val();
       var sns = $("#snsText").val();
       var name = $("#name").val();
-      textType = $("#textType").val();
+      var textType = $("#textType").val();
       var id2 = id;
       var age2 = age;
       var coment2 = coment;
