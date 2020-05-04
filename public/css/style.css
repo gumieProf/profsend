@@ -1,6 +1,9 @@
 @font-face {
   font-family: "ProfSend-serif";
   src: url("/font/NotoSerifJP-Medium-Canv.woff") format("woff"), url("/font/NotoSerifJP-Medium-Canv.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "ProfSend-sans";
   src: url("/font/NotoSansJP-Medium.ttf") format("truetype"), url("/font/NotoSansJP-Medium.woff") format("woff");
 }
