@@ -1,6 +1,5 @@
 ﻿export default function main() {
   $(function () {
-    $(".canvRead").hide();
     var id = $("#id").val();
     var age = $("#age").val();
     var coment = $("#coment").val();
