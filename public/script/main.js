@@ -1,5 +1,8 @@
 ﻿export default function main() {
   $(function () {
+    var o = 35,
+      prof = document.getElementById("prof"),
+      m = prof.getContext("2d");
     var id = $("#id").val();
     var age = $("#age").val();
     var coment = $("#coment").val();
