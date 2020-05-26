@@ -190,11 +190,7 @@
       var lineHeight = 1.1618; // 行の高さ (フォントサイズに対する倍率)
       var x = 30; // 水平位置
       var y = 30; // 垂直位置
-      if (textType === "serif") {
-        m.font = "ProfSend-serif";
-      } else if (textType === "sans") {
-        m.font = "ProfSend-sans";
-      }
+      m.font = "bold " + o + "Noto Sans JP";
       for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
         var line = lines[i];
         var addY = fontSize;
