@@ -48,132 +48,138 @@
       }
     </script>
     <form name="edit" id="editlicense" action="">
-      <div class="low">
-        <br />
-        <header>
-          <div id="nav-drawer">
-            <input id="nav-input" type="checkbox" class="nav-unshown disnon" />
-            <label for="nav-input"><span></span></label>
-            <a href="top.pwa.html"
-              ><img
-                src="/image/prof2.png"
-                alt="logo"
-                width="233px"
-                height="60px"
-                class="wrap"
-            /></a>
-            <a class="download" id="download"
-              ><i class="fas fa-file-download fa-2x download"></i
-            ></a>
+      <header>
+        <div id="nav-drawer">
+          <input id="nav-input" type="checkbox" class="nav-unshown" />
+          <label id="nav-open" for="nav-input"><span></span></label>
+          <a href="top.html"
+            ><img
+              src="/image/prof2.png"
+              alt="logo"
+              width="233px"
+              height="60px"
+              class="wrap"
+          /></a>
+          <a class="download" id="download"
+            ><i class="fas fa-file-download fa-2x download"></i
+          ></a>
 
-            <label class="nav-unshown" id="nav-close" for="nav-input"></label>
-            <div id="nav-content">
-              <ul>
-                <li>
-                  <a href="top.pwa.html"
+          <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+          <div id="nav-content">
+            <ul>
+              <li>
+                <a href="top.ejs"
+                  ><img
+                    src="/image/ja_prof.png"
+                    alt="logo"
+                    width="100px"
+                    height="100px"
+                    class="wrap"
+                /></a>
+              </li>
+              <li>
+                <toku
+                  ><a href="#" onclick="pic = '/image/toku.png';" id="toku"
                     ><img
-                      src="/image/ja_prof.png"
-                      alt="logo"
-                      width="100px"
-                      height="100px"
-                      class="wrap"
-                  /></a>
-                </li>
-                <li>
-                  <toku
-                    ><a href="#" onclick="pic = '/image/toku.png';" id="toku"
-                      ><img
-                        src="/image/toku.png"
-                        width="50"
-                        height="50"
-                        id="toku" /></a
-                  ></toku>
-                </li>
-                <li>
-                  <abolt
-                    ><a href="about.pwa.html" class="link"
-                      >プロフセンドについて</a
-                    ></abolt
-                  >
-                </li>
-                <li>
-                  <a href="13update.pwa.html">
-                    13アップデートに関わる大切なお知らせ
-                  </a>
-                </li>
-                <li>
-                  <copy><h5>2019 GUTSMINE c</h5></copy>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </header>
-        <div class="low"></div>
+                      src="/image/toku.png"
+                      width="50"
+                      height="50"
+                      id="toku" /></a
+                ></toku>
+              </li>
+              <li>
+                <img
+                  src="https://img.shields.io/badge/dynamic/json.svg?label=version&colorB=5f9ea0&query=$.version&uri=https://raw.githubusercontent.com/gutsmine-tech/profsend-v2/master/package.json&prefix=v"
+                  alt="badge"
+                  class="wrap"
+                />
+              </li>
+              <li>
+                <abolt
+                  ><a href="about.html"
+                    ><i class="fas fa-question fa-2x about"></i
+                    >プロフセンドについて</a
+                  ></abolt
+                >
+              </li>
+              <li>
+                <a href="13update.pwa.html">
+                  13アップデートに関わる大切なお知らせ
+                </a>
+              </li>
 
-        <div id="sec1">
-          <canvas id="prof" width="400" height="200"></canvas>
+              <li>
+                <copy><h5>2019 GUTSMINE c</h5></copy>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="low"></div>
+
+      <div id="sec1">
+        <canvas id="prof" width="400" height="200"></canvas>
+      </div>
+
+      <div class="dataBtns">
+        <div><img id="newImg" /></div>
+        <div class="dataBtn" id="data1Btn">
+          <a href="#"><span>基本情報</span> </a>
+          <p>ID、ユーザー名</p>
+          <i class="fas fa-angle-right fa-2x angle"></i>
         </div>
 
-        <div class="dataBtns">
-          <div><img id="newImg" /></div>
-          <div class="dataBtn" id="data1Btn">
-            <a href="#"><span>基本情報</span> </a>
-            <p>ID、ユーザー名</p>
-            <i class="fas fa-angle-right fa-2x angle"></i>
-          </div>
-
-          <div class="dataBtn" id="data2Btn">
-            <a href="#"> <span>その他情報</span> </a>
-            <p>コメント、SNS情報</p>
-            <i class="fas fa-angle-right fa-2x angle"></i>
-          </div>
-
-          <div class="dataBtn" id="data3Btn">
-            <a href="#"> <span>デザイン</span> </a>
-            <p>テキスト・背景の色・画像の変更・非表示</p>
-            <i class="fas fa-angle-right fa-2x angle"></i>
-          </div>
-          <a class="waves-effect waves-light btn" href="#" id="cookieClear"
-            >保存情報の削除</a
-          >
+        <div class="dataBtn" id="data2Btn">
+          <a href="#"> <span>その他情報</span> </a>
+          <p>コメント、SNS情報</p>
+          <i class="fas fa-angle-right fa-2x angle"></i>
         </div>
 
+        <div class="dataBtn" id="data3Btn">
+          <a href="#"> <span>デザイン</span> </a>
+          <p>テキスト・背景の色・画像の変更・非表示</p>
+          <i class="fas fa-angle-right fa-2x angle"></i>
+        </div>
+        <a class="waves-effect waves-light btn" href="#" id="cookieClear"
+          >保存情報の削除</a
+        >
+      </div>
+
+      <br />
+      <div id="data1" class="datas">
+        <div class="input-field col s12">
+          <input
+            type="text"
+            name="formName"
+            id="name"
+            class="wrap"
+            placeholder=""
+          />
+          <label for="namae">名前</label>
+          <a href="#" class="delete1"
+            ><i class="fas fa-times-circle delete"></i
+          ></a>
+        </div>
         <br />
-        <div id="data1" class="datas">
+        <div id="idtext">
           <div class="input-field col s12">
             <input
               type="text"
-              name="formName"
-              id="name"
+              name="formID"
+              id="id"
               class="wrap"
+              maxlength="25"
+              onkeyup="document.getElementById('id-leng').value=this.value.length"
               placeholder=""
             />
-            <label for="namae">名前</label>
-            <a href="#" class="delete1"
+            <label for="id">ID：</label>
+            <a href="#" class="delete2"
               ><i class="fas fa-times-circle delete"></i
             ></a>
           </div>
-          <br />
-          <div id="idtext">
-            <div class="input-field col s12">
-              <input
-                type="text"
-                name="formID"
-                id="id"
-                class="wrap"
-                maxlength="25"
-                onkeyup="document.getElementById('id-leng').value=this.value.length"
-                placeholder=""
-              />
-              <label for="id">ID：</label>
-              <a href="#" class="delete2"
-                ><i class="fas fa-times-circle delete"></i
-              ></a>
-            </div>
-            <div class="input-field col s12">
-              <input type="text" id="id-leng" readonly />
-              <label for="genzainomojisuB">現在の文字数</label>
-            </div>
+          <div class="input-field col s12">
+            <input type="text" id="id-leng" readonly />
+            <label for="genzainomojisuB">現在の文字数</label>
           </div>
         </div>
       </div>

@@ -1,66 +1,146 @@
 ﻿<!DOCTYPE html>
 <html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="keywords" content="ゲーム,プロフィール,ウェブアプリ,プロフセンド,profsend">
-<meta name="description" content="プロフセンドは、ゲームのIDをSNSに送るためのプロフィールジェネレータです。">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>PROFSEND(プロフセンド)</title>
-<link rel="stylesheet" type="text/css" href="/css/style.css">
-<script src="https://kit.fontawesome.com/31d4cf3320.js" crossorigin="anonymous"></script>
-<link rel="shortcut icon" href="/image/favicon.ico">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0//css/materialize.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src='script/jquery.js'></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="keywords"
+      content="ゲーム,プロフィール,ウェブアプリ,プロフセンド,profsend"
+    />
+    <meta
+      name="description"
+      content="プロフセンドは、ゲームのIDをSNSに送るためのプロフィールジェネレータです。"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>PROFSEND(プロフセンド)</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/31d4cf3320.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="shortcut icon" href="/image/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0//css/materialize.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script/jquery.js"></script>
+  </head>
 
-
-
-</head>
-
-<body>
-    <a href="top.pwa.html"><img src="/image/ja_prof.png" alt="logo" width="300px" height="300px" class="wrap"></a>
+  <body>
     <header>
       <div id="nav-drawer">
-    <input id="nav-input" type="checkbox" class="nav-unshown disnon">
-          <label for="nav-input" ><span><i class="fas fa-bars fa-2x hub"></i></span></label>
-          <label class="nav-unshown" id="nav-close" for="nav-input"></label>
-     <div id="nav-content">
-          <li>    <a href="top.pwa.html"><img src="/image/ja_prof.png" alt="logo" width="100px" height="100px" class="wrap"></a></li>
-        <li><abolt><a href="about.pwa.html" class="link">プロフセンドについて</a></abolt></li>
-            <li><copy><h5>2019 GUTSMINE c</h5></copy></li>
-        </ul>
-    </div>
+        <input id="nav-input" type="checkbox" class="nav-unshown" />
+        <label id="nav-open" for="nav-input"><span></span></label>
+        <a href="top.html"
+          ><img
+            src="/image/prof2.png"
+            alt="logo"
+            width="233px"
+            height="60px"
+            class="wrap"
+        /></a>
+        <a class="download" id="download"
+          ><i class="fas fa-file-download fa-2x download"></i
+        ></a>
+
+        <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+        <div id="nav-content">
+          <ul>
+            <li>
+              <a href="top.ejs"
+                ><img
+                  src="/image/ja_prof.png"
+                  alt="logo"
+                  width="100px"
+                  height="100px"
+                  class="wrap"
+              /></a>
+            </li>
+            <li>
+              <toku
+                ><a href="#" onclick="pic = '/image/toku.png';" id="toku"
+                  ><img
+                    src="/image/toku.png"
+                    width="50"
+                    height="50"
+                    id="toku" /></a
+              ></toku>
+            </li>
+            <li>
+              <abolt
+                ><a href="about.html"
+                  ><i class="fas fa-question fa-2x about"></i
+                  >プロフセンドについて</a
+                ></abolt
+              >
+            </li>
+            <li>
+              <sc
+                ><p>
+                  <a href="https://github.com/gutsmine/profsend" class="wrap"
+                    ><i class="fab fa-github fa-2x source"></i>ソースコード</a
+                  >
+                </p></sc
+              >
+            </li>
+            <li>
+              <mit
+                ><p>
+                  <a
+                    href="https://github.com/gutsmine/profsend/blob/master/LICENSE"
+                    class="wrap"
+                    ><i class="fas fa-file fa-2x license"></i>ライセンス</a
+                  >
+                </p></mit
+              >
+            </li>
+            <li>
+              <a href="13update.pwa.html">
+                13アップデートに関わる大切なお知らせ
+              </a>
+            </li>
+
+            <li>
+              <copy><h5>2019 GUTSMINE c</h5></copy>
+            </li>
+          </ul>
+        </div>
       </div>
-    </header>      
-<div class="row">
-<div class="col s12">
-<h5>
-本アプリ（プロフセンド）はios13ipadosの
-</h5>
-<h5>
-ダウンロードマネージャーによるダウンロードに対応していますが、
-</h5>
-<h5>
-ios12以下及び、ipados対象外のipadなどのSafariは、
-</h5>
-<h5>
-ダウンロードできない仕様になっています。
-</h5>
-<h5>
-その方はios13にアップデートしていただくか、
-</h5>
-<h5>
-スマホ版chromeをダウンロードしていただく必要があります。
-</h5>
-<h5>
-本アプリご利用者にはご理解、ご協力お願いします。
-  </h5>
- </div>
-</div>
-<br>
+    </header>
+    <div class="row">
+      <div class="col s12">
+        <h5>
+          本アプリ（プロフセンド）はios13ipadosの
+        </h5>
+        <h5>
+          ダウンロードマネージャーによるダウンロードに対応していますが、
+        </h5>
+        <h5>
+          ios12以下及び、ipados対象外のipadなどのSafariは、
+        </h5>
+        <h5>
+          ダウンロードできない仕様になっています。
+        </h5>
+        <h5>
+          その方はios13にアップデートしていただくか、
+        </h5>
+        <h5>
+          スマホ版chromeをダウンロードしていただく必要があります。
+        </h5>
+        <h5>
+          本アプリご利用者にはご理解、ご協力お願いします。
+        </h5>
+      </div>
+    </div>
+    <br />
 
-<a href="top.pwa.html" class="waves-effect waves-light btn">トップページに戻る</a>
+    <a href="top.pwa.html" class="waves-effect waves-light btn"
+      >トップページに戻る</a
+    >
 
-<h4>2019 GUTSMINE c</h4>
-</body>
+    <h4>2019 GUTSMINE c</h4>
+  </body>
 </html>
