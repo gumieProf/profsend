@@ -17,6 +17,7 @@ export default function sub() {
       } else {
         div.fadeOut;
       }
+      return false;
     });
   });
 }

@@ -55,14 +55,17 @@
     $(".delete1").click(function () {
       $("#name").val("");
       i();
+      return false;
     });
     $(".delete2").click(function () {
       $("#id").val("");
       i();
+      return false;
     });
     $(".delete3").click(function () {
       $("#coment").val("");
       i();
+      return false;
     });
 
     $("#data1Btn").click(function () {
@@ -75,6 +78,7 @@
         $("#data1").fadeIn();
         data1hide = 1;
       }
+      return false;
     });
     $("#data2Btn").click(function () {
       $(".datas").hide();
@@ -86,6 +90,7 @@
         $("#data2").fadeIn();
         data2hide = 1;
       }
+      return false;
     });
     $("#data3Btn").click(function () {
       $(".datas").hide();
@@ -97,6 +102,7 @@
         $("#data3").fadeIn();
         data3hide = 1;
       }
+      return false;
     });
 
     var prof = document.getElementById("prof");
