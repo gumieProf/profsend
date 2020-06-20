@@ -222,13 +222,10 @@
     $("#name").val(), $("#id").val(), $("#age").val(), $("#coment").val();
     $("#snsText").val();
     i();
-    $(document).on(
-      {
-        "keydown": i(),
-        "chenge": i(),
-      },
-      ".profelem"
-    );
+    $(".profelem").on({
+      "keydown": i(),
+      "chenge": i(),
+    });
     $("#colors").change(function () {
       (color = $(this).val()), i();
     }),
