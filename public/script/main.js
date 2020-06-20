@@ -212,7 +212,7 @@
           var a = new Image();
           (a.src = "" + pic), m.drawImage(a, 320, 130, 50, 50);
         }
-      }, 1000);
+      }, 100);
     };
     window.i = i;
     (m.fillStyle = "" + color),
