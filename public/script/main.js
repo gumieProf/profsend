@@ -239,7 +239,10 @@
             '" class="wrap" maxlength="' +
             idtypeVal +
             '">' +
-            "</input><label for=id>ID：</label>"
+            "</input><label for=id>ID：</label>" +
+            '<a href="#" class="delete2' +
+            '><i class="fas fa-times-circle delete"></i' +
+            "></a>"
         );
         i();
         $("#idleng").html("<h5>現在の桁数は" + idtypeVal + "です</h5>");
