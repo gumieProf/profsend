@@ -224,8 +224,8 @@
     i();
     $(document).on(
       {
-        keydown: i(),
-        chenge: i(),
+        "keydown": i(),
+        "chenge": i(),
       },
       ".profelem"
     );
