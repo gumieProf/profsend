@@ -226,6 +226,13 @@
       "keydown": i,
       "chenge": i,
     });
+    $(document).on(
+      {
+        "keydown": i,
+        "chenge": i,
+      },
+      ".profelem"
+    );
     $("#colors").change(function () {
       (color = $(this).val()), i();
     }),
