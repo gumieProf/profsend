@@ -1,9 +1,9 @@
 export default function download() {
-  $(function() {
-    $("#download").click(function() {
+  $(function () {
+    $("#download").click(function () {
       var name = $("#name").val();
       var id = $("#id").val();
-      $("#name, #id, #age, #coment").on("keyup", function() {
+      $("#name, #id, #age, #coment").on("keyup", function () {
         var name = $("#name").val();
         var id = $("#id").val();
       });
@@ -20,6 +20,7 @@ export default function download() {
         link.download = "prof.png";
         link.click();
       }
+      return false;
     });
   });
 }

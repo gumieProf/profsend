@@ -238,6 +238,7 @@
         i();
         $("#idleng").html("<h5>現在の桁数は" + idtypeVal + "です</h5>");
         $(document).on("keyup", "#id", i());
+        return false;
       }),
       e.addEventListener("change", function (e) {
         var t = e.target.files[0];
@@ -254,6 +255,7 @@
       $.removeCookie("id");
       $.removeCookie("coment");
       $.removeCookie("sns");
+      return false;
     });
   });
 }
