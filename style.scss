@@ -1,13 +1,3 @@
-@font-face {
-  font-family: "ProfSend-serif";
-  src: url("/font/NotoSerifJP-Medium-Canv.woff") format("woff"),
-    url("/font/NotoSerifJP-Medium-Canv.ttf") format("truetype");
-}
-@font-face {
-  font-family: "ProfSend-sans";
-  src: url("/font/NotoSansJP-Medium.ttf") format("truetype"),
-    url("/font/NotoSansJP-Medium.woff") format("woff");
-}
 body {
   text-align: center;
 
@@ -516,6 +506,7 @@ nof {
   position: relative;
   bottom: 30px;
   left: 40%;
+  color: #636bff;
 }
 .download {
   float: right;
