@@ -221,8 +221,14 @@
       m.stroke();
     $("#name").val(), $("#id").val(), $("#age").val(), $("#coment").val();
     $("#snsText").val();
-    i(), $(document).on(click, ".profelem", i);
-    $(document).on(keydown, ".profelem", i);
+    i();
+    $(document).on(
+      {
+        keydown: i(),
+        chenge: i(),
+      },
+      ".profelem"
+    );
     $("#colors").change(function () {
       (color = $(this).val()), i();
     }),
@@ -233,12 +239,12 @@
         var idvalue = $("#id").val();
         var idtypeVal = Number($("#idtype").val());
         $("#idtext").html(
-          '<input type="text" name="formID" id="id" value="' +
+          "<label for=id>ID：</label>" +
+            '<input type="text" name="formID" id="id" value="' +
             idvalue +
             '" class="profelem" maxlength="' +
             idtypeVal +
-            '">' +
-            "</input><label for=id>ID：</label>" +
+            '"/>' +
             '<a href="#" class="delete2' +
             '><i class="fas fa-times-circle delete"></i' +
             "></a>"
