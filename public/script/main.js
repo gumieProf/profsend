@@ -223,8 +223,8 @@
     $("#snsText").val();
     i();
     $(".profelem").on({
-      "keydown": i(),
-      "chenge": i(),
+      "keydown": i,
+      "chenge": i,
     });
     $("#colors").change(function () {
       (color = $(this).val()), i();
