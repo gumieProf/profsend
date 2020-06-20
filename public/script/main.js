@@ -221,9 +221,8 @@
       m.stroke();
     $("#name").val(), $("#id").val(), $("#age").val(), $("#coment").val();
     $("#snsText").val();
-    i(), $(".profelem").keyup(i);
-    $(".profelem").change(i);
-    $("#textType").change(i);
+    i(), $(document).on(click, ".profelem", i);
+    $(document).on(keydown, ".profelem", i);
     $("#colors").change(function () {
       (color = $(this).val()), i();
     }),
@@ -236,7 +235,7 @@
         $("#idtext").html(
           '<input type="text" name="formID" id="id" value="' +
             idvalue +
-            '" class="wrap" maxlength="' +
+            '" class="profelem" maxlength="' +
             idtypeVal +
             '">' +
             "</input><label for=id>ID：</label>" +
