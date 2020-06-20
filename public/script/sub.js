@@ -12,11 +12,14 @@ export default function sub() {
     $(document).on("change", "#snsText", i);
 
     $("#snsDataBtn").click(function () {
-      if (document.getElementById("snsText") !== null) {
+      if (document.getElementById("snsText")) {
         div.fadeIn;
       } else {
         div.fadeOut;
       }
+      setTimeout(function () {
+        i();
+      }, 100);
       return false;
     });
   });
