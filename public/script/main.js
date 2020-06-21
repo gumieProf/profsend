@@ -110,24 +110,24 @@
       new Image().src = "" + pic;
       var e = document.getElementById("file");
       var i = function () {
-        var id = $("#id").val();
-        var age = $("#age").val();
-        var coment = $("#coment").val();
-        var sns = $("#snsText").val();
-        var name = $("#name").val();
-        var id2 = id;
-        var age2 = age;
-        var coment2 = coment;
-        var sns2 = sns;
-        var name2 = name;
-        var age2 = age;
-        $.cookie("id", id2);
-        $.cookie("name", name2);
-        $.cookie("age", age2);
-        $.cookie("coment", coment2);
-        $.cookie("sns", sns2);
-        $.cookie("age", age2);
         setTimeout(function () {
+          var id = $("#id").val();
+          var age = $("#age").val();
+          var coment = $("#coment").val();
+          var sns = $("#snsText").val();
+          var name = $("#name").val();
+          var id2 = id;
+          var age2 = age;
+          var coment2 = coment;
+          var sns2 = sns;
+          var name2 = name;
+          var age2 = age;
+          $.cookie("id", id2);
+          $.cookie("name", name2);
+          $.cookie("age", age2);
+          $.cookie("coment", coment2);
+          $.cookie("sns", sns2);
+          $.cookie("age", age2);
           var comentif =
             coment == null || typeof coment == "undefined" || coment == "";
           var snsif = sns == null || typeof sns == "undefined" || sns == "";

@@ -180,7 +180,7 @@
           <div id="data1" class="datas">
             <div class="input-field col s12">
               <input type="text" name="formName" id="name" class="profelem" />
-              <label for="namae">名前</label>
+              <label for="name">名前</label>
               <a href="#" class="delete1"
                 ><i class="fas fa-times-circle delete"></i
               ></a>
@@ -189,7 +189,6 @@
             <br />
             <div class="input-field col s12">
               <div id="idtext">
-                <label for="id">ID：</label>
                 <input
                   type="text"
                   name="formID"
@@ -198,6 +197,7 @@
                   maxlength="25"
                   onkeyup="document.getElementById('id-leng').value=this.value.length"
                 />
+                <label for="id">ID：</label>
 
                 <a href="#" class="delete2"
                   ><i class="fas fa-times-circle delete"></i
@@ -206,7 +206,7 @@
             </div>
             <div class="input-field col s12">
               <input type="text" id="id-leng" readonly />
-              <label for="genzainomojisuB">現在の文字数</label>
+              <label for="id-leng">現在の文字数</label>
             </div>
             <div class="input-field col s12">
               <select id="idtype">
@@ -239,7 +239,7 @@
             <option>50代</option>
             <option value="" selected disabled>非公開</option>
           </select>
-          <label>年齢</label>
+          <label for="age">年齢</label>
         </div>
         <div class="input-field col s12">
           <br />
@@ -272,7 +272,7 @@
             <option value="#04b700">グリーン</option>
             <option value="#e719e4">パープル</option>
           </select>
-          <label>背景の色</label>
+          <label for="colors">背景の色</label>
         </div>
 
         <div class="input-field col s12">
@@ -281,7 +281,7 @@
             <option value="#fff">ホワイト</option>
             <option value="#888">グレー</option>
           </select>
-          <label>テキストの色</label>
+          <label for="textColor">テキストの色</label>
         </div>
 
         <a id="picdel" class="waves-effect waves-light btn" onclick="pic = '';"
