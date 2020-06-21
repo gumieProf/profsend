@@ -8,8 +8,13 @@ export default function sub() {
       "</div>";
     div.html(elems);
     div.hide();
-    $(document).on("keyup", "#snsText", window.i);
-    $(document).on("change", "#snsText", window.i);
+    $(document).on(
+      {
+        "keydown": window.i,
+        "change": window.i,
+      },
+      ".profelem"
+    );
 
     $("#snsDataBtn").click(function () {
       if (document.getElementById("snsText")) {
@@ -17,9 +22,8 @@ export default function sub() {
       } else {
         div.fadeOut;
       }
-      setTimeout(function () {
-        i();
-      }, 100);
+      i();
+
       return false;
     });
   });
