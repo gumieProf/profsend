@@ -8,8 +8,8 @@ export default function sub() {
       "</div>";
     div.html(elems);
     div.hide();
-    $(document).on("keyup", "#snsText", i);
-    $(document).on("change", "#snsText", i);
+    $(document).on("keyup", "#snsText", window.i);
+    $(document).on("change", "#snsText", window.i);
 
     $("#snsDataBtn").click(function () {
       if (document.getElementById("snsText")) {
