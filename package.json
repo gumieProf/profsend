@@ -7,9 +7,6 @@
     "type": "git",
     "url": "git+https://github.com/gutsmine-tech/profsend.git"
   },
-  "scripts": {
-    "eslint": "eslint ./public/script/**' >js.lint.log"
-  },
   "author": "",
   "license": "MIT",
   "bugs": {
@@ -18,7 +15,6 @@
   "homepage": "https://gutsmine.myportfolio.com",
   "dependencies": {
     "animate.css": "^3.7.2",
-    "bower": "^1.8.8",
     "jquery": "^3.4.1",
     "jquery.cookie": "^1.4.1",
     "webpack-fix-style-only-entries": "^0.4.0"

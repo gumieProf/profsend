@@ -47,70 +47,69 @@
       $("#age").val(age);
     }
     $.cookie("age", age2);
-
-    $(".datas").hide();
-    var data1hide = 0;
-    var data2hide = 0;
-    var data3hide = 0;
-    $(".delete1").click(function () {
-      $("#name").val("");
-      i();
-      return false;
-    });
-    $(".delete2").click(function () {
-      $("#id").val("");
-      i();
-      return false;
-    });
-    $(".delete3").click(function () {
-      $("#coment").val("");
-      i();
-      return false;
-    });
-
-    $("#data1Btn").click(function () {
+    setTimeout(function () {
       $(".datas").hide();
+      var data1hide = 0;
+      var data2hide = 0;
+      var data3hide = 0;
+      $(".delete1").click(function () {
+        $("#name").val("");
+        i();
+        return false;
+      });
+      $(".delete2").click(function () {
+        $("#id").val("");
+        i();
+        return false;
+      });
+      $(".delete3").click(function () {
+        $("#coment").val("");
+        i();
+        return false;
+      });
 
-      if (data1hide === 1) {
-        $("#data1").hide();
-        data1hide = 0;
-      } else {
-        $("#data1").fadeIn();
-        data1hide = 1;
-      }
-      return false;
-    });
-    $("#data2Btn").click(function () {
-      $(".datas").hide();
+      $("#data1Btn").click(function () {
+        $(".datas").hide();
 
-      if (data2hide === 1) {
-        $("#data2").hide();
-        data2hide = 0;
-      } else {
-        $("#data2").fadeIn();
-        data2hide = 1;
-      }
-      return false;
-    });
-    $("#data3Btn").click(function () {
-      $(".datas").hide();
+        if (data1hide === 1) {
+          $("#data1").hide();
+          data1hide = 0;
+        } else {
+          $("#data1").fadeIn();
+          data1hide = 1;
+        }
+        return false;
+      });
+      $("#data2Btn").click(function () {
+        $(".datas").hide();
 
-      if (data3hide === 1) {
-        $("#data3").hide();
-        data3hide = 0;
-      } else {
-        $("#data3").fadeIn();
-        data3hide = 1;
-      }
-      return false;
-    });
+        if (data2hide === 1) {
+          $("#data2").hide();
+          data2hide = 0;
+        } else {
+          $("#data2").fadeIn();
+          data2hide = 1;
+        }
+        return false;
+      });
+      $("#data3Btn").click(function () {
+        $(".datas").hide();
 
-    var prof = document.getElementById("prof");
-    var m = prof.getContext("2d");
-    new Image().src = "" + pic;
-    var e = document.getElementById("file");
-    var i = function () {
-      setTimeout(function () {
+        if (data3hide === 1) {
+          $("#data3").hide();
+          data3hide = 0;
+        } else {
+          $("#data3").fadeIn();
+          data3hide = 1;
+        }
+        return false;
+      });
+
+      var prof = document.getElementById("prof");
+      var m = prof.getContext("2d");
+      new Image().src = "" + pic;
+      var e = document.getElementById("file");
+      var i = function () {
         id = $("#id").val();
         age = $("#age").val();
         coment = $("#coment").val();
@@ -128,152 +127,154 @@
         $.cookie("coment", coment2);
         $.cookie("sns", sns2);
         $.cookie("age", age2);
+        setTimeout(function () {
+          var comentif =
+            coment == null || typeof coment == "undefined" || coment == "";
+          var snsif = sns == null || typeof sns == "undefined" || sns == "";
+          var ageif = age == null || typeof age == "undefined" || age == "";
 
-        var comentif =
-          coment == null || typeof coment == "undefined" || coment == "";
-        var snsif = sns == null || typeof sns == "undefined" || sns == "";
-        var ageif = age == null || typeof age == "undefined" || age == "";
+          if (comentif && snsif && ageif) {
+            var e = "ユーザー名:\t" + name + "\nID: \t" + id;
+          } else if (comentif && snsif) {
+            var e =
+              "ユーザー名:\t" + name + "\nID: \t" + id + "\n 年齢: \t" + age;
+          } else if (ageif && snsif) {
+            var e =
+              "ユーザー名:\t" + name + "\nID: \t" + id + "\nコメント: \t" + age;
+          } else if (ageif && comentif) {
+            var e =
+              "ユーザー名:\t" + name + "\nID: \t" + id + "\nSNS: \t" + sns;
+          } else if (ageif) {
+            var e =
+              "ユーザー名:\t" +
+              name +
+              "\nID: \t" +
+              id +
+              "\nコメント: \t" +
+              coment +
+              "\nSNS: \t" +
+              sns;
+          } else if (comentif) {
+            var e =
+              "ユーザー名:\t" +
+              name +
+              "\nID: \t" +
+              id +
+              "\n 年齢: \t" +
+              age +
+              "\nSNS: \t" +
+              sns;
+          } else if (snsif) {
+            var e =
+              "ユーザー名:\t" +
+              name +
+              "\nID: \t" +
+              id +
+              "\n 年齢: \t" +
+              age +
+              "\nコメント: \t" +
+              coment;
+          } else {
+            var e =
+              "ユーザー名:\t" +
+              name +
+              "\nID: \t" +
+              id +
+              "\n 年齢: \t" +
+              age +
+              "\nコメント: \t" +
+              coment +
+              "\nSNS: \t" +
+              sns;
+          }
 
-        if (comentif && snsif && ageif) {
-          var e = "ユーザー名:\t" + name + "\nID: \t" + id;
-        } else if (comentif && snsif) {
-          var e =
-            "ユーザー名:\t" + name + "\nID: \t" + id + "\n 年齢: \t" + age;
-        } else if (ageif && snsif) {
-          var e =
-            "ユーザー名:\t" + name + "\nID: \t" + id + "\nコメント: \t" + age;
-        } else if (ageif && comentif) {
-          var e = "ユーザー名:\t" + name + "\nID: \t" + id + "\nSNS: \t" + sns;
-        } else if (ageif) {
-          var e =
-            "ユーザー名:\t" +
-            name +
-            "\nID: \t" +
-            id +
-            "\nコメント: \t" +
-            coment +
-            "\nSNS: \t" +
-            sns;
-        } else if (comentif) {
-          var e =
-            "ユーザー名:\t" +
-            name +
-            "\nID: \t" +
-            id +
-            "\n 年齢: \t" +
-            age +
-            "\nSNS: \t" +
-            sns;
-        } else if (snsif) {
-          var e =
-            "ユーザー名:\t" +
-            name +
-            "\nID: \t" +
-            id +
-            "\n 年齢: \t" +
-            age +
-            "\nコメント: \t" +
-            coment;
-        } else {
-          var e =
-            "ユーザー名:\t" +
-            name +
-            "\nID: \t" +
-            id +
-            "\n 年齢: \t" +
-            age +
-            "\nコメント: \t" +
-            coment +
-            "\nSNS: \t" +
-            sns;
-        }
+          m.clearRect(0, 0, 500, 300);
+          m.beginPath();
+          m.fillStyle = "" + color;
+          m.fillRect(0, 0, 500, 300);
+          m.fillStyle = "" + text;
+          m.rect(15, 15, 370, 170);
+          m.lineWidth = 8;
+          m.stroke();
+          var fontSize = 24; // フォントサイズ
+          var lineHeight = 1.1618; // 行の高さ (フォントサイズに対する倍率)
+          var x = 30; // 水平位置
+          var y = 30; // 垂直位置
+          m.font = "bold " + o + "Noto Sans JP";
+          for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
+            var line = lines[i];
+            var addY = fontSize;
 
-        m.clearRect(0, 0, 500, 300);
-        m.beginPath();
-        m.fillStyle = "" + color;
-        m.fillRect(0, 0, 500, 300);
-        m.fillStyle = "" + text;
-        m.rect(15, 15, 370, 170);
-        m.lineWidth = 8;
+            // 2行目以降の水平位置は行数とlineHeightを考慮する
+            if (i) addY += fontSize * lineHeight * i;
+
+            m.fillText(line, x + 0, y + addY);
+            var a = new Image();
+            (a.src = "" + pic), m.drawImage(a, 320, 130, 50, 50);
+          }
+        }, 100);
+      };
+      window.i = i;
+      (m.fillStyle = "" + color),
+        m.fillRect(0, 0, 450, 300),
+        (m.fillStyle = "" + text),
+        m.rect(15, 15, 370, 170),
+        (m.lineWidth = 8),
         m.stroke();
-        var fontSize = 24; // フォントサイズ
-        var lineHeight = 1.1618; // 行の高さ (フォントサイズに対する倍率)
-        var x = 30; // 水平位置
-        var y = 30; // 垂直位置
-        m.font = "bold " + o + "Noto Sans JP";
-        for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
-          var line = lines[i];
-          var addY = fontSize;
-
-          // 2行目以降の水平位置は行数とlineHeightを考慮する
-          if (i) addY += fontSize * lineHeight * i;
-
-          m.fillText(line, x + 0, y + addY);
-          var a = new Image();
-          (a.src = "" + pic), m.drawImage(a, 320, 130, 50, 50);
-        }
-      }, 100);
-    };
-    window.i = i;
-    (m.fillStyle = "" + color),
-      m.fillRect(0, 0, 450, 300),
-      (m.fillStyle = "" + text),
-      m.rect(15, 15, 370, 170),
-      (m.lineWidth = 8),
-      m.stroke();
-    $("#name").val(), $("#id").val(), $("#age").val(), $("#coment").val();
-    $("#snsText").val();
-    i();
-    $(".profelem").on({
-      "keydown": i,
-      "chenge": i,
-    });
-    $(document).on(
-      {
+      $("#name").val(), $("#id").val(), $("#age").val(), $("#coment").val();
+      $("#snsText").val();
+      i();
+      $(".profelem").on({
         "keydown": i,
         "chenge": i,
-      },
-      ".profelem"
-    );
-    $("#colors").change(function () {
-      (color = $(this).val()), i();
-    }),
-      $("#textColor").change(function () {
-        (text = $(this).val()), i();
-      }),
-      $("#idset").click(function () {
-        var idvalue = $("#id").val();
-        var idtypeVal = Number($("#idtype").val());
-        $("#idtext").html(
-          "<label for=id>ID：</label>" +
-            '<input type="text" name="formID" id="id" value="' +
-            idvalue +
-            '" class="profelem" maxlength="' +
-            idtypeVal +
-            '"/>' +
-            '<a href="#" class="delete2' +
-            '><i class="fas fa-times-circle delete"></i' +
-            "></a>"
-        );
-        i();
-        $("#idleng").html("<h5>現在の桁数は" + idtypeVal + "です</h5>");
-      }),
-      e.addEventListener("change", function (e) {
-        var t = e.target.files[0];
-        if (t.type.match("image.*")) {
-          var n = new FileReader();
-          (n.onload = function () {
-            (pic = n.result), i();
-          }),
-            n.readAsDataURL(t);
-        } else alert("画像を選択してください");
       });
-    $("#cookieClear").click(function () {
-      $.removeCookie("name");
-      $.removeCookie("id");
-      $.removeCookie("coment");
-      $.removeCookie("sns");
-      return false;
+      $(document).on(
+        {
+          "keydown": i,
+          "chenge": i,
+        },
+        ".profelem"
+      );
+      $("#colors").change(function () {
+        (color = $(this).val()), i();
+      }),
+        $("#textColor").change(function () {
+          (text = $(this).val()), i();
+        }),
+        $("#idset").click(function () {
+          var idvalue = $("#id").val();
+          var idtypeVal = Number($("#idtype").val());
+          $("#idtext").html(
+            "<label for=id>ID：</label>" +
+              '<input type="text" name="formID" id="id" value="' +
+              idvalue +
+              '" class="profelem" maxlength="' +
+              idtypeVal +
+              '"/>' +
+              '<a href="#" class="delete2' +
+              '><i class="fas fa-times-circle delete"></i' +
+              "></a>"
+          );
+          i();
+          $("#idleng").html("<h5>現在の桁数は" + idtypeVal + "です</h5>");
+        }),
+        e.addEventListener("change", function (e) {
+          var t = e.target.files[0];
+          if (t.type.match("image.*")) {
+            var n = new FileReader();
+            (n.onload = function () {
+              (pic = n.result), i();
+            }),
+              n.readAsDataURL(t);
+          } else alert("画像を選択してください");
+        });
+      $("#cookieClear").click(function () {
+        $.removeCookie("name");
+        $.removeCookie("id");
+        $.removeCookie("coment");
+        $.removeCookie("sns");
+        return false;
+      });
     });
   });
 }
