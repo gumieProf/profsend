@@ -2,16 +2,12 @@ export default function download() {
   $(function () {
     $("#download").click(function () {
       var name = $("#name").val();
-      var id = $("#id").val();
       $("#name, #id, #age, #coment").on("keyup", function () {
         var name = $("#name").val();
-        var id = $("#id").val();
       });
 
-      if (name == null || (name == "" && id == null) || id == "") {
-        alert("名前とIDが抜けています。");
-      } else if (name == null || name == "" || id == null || name == "") {
-        alert("名前とIDのいずれかが抜けています。");
+      if (name == null || name == "") {
+        alert("名前が抜けています。");
       } else {
         let canvas = document.getElementById("prof");
 

@@ -104,7 +104,14 @@
         }
         return false;
       });
+      $(".dataBtn").click(function () {
+        const scrollTarget = $(this)[0].attributes[1].nodeValue;
 
+        const offsetTop = $(scrollTarget).offset().top;
+
+        // 取得した箇所に移動
+        $("html, body").animate({ scrollTop: offsetTop }, 200);
+      });
       var prof = document.getElementById("prof");
       var m = prof.getContext("2d");
       new Image().src = "" + pic;
@@ -121,7 +128,6 @@
           var coment2 = coment;
           var sns2 = sns;
           var name2 = name;
-          var age2 = age;
           $.cookie("id", id2);
           $.cookie("name", name2);
           $.cookie("age", age2);
