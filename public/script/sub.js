@@ -11,7 +11,7 @@ export default function sub() {
     $(document).on(
       {
         "keydown": window.i,
-        "change": window.i,
+        "chenge": window.i,
       },
       ".profelem"
     );
