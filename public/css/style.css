@@ -284,6 +284,10 @@ nof #nav-content {
   transform: translateX(-105%);
 }
 
+nof #nav-input {
+  position: fixed;
+}
+
 nof #nav-input:checked ~ #nav-close {
   display: block;
   opacity: 0.5;
