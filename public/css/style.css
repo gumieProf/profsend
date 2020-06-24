@@ -210,7 +210,7 @@ nof header {
 }
 
 nof #nav-drawer {
-  position: relative;
+  position: fixed;
 }
 
 nof .nav-unshown {
