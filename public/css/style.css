@@ -434,7 +434,8 @@ nof .link {
   position: fixed;
   background-color: #777;
   width: 100%;
-  height: 200px;
+  height: 50px;
+  text-align: center;
 }
 
 .subData {
@@ -442,6 +443,6 @@ nof .link {
   background-color: #000;
   color: #fff;
   width: 25%;
-  height: 200px;
+  height: 50px;
 }
 /*# sourceMappingURL=style.css.map */
