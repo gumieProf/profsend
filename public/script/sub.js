@@ -8,13 +8,10 @@ export default function sub() {
       "</div>";
     div.html(elems);
     div.hide();
-    $(document).on(
-      {
-        "keydown": window.i,
-        "chenge": window.i,
-      },
-      ".profelem"
-    );
+    $(".profelem").on({
+      "keydown": window.i,
+      "chenge": window.i,
+    });
 
     $("#snsDataBtn").click(function () {
       if (document.getElementById("snsText")) {
