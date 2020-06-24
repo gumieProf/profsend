@@ -147,6 +147,15 @@
 
       <br />
       <div id="data1" class="datas">
+        <div class="subDatas">
+          <a href="#" class="back subData"
+            ><i class="fas fa-arrow-left fa-2x"></i
+          ></a>
+          <a href="#" class="subData subData1">基本情報</a>
+          <a href="#" class="subData subData2">その他情報</a>
+          <a href="#" class="subData subData3">デザイン</a>
+        </div>
+
         <div class="input-field col s12">
           <input type="text" name="formName" id="name" class="wrap" />
           <label for="name">名前</label>
@@ -179,6 +188,15 @@
       </div>
 
       <div id="data2" class="datas">
+        <div class="subDatas">
+          <a href="#" class="back subData"
+            ><i class="fas fa-arrow-left fa-2x"></i
+          ></a>
+          <a href="#" class="subData subData1">基本情報</a>
+          <a href="#" class="subData subData2">その他情報</a>
+          <a href="#" class="subData subData3">デザイン</a>
+        </div>
+
         <div class="input-field col s12">
           <br />
         </div>
@@ -216,55 +234,61 @@
         >
       </div>
       <br />
-      <div id="data3" class="datas">
-        <div class="input-field col s12">
-          <select id="idtype">
-            <option value="25" selected>ゲーム未設定</option>
-            <option value="12">モンスト・スイッチ</option>
-            <option value="9">パズドラ</option>
-            <option value="10">ドッカンバトル</option>
-          </select>
-          <label> ゲームタイトル</label>
-        </div>
-
-        <a class="waves-effect waves-light btn" id="idset">桁数決定</a>
-
-        <h5><div id="idleng">現在の桁数は25です。</div></h5>
-
-        <div class="input-field col s12">
-          <select id="colors">
-            <option value="#999" selected>グレー</option>
-            <option value="#ff0000">レッド</option>
-            <option value="#0010bf">ブルー</option>
-            <option value="#f8fc5e">イエロー</option>
-            <option value="#04b700">グリーン</option>
-            <option value="#e719e4">パープル</option>
-          </select>
-          <label for="colors">背景の色</label>
-        </div>
-
-        <div class="input-field col s12">
-          <select id="textColor">
-            <option value="#000" selected>ブラック</option>
-            <option value="#fff">ホワイト</option>
-            <option value="#888">グレー</option>
-          </select>
-          <label for="textColor">テキストの色</label>
-        </div>
-        <a id="picdel" class="waves-effect waves-light btn" onclick="pic = '';"
-          >エンブレムを非表示</a
-        >
-
-        <a
-          id="reset"
-          class="waves-effect waves-light btn"
-          onclick="pic = '/image/img-1.png';"
-          >エンブレムをリセット</a
-        >
-        <strong>エンブレム画像のアップロード</strong>
-        <input type="file" name="file" id="file" />
+      <div class="subDatas">
+        <a href="#" class="back subData"
+          ><i class="fas fa-arrow-left fa-2x"></i
+        ></a>
+        <a href="#" class="subData subData1">基本情報</a>
+        <a href="#" class="subData subData2">その他情報</a>
+        <a href="#" class="subData subData3">デザイン</a>
       </div>
 
+      <div class="input-field col s12">
+        <select id="idtype">
+          <option value="25" selected>ゲーム未設定</option>
+          <option value="12">モンスト・スイッチ</option>
+          <option value="9">パズドラ</option>
+          <option value="10">ドッカンバトル</option>
+        </select>
+        <label> ゲームタイトル</label>
+      </div>
+
+      <a class="waves-effect waves-light btn" id="idset">桁数決定</a>
+
+      <h5><div id="idleng">現在の桁数は25です。</div></h5>
+
+      <div class="input-field col s12">
+        <select id="colors">
+          <option value="#999" selected>グレー</option>
+          <option value="#ff0000">レッド</option>
+          <option value="#0010bf">ブルー</option>
+          <option value="#f8fc5e">イエロー</option>
+          <option value="#04b700">グリーン</option>
+          <option value="#e719e4">パープル</option>
+        </select>
+        <label for="colors">背景の色</label>
+      </div>
+
+      <div class="input-field col s12">
+        <select id="textColor">
+          <option value="#000" selected>ブラック</option>
+          <option value="#fff">ホワイト</option>
+          <option value="#888">グレー</option>
+        </select>
+        <label for="textColor">テキストの色</label>
+      </div>
+      <a id="picdel" class="waves-effect waves-light btn" onclick="pic = '';"
+        >エンブレムを非表示</a
+      >
+
+      <a
+        id="reset"
+        class="waves-effect waves-light btn"
+        onclick="pic = '/image/img-1.png';"
+        >エンブレムをリセット</a
+      >
+      <strong>エンブレム画像のアップロード</strong>
+      <input type="file" name="file" id="file" />
       <div id="result"></div>
       <br />
       <h4>2019 GUTSMINE c</h4>

@@ -68,7 +68,7 @@
         return false;
       });
 
-      $("#data1Btn").click(function () {
+      $("#data1Btn,.subData1").click(function () {
         $(".datas").hide();
 
         if (data1hide === 1) {
@@ -78,9 +78,10 @@
           $("#data1").fadeIn();
           data1hide = 1;
         }
+        $(".dataBtn").hide();
         return false;
       });
-      $("#data2Btn").click(function () {
+      $("#data2Btn,.subData2").click(function () {
         $(".datas").hide();
 
         if (data2hide === 1) {
@@ -90,9 +91,11 @@
           $("#data2").fadeIn();
           data2hide = 1;
         }
+        $(".dataBtn").hide();
+
         return false;
       });
-      $("#data3Btn").click(function () {
+      $("#data3Btn,.subData3").click(function () {
         $(".datas").hide();
 
         if (data3hide === 1) {
@@ -102,6 +105,13 @@
           $("#data3").fadeIn();
           data3hide = 1;
         }
+        $(".dataBtn").hide();
+
+        return false;
+      });
+      $(".back").click(function () {
+        $(".datas").hide();
+        $(".dataBtn").show();
         return false;
       });
       $(".dataBtn").click(function () {
