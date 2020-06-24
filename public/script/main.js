@@ -96,16 +96,6 @@
         $(".dataBtn").show();
         return false;
       });
-      $(".dataBtn").click(function () {
-        setTimeout(function () {
-          const scrollTarget = $(this)[0].attributes[1].nodeValue;
-
-          const offsetTop = $(scrollTarget).offset().top;
-
-          // 取得した箇所に移動
-          $("html, body").animate({ scrollTop: offsetTop }, 200);
-        }, 100);
-      });
       var prof = document.getElementById("prof");
       var m = prof.getContext("2d");
       new Image().src = "" + pic;
@@ -212,7 +202,7 @@
             var a = new Image();
             (a.src = "" + pic), m.drawImage(a, 320, 130, 50, 50);
           }
-        }, 100);
+        }, 50);
       };
       window.i = i;
       (m.fillStyle = "" + color),
