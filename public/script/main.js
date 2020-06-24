@@ -70,27 +70,15 @@
 
       $("#data1Btn,.subData1").click(function () {
         $(".datas").hide();
-
-        if (data1hide === 1) {
-          $("#data1").hide();
-          data1hide = 0;
-        } else {
-          $("#data1").fadeIn();
-          data1hide = 1;
-        }
+        $("#data1").fadeIn();
+        data1hide = 1;
         $(".dataBtn").hide();
         return false;
       });
       $("#data2Btn,.subData2").click(function () {
         $(".datas").hide();
 
-        if (data2hide === 1) {
-          $("#data2").hide();
-          data2hide = 0;
-        } else {
-          $("#data2").fadeIn();
-          data2hide = 1;
-        }
+        $("#data2").fadeIn();
         $(".dataBtn").hide();
 
         return false;
@@ -98,13 +86,7 @@
       $("#data3Btn,.subData3").click(function () {
         $(".datas").hide();
 
-        if (data3hide === 1) {
-          $("#data3").hide();
-          data3hide = 0;
-        } else {
-          $("#data3").fadeIn();
-          data3hide = 1;
-        }
+        $("#data3").fadeIn();
         $(".dataBtn").hide();
 
         return false;
