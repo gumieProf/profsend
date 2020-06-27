@@ -25,18 +25,18 @@ header {
 
   width: 100px;
 
-  height: 100px;
+  height: 30px;
 
   vertical-align: middle;
 
   span {
     position: absolute;
 
-    height: 100px;
+    height: 15px;
 
-    width: 100px;
+    width: 30px;
 
-    border-radius: 10px;
+    border-radius: 5px;
 
     background: #fff;
 
@@ -50,11 +50,11 @@ header {
     &:after {
       position: absolute;
 
-      height: 100px;
+      height: 15px;
 
-      width: 100px;
+      width: 30px;
 
-      border-radius: 10px;
+      border-radius: 5px;
 
       background: #fff;
 

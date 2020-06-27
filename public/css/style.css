@@ -21,15 +21,15 @@ header {
 #nav-open {
   float: left;
   width: 100px;
-  height: 100px;
+  height: 30px;
   vertical-align: middle;
 }
 
 #nav-open span {
   position: absolute;
-  height: 100px;
-  width: 100px;
-  border-radius: 10px;
+  height: 15px;
+  width: 30px;
+  border-radius: 5px;
   background: #fff;
   display: block;
   content: "";
@@ -38,9 +38,9 @@ header {
 
 #nav-open span:before, #nav-open span:after {
   position: absolute;
-  height: 100px;
-  width: 100px;
-  border-radius: 10px;
+  height: 15px;
+  width: 30px;
+  border-radius: 5px;
   background: #fff;
   display: block;
   content: "";
