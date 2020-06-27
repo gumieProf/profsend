@@ -19,7 +19,7 @@ header {
 }
 
 #nav-open {
-  float: right;
+  float: left;
   width: 30px;
   height: 22px;
   vertical-align: middle;
