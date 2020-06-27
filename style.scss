@@ -21,7 +21,7 @@ header {
   display: none;
 }
 #nav-open {
-  display: inline-block;
+  float: right;
 
   width: 30px;
 
@@ -31,8 +31,6 @@ header {
 
   span {
     position: absolute;
-
-    float: right;
 
     height: 3px;
 
