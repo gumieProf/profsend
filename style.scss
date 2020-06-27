@@ -23,7 +23,7 @@ header {
 #nav-open {
   float: left;
 
-  width: 100px;
+  width: 30px;
 
   height: 30px;
 
@@ -32,9 +32,9 @@ header {
   span {
     position: absolute;
 
-    height: 15px;
+    height: 5px;
 
-    width: 30px;
+    width: 10px;
 
     border-radius: 5px;
 
@@ -50,9 +50,9 @@ header {
     &:after {
       position: absolute;
 
-      height: 15px;
+      height: 5px;
 
-      width: 30px;
+      width: 10px;
 
       border-radius: 5px;
 
