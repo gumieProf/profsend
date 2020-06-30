@@ -195,12 +195,12 @@ export default function main() {
               sns;
           }
 
-          m.clearRect(0, 0, prof.width + 100, prof.width + 100);
+          m.clearRect(0, 0, prof.width + 100, prof.height + 100);
           m.beginPath();
           m.fillStyle = "" + color;
-          m.fillRect(0, 0, prof.width + 100, prof.width + 100);
+          m.fillRect(0, 0, prof.width + 100, prof.height + 100);
           m.fillStyle = "" + text;
-          m.rect(15, 15, prof.width - 30, prof.width - 30);
+          m.rect(15, 15, prof.width - 30, prof.height - 30);
           m.lineWidth = 8;
           m.stroke();
           var fontSize = 24; // フォントサイズ

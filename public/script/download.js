@@ -46,96 +46,98 @@ export default function download() {
       var dlcanv = document.createElement("canvas");
       dlcanv.width = 1920;
       dlcanv.height = 1080;
-      var o = 35;
-      var id = $("#id").val();
-      var age = $("#age").val();
-      var coment = $("#coment").val();
-      var sns = $("#snsText").val();
-      var name = $("#name").val();
-      var prof = document.getElementById("prof");
-      var m = prof.getContext("2d");
-      var e = document.getElementById("file");
-      var color = $("#colors").val();
+      setTimeout(() => {
+        var o = 35;
+        var id = $("#id").val();
+        var age = $("#age").val();
+        var coment = $("#coment").val();
+        var sns = $("#snsText").val();
+        var name = $("#name").val();
+        var prof = document.getElementById("prof");
+        var m = prof.getContext("2d");
+        var e = document.getElementById("file");
+        var color = $("#colors").val();
 
-      var text = $("#textColor").val();
+        var text = $("#textColor").val();
 
-      var comentif = coment == null || typeof coment == "undefined" ||
-        coment == "";
-      var snsif = sns == null || typeof sns == "undefined" || sns == "";
-      var ageif = age == null || typeof age == "undefined" || age == "";
+        var comentif = coment == null || typeof coment == "undefined" ||
+          coment == "";
+        var snsif = sns == null || typeof sns == "undefined" || sns == "";
+        var ageif = age == null || typeof age == "undefined" || age == "";
 
-      if (comentif && snsif && ageif) {
-        var e = "ユーザー名:\t" + name + "\nID: \t" + id;
-      } else if (comentif && snsif) {
-        var e = "ユーザー名:\t" + name + "\nID: \t" + id + "\n 年齢: \t" + age;
-      } else if (ageif && snsif) {
-        var e = "ユーザー名:\t" + name + "\nID: \t" + id + "\nコメント: \t" + age;
-      } else if (ageif && comentif) {
-        var e = "ユーザー名:\t" + name + "\nID: \t" + id + "\nSNS: \t" + sns;
-      } else if (ageif) {
-        var e = "ユーザー名:\t" +
-          name +
-          "\nID: \t" +
-          id +
-          "\nコメント: \t" +
-          coment +
-          "\nSNS: \t" +
-          sns;
-      } else if (comentif) {
-        var e = "ユーザー名:\t" +
-          name +
-          "\nID: \t" +
-          id +
-          "\n 年齢: \t" +
-          age +
-          "\nSNS: \t" +
-          sns;
-      } else if (snsif) {
-        var e = "ユーザー名:\t" +
-          name +
-          "\nID: \t" +
-          id +
-          "\n 年齢: \t" +
-          age +
-          "\nコメント: \t" +
-          coment;
-      } else {
-        var e = "ユーザー名:\t" +
-          name +
-          "\nID: \t" +
-          id +
-          "\n 年齢: \t" +
-          age +
-          "\nコメント: \t" +
-          coment +
-          "\nSNS: \t" +
-          sns;
-      }
+        if (comentif && snsif && ageif) {
+          var e = "ユーザー名:\t" + name + "\nID: \t" + id;
+        } else if (comentif && snsif) {
+          var e = "ユーザー名:\t" + name + "\nID: \t" + id + "\n 年齢: \t" + age;
+        } else if (ageif && snsif) {
+          var e = "ユーザー名:\t" + name + "\nID: \t" + id + "\nコメント: \t" + age;
+        } else if (ageif && comentif) {
+          var e = "ユーザー名:\t" + name + "\nID: \t" + id + "\nSNS: \t" + sns;
+        } else if (ageif) {
+          var e = "ユーザー名:\t" +
+            name +
+            "\nID: \t" +
+            id +
+            "\nコメント: \t" +
+            coment +
+            "\nSNS: \t" +
+            sns;
+        } else if (comentif) {
+          var e = "ユーザー名:\t" +
+            name +
+            "\nID: \t" +
+            id +
+            "\n 年齢: \t" +
+            age +
+            "\nSNS: \t" +
+            sns;
+        } else if (snsif) {
+          var e = "ユーザー名:\t" +
+            name +
+            "\nID: \t" +
+            id +
+            "\n 年齢: \t" +
+            age +
+            "\nコメント: \t" +
+            coment;
+        } else {
+          var e = "ユーザー名:\t" +
+            name +
+            "\nID: \t" +
+            id +
+            "\n 年齢: \t" +
+            age +
+            "\nコメント: \t" +
+            coment +
+            "\nSNS: \t" +
+            sns;
+        }
 
-      m.clearRect(0, 0, prof.width + 100, prof.height + 100);
-      m.beginPath();
-      m.fillStyle = "" + color;
-      m.fillRect(0, 0, prof.width + 100, prof.height + 100);
-      m.fillStyle = "" + text;
-      m.rect(15, 15, prof.width - 30, prof.height - 30);
-      m.lineWidth = 8;
-      m.stroke();
-      var fontSize = 24; // フォントサイズ
-      var lineHeight = 1.1618; // 行の高さ (フォントサイズに対する倍率)
-      var x = 30; // 水平位置
-      var y = 30; // 垂直位置
-      m.font = "bold " + o + "Noto Sans JP";
-      for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
-        var line = lines[i];
-        var addY = fontSize;
+        m.clearRect(0, 0, prof.width + 100, prof.height + 100);
+        m.beginPath();
+        m.fillStyle = "" + color;
+        m.fillRect(0, 0, prof.width + 100, prof.height + 100);
+        m.fillStyle = "" + text;
+        m.rect(15, 15, prof.width - 30, prof.height - 30);
+        m.lineWidth = 8;
+        m.stroke();
+        var fontSize = 24; // フォントサイズ
+        var lineHeight = 1.1618; // 行の高さ (フォントサイズに対する倍率)
+        var x = 30; // 水平位置
+        var y = 30; // 垂直位置
+        m.font = "bold " + o + "Noto Sans JP";
+        for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
+          var line = lines[i];
+          var addY = fontSize;
 
-        // 2行目以降の水平位置は行数とlineHeightを考慮する
-        if (i) addY += fontSize * lineHeight * i;
+          // 2行目以降の水平位置は行数とlineHeightを考慮する
+          if (i) addY += fontSize * lineHeight * i;
 
-        m.fillText(line, x + 0, y + addY);
-        var a = new Image();
-        (a.src = "" + pic), m.drawImage(a, 320, 130, 50, 50);
-      }
+          m.fillText(line, x + 0, y + addY);
+          var a = new Image();
+          (a.src = "" + pic), m.drawImage(a, 320, 130, 50, 50);
+        }
+      }, 50);
     });
   });
 }
