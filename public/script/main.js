@@ -142,25 +142,21 @@ export default function main() {
           $.cookie("coment", coment2);
           $.cookie("sns", sns2);
           $.cookie("age", age2);
-          var comentif =
-            coment == null || typeof coment == "undefined" || coment == "";
+          var comentif = coment == null || typeof coment == "undefined" ||
+            coment == "";
           var snsif = sns == null || typeof sns == "undefined" || sns == "";
           var ageif = age == null || typeof age == "undefined" || age == "";
 
           if (comentif && snsif && ageif) {
             var e = "ユーザー名:\t" + name + "\nID: \t" + id;
           } else if (comentif && snsif) {
-            var e =
-              "ユーザー名:\t" + name + "\nID: \t" + id + "\n 年齢: \t" + age;
+            var e = "ユーザー名:\t" + name + "\nID: \t" + id + "\n 年齢: \t" + age;
           } else if (ageif && snsif) {
-            var e =
-              "ユーザー名:\t" + name + "\nID: \t" + id + "\nコメント: \t" + age;
+            var e = "ユーザー名:\t" + name + "\nID: \t" + id + "\nコメント: \t" + age;
           } else if (ageif && comentif) {
-            var e =
-              "ユーザー名:\t" + name + "\nID: \t" + id + "\nSNS: \t" + sns;
+            var e = "ユーザー名:\t" + name + "\nID: \t" + id + "\nSNS: \t" + sns;
           } else if (ageif) {
-            var e =
-              "ユーザー名:\t" +
+            var e = "ユーザー名:\t" +
               name +
               "\nID: \t" +
               id +
@@ -169,8 +165,7 @@ export default function main() {
               "\nSNS: \t" +
               sns;
           } else if (comentif) {
-            var e =
-              "ユーザー名:\t" +
+            var e = "ユーザー名:\t" +
               name +
               "\nID: \t" +
               id +
@@ -179,8 +174,7 @@ export default function main() {
               "\nSNS: \t" +
               sns;
           } else if (snsif) {
-            var e =
-              "ユーザー名:\t" +
+            var e = "ユーザー名:\t" +
               name +
               "\nID: \t" +
               id +
@@ -189,8 +183,7 @@ export default function main() {
               "\nコメント: \t" +
               coment;
           } else {
-            var e =
-              "ユーザー名:\t" +
+            var e = "ユーザー名:\t" +
               name +
               "\nID: \t" +
               id +
@@ -247,7 +240,7 @@ export default function main() {
           "keydown": i,
           "chenge": i,
         },
-        ".profelem"
+        ".profelem",
       );
       $("#colors").change(function () {
         (color = $(this).val()), i();
@@ -267,7 +260,7 @@ export default function main() {
               '"/>' +
               '<a href="#" class="delete2' +
               '><i class="fas fa-times-circle delete"></i' +
-              "></a>"
+              "></a>",
           );
           i();
           $("#idleng").html("<h5>現在の桁数は" + idtypeVal + "です</h5>");
@@ -278,8 +271,7 @@ export default function main() {
             var n = new FileReader();
             (n.onload = function () {
               (pic = n.result), i();
-            }),
-              n.readAsDataURL(t);
+            }), n.readAsDataURL(t);
           } else alert("画像を選択してください");
         });
       $("#cookieClear").click(function () {
