@@ -119,7 +119,7 @@ export default function download() {
         m.fillRect(0, 0, prof.width + 100, prof.height + 100);
         m.fillStyle = "" + text;
         m.rect(15, 15, prof.width - 30, prof.height - 30);
-        m.lineWidth = 8;
+        m.lineWidth = 8 * 5;
         m.stroke();
         var fontSize = 24 * 5; // フォントサイズ
         var lineHeight = 1.1618 * 5; // 行の高さ (フォントサイズに対する倍率)
@@ -135,7 +135,7 @@ export default function download() {
 
           m.fillText(line, x + 0, y + addY);
           var a = new Image();
-          (a.src = "" + pic), m.drawImage(a, 320, 130, 50, 50);
+          (a.src = "" + pic), m.drawImage(a, 320 * 5, 130 * 5, 50 * 5, 50 * 5);
         }
         let link = document.createElement("a");
         link.href = prof.toDataURL("image/png");
