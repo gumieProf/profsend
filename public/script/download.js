@@ -47,7 +47,7 @@ export default function download() {
       dlcanv.width = 1920;
       dlcanv.height = 1080;
       setTimeout(() => {
-        var o = 100;
+        var o = "50px";
         var id = $("#id").val();
         var age = $("#age").val();
         var coment = $("#coment").val();
@@ -125,7 +125,7 @@ export default function download() {
         var lineHeight = 1.1618; // 行の高さ (フォントサイズに対する倍率)
         var x = 30; // 水平位置
         var y = 30; // 垂直位置
-        m.font = "bold " + o + "Noto Sans JP";
+        m.font = "bold " + o + " Noto Sans JP";
         for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
           var line = lines[i];
           var addY = fontSize;
