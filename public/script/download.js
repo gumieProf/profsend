@@ -123,8 +123,8 @@ export default function download() {
         m.stroke();
         var fontSize = 24 * 5; // フォントサイズ
         var lineHeight = 1.1618 * 5; // 行の高さ (フォントサイズに対する倍率)
-        var x = 30 * 5; // 水平位置
-        var y = 30 * 5; // 垂直位置
+        var x = 30; // 水平位置
+        var y = 30; // 垂直位置
         m.font = "bold " + o + "Noto Sans JP";
         for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
           var line = lines[i];
@@ -142,6 +142,7 @@ export default function download() {
         link.download = "prof-window.png";
         link.click();
       }, 50);
+      return false;
     });
   });
 }
