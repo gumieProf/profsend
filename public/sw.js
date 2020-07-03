@@ -24,6 +24,9 @@ SOFTWARE.
 
 var CACHE_NAME = "profsend-pwa-v1";
 var urlsToCache = [
+  "top.ejs",
+  "about.ejs",
+  "13update.ejs",
   "top.pwa.html",
   "css/style.css",
   "css/bootstrap-4.3.1.css",
@@ -58,6 +61,7 @@ var urlsToCache = [
   "image/icon-512.png",
   "image/icon-72.png",
   "image/icon-96.png",
+  "manifest.json",
 ];
 
 self.addEventListener("install", function (event) {
