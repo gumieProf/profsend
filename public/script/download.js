@@ -122,7 +122,7 @@ export default function download() {
         m.lineWidth = 8;
         m.stroke();
         var fontSize = 50; // フォントサイズ
-        var lineHeight = 10; // 行の高さ (フォントサイズに対する倍率)
+        var lineHeight = 1.5; // 行の高さ (フォントサイズに対する倍率)
         var x = 30; // 水平位置
         var y = 30; // 垂直位置
         m.font = "bold " + o + " Noto Sans JP";
