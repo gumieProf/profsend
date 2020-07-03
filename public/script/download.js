@@ -53,7 +53,7 @@ export default function download() {
         var coment = $("#coment").val();
         var sns = $("#snsText").val();
         var name = $("#name").val();
-        var prof = document.getElementById("prof");
+        var prof = dlcanv;
         var m = prof.getContext("2d");
         var e = document.getElementById("file");
         var color = $("#colors").val();
@@ -137,6 +137,10 @@ export default function download() {
           var a = new Image();
           (a.src = "" + pic), m.drawImage(a, 320, 130, 50, 50);
         }
+        let link = document.createElement("a");
+        link.href = prof.toDataURL("image/png");
+        link.download = "prof-window.png";
+        link.click();
       }, 50);
     });
   });
