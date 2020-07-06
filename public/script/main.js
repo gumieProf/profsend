@@ -202,6 +202,7 @@ export default function main() {
           m.fillStyle = "" + text;
           m.rect(15, 15, prof.width - 30, prof.height - 30);
           m.lineWidth = 8;
+          m.strokeStyle = text
           m.stroke();
           var fontSize = 24; // フォントサイズ
           var lineHeight = 1.1618; // 行の高さ (フォントサイズに対する倍率)
@@ -253,14 +254,14 @@ export default function main() {
           var idtypeVal = Number($("#idtype").val());
           $("#idtext").html(
             "<label for=id>ID：</label>" +
-              '<input type="text" name="formID" id="id" value="' +
-              idvalue +
-              '" class="profelem" maxlength="' +
-              idtypeVal +
-              '"/>' +
-              '<a href="#" class="delete2' +
-              '><i class="fas fa-times-circle delete"></i' +
-              "></a>",
+            '<input type="text" name="formID" id="id" value="' +
+            idvalue +
+            '" class="profelem" maxlength="' +
+            idtypeVal +
+            '"/>' +
+            '<a href="#" class="delete2' +
+            '><i class="fas fa-times-circle delete"></i' +
+            "></a>",
           );
           i();
           $("#idleng").html("<h5>現在の桁数は" + idtypeVal + "です</h5>");

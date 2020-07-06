@@ -122,6 +122,8 @@ export default function download() {
         m.lineWidth = 8;
         m.stroke();
         var fontSize = 50; // フォントサイズ
+        m.strokeStyle = text
+
         var lineHeight = 1.5; // 行の高さ (フォントサイズに対する倍率)
         var x = 30; // 水平位置
         var y = 30; // 垂直位置
@@ -144,5 +146,109 @@ export default function download() {
       }, 50);
       return false;
     });
+    $("#smtdl").click(function () {
+      var dlcanv = document.createElement("canvas");
+      dlcanv.width = 1080;
+      dlcanv.height = 1920;
+      setTimeout(() => {
+        var o = "30px";
+        var id = $("#id").val();
+        var age = $("#age").val();
+        var coment = $("#coment").val();
+        var sns = $("#snsText").val();
+        var name = $("#name").val();
+        var prof = dlcanv;
+        var m = prof.getContext("2d");
+        var e = document.getElementById("file");
+        var color = $("#colors").val();
+
+        var text = $("#textColor").val();
+
+        var comentif = coment == null || typeof coment == "undefined" ||
+          coment == "";
+        var snsif = sns == null || typeof sns == "undefined" || sns == "";
+        var ageif = age == null || typeof age == "undefined" || age == "";
+
+        if (comentif && snsif && ageif) {
+          var e = "ユーザー名:\t" + name + "\nID: \t" + id;
+        } else if (comentif && snsif) {
+          var e = "ユーザー名:\t" + name + "\nID: \t" + id + "\n 年齢: \t" + age;
+        } else if (ageif && snsif) {
+          var e = "ユーザー名:\t" + name + "\nID: \t" + id + "\nコメント: \t" + age;
+        } else if (ageif && comentif) {
+          var e = "ユーザー名:\t" + name + "\nID: \t" + id + "\nSNS: \t" + sns;
+        } else if (ageif) {
+          var e = "ユーザー名:\t" +
+            name +
+            "\nID: \t" +
+            id +
+            "\nコメント: \t" +
+            coment +
+            "\nSNS: \t" +
+            sns;
+        } else if (comentif) {
+          var e = "ユーザー名:\t" +
+            name +
+            "\nID: \t" +
+            id +
+            "\n 年齢: \t" +
+            age +
+            "\nSNS: \t" +
+            sns;
+        } else if (snsif) {
+          var e = "ユーザー名:\t" +
+            name +
+            "\nID: \t" +
+            id +
+            "\n 年齢: \t" +
+            age +
+            "\nコメント: \t" +
+            coment;
+        } else {
+          var e = "ユーザー名:\t" +
+            name +
+            "\nID: \t" +
+            id +
+            "\n 年齢: \t" +
+            age +
+            "\nコメント: \t" +
+            coment +
+            "\nSNS: \t" +
+            sns;
+        }
+
+        m.clearRect(0, 0, prof.width + 100, prof.height + 100);
+        m.beginPath();
+        m.fillStyle = "" + color;
+        m.fillRect(0, 0, prof.width + 100, prof.height + 100);
+        m.fillStyle = "" + text;
+        m.rect(15, 15, prof.width - 30, prof.height - 30);
+        m.lineWidth = 8;
+        m.strokeStyle = text
+        m.stroke();
+        var fontSize = 30; // フォントサイズ
+        var lineHeight = 1.5; // 行の高さ (フォントサイズに対する倍率)
+        var x = 30; // 水平位置
+        var y = 30; // 垂直位置
+        m.font = "bold " + o + " Noto Sans JP";
+        for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
+          var line = lines[i];
+          var addY = fontSize;
+
+          // 2行目以降の水平位置は行数とlineHeightを考慮する
+          if (i) addY += fontSize * lineHeight * i;
+
+          m.fillText(line, x + 0, y + addY);
+          var a = new Image();
+          (a.src = "" + pic), m.drawImage(a, 320 * 5, 130, 50 * 5, 50);
+        }
+        let link = document.createElement("a");
+        link.href = prof.toDataURL("image/png");
+        link.download = "prof-window.png";
+        link.click();
+      }, 50);
+      return false;
+    });
+
   });
 }
