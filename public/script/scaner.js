@@ -10,7 +10,7 @@ $(function () {
       {
         logger: m => {
           console.log(m);
-          $("#loading").text("実行中:" + m)
+          $("#loading").text("実行中...")
         }
       }
     ).then(({ data: { idData } }) => {
