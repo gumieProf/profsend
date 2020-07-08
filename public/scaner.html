@@ -15,8 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="/script/jquery.js"></script>
-  <script src="/script/modules-build.js"></script>
-
+  <script src="/script/scaner-build.js"></script>
 </head>
 
 <body>
@@ -79,26 +78,6 @@
   <h4>出力結果</h4>
 
   <strong id="scanData"></strong>
-
-  <script>
-
-    $("#scanFile").change(function () {
-
-      var scanImage = $(this)[0].files[0];
-
-      Tesseract.recognize(
-        scanImage,
-        'eng',
-      ).then(({ data: { idData } }) => {
-        console.log(idData);
-        $("#scanData").text(idData).select();
-        document.execCommand("copy");
-
-      })
-    })
-
-  </script>
-
 </body>
 
 </html>

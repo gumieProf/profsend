@@ -24,4 +24,3 @@ SOFTWARE.
 
 window.$ = require("jquery");
 window.Cookies = require("jquery.cookie");
-window.Tesseract = require('tesseract.js')

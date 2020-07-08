@@ -8,6 +8,7 @@ const froms = {
   js: {
     scripts: assets + "app.js",
     modules: assets + "modules.js",
+    scaner: assets + "scaner.js",
   },
 };
 module.exports = {
@@ -17,6 +18,8 @@ module.exports = {
   entry: {
     scripts: froms.js.scripts,
     modules: froms.js.modules,
+    scaner: froms.js.scaner,
+
   },
   // 出力の設定
   output: {
