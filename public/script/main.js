@@ -72,6 +72,7 @@ export default function main() {
     }
     $.cookie("age", age2);
     setTimeout(function () {
+      $("#scanFile").hide();
       $(".datas").hide();
       $(".delete1").click(function () {
         $("#name").val("");
