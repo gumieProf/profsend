@@ -14,9 +14,12 @@ $(function () {
         }
       }
     ).then(({ data: { idData } }) => {
+      var data = idData.text;
+      var matchrs = data.match(/[ID:]+[0-9a-zA-Z]{9,25}/);
+      matchrs.slice(5);
       $("#loading").text("実行完了！");
-      console.log(idData);
-      $("#scanData").text(idData).select();
+      console.log(matchrs);
+      $("#scanData").text(matchrs).select();
       document.execCommand("copy");
 
     })
