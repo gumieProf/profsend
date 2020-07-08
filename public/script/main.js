@@ -293,7 +293,7 @@ export default function main() {
         $.removeCookie("sns");
         return false;
       });
-      $('input[type=file]').change(function () {
+      $('#scanFile').change(function () {
         var file = $(this).prop('files')[0];
         window.Tesseract.recognize(file, { lang: 'eng' }) //exp: jpn, eng
           //.ImageLike('media', lang)  //* browser only img || video || canvas
