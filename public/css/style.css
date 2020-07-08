@@ -478,15 +478,4 @@ nof .link {
 .discord {
   color: #000;
 }
-
-label > input {
-  display: none;
-}
-
-label {
-  color: #000;
-  background-color: #777;
-  padding: 5px;
-  border: 4px #000;
-}
 /*# sourceMappingURL=style.css.map */

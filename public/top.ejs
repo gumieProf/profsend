@@ -261,29 +261,29 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
           <i class="fas fa-angle-right fa-2x angle"></i>
         </a>
       </div>
+
+      <div class="library" id="library">
+
+        <span><a href="#" class="envls"><img src="/image/prof.png" alt="profLogo"></a></span>
+        <span><a href="#" class="envls"><img src="/image/Tspin.png" alt="Tspin"></a></span>
+        <span><a href="#" class="envls"><img src="/image/bomb.png" alt="bomb"></a></span>
+        <span><a href="#" class="envls"><img src="/image/sword.png" alt="sword"></a></span>
+        <span><a href="#" class="envls"><img src="/image/shield.png" alt="shield"></a></span>
+
+
+      </div>
+
+      <a id="picdel" class="waves-effect waves-light btn" onclick="pic = '';">エンブレムを非表示</a>
+
+      <a id="reset" class="waves-effect waves-light btn" onclick="pic = '/image/img-1.png';">エンブレムをリセット</a>
+      <br />
+      <label for="file">
+        <strong>エンブレム画像のアップロード</strong>
+        <input type="text" value="ファイル選択" name="fileUpload" id="fileUpload" onClick="$('#file').click();" />
+        <input type="file" name="file" id="file" onchange="$('#fake_text_box').val($(this).val());" />
+        <input type="text" id="fake_text_box" value="" size="35" readonly onClick="$('#file').click();">
+      </label>
     </div>
-
-    <div class="library" id="library">
-
-      <span><a href="#" class="envls"><img src="/image/prof.png" alt="profLogo"></a></span>
-      <span><a href="#" class="envls"><img src="/image/Tspin.png" alt="Tspin"></a></span>
-      <span><a href="#" class="envls"><img src="/image/bomb.png" alt="bomb"></a></span>
-      <span><a href="#" class="envls"><img src="/image/sword.png" alt="sword"></a></span>
-      <span><a href="#" class="envls"><img src="/image/shield.png" alt="shield"></a></span>
-
-
-    </div>
-
-    <a id="picdel" class="waves-effect waves-light btn" onclick="pic = '';">エンブレムを非表示</a>
-
-    <a id="reset" class="waves-effect waves-light btn" onclick="pic = '/image/img-1.png';">エンブレムをリセット</a>
-    <br />
-    <label for="file">
-      <strong>エンブレム画像のアップロード</strong>
-      <input type="text" value="ファイル選択" name="fileUpload" id="fileUpload" onClick="$('#file').click();" />
-      <input type="file" name="file" id="file" onchange="$('#fake_text_box').val($(this).val());" />
-      <input type="text" id="fake_text_box" value="" size="35" readonly onClick="$('#file').click();">
-    </label>
     </div>
 
     <br />
