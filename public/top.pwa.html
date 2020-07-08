@@ -78,9 +78,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
                     height="50" id="toku" /></a></toku>
             </li>
             <li>
-              <img
-                src="https://img.shields.io/badge/dynamic/json.svg?label=version&colorB=5f9ea0&query=$.version&uri=https://raw.githubusercontent.com/gutsmine-tech/profsend-v2/master/package.json&prefix=v"
-                alt="badge" class="wrap" />
+              <a href="#" class="scan">
+                <i class="fab fa-searchengin" onclick="$('scanFile').click()"></i>
+                <strong>IDスキャン</strong>
+                <input type="file" name="scanFile" id="scanFile" style="display: none;">
+              </a>
             </li>
             <li>
               <abolt><a href="about.html"><strong>プロフセンドについて</strong></a></abolt>

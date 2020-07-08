@@ -127,6 +127,7 @@ export default function main() {
       $(".envls").click(function () {
         var img = $(this).children("img");
         pic = img;
+        return false;
       });
       var prof = document.getElementById("prof");
       var m = prof.getContext("2d");
@@ -291,6 +292,24 @@ export default function main() {
         $.removeCookie("sns");
         return false;
       });
+      $('input[type=file]').change(function () {
+        var file = $(this).prop('files')[0];
+        window.Tesseract.recognize(file, { lang: 'eng' }) //exp: jpn, eng
+          //.ImageLike('media', lang)  //* browser only img || video || canvas
+          .progress(function (p) {
+            // 進歩状況の表示
+            console.log('progress', p)
+          })
+          // 結果のコールバック
+          .then(function (result) {
+            var elem = document.getElementById("scanData");
+            elem.innerHTML(result);
+            elem.select();
+            document.execCommand("copy");
+
+          });
+
+      })
     });
   });
 }
