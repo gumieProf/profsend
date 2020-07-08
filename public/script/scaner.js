@@ -6,7 +6,7 @@ $(function () {
 
     Tesseract.recognize(
       scanImage,
-      'eng',
+      'jpn',
       {
         logger: m => {
           console.log(m);
