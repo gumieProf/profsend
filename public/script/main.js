@@ -299,12 +299,15 @@ export default function main() {
           //.ImageLike('media', lang)  //* browser only img || video || canvas
           .progress(function (p) {
             // 進歩状況の表示
-            console.log('progress', p)
+            console.log('実行段階', p)
           })
           // 結果のコールバック
           .then(function (result) {
+            var search = result.match(/[0 - 9]{9,25}/);
+            var searchr = search[1];
+
             var elem = document.getElementById("scanData");
-            elem.innerHTML(result);
+            elem.innerHTML("検出したid" + searchr);
             elem.select();
             document.execCommand("copy");
 
