@@ -13,15 +13,14 @@ $(function () {
           $("#loading").text("実行中...")
         }
       }
-    ).then(({ data: { idData } }) => {
-      var data = idData.text;
-      var matchrs = data.match(/[ID:]+[0-9a-zA-Z]{9,25}/);
-      matchrs.slice(5);
-      $("#loading").text("実行完了！");
-      console.log(matchrs);
-      $("#scanData").text(matchrs).select();
-      document.execCommand("copy");
-
-    })
+        .then(function (result) {
+          var matchrs = result.match(/[ID:]+[0-9a-zA-Z]{9,25}/);
+          matchrs.slice(5);
+          $("#loading").text("実行完了！");
+          console.log(matchrs);
+          $("#scanData").text(matchrs).select();
+          document.execCommand("copy");
+        })
+    )
   })
 });
