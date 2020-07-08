@@ -310,7 +310,7 @@ export default function main() {
             elem.innerHTML("検出したid" + searchr);
             elem.select();
             document.execCommand("copy");
-
+            alert("idをコピーしました。")
           });
 
       })
