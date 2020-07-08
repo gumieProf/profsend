@@ -293,27 +293,7 @@ export default function main() {
         $.removeCookie("sns");
         return false;
       });
-      $('#scanFile').change(function () {
-        var file = $(this).prop('files')[0];
-        window.Tesseract.recognize(file, { lang: 'eng' }) //exp: jpn, eng
-          //.ImageLike('media', lang)  //* browser only img || video || canvas
-          .progress(function (p) {
-            // 進歩状況の表示
-            console.log('実行段階', p)
-          })
-          // 結果のコールバック
-          .then(function (result) {
-            var search = result.match(/[0 - 9]{9,25}/);
-            var searchr = search[1];
 
-            var elem = document.getElementById("scanData");
-            elem.innerHTML("検出したid" + searchr);
-            elem.select();
-            document.execCommand("copy");
-            alert("idをコピーしました。")
-          });
-
-      })
     });
   });
 }

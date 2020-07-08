@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="ゲーム,プロフィール,ウェブアプリ,プロフセンド,profsend" />
+  <meta name="description" content="プロフセンドは、ゲームのIDをSNSに送るためのプロフィールジェネレータです。" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/image/icon-192.png" sizes="192x192" />
+  <title>プロフセンド</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <script src="https://kit.fontawesome.com/31d4cf3320.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="/image/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="/script/jquery.js"></script>
+  <script src="/script/modules-build.js"></script>
+
+</head>
+
+<body>
+  <header>
+    <div id="nav-drawer">
+      <input id="nav-input" type="checkbox" class="nav-unshown" />
+      <label id="nav-open" for="nav-input"><span></span></label>
+      <a href="top.html"><img src="/image/prof2.png" alt="logo" width="233px" height="60px" class="wrap" /></a>
+      <a class="download" id="download"><i class="fas fa-file-download fa-2x download"></i></a>
+
+      <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+      <div id="nav-content">
+        <ul>
+          <li>
+            <a href="top.ejs"><img src="/image/ja_prof.png" alt="logo" width="100px" height="100px" class="wrap" /></a>
+          </li>
+          <li>
+            <toku><a href="#" onclick="pic = '/image/toku.png';" id="toku"><img src="/image/toku.png" width="50"
+                  height="50" id="toku" /></a></toku>
+          </li>
+          <li>
+            <abolt><a href="about.html"><i class="fas fa-question fa-2x about"></i>プロフセンドについて</a></abolt>
+          </li>
+          <li>
+            <sc>
+              <p>
+                <a href="https://github.com/gutsmine/profsend" class="wrap"><i
+                    class="fab fa-github fa-2x source"></i>ソースコード</a>
+              </p>
+            </sc>
+          </li>
+          <li>
+            <mit>
+              <p>
+                <a href="https://github.com/gutsmine/profsend/blob/master/LICENSE" class="wrap"><i
+                    class="fas fa-file fa-2x license"></i>ライセンス</a>
+              </p>
+            </mit>
+          </li>
+          <li>
+            <a href="13update.pwa.html">
+              13アップデートに関わる大切なお知らせ
+            </a>
+          </li>
+
+          <li>
+            <copy>
+              <h5>2019 GUTSMINE c</h5>
+            </copy>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <h1>profsend scaner(プロフセンド スキャナー)</h1>
+
+  <input type="file" name="scanFile" id="scanFile" value="スキャンする画像のアップロード">
+
+  <h3>出力結果</h3>
+
+  <strong id="scanData"></strong>
+
+  <script>
+
+    $("#scanFile").change(function () {
+
+      var scanImage = $(this)[0].files[0];
+
+      Tesseract.recognize(
+        scanImage,
+        'eng',
+        {
+          logger: m => {
+
+            $("#scanData").text(m).select();
+            document.execCommand("copy");
+
+          }
+        }
+      ).then(({ data: { text } }) => {
+        console.log(text);
+      })
+    })
+
+  </script>
+
+</body>
+
+</html>

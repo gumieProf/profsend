@@ -58,6 +58,7 @@ var urlsToCache = [
   "/image/icon-72.png",
   "/image/icon-96.png",
   "/manifest.json",
+  "/scaner.html"
 ];
 
 self.addEventListener("install", function (event) {
