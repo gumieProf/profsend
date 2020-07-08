@@ -73,9 +73,6 @@ export default function main() {
     $.cookie("age", age2);
     setTimeout(function () {
       $(".datas").hide();
-      var data1hide = 0;
-      var data2hide = 0;
-      var data3hide = 0;
       $(".delete1").click(function () {
         $("#name").val("");
         i();
@@ -95,7 +92,6 @@ export default function main() {
       $("#data1Btn,.subData1").click(function () {
         $(".datas").hide();
         $("#data1").fadeIn();
-        data1hide = 1;
         $(".dataBtn").hide();
         return false;
       });
@@ -115,10 +111,22 @@ export default function main() {
 
         return false;
       });
+      $("#data4Btn,.subData4").click(function () {
+        $(".datas").hide();
+
+        $("#data4").fadeIn();
+        $(".dataBtn").hide();
+
+        return false;
+      });
       $(".back").click(function () {
         $(".datas").hide();
         $(".dataBtn").show();
         return false;
+      });
+      $(".envls").click(function () {
+        var img = $(this).children("img");
+        pic = img;
       });
       var prof = document.getElementById("prof");
       var m = prof.getContext("2d");
@@ -266,15 +274,16 @@ export default function main() {
           i();
           $("#idleng").html("<h5>現在の桁数は" + idtypeVal + "です</h5>");
         }),
-        e.addEventListener("change", function (e) {
-          var t = e.target.files[0];
-          if (t.type.match("image.*")) {
-            var n = new FileReader();
-            (n.onload = function () {
-              (pic = n.result), i();
-            }), n.readAsDataURL(t);
-          } else alert("画像を選択してください");
-        });
+        $("")
+      e.addEventListener("change", function (e) {
+        var t = e.target.files[0];
+        if (t.type.match("image.*")) {
+          var n = new FileReader();
+          (n.onload = function () {
+            (pic = n.result), i();
+          }), n.readAsDataURL(t);
+        } else alert("画像を選択してください");
+      });
       $("#cookieClear").click(function () {
         $.removeCookie("name");
         $.removeCookie("id");

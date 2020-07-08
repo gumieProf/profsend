@@ -106,6 +106,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
       <a href="#" class="subData subData1">基本情報</a>
       <a href="#" class="subData subData2">その他情報</a>
       <a href="#" class="subData subData3">デザイン</a>
+      <a href="#" class="subData subData4">エンブレム</a>
     </div>
 
     <div id="sec1">
@@ -131,9 +132,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
         <p>テキスト・背景の色・画像の変更・非表示</p>
         <i class="fas fa-angle-right fa-2x angle"></i>
       </div>
-      <a class="waves-effect waves-light btn" href="#" id="cookieClear">保存情報の削除</a>
-      <a class="waves-effect waves-light btn" id="windl" href="#">ウィンドウサイズでダウンロード</a>
-      <a class="waves-effect waves-light btn" id="smtdl" href="#">スマホ画面サイズでダウンロード</a>
+      <div class="dataBtn" id="data4Btn">
+        <a href="#data4"> <span>エンブレム</span> </a>
+        <p>エンブレムの変更・非表示</p>
+        <i class="fas fa-angle-right fa-2x angle"></i>
+      </div>
+    </div>
+
+    <a class="waves-effect waves-light btn" href="#" id="cookieClear">保存情報の削除</a>
+    <a class="waves-effect waves-light btn" id="windl" href="#">ウィンドウサイズでダウンロード</a>
+    <a class="waves-effect waves-light btn" id="smtdl" href="#">スマホ画面サイズでダウンロード</a>
 
     </div>
 
@@ -226,13 +234,34 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
         </select>
         <label for="textColor">テキストの色</label>
       </div>
-      <a id="picdel" class="waves-effect waves-light btn" onclick="pic = '';">エンブレムを非表示</a>
-
-      <a id="reset" class="waves-effect waves-light btn" onclick="pic = '/image/img-1.png';">エンブレムをリセット</a>
-      <br />
-      <strong>エンブレム画像のアップロード</strong>
-      <input type="file" name="file" id="file" />
     </div>
+    <div class="datas" id="data4">
+
+      <div class="library" id="library">
+        <a href="#library"> <span>エンブレムライブラリー</span> </a>
+        <i class="fas fa-angle-right fa-2x angle"></i>
+      </div>
+    </div>
+
+    <div class="library" id="library">
+
+      <span><a href="#" class="envls"><img src="/image/prof.png" alt="profLogo"></a></span>
+      <span><a href="#" class="envls"><img src="/image/Tspin.png" alt="Tspin"></a></span>
+      <span><a href="#" class="envls"><img src="/image/bomb.png" alt="bomb"></a></span>
+      <span><a href="#" class="envls"><img src="/image/sword.png" alt="sword"></a></span>
+      <span><a href="#" class="envls"><img src="/image/shield.png" alt="shield"></a></span>
+
+
+    </div>
+
+    <a id="picdel" class="waves-effect waves-light btn" onclick="pic = '';">エンブレムを非表示</a>
+
+    <a id="reset" class="waves-effect waves-light btn" onclick="pic = '/image/img-1.png';">エンブレムをリセット</a>
+    <br />
+    <strong>エンブレム画像のアップロード</strong>
+    <input type="file" name="file" id="file" />
+    </div>
+
     <div id="result"></div>
     <br />
     <small>©︎ 2020 gumie</small>
