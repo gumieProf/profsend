@@ -72,11 +72,11 @@
     </div>
   </header>
 
-  <h1>profsend scaner(プロフセンド スキャナー)</h1>
+  <h2>profsend scaner(プロフセンド スキャナー)</h2>
 
   <input type="file" name="scanFile" id="scanFile" value="スキャンする画像のアップロード">
 
-  <h3>出力結果</h3>
+  <h4>出力結果</h4>
 
   <strong id="scanData"></strong>
 
@@ -89,16 +89,11 @@
       Tesseract.recognize(
         scanImage,
         'eng',
-        {
-          logger: m => {
+      ).then(({ data: { idData } }) => {
+        console.log(idData);
+        $("#scanData").text(idData).select();
+        document.execCommand("copy");
 
-            $("#scanData").text(m).select();
-            document.execCommand("copy");
-
-          }
-        }
-      ).then(({ data: { text } }) => {
-        console.log(text);
       })
     })
 
