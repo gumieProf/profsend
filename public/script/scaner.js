@@ -8,11 +8,11 @@ $(function () {
       scanImage,
       'jpn'
     )
-      .progress(function (p) {
+      .progress(p => {
         $("#loading").text(p.status + ":" + Math.round(p.progress * 100) + "%")
 
       })
-      .then(function (result) {
+      .then(result => {
         var ris = String(result.text);
         console.log(ris)
         matchrs = ris.match(/[ID:]+[0-9a-zA-Z]{9,25}/);
