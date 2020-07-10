@@ -14,7 +14,7 @@ $(function () {
       .then(result => {
         var ris = String(result.text);
         console.log(ris)
-        matchrs = ris.match(/[ID:]+[0-9a-zA-Z]{9,25}/);
+        var matchrs = ris.match(/[ID:]+[0-9a-zA-Z]{9,25}/);
         matchrs.slice(4);
         $("#loading").text("実行完了！");
         console.log(matchrs);
