@@ -8,13 +8,13 @@ $(function () {
       scanImage,
       'jpn',
       {
-        logger: m => {
-          console.log(m);
-          $("#loading").text("実行中...")
-        }
+      })
+      .progress(function (p) {
+        $("#loading").text("実行中:" + Math.round(p.progress * 100) + "%")
+
       })
       .then(function (result) {
-        var ris = result.text;
+        var ris = String(result.text);
         console.log(ris)
         matchrs = ris.match(/[ID:]+[0-9a-zA-Z]{9,25}/);
         matchrs.slice(4);
