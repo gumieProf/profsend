@@ -6,12 +6,11 @@ $(function () {
 
     Tesseract.recognize(
       scanImage,
-      'jpn'
+      'jpn',
+      {
+        logger: p => $("#loading").text(p.status + ":" + Math.round(p.progress * 100) + "%")
+      }
     )
-      .progress(p => {
-        $("#loading").text(p.status + ":" + Math.round(p.progress * 100) + "%")
-
-      })
       .then(result => {
         var ris = String(result.text);
         console.log(ris)
