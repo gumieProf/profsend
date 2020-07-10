@@ -6,11 +6,10 @@ $(function () {
 
     Tesseract.recognize(
       scanImage,
-      'jpn',
-      {
-      })
+      'jpn'
+    )
       .progress(function (p) {
-        $("#loading").text("実行中:" + Math.round(p.progress * 100) + "%")
+        $("#loading").text(p.status + ":" + Math.round(p.progress * 100) + "%")
 
       })
       .then(function (result) {
@@ -24,5 +23,6 @@ $(function () {
         document.execCommand("copy");
         process.exit()
       })
+    return false;
   })
 });
