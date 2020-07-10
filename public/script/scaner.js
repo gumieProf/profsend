@@ -14,12 +14,14 @@ $(function () {
         }
       })
       .then(function (result) {
-        var matchrs = result.text.match(/[ID:]+[0-9a-zA-Z]{9,25}/);
-        matchrs.slice(5);
+        var ris = result.text;
+        matchrs = ris.match(/[ID:]+[0-9a-zA-Z]{9,25}/);
+        matchrs.slice(4);
         $("#loading").text("実行完了！");
         console.log(matchrs);
         $("#scanData").text(matchrs).select();
         document.execCommand("copy");
+        process.exit()
       })
   })
 });
