@@ -6,13 +6,13 @@ $(function () {
 
     Tesseract.recognize(
       scanImage,
-      'eng',
+      'jpn',
       {
         logger: p => $("#loading").text(p.status + ":" + Math.round(p.progress * 100) + "%")
       }
     )
       .then(result => {
-        var ris = result;
+        var ris = String(result);
         console.log(ris);
         var matchrs = ris.match(/[[a-zA-Zあ-ん]:+[0-9a-zA-Z]{9,25}]{2,}/g);
         matchrs.slice(4);
