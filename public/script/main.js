@@ -129,7 +129,7 @@ export default function main() {
         return false;
       });
       $(".envls").click(function () {
-        var img = $(this).children("img");
+        var img = $(this).find("img");
         var imgsrc = img.attr('src');
         pic = imgsrc;
         i();
