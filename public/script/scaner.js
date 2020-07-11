@@ -21,9 +21,7 @@ $(function () {
           console.log(ris);
           var rismat = ris.match(/[A-Zあ-ん:]+[A-Zあ-ん]/g);
           $("#loading").text("実行完了！");
-          for (let i = ris.length; i > 0; i = -1) {
-            $("#scanData>ul").html("<li>" + rismat[i] + "</li>");
-          }
+          $("#scanData").html(rismat);
         })
       return false;
     }
