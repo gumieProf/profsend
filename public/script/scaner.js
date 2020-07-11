@@ -4,6 +4,7 @@ $(function () {
 
     var scanImage = $(this)[0].files[0];
     if (scanImage) {
+      document.getElementById("preview").src = scanImage;
       Tesseract.recognize(
         scanImage,
         'jpn',
