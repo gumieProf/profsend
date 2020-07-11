@@ -9,7 +9,6 @@ $(function () {
         $("#preview").attr('src', e.target.result);
       }
       reader.readAsDataURL(e.target.files[0]);
-      $("#preview").attr('src', scanImage);
       Tesseract.recognize(
         scanImage,
         'jpn',
