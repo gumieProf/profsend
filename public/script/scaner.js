@@ -19,11 +19,9 @@ $(function () {
         .then(result => {
           var ris = result.data.text;
           console.log(ris);
-          var rismat = ris.match(/[A-Zあ-ん]+[:]+[A-Zあ-ん]/g);
+          var rismat = ris.match(/[A-Zあ-ん]{2,}:\s[A-Zあ-ん]{9,25}/g);
           $("#loading").text("実行完了！");
-          for (let i = 0; i < rismat.length; i++) {
-            $("#scanData").html(rismat[i]);
-          }
+          $("#scanData").html(rismat);
         })
       return false;
     }
