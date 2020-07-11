@@ -22,10 +22,10 @@ $(function () {
           var rismat = ris.match(/[A-Zあ-ん:]+[A-Zあ-ん]/g);
           $("#loading").text("実行完了！");
           for (let i = ris.length; i > 0; i = -1) {
-            var rismat1 = rismat.slice(rismat.match(/[A-Zあ-ん: ]/));
-            var rismat2 = rismat.slice(rismat.match(/[A-Zあ-ん]/));
-            $("#scanData>ul").html("<li>" + rismat1[i] + "</li>");
-            $("#scanData>ul").html("<li>" + rismat2[i] + "</li>");
+            var rismat1 = rismat.slice(rismat[i].match(/[A-Zあ-ん: ]/));
+            var rismat2 = rismat.slice(rismat[i].match(/[A-Zあ-ん]/));
+            $("#scanData>ul").html("<li>" + rismat1[1] + "</li>");
+            $("#scanData>ul").html("<li>" + rismat2[1] + "</li>");
           }
         })
       return false;
