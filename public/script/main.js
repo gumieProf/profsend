@@ -130,10 +130,12 @@ export default function main() {
       });
       $(".envls").click(function () {
         var img = $(this).children("img");
-        pic = img;
+        var imgsrc = img.attr('src');
+        pic = imgsrc;
         i();
         return false;
       });
+
       var prof = document.getElementById("prof");
       var m = prof.getContext("2d");
       new Image().src = "" + pic;
