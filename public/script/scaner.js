@@ -3,7 +3,7 @@ $(function () {
   $("#scanFile").change(function () {
 
     var scanImage = $(this)[0].files[0];
-    if (!scanImage) {
+    if (scanImage) {
       Tesseract.recognize(
         scanImage,
         'jpn',
