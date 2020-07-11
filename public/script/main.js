@@ -37,6 +37,10 @@ export default function main() {
     var coment2 = coment;
     var sns2 = sns;
     var name2 = name;
+    var pic = "/image/img-1.png";
+    var color = "#999";
+    var text = "#000000";
+
     if ($.cookie("id")) {
       var id = $.cookie("id");
       $("#id").val(id);
@@ -71,6 +75,7 @@ export default function main() {
       $("#age").val(age);
     }
     $.cookie("age", age2);
+
     setTimeout(function () {
       $("#scanFile").hide();
       $(".datas").hide();
@@ -128,6 +133,7 @@ export default function main() {
       $(".envls").click(function () {
         var img = $(this).children("img");
         pic = img;
+        i();
         return false;
       });
       var prof = document.getElementById("prof");
