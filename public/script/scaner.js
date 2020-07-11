@@ -2,7 +2,7 @@ import Tesseract from 'tesseract.js'
 $(function () {
   $("#scanFile").change(function () {
 
-    var scanImage = $(this)[0].files;
+    var scanImage = $(this)[0].files[0];
 
     Tesseract.recognize(
       scanImage,
