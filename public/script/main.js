@@ -37,12 +37,6 @@ export default function main() {
     var coment2 = coment;
     var sns2 = sns;
     var name2 = name;
-    var pic = "/image/img-1.png";
-    var color = "#999";
-    var text = "#000000";
-    window.pic = pic
-    window.color = color
-    window.text = text
 
 
     if ($.cookie("id")) {
