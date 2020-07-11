@@ -19,6 +19,7 @@ $(function () {
         .then(result => {
           var ris = result.data.text;
           console.log(ris);
+
           $("#loading").text("実行完了！");
           $("#scanData").html(risrep);
         })
