@@ -21,7 +21,7 @@ $(function () {
           console.log(ris);
 
           $("#loading").text("実行完了！");
-          $("#scanData").html(risrep);
+          $("#scanData").html(ris);
         })
       return false;
     }
