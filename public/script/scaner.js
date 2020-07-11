@@ -1,10 +1,10 @@
 import Tesseract from 'tesseract.js'
 $(function () {
-  $("#scanFile").change(function () {
+  $("#scanFile").change(function (e) {
 
     var scanImage = $(this)[0].files[0];
     if (scanImage) {
-      document.getElementById("preview").src = scanImage;
+      $("#preview").attr('src', scanImage);
       Tesseract.recognize(
         scanImage,
         'jpn',
