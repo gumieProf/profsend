@@ -40,6 +40,10 @@ export default function main() {
     var pic = "/image/img-1.png";
     var color = "#999";
     var text = "#000000";
+    window.pic = pic
+    window.color = color
+    window.text = text
+
 
     if ($.cookie("id")) {
       var id = $.cookie("id");
