@@ -18,13 +18,7 @@ $(function () {
       )
         .then(result => {
           var ris = result.data.text;
-          var ris2 = ris
           console.log(ris);
-          var risrep = ris2.replace(":", " ");
-          while (risrep !== ris2) {
-            ris2 = ris2.replace('_', '-');
-            risrep = risrep.replace('_', '-');
-          }
           $("#loading").text("実行完了！");
           $("#scanData").html(risrep);
         })
