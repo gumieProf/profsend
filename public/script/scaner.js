@@ -13,7 +13,7 @@ $(function () {
     )
       .then(result => {
         var ris = result;
-        console.log(ris)
+        console.log(ris);
         var matchrs = ris.match(/[[a-zA-Zあ-ん]:+[0-9a-zA-Z]{9,25}]{2,}/g);
         matchrs.slice(4);
         $("#loading").text("実行完了！");
