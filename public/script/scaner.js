@@ -19,9 +19,10 @@ $(function () {
         .then(result => {
           var ris = result.data.text;
           console.log(ris);
-          var rismat = ris.match(/[A-Zあ-ん:]+[A-Zあ-ん]/g).slice(2);
+          var rismat = ris.match(/[A-Zあ-ん:]+[A-Zあ-ん]/g);
+          var risms = rismat.slice(2)
           $("#loading").text("実行完了！");
-          $("#scanData").html(rismat);
+          $("#scanData").html(risms);
         })
       return false;
     }
