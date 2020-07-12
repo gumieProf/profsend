@@ -151,7 +151,7 @@ export default function download() {
       dlcanv.width = 1080;
       dlcanv.height = 1920;
       setTimeout(() => {
-        var o = "30px";
+        var o = "45px";
         var id = $("#id").val();
         var age = $("#age").val();
         var coment = $("#coment").val();
@@ -226,7 +226,7 @@ export default function download() {
         m.lineWidth = 8;
         m.strokeStyle = text
         m.stroke();
-        var fontSize = 30; // フォントサイズ
+        var fontSize = 45; // フォントサイズ
         var lineHeight = 1.5; // 行の高さ (フォントサイズに対する倍率)
         var x = 30; // 水平位置
         var y = 30; // 垂直位置
@@ -244,7 +244,7 @@ export default function download() {
         }
         let link = document.createElement("a");
         link.href = prof.toDataURL("image/png");
-        link.download = "prof-window.png";
+        link.download = "prof-smart.png";
         link.click();
       }, 50);
       return false;
