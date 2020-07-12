@@ -164,48 +164,48 @@ export default function main() {
           var ageif = age == null || typeof age == "undefined" || age == "";
 
           if (comentif && snsif && ageif) {
-            var e = "ユーザー名:\t" + name + "\nID: \t" + id;
+            var e = "NAME:\t" + name + "\nID: \t" + id;
           } else if (comentif && snsif) {
-            var e = "ユーザー名:\t" + name + "\nID: \t" + id + "\n 年齢: \t" + age;
+            var e = "NAME:\t" + name + "\nID: \t" + id + "\n AGE: \t" + age;
           } else if (ageif && snsif) {
-            var e = "ユーザー名:\t" + name + "\nID: \t" + id + "\nコメント: \t" + age;
+            var e = "NAME:\t" + name + "\nID: \t" + id + "\nCOMMENT: \t" + age;
           } else if (ageif && comentif) {
-            var e = "ユーザー名:\t" + name + "\nID: \t" + id + "\nSNS: \t" + sns;
+            var e = "NAME:\t" + name + "\nID: \t" + id + "\nSNS: \t" + sns;
           } else if (ageif) {
-            var e = "ユーザー名:\t" +
+            var e = "NAME:\t" +
               name +
               "\nID: \t" +
               id +
-              "\nコメント: \t" +
+              "\nCOMMENT: \t" +
               coment +
               "\nSNS: \t" +
               sns;
           } else if (comentif) {
-            var e = "ユーザー名:\t" +
+            var e = "NAME:\t" +
               name +
               "\nID: \t" +
               id +
-              "\n 年齢: \t" +
+              "\n AGE: \t" +
               age +
               "\nSNS: \t" +
               sns;
           } else if (snsif) {
-            var e = "ユーザー名:\t" +
+            var e = "NAME:\t" +
               name +
               "\nID: \t" +
               id +
-              "\n 年齢: \t" +
+              "\n AGE: \t" +
               age +
-              "\nコメント: \t" +
+              "\nCOMMENT: \t" +
               coment;
           } else {
-            var e = "ユーザー名:\t" +
+            var e = "NAME:\t" +
               name +
               "\nID: \t" +
               id +
-              "\n 年齢: \t" +
+              "\n AGE: \t" +
               age +
-              "\nコメント: \t" +
+              "\nCOMMENT: \t" +
               coment +
               "\nSNS: \t" +
               sns;
