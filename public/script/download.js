@@ -240,7 +240,7 @@ export default function download() {
 
           m.fillText(line, x + 0, y + addY);
           var a = new Image();
-          (a.src = "" + pic), m.drawImage(a, 320 * 5, 130, 50 * 5, 50);
+          (a.src = "" + pic), m.drawImage(a, 320 * 5, 130, 900, 1700);
         }
         let link = document.createElement("a");
         link.href = prof.toDataURL("image/png");
