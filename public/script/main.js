@@ -234,7 +234,7 @@ export default function main() {
 
             m.fillText(line, x + 0, y + addY);
             var a = new Image();
-            (a.src = "" + pic), m.drawImage(a, prof.width - 30, prof.height - 30, 30, 30);
+            (a.src = "" + pic), m.drawImage(a, prof.width - 50, prof.height - 50, 30, 30);
           }
         }, 50);
       };

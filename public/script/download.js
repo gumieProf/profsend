@@ -137,7 +137,7 @@ export default function download() {
 
           m.fillText(line, x + 0, y + addY);
           var a = new Image();
-          (a.src = "" + pic), m.drawImage(a, prof.width - 30, prof.height - 30, 100, 100);
+          (a.src = "" + pic), m.drawImage(a, prof.width - 50, prof.height - 50, 30, 30);
         }
         let link = document.createElement("a");
         link.href = prof.toDataURL("image/png");
@@ -240,7 +240,7 @@ export default function download() {
 
           m.fillText(line, x + 0, y + addY);
           var a = new Image();
-          (a.src = "" + pic), m.drawImage(a, prof.width - 30, prof.height - 30, 100, 100);
+          (a.src = "" + pic), m.drawImage(a, prof.width - 50, prof.height - 50, 30, 30);
         }
         let link = document.createElement("a");
         link.href = prof.toDataURL("image/png");
