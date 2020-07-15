@@ -25,7 +25,7 @@ SOFTWARE.
 export default function main() {
   $(function () {
     $.cookie("SameSite", "lax");
-    var o = 50,
+    var o = 100,
       prof = document.getElementById("prof"),
       m = prof.getContext("2d");
     var id = $("#id").val();
@@ -222,10 +222,10 @@ export default function main() {
           m.lineWidth = 8;
           m.strokeStyle = text
           m.stroke();
-          var fontSize = 50; // フォントサイズ
+          var fontSize = 100; // フォントサイズ
           var lineHeight = 1.1618; // 行の高さ (フォントサイズに対する倍率)
-          var x = 100; // 水平位置
-          var y = 100; // 垂直位置
+          var x = 50; // 水平位置
+          var y = 50; // 垂直位置
           m.font = "bold " + o + "Noto Sans JP";
           for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
             var line = lines[i];
