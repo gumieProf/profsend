@@ -24,7 +24,7 @@ SOFTWARE.
 
 export default function main() {
   $(function () {
-    $.cookie("SameSite", "lax");
+    $.cookie("SameSite", "Lax");
     var o = 100,
       prof = document.getElementById("prof"),
       m = prof.getContext("2d");
@@ -223,7 +223,7 @@ export default function main() {
           m.strokeStyle = text
           m.stroke();
           var fontSize = 100; // フォントサイズ
-          var lineHeight = 1.1618; // 行の高さ (フォントサイズに対する倍率)
+          var lineHeight = 0.5; // 行の高さ (フォントサイズに対する倍率)
           var x = 50; // 水平位置
           var y = 50; // 垂直位置
           m.font = "bold " + o + "Noto Sans JP";
