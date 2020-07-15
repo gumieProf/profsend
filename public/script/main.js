@@ -24,7 +24,7 @@ SOFTWARE.
 
 export default function main() {
   $(function () {
-    var o = "200px",
+    var o = "150px",
       prof = document.getElementById("prof"),
       m = prof.getContext("2d");
     var id = $("#id").val();
