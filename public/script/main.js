@@ -141,6 +141,7 @@ export default function main() {
       new Image().src = "" + pic;
       var e = document.getElementById("file");
       var i = function () {
+        prof.style.display = "block"
         setTimeout(function () {
           var id = $("#id").val();
           var age = $("#age").val();
@@ -236,6 +237,9 @@ export default function main() {
             var a = new Image();
             (a.src = "" + pic), m.drawImage(a, prof.width - 50, prof.height - 50, 30, 30);
           }
+          var imgT = document.getElementById("preview");
+          imgT.src = prof.toDataURL();
+          prof.style.display = "none"
         }, 50);
       };
       window.i = i;
