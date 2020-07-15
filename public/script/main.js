@@ -24,8 +24,7 @@ SOFTWARE.
 
 export default function main() {
   $(function () {
-    $.cookie("SameSite", "lax");
-    var o = "100px",
+    var o = "200px",
       prof = document.getElementById("prof"),
       m = prof.getContext("2d");
     var id = $("#id").val();
