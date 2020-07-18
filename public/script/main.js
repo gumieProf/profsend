@@ -225,7 +225,7 @@ export default function main() {
           var lineHeight = 0.5; // 行の高さ (フォントサイズに対する倍率)
           var x = 50; // 水平位置
           var y = 50; // 垂直位置
-          m.font = "bold " + o + "Noto Sans JP";
+          m.font = "bold " + o + " Noto Sans JP";
           for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
             var line = lines[i];
             var addY = fontSize;
