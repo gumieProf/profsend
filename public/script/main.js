@@ -158,7 +158,6 @@ export default function main() {
           $.cookie("age", age2);
           $.cookie("coment", coment2);
           $.cookie("sns", sns2);
-          $.cookie("age", age2);
           var comentif = coment == null || typeof coment == "undefined" ||
             coment == "";
           var snsif = sns == null || typeof sns == "undefined" || sns == "";
@@ -169,7 +168,7 @@ export default function main() {
           } else if (comentif && snsif) {
             var e = "NAME:\t" + name + "\nID: \t" + id + "\n AGE: \t" + age;
           } else if (ageif && snsif) {
-            var e = "NAME:\t" + name + "\nID: \t" + id + "\nCOMMENT: \t" + age;
+            var e = "NAME:\t" + name + "\nID: \t" + id + "\nCOMMENT: \t" + coment;
           } else if (ageif && comentif) {
             var e = "NAME:\t" + name + "\nID: \t" + id + "\nSNS: \t" + sns;
           } else if (ageif) {
