@@ -251,7 +251,7 @@ export default function main() {
       $("#name").val(), $("#id").val(), $("#age").val(), $("#coment").val();
       $("#snsText").val();
       i();
-      $(".profelem").on({
+      $(".profelem,#coment").on({
         "keydown": i,
         "chenge": i,
       });
@@ -260,7 +260,7 @@ export default function main() {
           "keydown": i,
           "chenge": i,
         },
-        ".profelem",
+        ".profelem,#coment",
       );
       $("#colors").change(function () {
         (color = $(this).val()), i();
