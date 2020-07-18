@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>profsend pwa TopPage</title>
+  <link rel="stylesheet" href="/css/materialize.css" />
+  <script src="/script/materialize.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/pwa.top.css" />
+  <script src="https://kit.fontawesome.com/31d4cf3320.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="/image/favicon.ico" />
+  <script src="/script/jquery.js"></script>
+  <script src="/script/modules-build.js"></script>
+  <script>
+    $(function () {
+      $(".btn").hide();
+      setTimeout(function () {
+        $("img").animate({
+          "marginTop": "50px"
+        },
+          function () {
+            $(".btn").fadeIn();
+          });
+      }, 5000)
+    });
+  </script>
+</head>
+
+<body>
+  <img src="/image/prof.png" alt="profsendLogo" height="118px" width="466px">
+  <a href="/top.pwa.html" class="btn">編集</a>
+  <a href="/scaner.html" class="btn">読み込み</a>
+</body>
+
+</html>

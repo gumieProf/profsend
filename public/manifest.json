@@ -2,7 +2,7 @@
     "short_name": "profsend",
     "name": "profsend",
     "display": "standalone",
-    "start_url": "./top.pwa",
+    "start_url": "./pwa.top",
     "icons": [
         {
             "src": "image/icon72.png",
@@ -43,6 +43,32 @@
             "src": "image/icon512.png",
             "sizes": "512x512",
             "type": "image/png"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "profile editor",
+            "short_name": "editor",
+            "description": "Create and save your profile",
+            "url": "/top.pwa.html",
+            "icons": [
+                {
+                    "src": "sc-editor.png",
+                    "sizes": "192x192"
+                }
+            ]
+        },
+        {
+            "name": "profile scaner",
+            "short_name": "scaner",
+            "description": "Get information from your profile",
+            "url": "/scaner.html",
+            "icons": [
+                {
+                    "src": "sc-scaner.png",
+                    "sizes": "192x192"
+                }
+            ]
         }
     ],
     "splash_pages": null
