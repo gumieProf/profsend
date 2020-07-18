@@ -24,6 +24,7 @@ SOFTWARE.
 
 export default function main() {
   $(function () {
+    $("#prof").hide()
     var o = "50px",
       prof = document.getElementById("prof"),
       m = prof.getContext("2d");
@@ -141,7 +142,6 @@ export default function main() {
       new Image().src = "" + pic;
       var e = document.getElementById("file");
       var i = function () {
-        prof.style.display = "block"
         setTimeout(function () {
           var id = $("#id").val();
           var age = $("#age").val();
@@ -239,7 +239,6 @@ export default function main() {
           }
           var imgT = document.getElementById("preview");
           imgT.src = prof.toDataURL();
-          prof.style.display = "none"
         }, 50);
       };
       window.i = i;
