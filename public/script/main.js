@@ -234,7 +234,7 @@ export default function main() {
 
             m.fillText(line, x + 0, y + addY);
             var a = new Image();
-            (a.src = "" + pic), m.drawImage(a, prof.width - 50, prof.height - 50, 100, 100);
+            (a.src = "" + pic), m.drawImage(a, prof.width - 150, prof.height - 150, 100, 100);
           }
           var imgT = document.getElementById("preview");
           imgT.src = prof.toDataURL();
