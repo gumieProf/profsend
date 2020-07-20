@@ -22,7 +22,7 @@ $(function () {
           console.log(ris);
           var rismatch = ris.match(/[a-zA-Z]: [a-zA-Z0-9あ-ん]/g);
           console.log(rismatch);
-          if (version.indexOf("msie 8.") != -1) {
+          if (userAgent.indexOf("msie 8.") != -1) {
             function isArray(obj) {
               return Object.prototype.toString.call(obj) === "[object Array]"
             }
