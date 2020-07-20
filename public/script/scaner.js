@@ -26,8 +26,7 @@ $(function () {
             for (let i = 0; i < rismatch.length; i++) {
               var risnam = rismatch[i].match(/[a-zA-Z]{0,}:/);
               var risval = rismatch[i].match(/[A-Za-z]{0,}/);
-              $("#scanData > ul").html("<li><strong>" + risnam + "</strong></li>");
-              $("#scanData > ul").html("<li>" + risval + "</li>");
+              $("#scanData > ul").html("<li><strong>" + risnam[2] + risval[1] + risval[2] + "</strong></li>");
             }
           }
           $("#loading").text("実行完了！");
