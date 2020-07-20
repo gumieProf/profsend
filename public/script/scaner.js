@@ -23,7 +23,7 @@ $(function () {
           var rismatch = ris.match(/[a-zA-Z]{0,}: [a-zA-Z0-9あ-ん]{0,}/g);
           console.log(rismatch);
           if ($.isArray(rismatch)) {
-            for (let i = 0; index < rismatch.length; i++) {
+            for (let i = 0; i < rismatch.length; i++) {
               var risnam = rismatch[i].match(/[a-zA-Z]{0,}:/);
               var risval = rismatch[i].match(/[A-Za-z]{0,}/);
               $("#scanData > ul").html("<li><strong>" + risnam + "</strong></li>");
