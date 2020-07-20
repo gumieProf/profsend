@@ -20,7 +20,7 @@ $(function () {
         .then(result => {
           var ris = result.data.text;
           console.log(ris);
-          var rismatch = ris.match(/[a-zA-Z]: [a-zA-Z0-9あ-ん]/g);
+          var rismatch = ris.match(/[a-zA-Z]{0,}: [a-zA-Z0-9あ-ん]{0,}/g);
           console.log(rismatch);
           if (userAgent.indexOf("msie 8.") != -1) {
             function isArray(obj) {
@@ -29,8 +29,8 @@ $(function () {
           }
           if (rismatch.isArray([])) {
             for (let i = 0; index < rismatch.length; i++) {
-              var risnam = rismatch[i].match(/[a-zA-Z]:/);
-              var risval = rismatch[i].match(/[A-Za-z]/);
+              var risnam = rismatch[i].match(/[a-zA-Z]{0,}:/);
+              var risval = rismatch[i].match(/[A-Za-z]{0,}/);
               $("#scanData > ul").html("<li><strong>" + risnam + "</strong></li>");
               $("#scanData > ul").html("<li>" + risval + "</li>");
             }
