@@ -27,7 +27,7 @@ $(function () {
               var risnam = rismatch[i].match(/[a-zA-Z]{0,}:/);
               var risrep = rismatch[i].replace(risnam, "")
               $("#scanData > ul").append("<li><strong>" + risnam + "=>" + risrep + "</strong><a harf='#' class='copyBtn'>コピーする</a></li>");
-              console.log(risnam + risval);
+              console.log(risnam + "=>" + risrep);
             }
           }
           $("#loading").text("実行完了！");
