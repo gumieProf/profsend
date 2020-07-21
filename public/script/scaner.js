@@ -23,10 +23,11 @@ $(function () {
           console.log(rismatch);
           if ($.isArray(rismatch)) {
             for (let i = 0; i < rismatch.length; i++) {
-              var risnam = rismatch[i].match(/[a-zA-Z]{0,}:/).replace(":", "");
+              var risnam = rismatch[i].match(/[a-zA-Z]{0,}:/);
+              var namrip = risnam.replace(":", "");
               var risrep = rismatch[i].replace(risnam, "")
-              $("#scanData > ul").append("<li><strong>" + risnam + "=>" + risrep + "</strong><a href='#' class='copyBtn'>コピーする</a></li>");
-              console.log(risnam + "=>" + risrep);
+              $("#scanData > ul").append("<li><strong>" + namrip + "=>" + risrep + "</strong><a href='#' class='copyBtn'>コピーする</a></li>");
+              console.log(namrip + "=>" + risrep);
             }
           }
           $("#loading").text("実行完了！");
@@ -34,7 +35,8 @@ $(function () {
       return false;
     }
     $("#copyBtn").click(function () {
-      $(this).select();
+
+      $(this).prev('a').select();
       document.execCommand("copy");
       alert("コピーが完了しました。");
       return false;
