@@ -1,6 +1,5 @@
 import Tesseract from 'tesseract.js'
 $(function () {
-  var userAgent = window.navigator.userAgent;
   $("#scanFile").change(function (e) {
 
     var scanImage = $(this)[0].files[0];
@@ -24,9 +23,9 @@ $(function () {
           console.log(rismatch);
           if ($.isArray(rismatch)) {
             for (let i = 0; i < rismatch.length; i++) {
-              var risnam = rismatch[i].match(/[a-zA-Z]{0,}:/);
+              var risnam = rismatch[i].match(/[a-zA-Z]{0,}:/).replace(":", "");
               var risrep = rismatch[i].replace(risnam, "")
-              $("#scanData > ul").append("<li><strong>" + risnam + "=>" + risrep + "</strong><a harf='#' class='copyBtn'>コピーする</a></li>");
+              $("#scanData > ul").append("<li><strong>" + risnam + "=>" + risrep + "</strong><a href='#' class='copyBtn'>コピーする</a></li>");
               console.log(risnam + "=>" + risrep);
             }
           }
@@ -38,6 +37,7 @@ $(function () {
       $(this).select();
       document.execCommand("copy");
       alert("コピーが完了しました。");
+      return false;
     });
   })
 });
