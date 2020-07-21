@@ -26,12 +26,18 @@ $(function () {
             for (let i = 0; i < rismatch.length; i++) {
               var risnam = rismatch[i].match(/[a-zA-Z]{0,}:/);
               var risval = rismatch[i].match(/[A-Za-z]{0,}/);
-              $("#scanData > ul").html("<li><strong>" + risnam[2] + risval[1] + risval[2] + "</strong></li>");
+              $("#scanData > ul").append("<li><strong>" + risnam + "=>" + risval + "</strong><a harf='#' class='copyBtn'>コピーする</a></li>");
+              console.log(risnam + risval);
             }
           }
           $("#loading").text("実行完了！");
         })
       return false;
     }
+    $("#copyBtn").click(function () {
+      $(this).select();
+      document.execCommand("copy");
+      alert("コピーが完了しました。");
+    });
   })
 });
