@@ -24,7 +24,7 @@ $(function () {
           if ($.isArray(rismatch)) {
             for (let i = 0; i < rismatch.length; i++) {
               var risnam = rismatch[i].match(/[a-zA-Z]{0,}:/);
-              var namrip = risnam.replace(":", "");
+              var namrip = risnam[0].replace(":", "");
               var risrep = rismatch[i].replace(risnam, "")
               $("#scanData > ul").append("<li><strong>" + namrip + "=>" + risrep + "</strong><a href='#' class='copyBtn'>コピーする</a></li>");
               console.log(namrip + "=>" + risrep);
