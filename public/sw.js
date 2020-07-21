@@ -39,8 +39,6 @@ var urlsToCache = [
   "/image/sword.png",
   "/image/shield.png",
   "/image/Tspin.png",
-  "/image/sc-editor.png",
-  "/image/sc-scaner.png",
   "/image/twiCard.png"
 
 ];
