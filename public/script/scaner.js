@@ -26,7 +26,7 @@ $(function () {
               var risnam = rismatch[i].match(/[a-zA-Z]{0,}:/);
               var namrip = risnam[0].replace(":", "");
               var risrep = rismatch[i].replace(risnam, "")
-              $("#scanData > ul").append("<li><strong>" + namrip + "=>" + risrep + "</strong><a href='#' class='copyBtn'>コピーする</a></li>");
+              $("#scanData > ul").append("<li>" + namrip + "=><strong>" + risrep + "</strong><a href='#' class='copyBtn'>コピーする</a></li>");
               console.log(namrip + "=>" + risrep);
             }
           }
@@ -36,7 +36,7 @@ $(function () {
     }
     $("#copyBtn").click(function () {
 
-      $(this).prev('a').select();
+      $(this).prev('strong').select();
       document.execCommand("copy");
       alert("コピーが完了しました。");
       return false;
