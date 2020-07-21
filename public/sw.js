@@ -1,8 +1,8 @@
 var CACHE_NAME = "profsend-pwa-v1";
 var urlsToCache = [
-  "/top.ejs",
-  "/about.ejs",
-  "/13update.ejs",
+  "/top.html",
+  "/about.html",
+  "/13update.html",
   "/top.pwa.html",
   "/css/style.css",
   "/css/bootstrap-4.3.1.css",
