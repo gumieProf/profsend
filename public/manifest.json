@@ -45,31 +45,5 @@
             "type": "image/png"
         }
     ],
-    "shortcuts": [
-        {
-            "name": "profile editor",
-            "short_name": "editor",
-            "description": "Create and save your profile",
-            "url": "/top.pwa.html",
-            "icons": [
-                {
-                    "src": "sc-editor.png",
-                    "sizes": "192x192"
-                }
-            ]
-        },
-        {
-            "name": "profile scaner",
-            "short_name": "scaner",
-            "description": "Get information from your profile",
-            "url": "/scaner.html",
-            "icons": [
-                {
-                    "src": "sc-scaner.png",
-                    "sizes": "192x192"
-                }
-            ]
-        }
-    ],
     "splash_pages": null
 }
