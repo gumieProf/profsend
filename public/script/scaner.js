@@ -25,8 +25,8 @@ $(function () {
           if ($.isArray(rismatch)) {
             for (let i = 0; i < rismatch.length; i++) {
               var risnam = rismatch[i].match(/[a-zA-Z]{0,}:/);
-              var risval = rismatch[i].match(/[A-Za-z]{0,}/);
-              $("#scanData > ul").append("<li><strong>" + risnam + "=>" + risval + "</strong><a harf='#' class='copyBtn'>コピーする</a></li>");
+              var risrep = rismatch.replace(risnam, "")
+              $("#scanData > ul").append("<li><strong>" + risnam + "=>" + risrep + "</strong><a harf='#' class='copyBtn'>コピーする</a></li>");
               console.log(risnam + risval);
             }
           }
