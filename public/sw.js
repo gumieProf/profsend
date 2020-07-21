@@ -34,7 +34,15 @@ var urlsToCache = [
   "/image/icon72.png",
   "/image/icon96.png",
   "/manifest.json",
-  "/scaner.html"
+  "/scaner.html",
+  "/image/bomb.png",
+  "/image/sword.png",
+  "/image/shield.png",
+  "/image/Tspin.png",
+  "/image/sc-editor.png",
+  "/image/sc-scaner.png",
+  "/image/twiCard.png"
+
 ];
 
 self.addEventListener("install", function (event) {
