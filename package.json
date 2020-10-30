@@ -21,8 +21,8 @@
     "webpack-fix-style-only-entries": "^0.6.0"
   },
   "devDependencies": {
-    "npm-check-updates": "^9.2.2",
-    "webpack": "^5.2.0",
+    "npm-check-updates": "^9.2.3",
+    "webpack": "^5.3.2",
     "webpack-cli": "^4.1.0",
     "webpack-utf8-bom": "^1.2.0"
   }
