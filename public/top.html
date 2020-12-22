@@ -28,27 +28,27 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   <meta name="keywords" content="ゲーム,プロフィール,ウェブアプリ,プロフセンド,profsend" />
   <meta name="description" content="プロフセンドは、ゲームのIDをSNSに送るためのプロフィールジェネレータです。" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <link rel="manifest" href="/manifest.json" />
-  <link rel="apple-touch-icon" href="/image/icon-192.png" sizes="192x192" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="apple-touch-icon" href="./image/icon-192.png" sizes="192x192" />
   <title>プロフセンド</title>
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="profsend" />
   <meta name="twitter:description" content="ゲームプレイヤーのためのプロフィールエディター" />
   <meta name="twitter:image" content="/image/twiCard.png" />
-  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
   <script src="https://kit.fontawesome.com/31d4cf3320.js" crossorigin="anonymous"></script>
-  <link rel="shortcut icon" href="/image/favicon.ico" />
+  <link rel="shortcut icon" href="./image/favicon.ico" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="/script/jquery.js"></script>
-  <script src="/script/modules-build.js"></script>
+  <script src="./script/jquery.js"></script>
+  <script src="./script/modules-build.js"></script>
 </head>
 
 <body>
   <script>
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker
-        .register("/sw.js")
+        .register("./sw.js")
         .then(function (registration) {
           console.log(
             "サービスワーカーの登録が完了しました: ",
@@ -67,7 +67,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
         <div id="nav-drawer">
           <input id="nav-input" type="checkbox" class="nav-unshown" />
           <label id="nav-open" for="nav-input"><span></span></label>
-          <a href="top.html"><img src="/image/prof2.png" alt="logo" width="233px" height="60px" class="wrap" /></a>
+          <a href="top.html"><img src="./image/prof2.png" alt="logo" width="233px" height="60px" class="wrap" /></a>
           <a href="scaner.html"><i class="fab fa-searchengin fa-2x scaner"></i></a>
 
 
@@ -75,36 +75,24 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
           <div id="nav-content">
             <ul>
               <li>
-                <a href="top.ejs"><img src="/image/ja_prof.png" alt="logo" width="100px" height="100px"
+                <a href="./top.html"><img src="./image/ja_prof.png" alt="logo" width="100px" height="100px"
                     class="wrap" /></a>
               </li>
               <li>
-                <toku><a href="#" onclick="pic = '/image/toku.png';" id="toku"><img src="/image/toku.png" width="50"
+                <toku><a href="#" onclick="pic = './image/toku.png';" id="toku"><img src="./image/toku.png" width="50"
                       height="50" id="toku" /></a></toku>
               </li>
               <li>
-                <abolt><a href="about.html"><strong>プロフセンドについて</strong></a></abolt>
+                <abolt><a href="./about.html"><strong>プロフセンドについて</strong></a></abolt>
               </li>
               <li>
-                <a href="13update.pwa.html">
+                <a href="./13update.pwa.html">
                   <strong>13アップデートに関わる大切なお知らせ</strong>
                 </a>
               </li>
               <li>
-                <a href="https://github.com/gutsmine/profsend" class="wrap" target="blank"><i
-                    class="fab fa-github fa-2x source"></i></a>
-
-                <a href="https://discord.gg/nxZFKkc" target="blank">
-                  <i class="fab fa-discord fa-2x discord"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://twitter.com/intent/tweet?text=あなたもプロフセンドでプロフィールを作りませんか？&url=https://profsend.herokuapp.com"
-                  class="twitter-button" target="blank"><i class="fab fa-twitter fa-2x twitter"></i></a>
-              </li>
-              <li>
                 <copy>
-                  <small>©︎ 2020 gumie</small>
+                  <small>© 2020 gumie</small>
                 </copy>
               </li>
             </ul>
@@ -121,7 +109,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
       </div>
 
       <div class="low">
-        <a href="13update.html">
+        <a href="./13update.html">
           <h4 class="link">
             13アップデートに関わる大切なお知らせ
           </h4>
@@ -269,18 +257,18 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 
       <div class="library" id="library">
 
-        <span><a href="#" class="envls"><img src="/image/prof.png" alt="profLogo" height="100" width="100"></a></span>
-        <span><a href="#" class="envls"><img src="/image/Tspin.png" alt="Tspin" height="100" width="100"></a></span>
-        <span><a href="#" class="envls"><img src="/image/bomb.png" alt="bomb" height="100" width="100"></a></span>
-        <span><a href="#" class="envls"><img src="/image/sword.png" alt="sword" height="100" width="100"></a></span>
-        <span><a href="#" class="envls"><img src="/image/shield.png" alt="shield" height="100" width="100"></a></span>
+        <span><a href="#" class="envls"><img src="./image/prof.png" alt="profLogo" height="100" width="100"></a></span>
+        <span><a href="#" class="envls"><img src="./image/Tspin.png" alt="Tspin" height="100" width="100"></a></span>
+        <span><a href="#" class="envls"><img src="./image/bomb.png" alt="bomb" height="100" width="100"></a></span>
+        <span><a href="#" class="envls"><img src="./image/sword.png" alt="sword" height="100" width="100"></a></span>
+        <span><a href="#" class="envls"><img src="./image/shield.png" alt="shield" height="100" width="100"></a></span>
 
 
       </div>
 
       <a id="picdel" class="waves-effect waves-light btn" onclick="pic = '';">エンブレムを非表示</a>
 
-      <a id="reset" class="waves-effect waves-light btn" onclick="pic = '/image/img-1.png';">エンブレムをリセット</a>
+      <a id="reset" class="waves-effect waves-light btn" onclick="pic = './image/img-1.png';">エンブレムをリセット</a>
       <br />
       <label for="file">
         <strong>エンブレム画像のアップロード</strong>
@@ -291,11 +279,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 
     <br />
 
-    <small>©︎ 2020 gumie</small>
+    <small>© 2020 gumie</small>
   </form>
-  <script type="text/javascript" src="/script/scripts-build.js"></script>
+  <script type="text/javascript" src="./script/scripts-build.js"></script>
   <script>
-    var pic = "/image/img-1.png";
+    var pic = "./image/img-1.png";
     var color = "#999";
     var text = "#000000";
     document.addEventListener("DOMContentLoaded", function () {
