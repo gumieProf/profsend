@@ -24,7 +24,7 @@ SOFTWARE.
 
 export default function main() {
   $(function () {
-    $("#prof").hide()
+    $("#prof").hide();
     var o = "50px",
       prof = document.getElementById("prof"),
       m = prof.getContext("2d");
@@ -38,43 +38,53 @@ export default function main() {
     var coment2 = coment;
     var sns2 = sns;
     var name2 = name;
+    var cropArea;
+    var image;
+    var file;
+    var imageData;
+    var picHeight;
+    var picWidth;
+    function setData() {
+      id = $("#id").val();
+      age = $("#age").val();
+      coment = $("#coment").val();
+      sns = $("#snsText").val();
+      name = $("#name").val();
+      id2 = id;
+      age2 = age;
+      coment2 = coment;
+      sns2 = sns;
+      name2 = name;
+      if (localStorage.getItem("id") !== id) {
+        var id = localStorage.getItem("id");
+        $("#id").val(id);
+      }
+      localStorage.setItem("id", id2);
 
+      if (localStorage.getItem("name") !== name) {
+        var id = localStorage.getItem("name");
+        $("#name").val(name);
+      }
+      localStorage.setItem("name", name2);
 
-    if ($.cookie("id")) {
-      var id = $.cookie("id");
-      $("#id").val(id);
+      if (localStorage.getItem("age") !== age) {
+        var id = localStorage.getItem("age");
+        $("#age").val(age);
+      }
+      localStorage.setItem("age", age2);
+
+      if (localStorage.getItem("coment") !== coment) {
+        var id = localStorage.getItem("coment");
+        $("#coment").val(coment);
+      }
+      localStorage.setItem("coment", coment2);
+
+      if (localStorage.getItem("sns") !== sns) {
+        var id = localStorage.getItem("sns");
+        $("#sns").val(sns);
+      }
+      localStorage.setItem("sns", sns2);
     }
-    $.cookie("id", id2);
-
-    if ($.cookie("name")) {
-      var name = $.cookie("name");
-      $("#name").val(name);
-    }
-    $.cookie("name", name2);
-
-    if ($.cookie("age")) {
-      var age = $.cookie("age");
-      $("#age").val(age);
-    }
-    $.cookie("age", age2);
-
-    if ($.cookie("coment")) {
-      var coment = $.cookie("coment");
-      $("#coment").val(coment);
-    }
-    $.cookie("coment", coment2);
-    if ($.cookie("sns")) {
-      var sns = $.cookie("sns");
-      $("#sns").val(sns);
-    }
-    $.cookie("sns", sns2);
-
-    if ($.cookie("age")) {
-      var age = $.cookie("age");
-      $("#age").val(age);
-    }
-    $.cookie("age", age2);
-
     setTimeout(function () {
       $("#scanFile").hide();
       $(".datas").hide();
@@ -131,8 +141,12 @@ export default function main() {
       });
       $(".envls").click(function () {
         var img = $(this).find("img");
-        var imgsrc = img.attr('src');
+        var imgWidth = img.attr("width");
+        var imgHeight = img.attr("width");
+        var imgsrc = img.attr("src");
         pic = imgsrc;
+        picHeight = imgHeight;
+        picWidth = imgWidth;
         i();
         return false;
       });
@@ -143,23 +157,9 @@ export default function main() {
       var e = document.getElementById("file");
       var i = function () {
         setTimeout(function () {
-          var id = $("#id").val();
-          var age = $("#age").val();
-          var coment = $("#coment").val();
-          var sns = $("#snsText").val();
-          var name = $("#name").val();
-          var id2 = id;
-          var age2 = age;
-          var coment2 = coment;
-          var sns2 = sns;
-          var name2 = name;
-          $.cookie("id", id2);
-          $.cookie("name", name2);
-          $.cookie("age", age2);
-          $.cookie("coment", coment2);
-          $.cookie("sns", sns2);
-          var comentif = coment == null || typeof coment == "undefined" ||
-            coment == "";
+          setData();
+          var comentif =
+            coment == null || typeof coment == "undefined" || coment == "";
           var snsif = sns == null || typeof sns == "undefined" || sns == "";
           var ageif = age == null || typeof age == "undefined" || age == "";
 
@@ -168,11 +168,13 @@ export default function main() {
           } else if (comentif && snsif) {
             var e = "NAME:\t" + name + "\nID: \t" + id + "\n AGE: \t" + age;
           } else if (ageif && snsif) {
-            var e = "NAME:\t" + name + "\nID: \t" + id + "\nCOMMENT: \t" + coment;
+            var e =
+              "NAME:\t" + name + "\nID: \t" + id + "\nCOMMENT: \t" + coment;
           } else if (ageif && comentif) {
             var e = "NAME:\t" + name + "\nID: \t" + id + "\nSNS: \t" + sns;
           } else if (ageif) {
-            var e = "NAME:\t" +
+            var e =
+              "NAME:\t" +
               name +
               "\nID: \t" +
               id +
@@ -181,7 +183,8 @@ export default function main() {
               "\nSNS: \t" +
               sns;
           } else if (comentif) {
-            var e = "NAME:\t" +
+            var e =
+              "NAME:\t" +
               name +
               "\nID: \t" +
               id +
@@ -190,7 +193,8 @@ export default function main() {
               "\nSNS: \t" +
               sns;
           } else if (snsif) {
-            var e = "NAME:\t" +
+            var e =
+              "NAME:\t" +
               name +
               "\nID: \t" +
               id +
@@ -199,7 +203,8 @@ export default function main() {
               "\nCOMMENT: \t" +
               coment;
           } else {
-            var e = "NAME:\t" +
+            var e =
+              "NAME:\t" +
               name +
               "\nID: \t" +
               id +
@@ -218,7 +223,7 @@ export default function main() {
           m.fillStyle = "" + text;
           m.rect(15, 15, prof.width - 30, prof.height - 30);
           m.lineWidth = 8;
-          m.strokeStyle = text
+          m.strokeStyle = text;
           m.stroke();
           var fontSize = 100; // フォントサイズ
           var lineHeight = 0.5; // 行の高さ (フォントサイズに対する倍率)
@@ -234,7 +239,14 @@ export default function main() {
 
             m.fillText(line, x + 0, y + addY);
             var a = new Image();
-            (a.src = "" + pic), m.drawImage(a, prof.width - 150, prof.height - 150, 100, 100);
+            (a.src = "" + pic),
+              m.drawImage(
+                a,
+                prof.width - 150,
+                prof.height - 150,
+                picWidth,
+                picHeight
+              );
           }
           var imgT = document.getElementById("preview");
           imgT.src = prof.toDataURL();
@@ -251,15 +263,15 @@ export default function main() {
       $("#snsText").val();
       i();
       $(".profelem,#coment").on({
-        "keydown": i,
-        "chenge": i,
+        keydown: i,
+        chenge: i,
       });
       $(document).on(
         {
-          "keydown": i,
-          "chenge": i,
+          keydown: i,
+          chenge: i,
         },
-        ".profelem,#coment",
+        ".profelem,#coment"
       );
       $("#colors").change(function () {
         (color = $(this).val()), i();
@@ -272,26 +284,27 @@ export default function main() {
           var idtypeVal = Number($("#idtype").val());
           $("#idtext").html(
             "<label for=id>ID：</label>" +
-            '<input type="text" name="formID" id="id" value="' +
-            idvalue +
-            '" class="profelem" maxlength="' +
-            idtypeVal +
-            '"/>' +
-            '<a href="#" class="delete2' +
-            '><i class="fas fa-times-circle delete"></i' +
-            "></a>",
+              '<input type="text" name="formID" id="id" value="' +
+              idvalue +
+              '" class="profelem" maxlength="' +
+              idtypeVal +
+              '"/>' +
+              '<a href="#" class="delete2' +
+              '><i class="fas fa-times-circle delete"></i' +
+              "></a>"
           );
           i();
           $("#idleng").html("<h5>現在の桁数は" + idtypeVal + "です</h5>");
         }),
-        $("")
+        $("");
       e.addEventListener("change", function (e) {
         var t = e.target.files[0];
         if (t.type.match("image.*")) {
           var n = new FileReader();
           (n.onload = function () {
             (pic = n.result), i();
-          }), n.readAsDataURL(t);
+          }),
+            n.readAsDataURL(t);
         } else alert("画像を選択してください");
       });
       $("#cookieClear").click(function () {
@@ -301,7 +314,35 @@ export default function main() {
         $.removeCookie("sns");
         return false;
       });
-
+      $(".snsDataBtn").click(function () {
+        if ($("sns-div").css("display") == "block") {
+          $("sns-div").fadeout();
+        } else {
+          $("sns-div").fadeIn();
+        }
+      });
+      $("#background-pic").chenge(function () {
+        var fileinfo = $("#background-pic")[0].files[0];
+        image = fileinfo.toDataURL("image/png");
+        cropArea = $(".croppie");
+        file = cropArea.croppie({
+          url: image,
+          viewport: {
+            width: 1920,
+            height: 1080,
+          },
+          boundary: {
+            width: 2000,
+            height: 2000,
+          },
+        });
+      });
+      $(".cropBTN").click(function () {
+        file.croppie("result", "base64").then(function (base64) {
+          imageData = dase64;
+          i();
+        });
+      });
     });
   });
 }

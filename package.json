@@ -14,8 +14,9 @@
   },
   "homepage": "https://gutsmine.myportfolio.com",
   "dependencies": {
-    "animate.css": "^3.7.2",
-    "jquery": "^3.4.1",
+    "animate.css": "^4.1.1",
+    "croppie": "^2.6.5",
+    "jquery": "^3.5.1",
     "jquery.cookie": "^1.4.1",
     "tesseract.js": "^2.1.1",
     "webpack-fix-style-only-entries": "^0.4.0"
