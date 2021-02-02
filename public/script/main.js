@@ -253,12 +253,18 @@ export default function main() {
         }, 50);
       };
       window.i = i;
-      (m.fillStyle = "" + color),
-        m.fillRect(0, 0, 450, 300),
-        (m.fillStyle = "" + text),
-        m.rect(15, 15, 370, 170),
-        (m.lineWidth = 8),
+      if ($("#colors").val() === "picture") {
+        m.drawImage(imageData, 0, 0);
+        m.fillStyle = "" + text;
+        m.fillRect(15, 15, 370, 170);
+      } else {
+        m.fillStyle = "" + color;
+        m.fillRect(0, 0, 450, 300);
+        m.fillStyle = "" + text;
+        m.rect(15, 15, 370, 170);
+        m.lineWidth = 8;
         m.stroke();
+      }
       $("#name").val(), $("#id").val(), $("#age").val(), $("#coment").val();
       $("#snsText").val();
       i();
@@ -308,10 +314,11 @@ export default function main() {
         } else alert("画像を選択してください");
       });
       $("#cookieClear").click(function () {
-        $.removeCookie("name");
-        $.removeCookie("id");
-        $.removeCookie("coment");
-        $.removeCookie("sns");
+        localStorage.setItem("name", null);
+        localStorage.setItem("id", null);
+        localStorage.setItem("age", null);
+        localStorage.setItem("coment", null);
+        localStorage.setItem("sns", null);
         return false;
       });
       $(".snsDataBtn").click(function () {
@@ -321,8 +328,8 @@ export default function main() {
           $("sns-div").fadeIn();
         }
       });
-      $("#background-pic").chenge(function () {
-        var fileinfo = $("#background-pic")[0].files[0];
+      $("#background-pic").change(function (e) {
+        var fileinfo = e.target.files[0];
         image = fileinfo.toDataURL("image/png");
         cropArea = $(".croppie");
         file = cropArea.croppie({
@@ -341,6 +348,7 @@ export default function main() {
         file.croppie("result", "base64").then(function (base64) {
           imageData = dase64;
           i();
+          return false;
         });
       });
     });
