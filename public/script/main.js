@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 export default function main() {
+  var croppie = require("croppie");
   $(function () {
     $("#prof").hide();
     var o = "50px",
@@ -86,6 +87,7 @@ export default function main() {
       localStorage.setItem("sns", sns2);
     }
     setTimeout(function () {
+      $("#background-pic").hide();
       $("#scanFile").hide();
       $(".datas").hide();
       $(".delete1").click(function () {
@@ -336,6 +338,10 @@ export default function main() {
         } else {
           $("sns-div").fadeIn();
         }
+      });
+      $(".cropUpload").click(function () {
+        $("#background-pic").click();
+        return false;
       });
       $("#background-pic").change(function (e) {
         image = e.target.files[0];
