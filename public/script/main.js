@@ -329,8 +329,7 @@ export default function main() {
         }
       });
       $("#background-pic").change(function (e) {
-        var fileinfo = e.target.files[0];
-        image = fileinfo.toDataURL("image/png");
+        image = e.target.files[0];
         cropArea = $(".croppie");
         file = cropArea.croppie({
           url: image,
