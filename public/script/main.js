@@ -254,9 +254,18 @@ export default function main() {
       };
       window.i = i;
       if ($("#colors").val() === "picture") {
-        m.drawImage(imageData, 0, 0);
-        m.fillStyle = "" + text;
-        m.fillRect(15, 15, 370, 170);
+        if (!imageData) {
+          m.drawImage(imageData, 0, 0);
+          m.fillStyle = "" + text;
+          m.fillRect(15, 15, 370, 170);
+        } else {
+          m.fillStyle = "#999";
+          m.fillRect(0, 0, 450, 300);
+          m.fillStyle = "#000";
+          m.rect(15, 15, 370, 170);
+          m.lineWidth = 8;
+          m.stroke();
+        }
       } else {
         m.fillStyle = "" + color;
         m.fillRect(0, 0, 450, 300);
