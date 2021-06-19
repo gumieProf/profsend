@@ -23,7 +23,6 @@ SOFTWARE.
 */
 
 export default function main() {
-  var croppie = require("croppie");
   $(function () {
     $("#prof").hide();
     var o = "50px",
@@ -172,27 +171,12 @@ export default function main() {
         }, 50);
       };
       window.i = i;
-      if ($("#colors").val() === "picture") {
-        if (!imageData) {
-          m.drawImage(imageData, 0, 0);
-          m.fillStyle = "" + text;
-          m.fillRect(15, 15, 370, 170);
-        } else {
-          m.fillStyle = "#999";
-          m.fillRect(0, 0, 450, 300);
-          m.fillStyle = "#000";
-          m.rect(15, 15, 370, 170);
-          m.lineWidth = 8;
-          m.stroke();
-        }
-      } else {
-        m.fillStyle = "" + color;
-        m.fillRect(0, 0, 450, 300);
-        m.fillStyle = "" + text;
-        m.rect(15, 15, 370, 170);
-        m.lineWidth = 8;
-        m.stroke();
-      }
+      m.fillStyle = "" + color;
+      m.fillRect(0, 0, 450, 300);
+      m.fillStyle = "" + text;
+      m.rect(15, 15, 370, 170);
+      m.lineWidth = 8;
+      m.stroke();
       $("#name").val(), $("#id").val(), $("#age").val(), $("#coment").val();
       $("#snsText").val();
       i();
@@ -214,7 +198,6 @@ export default function main() {
           (text = $(this).val()), i();
         }),
         i();
-      $("#idleng").html("<h5>現在の桁数は" + idtypeVal + "です</h5>");
     }),
       $("");
     e.addEventListener("change", function (e) {
