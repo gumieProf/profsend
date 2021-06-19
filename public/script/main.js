@@ -120,7 +120,7 @@ export default function main() {
       var prof = document.getElementById("prof");
       var m = prof.getContext("2d");
       new Image().src = "" + pic;
-      var e = document.getElementById("file");
+      e = document.getElementById("file");
       var i = function () {
         setData();
         setTimeout(function () {
@@ -199,17 +199,16 @@ export default function main() {
         }),
         i();
     }),
-      $("");
-    e.addEventListener("change", function (e) {
-      var t = e.target.files[0];
-      if (t.type.match("image.*")) {
-        var n = new FileReader();
-        (n.onload = function () {
-          (pic = n.result), i();
-        }),
-          n.readAsDataURL(t);
-      } else alert("画像を選択してください");
-    });
+      e.addEventListener("change", function (e) {
+        var t = e.target.files[0];
+        if (t.type.match("image.*")) {
+          var n = new FileReader();
+          (n.onload = function () {
+            (pic = n.result), i();
+          }),
+            n.readAsDataURL(t);
+        } else alert("画像を選択してください");
+      });
     $("#cookieClear").click(function () {
       localStorage.setItem("profdata", null);
       return false;

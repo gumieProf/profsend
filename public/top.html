@@ -265,82 +265,88 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
               <option value="#888">グレー</option>
             </select>
             <label for="textColor">テキストの色</label>
+            <div class="library" id="library">
+              <a href="#library">
+                <span>エンブレムライブラリー</span>
+                <i class="fas fa-angle-right fa-2x angle"></i>
+              </a>
+            </div>
+
+            <div class="library" id="library">
+              <span
+                ><a href="#" class="envls"
+                  ><img
+                    src="/image/prof.png"
+                    alt="profLogo"
+                    height="59"
+                    width="233" /></a
+              ></span>
+              <span
+                ><a href="#" class="envls"
+                  ><img
+                    src="/image/toku.png"
+                    alt="toku"
+                    height="100"
+                    width="100" /></a
+              ></span>
+
+              <span
+                ><a href="#" class="envls"
+                  ><img
+                    src="/image/Tspin.png"
+                    alt="Tspin"
+                    height="100"
+                    width="100" /></a
+              ></span>
+              <span
+                ><a href="#" class="envls"
+                  ><img
+                    src="/image/bomb.png"
+                    alt="bomb"
+                    height="100"
+                    width="100" /></a
+              ></span>
+              <span
+                ><a href="#" class="envls"
+                  ><img
+                    src="/image/sword.png"
+                    alt="sword"
+                    height="100"
+                    width="100" /></a
+              ></span>
+              <span
+                ><a href="#" class="envls"
+                  ><img
+                    src="/image/shield.png"
+                    alt="shield"
+                    height="100"
+                    width="100" /></a
+              ></span>
+            </div>
+
+            <a
+              id="picdel"
+              class="waves-effect waves-light btn"
+              onclick="pic = '';"
+              >エンブレムを非表示</a
+            >
+
+            <a
+              id="reset"
+              class="waves-effect waves-light btn"
+              onclick="pic = '/image/img-1.png';"
+              >エンブレムをリセット</a
+            >
+
+            <br />
+
+            <label for="file">
+              <strong>エンブレム画像のアップロード</strong>
+
+              <input type="file" name="file" id="file" />
+            </label>
           </div>
         </div>
-        <div class="library" id="library">
-          <a href="#library">
-            <span>エンブレムライブラリー</span>
-            <i class="fas fa-angle-right fa-2x angle"></i>
-          </a>
-        </div>
-
-        <div class="library" id="library">
-          <span
-            ><a href="#" class="envls"
-              ><img
-                src="/image/prof.png"
-                alt="profLogo"
-                height="59"
-                width="233" /></a
-          ></span>
-          <span
-            ><a href="#" class="envls"
-              ><img
-                src="/image/toku.png"
-                alt="toku"
-                height="100"
-                width="100" /></a
-          ></span>
-
-          <span
-            ><a href="#" class="envls"
-              ><img
-                src="/image/Tspin.png"
-                alt="Tspin"
-                height="100"
-                width="100" /></a
-          ></span>
-          <span
-            ><a href="#" class="envls"
-              ><img
-                src="/image/bomb.png"
-                alt="bomb"
-                height="100"
-                width="100" /></a
-          ></span>
-          <span
-            ><a href="#" class="envls"
-              ><img
-                src="/image/sword.png"
-                alt="sword"
-                height="100"
-                width="100" /></a
-          ></span>
-          <span
-            ><a href="#" class="envls"
-              ><img
-                src="/image/shield.png"
-                alt="shield"
-                height="100"
-                width="100" /></a
-          ></span>
-        </div>
-
-        <a id="picdel" class="waves-effect waves-light btn" onclick="pic = '';"
-          >エンブレムを非表示</a
-        >
-
-        <a
-          id="reset"
-          class="waves-effect waves-light btn"
-          onclick="pic = '/image/img-1.png';"
-          >エンブレムをリセット</a
-        >
-        <br />
-        <label for="file">
-          <strong>エンブレム画像のアップロード</strong>
-          <input type="file" name="file" id="file" />
-        </label>
       </div>
 
       <div class="datas" id="data3">
