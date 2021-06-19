@@ -28,83 +28,56 @@ export default function main() {
     $("#prof").hide();
     var o = "50px",
       prof = document.getElementById("prof"),
-      m = prof.getContext("2d");
-    var id = $("#id").val();
-    var age = $("#age").val();
-    var coment = $("#coment").val();
-    var sns = $("#snsText").val();
-    var name = $("#name").val();
-    var id2 = id;
-    var age2 = age;
-    var coment2 = coment;
-    var sns2 = sns;
-    var name2 = name;
-    var cropArea;
-    var image;
-    var file;
-    var imageData;
-    var picHeight;
-    var picWidth;
+      m = prof.getContext("2d"),
+      e;
+    if (
+      localStorage.getItem("autosync") === true ||
+      localStorage.getItem("autosync") === null
+    ) {
+      $(".switch__label").prop("checked", true);
+      localStorage.setItem("autosync", true);
+    }
     function setData() {
-      id = $("#id").val();
-      age = $("#age").val();
-      coment = $("#coment").val();
-      sns = $("#snsText").val();
-      name = $("#name").val();
-      id2 = id;
-      age2 = age;
-      coment2 = coment;
-      sns2 = sns;
-      name2 = name;
-      if (localStorage.getItem("id") !== id) {
-        var id = localStorage.getItem("id");
-        $("#id").val(id);
+      if (localStorage.getItem("profData")) {
+        var object = localStorage.getItem("profData");
       }
-      localStorage.setItem("id", id2);
-
-      if (localStorage.getItem("name") !== name) {
-        var id = localStorage.getItem("name");
-        $("#name").val(name);
+      var newObj = {};
+      if (object) {
+        var data = JSON.stringify(object);
+        var titleName = new Function("data.title" + i)();
+        var valueName = new Function("data.value" + i)();
+        var newTitleName = new Function("newObj.title" + i)();
+        var newValueName = new Function("newObj.value" + i)();
+        $(".editList").empty();
+        for (let i = 0; i < 10; i++) {
+          $(".editList").append('<li class="editText' + i + '"></li>');
+          var title = $(".editText" + i).append(
+            '<input type="text" class="title' + i + '"/>'
+          );
+          $(".editText" + i).append(
+            '<a href="#" class="deleteBtn"><i class="far fa-times-circle"></i></a>'
+          );
+          var value = $(".editText" + i).append(
+            '<input type="text" class="value' + i + '"/>'
+          );
+          title.val(titleName);
+          value.val(valueName);
+        }
+        if ($(".switch__label").prop("checked")) {
+          for (let i = 0; i < 10; i++) {
+            if ($(".editText" + i)) {
+              newTitleName = $("title" + i).val();
+              newValueName = $("value" + i).val();
+            }
+          }
+          localStorage.setItem("profdata", newObj);
+        }
       }
-      localStorage.setItem("name", name2);
-
-      if (localStorage.getItem("age") !== age) {
-        var id = localStorage.getItem("age");
-        $("#age").val(age);
-      }
-      localStorage.setItem("age", age2);
-
-      if (localStorage.getItem("coment") !== coment) {
-        var id = localStorage.getItem("coment");
-        $("#coment").val(coment);
-      }
-      localStorage.setItem("coment", coment2);
-
-      if (localStorage.getItem("sns") !== sns) {
-        var id = localStorage.getItem("sns");
-        $("#sns").val(sns);
-      }
-      localStorage.setItem("sns", sns2);
     }
     setTimeout(function () {
       $("#background-pic").hide();
       $("#scanFile").hide();
       $(".datas").hide();
-      $(".delete1").click(function () {
-        $("#name").val("");
-        i();
-        return false;
-      });
-      $(".delete2").click(function () {
-        $("#id").val("");
-        i();
-        return false;
-      });
-      $(".delete3").click(function () {
-        $("#coment").val("");
-        i();
-        return false;
-      });
 
       $("#data1Btn,.subData1").click(function () {
         $(".datas").hide();
@@ -124,14 +97,6 @@ export default function main() {
         $(".datas").hide();
 
         $("#data3").fadeIn();
-        $(".dataBtn").hide();
-
-        return false;
-      });
-      $("#data4Btn,.subData4").click(function () {
-        $(".datas").hide();
-
-        $("#data4").fadeIn();
         $(".dataBtn").hide();
 
         return false;
@@ -158,64 +123,16 @@ export default function main() {
       new Image().src = "" + pic;
       var e = document.getElementById("file");
       var i = function () {
+        setData();
         setTimeout(function () {
-          setData();
-          var comentif =
-            coment == null || typeof coment == "undefined" || coment == "";
-          var snsif = sns == null || typeof sns == "undefined" || sns == "";
-          var ageif = age == null || typeof age == "undefined" || age == "";
-
-          if (comentif && snsif && ageif) {
-            var e = "NAME:\t" + name + "\nID: \t" + id;
-          } else if (comentif && snsif) {
-            var e = "NAME:\t" + name + "\nID: \t" + id + "\n AGE: \t" + age;
-          } else if (ageif && snsif) {
-            var e =
-              "NAME:\t" + name + "\nID: \t" + id + "\nCOMMENT: \t" + coment;
-          } else if (ageif && comentif) {
-            var e = "NAME:\t" + name + "\nID: \t" + id + "\nSNS: \t" + sns;
-          } else if (ageif) {
-            var e =
-              "NAME:\t" +
-              name +
-              "\nID: \t" +
-              id +
-              "\nCOMMENT: \t" +
-              coment +
-              "\nSNS: \t" +
-              sns;
-          } else if (comentif) {
-            var e =
-              "NAME:\t" +
-              name +
-              "\nID: \t" +
-              id +
-              "\n AGE: \t" +
-              age +
-              "\nSNS: \t" +
-              sns;
-          } else if (snsif) {
-            var e =
-              "NAME:\t" +
-              name +
-              "\nID: \t" +
-              id +
-              "\n AGE: \t" +
-              age +
-              "\nCOMMENT: \t" +
-              coment;
-          } else {
-            var e =
-              "NAME:\t" +
-              name +
-              "\nID: \t" +
-              id +
-              "\n AGE: \t" +
-              age +
-              "\nCOMMENT: \t" +
-              coment +
-              "\nSNS: \t" +
-              sns;
+          for (let i = 0; i < 10; i++) {
+            if (i == 0) {
+              e = e + $(".title" + i).val() + "\t" + $(".value" + i);
+            } else if (i === 9) {
+              e = e + $(".title" + i).val() + "\t" + $(".value" + i);
+            } else {
+              e = e + "\n" + $(".title" + i).val() + "\t" + $(".value" + i);
+            }
           }
 
           m.clearRect(0, 0, prof.width + 100, prof.height + 100);
@@ -296,75 +213,41 @@ export default function main() {
         $("#textColor").change(function () {
           (text = $(this).val()), i();
         }),
-        $("#idset").click(function () {
-          var idvalue = $("#id").val();
-          var idtypeVal = Number($("#idtype").val());
-          $("#idtext").html(
-            "<label for=id>ID：</label>" +
-              '<input type="text" name="formID" id="id" value="' +
-              idvalue +
-              '" class="profelem" maxlength="' +
-              idtypeVal +
-              '"/>' +
-              '<a href="#" class="delete2' +
-              '><i class="fas fa-times-circle delete"></i' +
-              "></a>"
-          );
-          i();
-          $("#idleng").html("<h5>現在の桁数は" + idtypeVal + "です</h5>");
+        i();
+      $("#idleng").html("<h5>現在の桁数は" + idtypeVal + "です</h5>");
+    }),
+      $("");
+    e.addEventListener("change", function (e) {
+      var t = e.target.files[0];
+      if (t.type.match("image.*")) {
+        var n = new FileReader();
+        (n.onload = function () {
+          (pic = n.result), i();
         }),
-        $("");
-      e.addEventListener("change", function (e) {
-        var t = e.target.files[0];
-        if (t.type.match("image.*")) {
-          var n = new FileReader();
-          (n.onload = function () {
-            (pic = n.result), i();
-          }),
-            n.readAsDataURL(t);
-        } else alert("画像を選択してください");
-      });
-      $("#cookieClear").click(function () {
-        localStorage.setItem("name", null);
-        localStorage.setItem("id", null);
-        localStorage.setItem("age", null);
-        localStorage.setItem("coment", null);
-        localStorage.setItem("sns", null);
-        return false;
-      });
-      $(".snsDataBtn").click(function () {
-        if ($("sns-div").css("display") == "block") {
-          $("sns-div").fadeout();
-        } else {
-          $("sns-div").fadeIn();
-        }
-      });
-      $(".cropUpload").click(function () {
-        $("#background-pic").click();
-        return false;
-      });
-      $("#background-pic").change(function (e) {
-        image = e.target.files[0];
-        cropArea = $(".croppie");
-        file = cropArea.croppie({
-          url: image,
-          viewport: {
-            width: 1920,
-            height: 1080,
-          },
-          boundary: {
-            width: 2000,
-            height: 2000,
-          },
-        });
-      });
-      $(".cropBTN").click(function () {
-        file.croppie("result", "base64").then(function (base64) {
-          imageData = dase64;
-          i();
-          return false;
-        });
-      });
+          n.readAsDataURL(t);
+      } else alert("画像を選択してください");
+    });
+    $("#cookieClear").click(function () {
+      localStorage.setItem("profdata", null);
+      return false;
+    });
+    $(".addBtn").click(function () {
+      var nam = $(".editlist > li").length() + 1;
+      var elem =
+        '<li class="editText' +
+        nam +
+        '">' +
+        '<input type="text" class="title' +
+        nam +
+        '" value="名前" /><a' +
+        'href="#"' +
+        'class="deleteBtn"' +
+        '><input type="text" class="value' +
+        nam +
+        '" /><i' +
+        'class="far fa-times-circle"' +
+        "></i></a></li>";
+      $(".editlist").append(elem);
     });
   });
 }

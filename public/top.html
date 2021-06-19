@@ -132,15 +132,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
                   /></a>
                 </li>
                 <li>
-                  <abolt
-                    ><a href="about.html"
+                  <abolt>
+                    <a href="about.html"
                       ><strong>プロフセンドについて</strong></a
-                    ></abolt
-                  >
+                    >
+                  </abolt>
                 </li>
                 <li>
                   <a href="13update.pwa.html">
-                    <strong>13アップデートに関わる大切なお知らせ</strong>
+                    <strong>iOS12以下をご使用の方へ</strong>
                   </a>
                 </li>
                 <li>
@@ -157,7 +157,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
                 </li>
                 <li>
                   <a
-                    href="https://twitter.com/intent/tweet?text=あなたもプロフセンドでプロフィールを作りませんか？&url=https://profsend.herokuapp.com"
+                    href="https://twitter.com/intent/tweet?text=あなたもプロフセンドでプロフィールを作りませんか？&url=https://profsend.ga"
                     class="twitter-button"
                     target="blank"
                     ><i class="fab fa-twitter fa-2x twitter"></i
@@ -175,193 +175,98 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 
         <div class="subDatas">
           <a href="#" class="back subData"><i class="fas fa-home"></i></a>
-          <a href="#" class="subData subData1">基本情報</a>
-          <a href="#" class="subData subData2">その他情報</a>
-          <a href="#" class="subData subData3">デザイン</a>
-          <a href="#" class="subData subData4">エンブレム</a>
+          <a href="#" class="subData subData1">テキスト編集</a>
+          <a href="#" class="subData subData2">デザイン</a>
+          <a href="#" class="subData subData3">設定</a>
         </div>
 
-        <div class="low">
-          <a href="13update.html">
-            <h4 class="link">13アップデートに関わる大切なお知らせ</h4>
-          </a>
-        </div>
         <canvas id="prof" width="960" height="540"></canvas>
         <img width="576" height="324" id="preview" />
         <img id="newImg" />
         <div class="dataBtns">
           <div class="dataBtn" id="data1Btn">
             <a href="#"
-              ><span>基本情報</span>
-              <p>ID、ユーザー名</p>
+              ><span>テキスト編集</span>
+              <p>行ごとの文字の編集</p>
               <i class="fas fa-angle-right fa-2x angle"></i>
             </a>
           </div>
 
           <div class="dataBtn" id="data2Btn">
             <a href="#">
-              <span>その他情報</span>
-              <p>コメント、SNS情報</p>
+              <span>デザイン</span>
+              <p>テキスト・背景・エンブレムの変更</p>
               <i class="fas fa-angle-right fa-2x angle"></i>
             </a>
           </div>
 
           <div class="dataBtn" id="data3Btn">
             <a href="#">
-              <span>デザイン</span>
-              <p>テキスト・背景の色・画像の変更・非表示</p>
+              <span>設定</span>
+              <p>アプリの機能に関わる設定</p>
               <i class="fas fa-angle-right fa-2x angle"></i>
             </a>
           </div>
         </div>
-        <div class="dataBtn" id="data4Btn">
-          <a href="#">
-            <span>エンブレム</span>
-            <p>エンブレムの変更・非表示</p>
-            <i class="fas fa-angle-right fa-2x angle"></i>
-          </a>
-        </div>
-      </div>
 
-      <a class="waves-effect waves-light btn" href="#" id="cookieClear"
-        >保存情報の削除</a
-      >
-      <a class="waves-effect waves-light btn" id="download" href="#"
-        >ダウンロード</a
-      >
-      <a class="waves-effect waves-light btn" id="windl" href="#"
-        >PC画面サイズでダウンロード</a
-      >
-      <a class="waves-effect waves-light btn" id="smtdl" href="#"
-        >スマホ画面サイズでダウンロード</a
-      >
+        <a class="waves-effect waves-light btn" id="download" href="#"
+          >ダウンロード</a
+        >
+        <a class="waves-effect waves-light btn" id="pcdl" href="#"
+          >PC画面サイズでダウンロード</a
+        >
+        <a class="waves-effect waves-light btn" id="smtdl" href="#"
+          >スマホ画面サイズでダウンロード</a
+        >
 
-      <div id="editor">
-        <br />
-        <div id="data1" class="datas">
-          <div class="input-field col s12">
-            <input type="text" name="formName" id="name" class="profelem" />
-            <label for="name">名前</label>
-            <a href="#" class="delete1"
-              ><i class="fas fa-times-circle delete"></i
-            ></a>
-          </div>
-
+        <div id="editor">
           <br />
-          <div class="input-field col s12">
-            <div id="idtext">
-              <input
-                type="text"
-                name="formID"
-                id="id"
-                class="profelem"
-                maxlength="25"
-                onkeyup="document.getElementById('id-leng').value=this.value.length"
-              />
-              <label for="id">ID：</label>
+          <div id="data1" class="datas">
+            <div class="input-field col s12">
+              <ul class="editList">
+                <li class="editText1">
+                  <input type="text" class="title1" value="ID" />
+                  <input type="text" class="value1" />
+                  <a href="#" class="deleteBtn">
+                    <i class="far fa-times-circle"></i>
+                  </a>
+                </li>
 
-              <a href="#" class="delete2"
-                ><i class="fas fa-times-circle delete"></i
-              ></a>
+                <li class="editText2">
+                  <input type="text" class="title2" value="ID" />
+                  <input type="text" class="value2" /><a
+                    href="#"
+                    class="deleteBtn"
+                  >
+                    <i class="far fa-times-circle"></i>
+                  </a>
+                </li>
+              </ul>
+              <a href="#" class="waves-effect waves-light btn addBtn"
+                >行の追加</a
+              >
             </div>
           </div>
+        </div>
+        <div id="data2" class="datas">
           <div class="input-field col s12">
-            <input type="text" id="id-leng" readonly />
-            <label for="id-leng">現在の文字数</label>
-          </div>
-          <div class="input-field col s12">
-            <select id="idtype">
-              <option value="25" selected>ゲーム未設定</option>
-              <option value="12">モンスト・スイッチ</option>
-              <option value="9">パズドラ</option>
-              <option value="10">ドッカンバトル</option>
+            <select id="colors">
+              <option value="#999" selected>グレー</option>
+              <option value="#ff0000">レッド</option>
+              <option value="#0010bf">ブルー</option>
+              <option value="#f8fc5e">イエロー</option>
+              <option value="#04b700">グリーン</option>
+              <option value="#e719e4">パープル</option>
             </select>
-            <label> ゲームタイトル</label>
-          </div>
 
-          <a class="waves-effect waves-light btn" id="idset">桁数決定</a>
-
-          <h5>
-            <div id="idleng">現在の桁数は25です。</div>
-          </h5>
-        </div>
-      </div>
-      <div id="data2" class="datas">
-        <div class="input-field col s12">
-          <br />
-
-          <select name="formAge" id="age" class="profelem">
-            <option>10代</option>
-            <option>20代</option>
-            <option>30代</option>
-            <option>40代</option>
-            <option>50代</option>
-            <option value="" selected>非公開</option>
-          </select>
-          <label for="age">年齢</label>
-        </div>
-        <div class="input-field col s12">
-          <br />
-          <input name="formComent" cols="25" id="coment" class="profelem" />
-          <a href="#" class="delete3"
-            ><i class="fas fa-times-circle delete"></i
-          ></a>
-
-          <label for="coment">コメント：</label>
-        </div>
-        <div id="snsData"></div>
-        <a id="snsDataBtn" class="waves-effect waves-light btn"
-          >sns情報欄を追加</a
-        >
-        <div class="sns-div">
-          <div class="input-field col s12">
-            <input
-              type="text"
-              name="formSNS"
-              id="snsText"
-              class="profelem"
-              maxlength="25"
-              placeholder=""
-            />
-            <label for="snsText">SNS情報：</label>
+            <select id="textColor">
+              <option value="#000" selected>ブラック</option>
+              <option value="#fff">ホワイト</option>
+              <option value="#888">グレー</option>
+            </select>
+            <label for="textColor">テキストの色</label>
           </div>
         </div>
-      </div>
-
-      <div id="data3" class="datas">
-        <div class="input-field col s12">
-          <select id="colors">
-            <option value="#999" selected>グレー</option>
-            <option value="#ff0000">レッド</option>
-            <option value="#0010bf">ブルー</option>
-            <option value="#f8fc5e">イエロー</option>
-            <option value="#04b700">グリーン</option>
-            <option value="#e719e4">パープル</option>
-            <option value="picture">画像</option>
-          </select>
-          <label for="colors">背景</label>
-          <input type="file" id="background-pic" />
-          <div class="crop">
-            <a href="#" class="waves-effect waves-light btn cropUpload"
-              >クロップ＆適応</a
-            >
-            <div class="croppie"></div>
-            <a href="#" class="waves-effect waves-light btn cropBTN"
-              >クロップ＆適応</a
-            >
-          </div>
-        </div>
-
-        <div class="input-field col s12">
-          <select id="textColor">
-            <option value="#000" selected>ブラック</option>
-            <option value="#fff">ホワイト</option>
-            <option value="#888">グレー</option>
-          </select>
-          <label for="textColor">テキストの色</label>
-        </div>
-      </div>
-      <div class="datas" id="data4">
         <div class="library" id="library">
           <a href="#library">
             <span>エンブレムライブラリー</span>
@@ -438,9 +343,25 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
         </label>
       </div>
 
-      <br />
-
-      <small>©︎ 2020 gumie</small>
+      <div class="datas" id="data3">
+        <h3>自動同期機能</h3>
+        <div class="switch">
+          <label class="switch__label">
+            <input type="checkbox" class="switch__input autosync" />
+            <span class="switch__content"></span>
+            <span class="switch__circle"></span>
+          </label>
+        </div>
+        <a
+          href="https://tayori.com/form/6ab95e28070de3e682c028fd913a261d0c276c4c"
+          class="feedback waves-effect waves-light btn"
+          >フィードバック・機能の提案</a
+        >
+        <a class="waves-effect waves-light btn" href="#" id="cookieClear"
+          >保存情報の削除</a
+        >
+        <small>©︎ 2020 gumie</small>
+      </div>
     </form>
     <script type="text/javascript" src="/script/scripts-build.js"></script>
     <script>

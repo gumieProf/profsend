@@ -1,2 +1,2 @@
 window.$ = require("jquery");
-window.croppie = require("croppie");
+window.focusPoint = require("jquery-focuspoint");
