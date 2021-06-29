@@ -28,6 +28,7 @@ export default function main() {
     var o = "50px",
       prof = document.getElementById("prof"),
       m = prof.getContext("2d"),
+      f,
       e;
     if (
       localStorage.getItem("autosync") === true ||
@@ -120,14 +121,14 @@ export default function main() {
       var prof = document.getElementById("prof");
       var m = prof.getContext("2d");
       new Image().src = "" + pic;
-      e = document.getElementById("file");
+      f = document.getElementById("file");
       var i = function () {
         setData();
         setTimeout(function () {
-          for (let i = 0; i < 10; i++) {
-            if (i == 0) {
+          for (let i = 1; i <= 10; i++) {
+            if (i == 1) {
               e = e + $(".title" + i).val() + "\t" + $(".value" + i);
-            } else if (i === 9) {
+            } else if (i === 10) {
               e = e + $(".title" + i).val() + "\t" + $(".value" + i);
             } else {
               e = e + "\n" + $(".title" + i).val() + "\t" + $(".value" + i);
@@ -199,8 +200,8 @@ export default function main() {
         }),
         i();
     }),
-      e.addEventListener("change", function (e) {
-        var t = e.target.files[0];
+      f.addEventListener("change", function (e) {
+        var t = f.target.files[0];
         if (t.type.match("image.*")) {
           var n = new FileReader();
           (n.onload = function () {
