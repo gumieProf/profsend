@@ -129,11 +129,18 @@ export default function main() {
         setTimeout(function () {
           for (let i = 1; i <= 10; i++) {
             if (i == 1) {
-              e = e + $(".title" + i).val() + "\t" + $(".value" + i);
-            } else if (i === 10) {
-              e = e + $(".title" + i).val() + "\t" + $(".value" + i);
-            } else {
-              e = e + "\n" + $(".title" + i).val() + "\t" + $(".value" + i);
+              if ($("editText" + i)) {
+                e = e + $(".title" + i).val() + "\t" + $(".value" + i).val();
+              } else if (i === 10) {
+                e = e + $(".title" + i).val() + "\t" + $(".value" + i).val();
+              } else {
+                e =
+                  e +
+                  "\n" +
+                  $(".title" + i).val() +
+                  "\t" +
+                  $(".value" + i).val();
+              }
             }
           }
 
