@@ -28,6 +28,8 @@ export default function main() {
     var o = "50px",
       prof = document.getElementById("prof"),
       m = prof.getContext("2d"),
+      picHeight,
+      picWidth,
       f,
       e;
     if (
