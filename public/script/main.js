@@ -30,7 +30,7 @@ export default function main() {
       m = prof.getContext("2d"),
       picHeight,
       picWidth,
-      f,
+      file = document.getElementById("file"),
       e;
     if (
       localStorage.getItem("autosync") === true ||
@@ -51,7 +51,7 @@ export default function main() {
         var newTitleName = new Function("newObj.title" + i)();
         var newValueName = new Function("newObj.value" + i)();
         $(".editList").empty();
-        for (let i = 0; i < data.length(); i++) {
+        for (let i = 1; i < data.length; i++) {
           $(".editList").append('<li class="editText' + i + '"></li>');
           var title = $(".editText" + i).append(
             '<input type="text" class="title' + i + '"/>'
@@ -66,7 +66,7 @@ export default function main() {
           value.val(valueName);
         }
         if ($(".switch__label").prop("checked")) {
-          for (let i = 0; i <= data.length(); i++) {
+          for (let i = 1; i <= data.length; i++) {
             if ($(".editText" + i)) {
               newTitleName = $("title" + i).val();
               newValueName = $("value" + i).val();
@@ -123,11 +123,10 @@ export default function main() {
       var prof = document.getElementById("prof");
       var m = prof.getContext("2d");
       new Image().src = "" + pic;
-      f = document.getElementById("file");
       var i = function () {
         setData();
         setTimeout(function () {
-          for (let i = 1; i <= $(".editlist li").length(); i++) {
+          for (let i = 1; i <= $(".editlist li").length; i++) {
             if (i == 1) {
               if ($("editText" + i)) {
                 e = e + $(".title" + i).val() + "\t" + $(".value" + i).val();
@@ -209,8 +208,8 @@ export default function main() {
         }),
         i();
     }),
-      f.addEventListener("change", function (e) {
-        var t = f.target.files[0];
+      file.addEventListener("change", function (e) {
+        var t = file.target.files[0];
         if (t.type.match("image.*")) {
           var n = new FileReader();
           (n.onload = function () {

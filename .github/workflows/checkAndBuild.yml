@@ -1,4 +1,4 @@
-name: Vulnerability check
+name: CheckAndBuild
 
 on:
   schedule:
@@ -14,7 +14,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "${{ matrix.node-version }}"
-      - name: "Vulnerability check now"
+      - name: "check and build"
         run: |
           npm install -D npm-check-updates
           npx ncu -u
