@@ -127,11 +127,16 @@ export default function main() {
         setData();
         setTimeout(function () {
           for (let i = 1; i <= $(".editlist li").length; i++) {
-            if (i == 1) {
-              if ($("editText" + i)) {
+            if ($("editText" + i)) {
+              if (i === 1) {
                 e = e + $(".title" + i).val() + "\t" + $(".value" + i).val();
-              } else if (i === 10) {
-                e = e + $(".title" + i).val() + "\t" + $(".value" + i).val();
+              } else if (i === $(".editlist li").length) {
+                e =
+                  e +
+                  "\n" +
+                  $(".title" + i).val() +
+                  "\t" +
+                  $(".value" + i).val();
               } else {
                 e =
                   e +
