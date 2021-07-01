@@ -19,14 +19,13 @@ module.exports = {
     scripts: froms.js.scripts,
     modules: froms.js.modules,
     scaner: froms.js.scaner,
-
   },
   // 出力の設定
   output: {
     // 出力するファイル名
     filename: "[name]-build.js",
     // 出力先のパス（絶対パスを指定する必要がある）
-    path: path.join(__dirname, "public/script/"),
+    path: path.join(__dirname, "public/script/dist/"),
   },
   plugins: [new FixStyleOnlyEntries(), new BomPlugin(true)],
 };

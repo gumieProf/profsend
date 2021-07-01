@@ -51,7 +51,7 @@ export default function main() {
         var newTitleName = new Function("newObj.title" + i)();
         var newValueName = new Function("newObj.value" + i)();
         $(".editList").empty();
-        for (let i = 1; i < data.length; i++) {
+        for (let i = 1; i <= data.length; i++) {
           $(".editList").append('<li class="editText' + i + '"></li>');
           var title = $(".editText" + i).append(
             '<input type="text" class="title' + i + '"/>'
@@ -129,21 +129,25 @@ export default function main() {
           for (let i = 1; i <= $(".editlist li").length; i++) {
             if ($("editText" + i)) {
               if (i === 1) {
-                e = e + $(".title" + i).val() + "\t" + $(".value" + i).val();
+                e = String(
+                  e + $(".title" + i).val() + "\t" + $(".value" + i).val()
+                );
               } else if (i === $(".editlist li").length) {
-                e =
+                e = String(
                   e +
-                  "\n" +
-                  $(".title" + i).val() +
-                  "\t" +
-                  $(".value" + i).val();
+                    "\n" +
+                    $(".title" + i).val() +
+                    "\t" +
+                    $(".value" + i).val()
+                );
               } else {
-                e =
+                e = String(
                   e +
-                  "\n" +
-                  $(".title" + i).val() +
-                  "\t" +
-                  $(".value" + i).val();
+                    "\n" +
+                    $(".title" + i).val() +
+                    "\t" +
+                    $(".value" + i).val()
+                );
               }
             }
           }

@@ -5,7 +5,6 @@ var urlsToCache = [
   "/13update.html",
   "/top.pwa.html",
   "/css/style.css",
-  "/css/bootstrap-4.3.1.css",
   "/image/card-img.png",
   "/image/en_prof.png",
   "/image/favicon.ico",
@@ -24,8 +23,9 @@ var urlsToCache = [
   "/css/all.min.css",
   "/script/materialize.js",
   "/css/materialize.css",
-  "/script/scripts-build.js",
-  "/script/modules-build.js",
+  "/script/dist/scripts-build.js",
+  "/script/dist/modules-build.js",
+  "/script/dist/scaner-build.js",
   "/image/icon128.png",
   "/image/icon144.png",
   "/image/icon192.png",
@@ -39,8 +39,7 @@ var urlsToCache = [
   "/image/sword.png",
   "/image/shield.png",
   "/image/Tspin.png",
-  "/image/twiCard.png"
-
+  "/image/twiCard.png",
 ];
 
 self.addEventListener("install", function (event) {
@@ -48,10 +47,10 @@ self.addEventListener("install", function (event) {
     caches.open(CACHE_NAME).then(function (cache) {
       return cache.addAll(
         urlsToCache.map(
-          (url) => new Request(url, { credentials: "same-origin" }),
-        ),
+          (url) => new Request(url, { credentials: "same-origin" })
+        )
       );
-    }),
+    })
   );
 });
 
@@ -59,6 +58,6 @@ self.addEventListener("fetch", function (event) {
   event.respondWith(
     caches.match(event.request).then(function (response) {
       return response ? response : fetch(event.request);
-    }),
+    })
   );
 });
