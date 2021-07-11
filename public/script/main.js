@@ -46,7 +46,7 @@ export default function main() {
       }
       var newObj = {};
       if (object) {
-        var data = JSON.stringify(object);
+        var data = JSON.parse(object);
         var titleName = new Function("data.title" + i)();
         var valueName = new Function("data.value" + i)();
         var newTitleName = new Function("newObj.title" + i)();
@@ -132,7 +132,9 @@ export default function main() {
               if (i === 1) {
                 e.concat($(".title" + i).val() + "\t" + $(".value" + i).val());
               } else if (i === $(".editlist li").length) {
-                e.concat($(".title" + i).val() + "\t" + $(".value" + i).val());
+                e.concat(
+                  "\n" + $(".title" + i).val() + "\t" + $(".value" + i).val()
+                );
               } else {
                 e.concat(
                   "\n" + $(".title" + i).val() + "\t" + $(".value" + i).val()
@@ -155,7 +157,11 @@ export default function main() {
           var x = 50; // 水平位置
           var y = 50; // 垂直位置
           m.font = "bold " + o + " Noto Sans JP";
-          for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
+          for (
+            var lines = String(e).split("\n"), i = 0, l = lines.length;
+            l > i;
+            i++
+          ) {
             var line = lines[i];
             var addY = fontSize;
 
