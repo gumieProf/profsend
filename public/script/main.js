@@ -32,7 +32,8 @@ export default function main() {
       picWidth,
       color,
       file = document.getElementById("file"),
-      e;
+      left,
+      right;
     if (
       localStorage.getItem("autosync") === true ||
       localStorage.getItem("autosync") === null
@@ -129,16 +130,48 @@ export default function main() {
         setTimeout(function () {
           for (let i = 1; i <= $(".editlist li").length; i++) {
             if ($("editText" + i)) {
-              if (i === 1) {
-                e.concat($(".title" + i).val() + "\t" + $(".value" + i).val());
-              } else if (i === $(".editlist li").length) {
-                e.concat(
-                  "\n" + $(".title" + i).val() + "\t" + $(".value" + i).val()
-                );
+              if ($(".editlist li").length > 5) {
+                var harf = $(".editlist li").length / 2;
+                if (i === 1) {
+                  left.concat(
+                    $(".title" + i).val() + "\t" + $(".value" + i).val()
+                  );
+                } else if (i === harf) {
+                  left.concat(
+                    $(".title" + i).val() + "\t" + $(".value" + i).val()
+                  );
+                } else if (i <= harf) {
+                  if (i === harf) {
+                    right.concat(
+                      $(".title" + i).val() + "\t" + $(".value" + i).val()
+                    );
+                  } else {
+                    right.concat(
+                      "\n" +
+                        $(".title" + i).val() +
+                        "\t" +
+                        $(".value" + i).val()
+                    );
+                  }
+                } else {
+                  right.concat(
+                    "\n" + $(".title" + i).val() + "\t" + $(".value" + i).val()
+                  );
+                }
               } else {
-                e.concat(
-                  "\n" + $(".title" + i).val() + "\t" + $(".value" + i).val()
-                );
+                if (i === 1) {
+                  left.concat(
+                    $(".title" + i).val() + "\t" + $(".value" + i).val()
+                  );
+                } else if (i === $(".editlist li").length) {
+                  left.concat(
+                    "\n" + $(".title" + i).val() + "\t" + $(".value" + i).val()
+                  );
+                } else {
+                  left.concat(
+                    "\n" + $(".title" + i).val() + "\t" + $(".value" + i).val()
+                  );
+                }
               }
             }
           }
@@ -227,36 +260,44 @@ export default function main() {
       return false;
     });
     $(".addBtn").click(function () {
-      var nam = $(".editlist > li").length() + 1;
-      var elem =
-        '<li class="editText' +
-        nam +
-        '">' +
-        '<input type="text" class="title' +
-        nam +
-        '" value="名前" /><a' +
-        'href="#"' +
-        'class="deleteBtn"' +
-        '><input type="text" class="value' +
-        nam +
-        '" /><i' +
-        'class="far fa-times-circle"' +
-        "></i></a></li>";
-      $(".editlist").append(elem);
+      if ($(".editlist > li").length === 10) {
+        alert("これ以上 行を追加できません");
+      } else {
+        var nam = $(".editlist > li").length() + 1;
+        var elem =
+          '<li class="editText' +
+          nam +
+          '">' +
+          '<input type="text" class="title' +
+          nam +
+          '" value="名前" /><a' +
+          'href="#"' +
+          'class="deleteBtn"' +
+          '><input type="text" class="value' +
+          nam +
+          '" /><i' +
+          'class="far fa-times-circle"' +
+          "></i></a></li>";
+        $(".editlist").append(elem);
+      }
     });
     $(".deleteBtn").click(function () {
-      var thisclass = $("this").attr("class");
-      $(this)
-        .parent()
-        .parent()
-        .find("." + thisclass)
-        .remove();
-      for (let i = 1; i <= $(".editlist li").length; i++) {
-        var oldClass = $(".editlist li")[i].attr("class");
-        $(".editlist li")[i].removeClass(oldClass);
-        $(".editlist li")[i].addClass("editText" + i);
+      if ($(".editlist > li").length === 1) {
+        alert("行が無くなるため削除できません");
+      } else {
+        var thisclass = $("this").attr("class");
+        $(this)
+          .parent()
+          .parent()
+          .find("." + thisclass)
+          .remove();
+        for (let i = 1; i <= $(".editlist li").length; i++) {
+          var oldClass = $(".editlist li")[i].attr("class");
+          $(".editlist li")[i].removeClass(oldClass);
+          $(".editlist li")[i].addClass("editText" + i);
+        }
+        return false;
       }
-      return false;
     });
   });
 }
