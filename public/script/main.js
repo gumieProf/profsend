@@ -30,6 +30,7 @@ export default function main() {
       m = prof.getContext("2d"),
       picHeight,
       picWidth,
+      color,
       file = document.getElementById("file"),
       e;
     if (
@@ -129,24 +130,12 @@ export default function main() {
           for (let i = 1; i <= $(".editlist li").length; i++) {
             if ($("editText" + i)) {
               if (i === 1) {
-                e = String(
-                  e + $(".title" + i).val() + "\t" + $(".value" + i).val()
-                );
+                e.concat($(".title" + i).val() + "\t" + $(".value" + i).val());
               } else if (i === $(".editlist li").length) {
-                e = String(
-                  e +
-                    "\n" +
-                    $(".title" + i).val() +
-                    "\t" +
-                    $(".value" + i).val()
-                );
+                e.concat($(".title" + i).val() + "\t" + $(".value" + i).val());
               } else {
-                e = String(
-                  e +
-                    "\n" +
-                    $(".title" + i).val() +
-                    "\t" +
-                    $(".value" + i).val()
+                e.concat(
+                  "\n" + $(".title" + i).val() + "\t" + $(".value" + i).val()
                 );
               }
             }
@@ -248,6 +237,20 @@ export default function main() {
         'class="far fa-times-circle"' +
         "></i></a></li>";
       $(".editlist").append(elem);
+    });
+    $(".deleteBtn").click(function () {
+      var thisclass = $("this").attr("class");
+      $(this)
+        .parent()
+        .parent()
+        .find("." + thisclass)
+        .remove();
+      for (let i = 1; i <= $(".editlist li").length; i++) {
+        var oldClass = $(".editlist li")[i].attr("class");
+        $(".editlist li")[i].removeClass(oldClass);
+        $(".editlist li")[i].addClass("editText" + i);
+      }
+      return false;
     });
   });
 }
