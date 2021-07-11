@@ -30,7 +30,8 @@ export default function main() {
       m = prof.getContext("2d"),
       picHeight,
       picWidth,
-      color = $("BGcolor").val(),
+      color = $(".BGcolor").val(),
+      text = $(".textColor").val(),
       file = document.getElementById("file"),
       left,
       right;
@@ -126,7 +127,8 @@ export default function main() {
       var m = prof.getContext("2d");
       new Image().src = "" + pic;
       var i = function () {
-        color = $("");
+        color = $(".BGColor").val();
+        text = $(".textColor").val();
         setData();
         setTimeout(function () {
           for (let i = 1; i <= $(".editlist li").length; i++) {
