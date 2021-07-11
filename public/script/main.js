@@ -30,7 +30,7 @@ export default function main() {
       m = prof.getContext("2d"),
       picHeight,
       picWidth,
-      color,
+      color = $("BGcolor").val(),
       file = document.getElementById("file"),
       left,
       right;
@@ -126,6 +126,7 @@ export default function main() {
       var m = prof.getContext("2d");
       new Image().src = "" + pic;
       var i = function () {
+        color = $("");
         setData();
         setTimeout(function () {
           for (let i = 1; i <= $(".editlist li").length; i++) {
@@ -187,11 +188,14 @@ export default function main() {
           m.stroke();
           var fontSize = 100; // フォントサイズ
           var lineHeight = 0.5; // 行の高さ (フォントサイズに対する倍率)
-          var x = 50; // 水平位置
-          var y = 50; // 垂直位置
+          var leftX = 50; // 水平位置
+          var leftY = 50; // 垂直位置
+          var rightX = 50; // 水平位置
+          var rightY = 50; // 垂直位置
+
           m.font = "bold " + o + " Noto Sans JP";
           for (
-            var lines = String(e).split("\n"), i = 0, l = lines.length;
+            var lines = String(left).split("\n"), i = 0, l = lines.length;
             l > i;
             i++
           ) {
@@ -201,7 +205,7 @@ export default function main() {
             // 2行目以降の水平位置は行数とlineHeightを考慮する
             if (i) addY += fontSize * lineHeight * i;
 
-            m.fillText(line, x + 0, y + addY);
+            m.fillText(line, leftX + 0, leftY + addY);
             var a = new Image();
             (a.src = "" + pic),
               m.drawImage(
@@ -212,6 +216,29 @@ export default function main() {
                 picHeight
               );
           }
+          for (
+            var lines = String(right).split("\n"), i = 0, l = lines.length;
+            l > i;
+            i++
+          ) {
+            var line = lines[i];
+            var addY = fontSize;
+
+            // 2行目以降の水平位置は行数とlineHeightを考慮する
+            if (i) addY += fontSize * lineHeight * i;
+
+            m.fillText(line, rightX + 0, rightY + addY);
+            var a = new Image();
+            (a.src = "" + pic),
+              m.drawImage(
+                a,
+                prof.width - 150,
+                prof.height - 150,
+                picWidth,
+                picHeight
+              );
+          }
+
           var imgT = document.getElementById("preview");
           imgT.src = prof.toDataURL();
         }, 50);
@@ -237,10 +264,18 @@ export default function main() {
         },
         ".profelem,#coment"
       );
-      $("#colors").change(function () {
+      $(".BGcolorBtn").click(function () {
+        $(".BGcolor").val($(this).attr("value"));
+        return false;
+      });
+      $(".TextColorBtn").click(function () {
+        $(".textColor").val($(this).attr("value"));
+        return false;
+      });
+      $(".BGcolor").change(function () {
         (color = $(this).val()), i();
       }),
-        $("#textColor").change(function () {
+        $(".textColor").change(function () {
           (text = $(this).val()), i();
         }),
         i();
@@ -280,6 +315,7 @@ export default function main() {
           "></i></a></li>";
         $(".editlist").append(elem);
       }
+      return false;
     });
     $(".deleteBtn").click(function () {
       if ($(".editlist > li").length === 1) {
