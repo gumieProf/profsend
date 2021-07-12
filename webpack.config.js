@@ -13,7 +13,7 @@ const froms = {
 };
 module.exports = {
   // モードの設定、v4系以降はmodeを指定しないと、webpack実行時に警告が出る
-  mode: "development",
+  mode: "production",
   // エントリーポイントの設定
   entry: {
     scripts: froms.js.scripts,
@@ -27,5 +27,21 @@ module.exports = {
     // 出力先のパス（絶対パスを指定する必要がある）
     path: path.join(__dirname, "public/script/dist/"),
   },
+  module: {
+    rules: [
+      {
+        test: /\.css/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: { url: false },
+          },
+        ],
+      },
+    ],
+  },
+  // ES5(IE11等)向けの指定
+  target: ["web", "es5"],
   plugins: [new FixStyleOnlyEntries(), new BomPlugin(true)],
 };

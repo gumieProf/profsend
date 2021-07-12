@@ -30,10 +30,12 @@ export default function main() {
       m = prof.getContext("2d"),
       picHeight,
       picWidth,
+      img,
       color = $(".BGcolor").val(),
       text = $(".textColor").val(),
       file = document.getElementById("file"),
       left,
+      var base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/,
       right;
     if (
       localStorage.getItem("autosync") === true ||
@@ -46,6 +48,10 @@ export default function main() {
       if (localStorage.getItem("profData")) {
         var object = localStorage.getItem("profData");
       }
+      if (localStorage.getItem("profImg")) {
+        img = localStorage.getItem("profImg");
+      }
+
       var newObj = {};
       if (object) {
         var data = JSON.parse(object);
@@ -120,11 +126,21 @@ export default function main() {
         picHeight = imgHeight;
         picWidth = imgWidth;
         i();
+        saveImage(imgsrc);
         return false;
       });
-
-      var prof = document.getElementById("prof");
-      var m = prof.getContext("2d");
+      function saveImage(image){
+        var canvas = document.createElement('canvas');
+        canvas.width  = pic.width;
+        canvas.height = pic.height;
+        // Draw Image
+        var ctx = canvas.getContext('2d');
+        ctx.drawImage(pic, 0, 0);
+        // To Base64
+        var base64 =canvas.toDataURL("image/png")
+        localStorage.setItem("profImg", base64);
+        return base64
+      }
       new Image().src = "" + pic;
       var i = function () {
         color = $(".BGColor").val();
@@ -287,13 +303,14 @@ export default function main() {
         if (t.type.match("image.*")) {
           var n = new FileReader();
           (n.onload = function () {
-            (pic = n.result), i();
+            (pic = saveImage(n.result)), i();
           }),
             n.readAsDataURL(t);
         } else alert("画像を選択してください");
       });
     $("#cookieClear").click(function () {
       localStorage.setItem("profdata", null);
+      localStorage.setItem("profImg", null);
       return false;
     });
     $(".addBtn").click(function () {
