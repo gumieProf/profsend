@@ -24,7 +24,6 @@ SOFTWARE.
 
 import main from "./main";
 import download from "./download";
-import "../style.css";
 
 main();
 download();

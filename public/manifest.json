@@ -3,6 +3,7 @@
   "name": "profsend",
   "display": "standalone",
   "start_url": "./pwa.top.html",
+  "scope": "https://profsend.ga/",
   "icons": [
     {
       "src": "image/icon192.png",

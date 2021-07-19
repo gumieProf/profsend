@@ -15,7 +15,8 @@
   "homepage": "https://gutsmine.myportfolio.com",
   "dependencies": {
     "jquery": "^3.6.0",
-    "tesseract.js": "^2.1.4"
+    "tesseract.js": "^2.1.4",
+    "uikit": "^3.7.1"
   },
   "devDependencies": {
     "css-loader": "^5.2.6",

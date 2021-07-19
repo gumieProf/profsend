@@ -32,10 +32,11 @@ export default function main() {
       picWidth,
       img,
       color = $(".BGcolor").val(),
-      text = $(".textColor").val(),
+      text = $(".TEXTcolor").val(),
       file = document.getElementById("file"),
       left,
-      var base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/,
+      base64regex =
+        /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/,
       right;
     if (
       localStorage.getItem("autosync") === true ||
@@ -129,17 +130,17 @@ export default function main() {
         saveImage(imgsrc);
         return false;
       });
-      function saveImage(image){
-        var canvas = document.createElement('canvas');
-        canvas.width  = pic.width;
+      function saveImage(image) {
+        var canvas = document.createElement("canvas");
+        canvas.width = pic.width;
         canvas.height = pic.height;
         // Draw Image
-        var ctx = canvas.getContext('2d');
+        var ctx = canvas.getContext("2d");
         ctx.drawImage(pic, 0, 0);
         // To Base64
-        var base64 =canvas.toDataURL("image/png")
+        var base64 = canvas.toDataURL("image/png");
         localStorage.setItem("profImg", base64);
-        return base64
+        return base64;
       }
       new Image().src = "" + pic;
       var i = function () {

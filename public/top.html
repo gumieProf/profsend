@@ -55,11 +55,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
       crossorigin="anonymous"
     ></script>
     <link rel="shortcut icon" href="/image/favicon.ico" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="/script/jquery.js"></script>
     <script src="/script/dist/modules-build.js"></script>
     <script type="text/javascript" src="/script/dist/scripts-build.js"></script>
@@ -101,8 +96,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     ></script>
     <!-- admax -->
     <form name="edit" id="editlicense" action="">
-      <div class="low">
-        <br />
         <header>
           <div id="nav-drawer">
             <input id="nav-input" type="checkbox" class="nav-unshown" />
@@ -203,20 +196,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
           </div>
         </div>
 
-        <a class="waves-effect waves-light btn" id="download" href="#"
+        <a class="uk-button uk-button-default" id="download" href="#"
           >ダウンロード</a
         >
-        <a class="waves-effect waves-light btn" id="pcdl" href="#"
+        <a class="uk-button uk-button-default" id="pcdl" href="#"
           >PC画面サイズでダウンロード</a
         >
-        <a class="waves-effect waves-light btn" id="smtdl" href="#"
+        <a class="uk-button uk-button-default" id="smtdl" href="#"
           >スマホ画面サイズでダウンロード</a
         >
 
         <div id="editor">
           <br />
           <div id="data1" class="datas">
-            <div class="input-field col s12">
               <ul class="editList">
                 <li class="editText1">
                   <input type="text" class="title1" value="ID" />
@@ -236,14 +228,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
                   </a>
                 </li>
               </ul>
-              <a href="#" class="waves-effect waves-light btn addBtn"
+              <a href="#" class="uk-button uk-button-default addBtn"
                 >行の追加</a
               >
             </div>
           </div>
         </div>
         <div id="data2" class="datas">
-          <div class="input-field col s12">
+          <span class="uk-label">背景の色</span>
             <input type="color" class="BGcolor" />
             <a href="#" value="#ffffff" class="BGcolorBtn" selected>ホワイト</a>
             <a href="#" value="#ff0000" class="BGcolorBtn">レッド</a>
@@ -251,19 +243,20 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
             <a href="#" value="#f8fc5e" class="BGcolorBtn">イエロー</a>
             <a href="#" value="#04b700" class="BGcolorBtn">グリーン</a>
             <a href="#" value="#e719e4" class="BGcolorBtn">パープル</a>
-
-            <input type="color" class="textColor" />
+            <br>
+            <span class="uk-label">文字の色</span>
+            <input type="color" class="TEXTcolor" />
             <a href="#" value="#000" class="TextColorBtn" selected>ブラック</a>
             <a href="#" value="#fff" class="TextColorBtn">ホワイト</a>
             <a href="#" value="#888" class="TextColorBtn">グレー</a>
-            <label for="textColor">テキストの色</label>
+            <br>
             <div class="library" id="library">
               <a href="#library">
                 <span>エンブレムライブラリー</span>
                 <i class="fas fa-angle-right fa-2x angle"></i>
               </a>
             </div>
-
+            <br>
             <div class="library" id="library">
               <span
                 ><a href="#" class="envls"
@@ -315,17 +308,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
                     width="100" /></a
               ></span>
             </div>
-
+            <br>
             <a
               id="picdel"
-              class="waves-effect waves-light btn"
+              class="uk-button uk-button-default"
               onclick="pic = '';"
               >エンブレムを非表示</a
             >
 
             <a
               id="reset"
-              class="waves-effect waves-light btn"
+              class="uk-button uk-button-default"
               onclick="pic = '/image/img-1.png';"
               >エンブレムをリセット</a
             >
@@ -350,12 +343,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
             <span class="switch__circle"></span>
           </label>
         </div>
+        <br>
         <a
           href="https://tayori.com/form/6ab95e28070de3e682c028fd913a261d0c276c4c"
-          class="feedback waves-effect waves-light btn"
+          class="feedback uk-button uk-button-default"
           >フィードバック・機能の提案</a
         >
-        <a class="waves-effect waves-light btn" href="#" id="cookieClear"
+        <a class="uk-button uk-button-default" href="#" id="cookieClear"
           >保存情報の削除</a
         >
         <small>©︎ 2020 gumie</small>
