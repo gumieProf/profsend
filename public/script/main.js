@@ -48,6 +48,13 @@ export default function main() {
     function setData() {
       if (localStorage.getItem("profData")) {
         var object = localStorage.getItem("profData");
+      } else {
+        saveImage("/image/img-1.png");
+        pic = "/image/img-1.png";
+        color = "#999";
+        $(".BGcolor").val(pic);
+        text = "#000000";
+        $(".TEXTcolor").val(text);
       }
       if (localStorage.getItem("profImg")) {
         img = localStorage.getItem("profImg");
