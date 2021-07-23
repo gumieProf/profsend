@@ -124,6 +124,19 @@ export default function main() {
         $(".dataBtn").show();
         return false;
       });
+      function saveImage(image) {
+        var canvas = document.createElement("canvas");
+        canvas.width = image.width;
+        canvas.height = image.height;
+        // Draw Image
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(image, 0, 0);
+        // To Base64
+        var base64 = canvas.toDataURL("image/png");
+        localStorage.setItem("profImg", base64);
+        return base64;
+      }
+
       $(".envls").click(function () {
         var img = $(this).find("img");
         var imgWidth = img.attr("width");
@@ -136,18 +149,6 @@ export default function main() {
         saveImage(imgsrc);
         return false;
       });
-      function saveImage(image) {
-        var canvas = document.createElement("canvas");
-        canvas.width = pic.width;
-        canvas.height = pic.height;
-        // Draw Image
-        var ctx = canvas.getContext("2d");
-        ctx.drawImage(pic, 0, 0);
-        // To Base64
-        var base64 = canvas.toDataURL("image/png");
-        localStorage.setItem("profImg", base64);
-        return base64;
-      }
       new Image().src = "" + pic;
       var i = function () {
         color = $(".BGColor").val();
@@ -218,7 +219,7 @@ export default function main() {
           var rightX = 50; // 水平位置
           var rightY = 50; // 垂直位置
 
-          m.font = "bold " + o + " Noto Sans JP";
+          m.font = "bold " + o + " boku2";
           for (
             var lines = String(left).split("\n"), i = 0, l = lines.length;
             l > i;
