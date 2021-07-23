@@ -24,6 +24,18 @@ SOFTWARE.
 
 export default function main() {
   $(function () {
+    function saveImage(image) {
+      var canvas = document.createElement("canvas");
+      canvas.width = image.width;
+      canvas.height = image.height;
+      // Draw Image
+      var ctx = canvas.getContext("2d");
+      ctx.drawImage(image, 0, 0);
+      // To Base64
+      var base64 = canvas.toDataURL("image/png");
+      localStorage.setItem("profImg", base64);
+      return base64;
+    }
     $("#prof").hide();
     var o = "50px",
       prof = document.getElementById("prof"),
@@ -49,7 +61,7 @@ export default function main() {
       if (localStorage.getItem("profData")) {
         var object = localStorage.getItem("profData");
       } else {
-        pic = saveImage("/image/img-1.png");
+        $(".defaultEnvl").click();
         color = "#999";
         $(".BGcolor").val(pic);
         text = "#000000";
@@ -124,19 +136,6 @@ export default function main() {
         $(".dataBtn").show();
         return false;
       });
-      function saveImage(image) {
-        var canvas = document.createElement("canvas");
-        canvas.width = image.width;
-        canvas.height = image.height;
-        // Draw Image
-        var ctx = canvas.getContext("2d");
-        ctx.drawImage(image, 0, 0);
-        // To Base64
-        var base64 = canvas.toDataURL("image/png");
-        localStorage.setItem("profImg", base64);
-        return base64;
-      }
-
       $(".envls").click(function () {
         var img = $(this).find("img");
         var imgWidth = img.attr("width");
@@ -146,7 +145,7 @@ export default function main() {
         picHeight = imgHeight;
         picWidth = imgWidth;
         i();
-        saveImage(imgsrc);
+        pic = saveImage(imgsrc);
         return false;
       });
       new Image().src = "" + pic;
@@ -232,15 +231,6 @@ export default function main() {
             if (i) addY += fontSize * lineHeight * i;
 
             m.fillText(line, leftX + 0, leftY + addY);
-            var a = new Image();
-            (a.src = "" + pic),
-              m.drawImage(
-                a,
-                prof.width - 150,
-                prof.height - 150,
-                picWidth,
-                picHeight
-              );
           }
           for (
             var lines = String(right).split("\n"), i = 0, l = lines.length;
@@ -254,16 +244,16 @@ export default function main() {
             if (i) addY += fontSize * lineHeight * i;
 
             m.fillText(line, rightX + 0, rightY + addY);
-            var a = new Image();
-            (a.src = "" + pic),
-              m.drawImage(
-                a,
-                prof.width - 150,
-                prof.height - 150,
-                picWidth,
-                picHeight
-              );
           }
+          var a = new Image();
+          (a.src = "" + pic),
+            m.drawImage(
+              a,
+              prof.width - 150,
+              prof.height - 150,
+              picWidth,
+              picHeight
+            );
 
           var imgT = document.getElementById("preview");
           imgT.src = prof.toDataURL();
