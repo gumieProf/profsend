@@ -24,11 +24,13 @@ SOFTWARE.
 
 export default function main() {
   $(function () {
-    function saveImage(image) {
+    function saveImage(data) {
       var canvas = document.createElement("canvas");
-      canvas.width = image.width;
-      canvas.height = image.height;
+      canvas.width = data.width;
+      canvas.height = data.height;
       var ctx = canvas.getContext("2d");
+      var image = new image();
+      image.src = data;
       ctx.drawImage(image, 0, 0);
       var base64 = canvas.toDataURL("image/png");
       localStorage.setItem("profImg", base64);

@@ -18,6 +18,8 @@ jobs:
         run: |
           npm install -D npm-check-updates
           npx ncu -u
+          npm i
+          webpack
       - env:
           CI: true
         name: "repositry push"
