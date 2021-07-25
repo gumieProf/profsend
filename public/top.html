@@ -96,242 +96,229 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     ></script>
     <!-- admax -->
     <form name="edit" id="editlicense" action="">
-        <header>
-          <div id="nav-drawer">
-            <input id="nav-input" type="checkbox" class="nav-unshown" />
-            <label id="nav-open" for="nav-input"><span></span></label>
-            <a href="top.html"
-              ><img
-                src="/image/psv4-white.png"
-                alt="logo"
-                width="466px"
-                height="120px"
-                class="logo"
-            /></a>
-            <label class="nav-unshown" id="nav-close" for="nav-input"></label>
-            <div id="nav-content">
-              <ul>
-                <li>
-                  <a href="top.html"
-                    ><img
-                      src="/image/psv4-white.png"
-                      alt="logo"
-                      width="100px"
-                      height="100px"
-                      class="wrap"
-                  /></a>
-                </li>
-                <li>
-                  <abolt>
-                    <a href="about.html"
-                      ><strong>プロフセンドについて</strong></a
-                    >
-                  </abolt>
-                </li>
-                <li>
-                  <a href="13update.pwa.html">
-                    <strong>iOS12以下をご使用の方へ</strong>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/gumieprof/profsend"
+      <header>
+        <div id="nav-drawer">
+          <input id="nav-input" type="checkbox" class="nav-unshown" />
+          <label id="nav-open" for="nav-input"><span></span></label>
+          <a href="top.html"
+            ><img
+              src="/image/psv4-white.png"
+              alt="logo"
+              width="466px"
+              height="120px"
+              class="logo"
+          /></a>
+          <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+          <div id="nav-content">
+            <ul>
+              <li>
+                <a href="top.html"
+                  ><img
+                    src="/image/psv4-white.png"
+                    alt="logo"
+                    width="100px"
+                    height="100px"
                     class="wrap"
-                    target="blank"
-                    ><i class="fab fa-github fa-2x source"></i
-                  ></a>
-                </li>
+                /></a>
+              </li>
+              <li>
+                <abolt>
+                  <a href="about.html"><strong>プロフセンドについて</strong></a>
+                </abolt>
+              </li>
+              <li>
+                <a href="13update.pwa.html">
+                  <strong>iOS12以下をご使用の方へ</strong>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/gumieprof/profsend"
+                  class="wrap"
+                  target="blank"
+                  ><i class="fab fa-github fa-2x source"></i
+                ></a>
+              </li>
 
-                <li>
-                  <a
-                    href="https://twitter.com/gumieprof"
-                    class="twitter-button"
-                    target="blank"
-                    ><i class="fab fa-twitter fa-2x twitter"></i
-                  ></a>
-                </li>
-                <li>
-                  <copy>
-                    <small>©︎ 2020 gumieprof</small>
-                  </copy>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </header>
-
-        <div class="subDatas">
-          <a href="#" class="back subData"><i class="fas fa-home"></i></a>
-          <a href="#" class="subData subData1">テキスト編集</a>
-          <a href="#" class="subData subData2">デザイン</a>
-          <a href="#" class="subData subData3">設定</a>
-        </div>
-
-        <canvas id="prof" width="960" height="540"></canvas>
-        <img width="576" height="324" id="preview" />
-        <img id="newImg" />
-        <div class="dataBtns">
-          <div class="dataBtn" id="data1Btn">
-            <a href="#"
-              ><span>テキスト編集</span>
-              <p>行ごとの文字の編集</p>
-              <i class="fas fa-angle-right fa-2x angle"></i>
-            </a>
-          </div>
-
-          <div class="dataBtn" id="data2Btn">
-            <a href="#">
-              <span>デザイン</span>
-              <p>テキスト・背景・エンブレムの変更</p>
-              <i class="fas fa-angle-right fa-2x angle"></i>
-            </a>
-          </div>
-
-          <div class="dataBtn" id="data3Btn">
-            <a href="#">
-              <span>設定</span>
-              <p>アプリの機能に関わる設定</p>
-              <i class="fas fa-angle-right fa-2x angle"></i>
-            </a>
+              <li>
+                <a
+                  href="https://twitter.com/gumieprof"
+                  class="twitter-button"
+                  target="blank"
+                  ><i class="fab fa-twitter fa-2x twitter"></i
+                ></a>
+              </li>
+              <li>
+                <copy>
+                  <small>©︎ 2020 gumieprof</small>
+                </copy>
+              </li>
+            </ul>
           </div>
         </div>
+      </header>
 
-        <a class="uk-button uk-button-default" id="download" href="#"
-          >ダウンロード</a
-        >
-        <a class="uk-button uk-button-default" id="pcdl" href="#"
-          >PC画面サイズでダウンロード</a
-        >
-        <a class="uk-button uk-button-default" id="smtdl" href="#"
-          >スマホ画面サイズでダウンロード</a
-        >
+      <div class="subDatas">
+        <a href="#" class="back subData"><i class="fas fa-home"></i></a>
+        <a href="#" class="subData subData1">テキスト編集</a>
+        <a href="#" class="subData subData2">デザイン</a>
+        <a href="#" class="subData subData3">設定</a>
+      </div>
 
-        <div id="editor">
-          <br />
-          <div id="data1" class="datas">
-              <ul class="editList">
-                <li class="editText1">
-                  <input type="text" class="title1" value="ID" />
-                  <input type="text" class="value1" />
-                  <a href="#" class="deleteBtn">
-                    <i class="far fa-times-circle"></i>
-                  </a>
-                </li>
-
-                <li class="editText2">
-                  <input type="text" class="title2" value="名前" />
-                  <input type="text" class="value2" /><a
-                    href="#"
-                    class="deleteBtn"
-                  >
-                    <i class="far fa-times-circle"></i>
-                  </a>
-                </li>
-              </ul>
-              <a href="#" class="uk-button uk-button-default addBtn"
-                >行の追加</a
-              >
-            </div>
-          </div>
+      <canvas id="prof" width="960" height="540"></canvas>
+      <img width="576" height="324" id="preview" />
+      <img id="newImg" />
+      <div class="dataBtns">
+        <div class="dataBtn" id="data1Btn">
+          <a href="#"
+            ><span>テキスト編集</span>
+            <p>行ごとの文字の編集</p>
+            <i class="fas fa-angle-right fa-2x angle"></i>
+          </a>
         </div>
-        <div id="data2" class="datas">
-          <span class="uk-label">背景の色</span>
-            <input type="color" class="BGcolor" value="#ffffff" />
-            <a href="#" value="#ffffff" class="BGcolorBtn" selected>ホワイト</a>
-            <a href="#" value="#ff0000" class="BGcolorBtn">レッド</a>
-            <a href="#" value="#0010bf" class="BGcolorBtn">ブルー</a>
-            <a href="#" value="#f8fc5e" class="BGcolorBtn">イエロー</a>
-            <a href="#" value="#04b700" class="BGcolorBtn">グリーン</a>
-            <a href="#" value="#e719e4" class="BGcolorBtn">パープル</a>
-            <br>
-            <span class="uk-label">文字の色</span>
-            <input type="color" class="TEXTcolor" />
-            <a href="#" value="#000" class="TextColorBtn" selected>ブラック</a>
-            <a href="#" value="#fff" class="TextColorBtn">ホワイト</a>
-            <a href="#" value="#888" class="TextColorBtn">グレー</a>
-            <br>
-            <div class="library" id="library">
-              <a href="#library">
-                <span>エンブレムライブラリー</span>
-                <i class="fas fa-angle-right fa-2x angle"></i>
+
+        <div class="dataBtn" id="data2Btn">
+          <a href="#">
+            <span>デザイン</span>
+            <p>テキスト・背景・エンブレムの変更</p>
+            <i class="fas fa-angle-right fa-2x angle"></i>
+          </a>
+        </div>
+
+        <div class="dataBtn" id="data3Btn">
+          <a href="#">
+            <span>設定</span>
+            <p>アプリの機能に関わる設定</p>
+            <i class="fas fa-angle-right fa-2x angle"></i>
+          </a>
+        </div>
+      </div>
+
+      <a class="uk-button uk-button-default" id="download" href="#"
+        >ダウンロード</a
+      >
+      <a class="uk-button uk-button-default" id="pcdl" href="#"
+        >PC画面サイズでダウンロード</a
+      >
+      <a class="uk-button uk-button-default" id="smtdl" href="#"
+        >スマホ画面サイズでダウンロード</a
+      >
+
+      <div id="editor">
+        <br />
+        <div id="data1" class="datas">
+          <ul class="editList">
+            <li class="editText1">
+              <input type="text" class="title1" value="ID" />
+              <input type="text" class="value1" />
+              <a href="#" class="deleteBtn">
+                <i class="far fa-times-circle"></i>
               </a>
-            </div>
-            <br>
-            <div class="library" id="library">
-              <span
-                ><a href="#" class="envls defaultEnvl"
-                  ><img
-                    src="/image/psv4-simbol.png"
-                    alt="profLogo"
-                    height="59"
-                    width="233" /></a
-              ></span>
-              <span
-                ><a href="#" class="envls"
-                  ><img
-                    src="/image/toku.png"
-                    alt="toku"
-                    height="100"
-                    width="100" /></a
-              ></span>
+            </li>
 
-              <span
-                ><a href="#" class="envls"
-                  ><img
-                    src="/image/Tspin.png"
-                    alt="Tspin"
-                    height="100"
-                    width="100" /></a
-              ></span>
-              <span
-                ><a href="#" class="envls"
-                  ><img
-                    src="/image/bomb.png"
-                    alt="bomb"
-                    height="100"
-                    width="100" /></a
-              ></span>
-              <span
-                ><a href="#" class="envls"
-                  ><img
-                    src="/image/sword.png"
-                    alt="sword"
-                    height="100"
-                    width="100" /></a
-              ></span>
-              <span
-                ><a href="#" class="envls"
-                  ><img
-                    src="/image/shield.png"
-                    alt="shield"
-                    height="100"
-                    width="100" /></a
-              ></span>
-            </div>
-            <br>
-            <a
-              id="picdel"
-              class="uk-button uk-button-default"
-              onclick="pic = '';"
-              >エンブレムを非表示</a
-            >
-
-            <a
-              id="reset"
-              class="uk-button uk-button-default"
-              onclick="pic = '/image/img-1.png';"
-              >エンブレムをリセット</a
-            >
-
-            <br />
-
-            <label for="file">
-              <strong>エンブレム画像のアップロード</strong>
-
-              <input type="file" name="file" id="file" />
-            </label>
-          </div>
+            <li class="editText2">
+              <input type="text" class="title2" value="名前" />
+              <input type="text" class="value2" /><a href="#" class="deleteBtn">
+                <i class="far fa-times-circle"></i>
+              </a>
+            </li>
+          </ul>
+          <a href="#" class="uk-button uk-button-default addBtn">行の追加</a>
         </div>
+      </div>
+      <div id="data2" class="datas">
+        <span class="uk-label">背景の色</span>
+        <input type="color" class="BGcolor" value="#ffffff" />
+        <a href="#" value="#ffffff" class="BGcolorBtn" selected>ホワイト</a>
+        <a href="#" value="#ff0000" class="BGcolorBtn">レッド</a>
+        <a href="#" value="#0010bf" class="BGcolorBtn">ブルー</a>
+        <a href="#" value="#f8fc5e" class="BGcolorBtn">イエロー</a>
+        <a href="#" value="#04b700" class="BGcolorBtn">グリーン</a>
+        <a href="#" value="#e719e4" class="BGcolorBtn">パープル</a>
+        <br />
+        <span class="uk-label">文字の色</span>
+        <input type="color" class="TEXTcolor" />
+        <a href="#" value="#000" class="TextColorBtn" selected>ブラック</a>
+        <a href="#" value="#fff" class="TextColorBtn">ホワイト</a>
+        <a href="#" value="#888" class="TextColorBtn">グレー</a>
+        <br />
+        <div class="library" id="library">
+          <a href="#library">
+            <span>エンブレムライブラリー</span>
+            <i class="fas fa-angle-right fa-2x angle"></i>
+          </a>
+        </div>
+        <br />
+        <div class="library" id="library">
+          <span
+            ><a href="#" class="envls defaultEnvl"
+              ><img
+                src="/image/psv4-simbol.png"
+                alt="profLogo"
+                height="100"
+                width="100" /></a
+          ></span>
+          <span
+            ><a href="#" class="envls"
+              ><img
+                src="/image/toku.png"
+                alt="toku"
+                height="100"
+                width="100" /></a
+          ></span>
+
+          <span
+            ><a href="#" class="envls"
+              ><img
+                src="/image/Tspin.png"
+                alt="Tspin"
+                height="100"
+                width="100" /></a
+          ></span>
+          <span
+            ><a href="#" class="envls"
+              ><img
+                src="/image/bomb.png"
+                alt="bomb"
+                height="100"
+                width="100" /></a
+          ></span>
+          <span
+            ><a href="#" class="envls"
+              ><img
+                src="/image/sword.png"
+                alt="sword"
+                height="100"
+                width="100" /></a
+          ></span>
+          <span
+            ><a href="#" class="envls"
+              ><img
+                src="/image/shield.png"
+                alt="shield"
+                height="100"
+                width="100" /></a
+          ></span>
+        </div>
+        <br />
+        <a id="picdel" class="uk-button uk-button-default" onclick="pic = '';"
+          >エンブレムを非表示</a
+        >
+
+        <a
+          id="reset"
+          class="uk-button uk-button-default"
+          onclick="pic = '/image/img-1.png';"
+          >エンブレムをリセット</a
+        >
+
+        <br />
+
+        <label for="file">
+          <strong>エンブレム画像のアップロード</strong>
+
+          <input type="file" name="file" id="file" />
+        </label>
       </div>
 
       <div class="datas" id="data3">
@@ -343,7 +330,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
             <span class="switch__circle"></span>
           </label>
         </div>
-        <br>
+        <br />
         <a
           href="https://tayori.com/form/6ab95e28070de3e682c028fd913a261d0c276c4c"
           class="feedback uk-button uk-button-default"
