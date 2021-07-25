@@ -135,7 +135,7 @@ export default function main() {
         return false;
       });
       $(".envls").click(function () {
-        var img = $(this).children("img");
+        var img = $(this + ">img");
         var imgWidth = img.attr("width");
         var imgHeight = img.attr("height");
         var imgsrc = img.attr("src");
@@ -341,8 +341,8 @@ export default function main() {
           .parent()
           .find("." + thisclass)
           .remove();
-        for (let i = 1; i <= $(".editlist li").length; i++) {
-          var oldClass = $(".editlist li")[i].attr("class");
+        for (let i = 1; i <= $(".editlist > li").length; i++) {
+          var oldClass = $(".editlist > li")[i].attr("class");
           $(".editlist li")[i].removeClass(oldClass);
           $(".editlist li")[i].addClass("editText" + i);
         }
