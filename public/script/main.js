@@ -29,7 +29,7 @@ export default function main() {
       canvas.width = data.width;
       canvas.height = data.height;
       var ctx = canvas.getContext("2d");
-      var img = new image();
+      var img = new Image();
       img.src = data;
       ctx.drawImage(img, 0, 0);
       var base64 = canvas.toDataURL("image/png");
