@@ -133,15 +133,14 @@ export default function main() {
         return false;
       });
       $(".envls").click(function () {
-        var img = $(this).find("img");
+        var img = $(this).children("img");
         var imgWidth = img.attr("width");
-        var imgHeight = img.attr("width");
+        var imgHeight = img.attr("height");
         var imgsrc = img.attr("src");
-        pic = imgsrc;
+        pic = saveImage(imgsrc);
         picHeight = imgHeight;
         picWidth = imgWidth;
         i();
-        pic = saveImage(imgsrc);
         return false;
       });
       new Image().src = "" + pic;
