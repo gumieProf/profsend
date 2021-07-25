@@ -135,7 +135,7 @@ export default function main() {
         return false;
       });
       $(".envls").click(function () {
-        var img = $(this);
+        var img = $("img", this);
         var imgWidth = img.attr("width");
         var imgHeight = img.attr("height");
         var imgsrc = img.attr("src");
