@@ -28,10 +28,8 @@ export default function main() {
       var canvas = document.createElement("canvas");
       canvas.width = image.width;
       canvas.height = image.height;
-      // Draw Image
       var ctx = canvas.getContext("2d");
       ctx.drawImage(image, 0, 0);
-      // To Base64
       var base64 = canvas.toDataURL("image/png");
       localStorage.setItem("profImg", base64);
       return base64;
@@ -47,8 +45,6 @@ export default function main() {
       text = $(".TEXTcolor").val(),
       file = document.getElementById("file"),
       left,
-      base64regex =
-        /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/,
       right;
     if (
       localStorage.getItem("autosync") === true ||
@@ -63,12 +59,12 @@ export default function main() {
       } else {
         $(".defaultEnvl").click();
         color = "#999";
-        $(".BGcolor").val(pic);
+        $(".BGcolor").val(color);
         text = "#000000";
         $(".TEXTcolor").val(text);
       }
       if (localStorage.getItem("profImg")) {
-        img = localStorage.getItem("profImg");
+        pic = localStorage.getItem("profImg");
       }
 
       var newObj = {};
