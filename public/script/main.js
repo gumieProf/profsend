@@ -335,12 +335,7 @@ export default function main() {
       if ($(".editlist > li").length === 1) {
         alert("行が無くなるため削除できません");
       } else {
-        var thisclass = $("this").attr("class");
-        $(this)
-          .parent()
-          .parent()
-          .find("." + thisclass)
-          .remove();
+        $(this).parents("li").remove();
         for (let i = 1; i <= $(".editlist > li").length; i++) {
           var oldClass = $(".editlist > li")[i].attr("class");
           $(".editlist li")[i].removeClass(oldClass);
