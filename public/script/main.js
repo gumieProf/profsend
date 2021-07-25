@@ -29,9 +29,9 @@ export default function main() {
       canvas.width = data.width;
       canvas.height = data.height;
       var ctx = canvas.getContext("2d");
-      var image = new image();
-      image.src = data;
-      ctx.drawImage(image, 0, 0);
+      var img = new image();
+      img.src = data;
+      ctx.drawImage(img, 0, 0);
       var base64 = canvas.toDataURL("image/png");
       localStorage.setItem("profImg", base64);
       return base64;
