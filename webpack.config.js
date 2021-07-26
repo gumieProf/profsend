@@ -41,9 +41,5 @@ module.exports = {
   },
   // ES5(IE11等)向けの指定
   target: ["web", "es5"],
-  plugins: [
-    new FixStyleOnlyEntries(),
-    new webpack.HotModuleReplacementPlugin(),
-    new BomPlugin(true),
-  ],
+  plugins: [new FixStyleOnlyEntries(), new BomPlugin(true)],
 };
