@@ -47,4 +47,7 @@ module.exports = {
     new HotModuleReplacementPlugin(),
     new BomPlugin(true),
   ],
+  performance: {
+    hints: false,
+  },
 };
