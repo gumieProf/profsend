@@ -3,6 +3,7 @@ const path = require("path");
 const BomPlugin = require("webpack-utf8-bom");
 const webpack = require("webpack");
 const FixStyleOnlyEntries = require("webpack-fix-style-only-entries");
+const { HotModuleReplacementPlugin } = require("webpack");
 const assets = path.join(__dirname, "./public/script/");
 const froms = {
   js: {
@@ -41,5 +42,9 @@ module.exports = {
   },
   // ES5(IE11等)向けの指定
   target: ["web", "es5"],
-  plugins: [new FixStyleOnlyEntries(), new BomPlugin(true)],
+  plugins: [
+    new FixStyleOnlyEntries(),
+    new HotModuleReplacementPlugin(),
+    new BomPlugin(true),
+  ],
 };
