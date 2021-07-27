@@ -40,6 +40,12 @@ var urlsToCache = [
   "/image/shield.png",
   "/image/Tspin.png",
   "/image/twiCard.png",
+  "/image/psv4-black.png",
+  "/image/psv4-white.png",
+  "/image/psv4-simbol.png",
+  "/font/Boku2-Bold.otf",
+  "/font/アプリ明朝.otf",
+  "failed.html",
 ];
 
 self.addEventListener("install", function (event) {

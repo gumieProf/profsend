@@ -2,7 +2,7 @@
   "short_name": "profsend",
   "name": "profsend",
   "display": "standalone",
-  "start_url": "./pwa.top.html",
+  "start_url": "./top.pwa.html",
   "scope": "https://profsend.ga/",
   "icons": [
     {

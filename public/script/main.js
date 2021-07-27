@@ -36,6 +36,18 @@ export default function main() {
       localStorage.setItem("profImg", base64);
       return base64;
     }
+    $(".envls").click(function () {
+      var img = $("img", this);
+      var imgWidth = img.attr("width");
+      var imgHeight = img.attr("height");
+      var imgsrc = img.attr("src");
+      pic = saveImage(imgsrc);
+      picHeight = imgHeight;
+      picWidth = imgWidth;
+      i();
+      return false;
+    });
+
     $("#prof").hide();
     var o = "50px",
       prof = document.getElementById("prof"),
@@ -132,17 +144,6 @@ export default function main() {
       $(".back").click(function () {
         $(".datas").hide();
         $(".dataBtn").show();
-        return false;
-      });
-      $(".envls").click(function () {
-        var img = $("img", this);
-        var imgWidth = img.attr("width");
-        var imgHeight = img.attr("height");
-        var imgsrc = img.attr("src");
-        pic = saveImage(imgsrc);
-        picHeight = imgHeight;
-        picWidth = imgWidth;
-        i();
         return false;
       });
       new Image().src = "" + pic;
@@ -252,8 +253,8 @@ export default function main() {
               picHeight
             );
 
-          var imgT = document.getElementById("preview");
-          imgT.src = prof.toDataURL();
+          var preview = document.getElementById("preview");
+          preview.src = prof.toDataURL();
         }, 50);
       };
       window.i = i;
