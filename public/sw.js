@@ -46,6 +46,7 @@ var urlsToCache = [
   "/font/Boku2-Bold.otf",
   "/font/アプリ明朝.otf",
   "failed.html",
+  "/script/jquery.js",
 ];
 
 self.addEventListener("install", function (event) {
