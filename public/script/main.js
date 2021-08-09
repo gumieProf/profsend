@@ -92,7 +92,7 @@ export default function main() {
         for (let i = 1; i <= data.length; i++) {
           $(".editList").append('<li class="editText' + i + '"></li>');
           var title = $(".editText" + i).append(
-            '<input type="text" class="title' + i + '"/>'
+            '<input type="text" class="PS-text title' + i + '"/>'
           );
           $(".editText" + i).append(
             '<a href="#" class="deleteBtn"><i class="far fa-times-circle"></i></a>'

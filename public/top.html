@@ -60,7 +60,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
-    <script src="/script/dist/modules-build.js"></script>
     <script type="text/javascript" src="/script/dist/scripts-build.js"></script>
   </head>
 
@@ -198,36 +197,33 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
         </div>
       </div>
 
-      <a class="uk-button uk-button-default" id="download" href="#"
-        >ダウンロード</a
-      >
-      <a class="uk-button uk-button-default" id="pcdl" href="#"
-        >PC画面サイズでダウンロード</a
-      >
-      <a class="uk-button uk-button-default" id="smtdl" href="#"
-        >スマホ画面サイズでダウンロード</a
-      >
+      <a class="PS-btn" id="download" href="#">ダウンロード</a>
+      <a class="PS-btn" id="pcdl" href="#">PC画面サイズでダウンロード</a>
+      <a class="PS-btn" id="smtdl" href="#">スマホ画面サイズでダウンロード</a>
 
       <div id="editor">
         <br />
         <div id="data1" class="datas">
           <ul class="editList">
             <li class="editText1">
-              <input type="text" class="title1" value="ID" />
-              <input type="text" class="value1" />
+              <input type="text" class="PS-text title1" value="ID" />
+              <input type="text" class="PS-text value1" />
               <a href="#" class="deleteBtn">
                 <i class="far fa-times-circle"></i>
               </a>
             </li>
 
             <li class="editText2">
-              <input type="text" class="title2" value="名前" />
-              <input type="text" class="value2" /><a href="#" class="deleteBtn">
+              <input type="text" class="PS-text title2" value="名前" />
+              <input type="text" class="PS-text value2" /><a
+                href="#"
+                class="deleteBtn"
+              >
                 <i class="far fa-times-circle"></i>
               </a>
             </li>
           </ul>
-          <a href="#" class="uk-button uk-button-default addBtn">行の追加</a>
+          <a href="#" class="PS-btn addBtn">行の追加</a>
         </div>
       </div>
       <div id="data2" class="datas">
@@ -305,14 +301,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
           ></span>
         </div>
         <br />
-        <a id="picdel" class="uk-button uk-button-default" onclick="pic = '';"
-          >エンブレムを非表示</a
-        >
+        <a id="picdel" class="PS-btn" onclick="pic = '';">エンブレムを非表示</a>
 
-        <a
-          id="reset"
-          class="uk-button uk-button-default"
-          onclick="pic = '/image/img-1.png';"
+        <a id="reset" class="PS-btn" onclick="pic = '/image/img-1.png';"
           >エンブレムをリセット</a
         >
 
@@ -337,12 +328,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
         <br />
         <a
           href="https://tayori.com/form/6ab95e28070de3e682c028fd913a261d0c276c4c"
-          class="feedback uk-button uk-button-default"
+          class="feedback PS-btn"
           >フィードバック・機能の提案</a
         >
-        <a class="uk-button uk-button-default" href="#" id="cookieClear"
-          >保存情報の削除</a
-        >
+        <a class="PS-btn" href="#" id="cookieClear">保存情報の削除</a>
         <small>©︎ 2020 gumie</small>
       </div>
     </form>
