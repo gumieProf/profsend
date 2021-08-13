@@ -69,7 +69,7 @@ export default function main() {
     }
     function setData() {
       if (localStorage.getItem("profData")) {
-        var object = localStorage.getItem("profData");
+        var obj = localStorage.getItem("profData");
       } else {
         $(".defaultEnvl").click();
         color = "#999";
@@ -82,7 +82,7 @@ export default function main() {
       }
 
       var newObj = {};
-      if (object) {
+      if (obj) {
         var data = JSON.parse(object);
         var titleName = new Function("data.title" + i)();
         var valueName = new Function("data.value" + i)();
