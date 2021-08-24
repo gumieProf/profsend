@@ -61,7 +61,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="/script/jquery.js"></script>
-    <script src="/script/modules-build.js"></script>
+    <script src="/script/dist/modules-build.js"></script>
     <script src="/script/qrcode.min.js"></script>
     <script src="/script/cropper.min.js"></script>
     <link rel="stylesheet" href="/css/cropper.min.css" />
@@ -200,7 +200,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 
     <canvas id="prof" width="960" height="540"></canvas>
     <img width="576" height="324" id="preview" />
-    <img id="newImg" />
+    <canvas id="SMTprof" width="540" height="960"></canvas>
+    <img id="SMTpreview" height="324" width="576" />
     <div class="dataBtns">
       <div class="dataBtn" id="data1Btn">
         <a href="#"
@@ -231,6 +232,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
         </a>
       </div>
     </div>
+    <strong>プレビューサイズ</strong>
+    <select id="viewList">
+      <option value="default">PCサイズ</option>
+      <option value="smart">スマホサイズ</option>
+    </select>
     <a class="waves-effect waves-light btn" href="#" id="cookieClear"
       >保存情報の削除</a
     >
@@ -346,7 +352,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
               src="/image/prof.png"
               alt="profLogo"
               height="100"
-              width="100" /></a
+              width="200" /></a
         ></span>
         <span
           ><a href="#" class="envls"
@@ -407,7 +413,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     <br />
 
     <small>©︎ 2020 gumie</small>
-    <script type="text/javascript" src="/script/scripts-build.js"></script>
+    <script type="text/javascript" src="/script/dist/scripts-build.js"></script>
     <script>
       var pic = "/image/img-1.png";
       var color = "#999";

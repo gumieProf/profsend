@@ -25,9 +25,10 @@ SOFTWARE.
 export default function main() {
   $(function () {
     $("#prof").hide();
-    var o = "50px",
-      prof = document.getElementById("prof"),
-      m = prof.getContext("2d");
+    var prof = document.getElementById("prof");
+    var profPrev = document.getElementById("preview");
+    var SMTprof = document.getElementById("SMTprof");
+    var SMTprev = document.getElementById("SMTpreview");
     var id = $("#id").val();
     var age = $("#age").val();
     var coment = $("#coment").val();
@@ -84,6 +85,8 @@ export default function main() {
       $("#textInputDiv").hide();
       $(".crop1").hide();
       $("#qrValue").hide();
+      $("#SMTprof").hide();
+      $("#SMTpreview").hide();
       $(".delete1").click(function () {
         $("#name").val("");
         i();
@@ -235,35 +238,71 @@ export default function main() {
               "\nSNS: \t" +
               sns;
           }
+          function read(cav, mode) {
+            var cavHeight = cav.height;
+            var cavWidth = cav.width;
+            var cvs = cav.getContext("2d");
+            cvs.clearRect(0, 0, cavWidth + 100, cavHeight + 100);
+            cvs.beginPath();
+            cvs.fillStyle = "" + color;
+            cvs.fillRect(0, 0, cavWidth + 100, cavHeight + 100);
+            cvs.fillStyle = "" + text;
+            cvs.rect(15, 15, cavWidth - 30, cavHeight - 30);
+            cvs.lineWidth = 8;
+            cvs.strokeStyle = text;
+            cvs.stroke();
+            if (mode === "default") {
+              var o = "50px";
+              var fontSize = 100;
+              var lineHeight = 0.5; // 行の高さ (フォントサイズに対する倍率)
+            } else if (mode === "smt") {
+              var o = "50px";
+              var fontSize = 100;
+              var lineHeight = 1; // 行の高さ (フォントサイズに対する倍率)
+            }
+            var x = 50; // 水平位置
+            var y = 50; // 垂直位置
+            cvs.font = "bold " + o + " Boku2";
+            for (
+              var lines = e.split("\n"), i = 0, l = lines.length;
+              l > i;
+              i++
+            ) {
+              var line = lines[i];
+              var addY = fontSize;
 
-          m.clearRect(0, 0, prof.width + 100, prof.height + 100);
-          m.beginPath();
-          m.fillStyle = "" + color;
-          m.fillRect(0, 0, prof.width + 100, prof.height + 100);
-          m.fillStyle = "" + text;
-          m.rect(15, 15, prof.width - 30, prof.height - 30);
-          m.lineWidth = 8;
-          m.strokeStyle = text;
-          m.stroke();
-          var fontSize = 100; // フォントサイズ
-          var lineHeight = 0.5; // 行の高さ (フォントサイズに対する倍率)
-          var x = 50; // 水平位置
-          var y = 50; // 垂直位置
-          m.font = "bold " + o + " Boku2";
-          for (var lines = e.split("\n"), i = 0, l = lines.length; l > i; i++) {
-            var line = lines[i];
-            var addY = fontSize;
+              // 2行目以降の水平位置は行数とlineHeightを考慮する
+              if (i) addY += fontSize * lineHeight * i;
 
-            // 2行目以降の水平位置は行数とlineHeightを考慮する
-            if (i) addY += fontSize * lineHeight * i;
-
-            m.fillText(line, x + 0, y + addY);
-            var a = new Image();
-            (a.src = "" + pic),
-              m.drawImage(a, prof.width - 150, prof.height - 150, 100, 100);
+              cvs.fillText(line, x + 0, y + addY);
+              var a = new Image();
+              a.src = "" + pic;
+              var imgHeight = a.height;
+              var imgWidth = a.width;
+            }
+            if (mode === "default") {
+              cvs.drawImage(
+                a,
+                cavHeight - 150,
+                cavWidth - 150,
+                imgHeight,
+                imgWidth
+              );
+            } else if (mode === "smt") {
+              cvs.drawImage(
+                a,
+                cavHeight - 150,
+                cavWidth - 150,
+                imgHeight * 2,
+                imgWidth * 2
+              );
+            }
           }
-          var imgT = document.getElementById("preview");
-          imgT.src = prof.toDataURL();
+
+          read(prof, "default");
+          read(SMTprof, "smt");
+          profPrev.src = prof.toDataURL();
+          SMTprev.src = SMTprof.toDataURL();
         }, 50);
       };
       window.i = i;
@@ -295,7 +334,9 @@ export default function main() {
           $("#cropFile1").click();
         } else {
           if ((ifColorInput = true)) {
+            $("#colorInputDiv").fadeIn(100);
             ifColorInput = false;
+            $("#colorInput").click();
           }
 
           color = $(this).val();
@@ -306,6 +347,7 @@ export default function main() {
           if ($(this).val() === "input") {
             $("#textInputDiv").fadeIn(100);
             ifTextInput = true;
+            $("#textInput").click();
           } else {
             if ((ifTextInput = true)) {
               ifTextInput = false;
@@ -350,6 +392,15 @@ export default function main() {
           }),
             n.readAsDataURL(t);
         } else alert("画像を選択してください");
+      });
+      $("#viewList").change(function () {
+        if ($(this).val() === "default") {
+          $("#SMTprof").fadeOut(100);
+          $("#preview").fadeIn(100);
+        } else if ($(this).val() === "smart") {
+          $("#SMTprof").fadeIn(100);
+          $("#preview").fadeOut(100);
+        }
       });
       $("#cropFile1").change(function (e) {
         var this_ = $(this);
