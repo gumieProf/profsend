@@ -309,7 +309,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
           <option value="#04b700">グリーン</option>
           <option value="#e719e4">パープル</option>
           <option value="input">カラーピッカー</option>
-          <option value="img">画像</option>
         </select>
         <label for="colors">背景の色</label>
         <input type="file" id="cropFile1" />
@@ -386,21 +385,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
               height="100"
               width="100" /></a
         ></span>
-        <div id="qrValue"></div>
         <h5>QRコードエンブレム</h5>
         <input type="text" id="qrURL" />
-        <div class="qrValue"></div>
+        <div id="qrValue"></div>
         <a href="#" class="waves-effect waves-light btn qrBtn">QRコード化</a>
       </div>
 
-      <a id="picdel" class="waves-effect waves-light btn" onclick="pic = '';"
+      <a id="picdel" class="waves-effect waves-light btn EMBhide"
         >エンブレムを非表示</a
       >
 
-      <a
-        id="reset"
-        class="waves-effect waves-light btn"
-        onclick="pic = '/image/img-1.png';"
+      <a id="reset" class="waves-effect waves-light btn EMBreset"
         >エンブレムをリセット</a
       >
       <br />
@@ -415,9 +410,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     <small>©︎ 2020 gumie</small>
     <script type="text/javascript" src="/script/dist/scripts-build.js"></script>
     <script>
-      var pic = "/image/img-1.png";
-      var color = "#999";
-      var text = "#000000";
       document.addEventListener("DOMContentLoaded", function () {
         var elems = document.querySelectorAll("select");
         var instances = M.FormSelect.init(elems);

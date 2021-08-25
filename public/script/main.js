@@ -21,7 +21,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-
 export default function main() {
   $(function () {
     $("#prof").hide();
@@ -39,6 +38,9 @@ export default function main() {
     var coment2 = coment;
     var sns2 = sns;
     var name2 = name;
+    var pic = "/image/img-1.png";
+    var color = "#999";
+    var text = "#000000";
     var ifTextInput = false;
     var ifColorInput = false;
     var cropper;
@@ -146,9 +148,6 @@ export default function main() {
         return false;
       });
 
-      var prof = document.getElementById("prof");
-      var m = prof.getContext("2d");
-      new Image().src = "" + pic;
       var e = document.getElementById("file");
       function indention(text) {
         if (text.length > 32) {
@@ -280,22 +279,42 @@ export default function main() {
               var imgHeight = a.height;
               var imgWidth = a.width;
             }
-            if (mode === "default") {
-              cvs.drawImage(
-                a,
-                cavHeight - 150,
-                cavWidth - 150,
-                imgHeight,
-                imgWidth
-              );
-            } else if (mode === "smt") {
-              cvs.drawImage(
-                a,
-                cavHeight - 150,
-                cavWidth - 150,
-                imgHeight * 2,
-                imgWidth * 2
-              );
+            if (pic === "/image/img-1.png") {
+              if (mode === "default") {
+                cvs.drawImage(
+                  a,
+                  cavWidth - 250,
+                  cavHeight - 250,
+                  imgWidth * 1.5,
+                  imgHeight * 1.5
+                );
+              } else if (mode === "smt") {
+                cvs.drawImage(
+                  a,
+                  cavWidth / 3,
+                  cavHeight / 2.5,
+                  imgWidth * 2,
+                  imgHeight * 2
+                );
+              }
+            } else {
+              if (mode === "default") {
+                cvs.drawImage(
+                  a,
+                  cavWidth - 250,
+                  cavHeight - 250,
+                  imgWidth / 2,
+                  imgHeight / 2
+                );
+              } else if (mode === "smt") {
+                cvs.drawImage(
+                  a,
+                  cavWidth / 3,
+                  cavHeight / 2.5,
+                  imgWidth / 2,
+                  imgHeight / 2
+                );
+              }
             }
           }
 
@@ -305,13 +324,17 @@ export default function main() {
           SMTprev.src = SMTprof.toDataURL();
         }, 50);
       };
+      $(".EMBreset").click(function () {
+        pic = "/image/img-1.png";
+        i();
+        return false;
+      });
+      $(".EMBhide").click(function () {
+        pic = "";
+        i();
+        return false;
+      });
       window.i = i;
-      (m.fillStyle = "" + color),
-        m.fillRect(0, 0, 450, 300),
-        (m.fillStyle = "" + text),
-        m.rect(15, 15, 370, 170),
-        (m.lineWidth = 8),
-        m.stroke();
       $("#name").val(), $("#id").val(), $("#age").val(), $("#coment").val();
       $("#snsText").val();
       i();
@@ -369,18 +392,20 @@ export default function main() {
         i();
       });
       $(".qrBtn").click(function () {
-        var value = document.getElementById("qrURL").value;
-        var text = document.getElementById("qrValue");
-        new QRCode(text, {
+        var value = $("#qrURL").val();
+        $("#qrValue").empty();
+        new QRCode("qrValue", {
           text: value,
-          width: 100,
-          height: 100,
+          width: 200,
+          height: 200,
+          correctLevel: QRCode.CorrectLevel.H,
         });
-        var qr = text.firstChild;
-        qr.onload = function () {
-          pic = qr;
-          i();
-        };
+        $("#qrValue")
+          .find("img")
+          .on("load", function () {
+            pic = $(this).attr("src");
+            i();
+          });
         return false;
       });
       e.addEventListener("change", function (e) {
