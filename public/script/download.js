@@ -46,14 +46,17 @@ export default function download() {
       if (name === null || name === "") {
         alert("名前が抜けています。");
       } else {
+        var canv = document.getElementById("prof");
         var dlcanv = document.createElement("canvas");
         dlcanv.width = 1920;
         dlcanv.height = 1080;
+        var dlctx = dlcanv.getContext("2d");
+        var dlimg = new Image();
+        dlimg.src = canv.toDataURL("image/png");
+        dlctx.drawImage(dlimg, 0, 0, 960, 540, 0, 0, 1920, 1080);
         setTimeout(() => {
-          var o = "100px";
-          read(dlcanv);
           let link = document.createElement("a");
-          link.href = prof.toDataURL("image/png");
+          link.href = dlcanv.toDataURL("image/png");
           link.download = "prof-window.png";
           link.click();
         }, 50);
@@ -68,7 +71,7 @@ export default function download() {
         var dlcanv = document.getElementById("SMTprof");
         setTimeout(() => {
           let link = document.createElement("a");
-          link.href = prof.toDataURL("image/png");
+          link.href = dlcanv.toDataURL("image/png");
           link.download = "prof-smart.png";
           link.click();
         }, 50);

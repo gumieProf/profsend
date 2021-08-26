@@ -23,6 +23,7 @@ SOFTWARE.
 */
 export default function main() {
   $(function () {
+    getStrage();
     $("#prof").hide();
     var prof = document.getElementById("prof");
     var profPrev = document.getElementById("preview");
@@ -44,40 +45,38 @@ export default function main() {
     var ifTextInput = false;
     var ifColorInput = false;
     var cropper;
-    if ($.cookie("id")) {
-      var id = $.cookie("id");
-      $("#id").val(id);
+    function setstrage() {
+      localStorage.setItem("id", $("#id").val());
+      localStorage.setItem("name", $("#name").val());
+      localStorage.setItem("age", $("#age").val());
+      localStorage.setItem("coment", $("#coment").val());
+      localStorage.setItem("sns", $("#snsText").val());
     }
-    $.cookie("id", id2);
+    function getStrage() {
+      if (localStorage.getItem("id")) {
+        var id = localStorage.getItem("id");
+        $("#id").val(id);
+      }
 
-    if ($.cookie("name")) {
-      var name = $.cookie("name");
-      $("#name").val(name);
-    }
-    $.cookie("name", name2);
+      if (localStorage.getItem("name")) {
+        var name = localStorage.getItem("name");
+        $("#name").val(name);
+      }
 
-    if ($.cookie("age")) {
-      var age = $.cookie("age");
-      $("#age").val(age);
-    }
-    $.cookie("age", age2);
+      if (localStorage.getItem("age")) {
+        var age = localStorage.getItem("age");
+        $("#age").val(age);
+      }
 
-    if ($.cookie("coment")) {
-      var coment = $.cookie("coment");
-      $("#coment").val(coment);
+      if (localStorage.getItem("coment")) {
+        var coment = localStorage.getItem("coment");
+        $("#coment").val(coment);
+      }
+      if (localStorage.getItem("sns")) {
+        var sns = localStorage.getItem("sns");
+        $("#sns").val(sns);
+      }
     }
-    $.cookie("coment", coment2);
-    if ($.cookie("sns")) {
-      var sns = $.cookie("sns");
-      $("#sns").val(sns);
-    }
-    $.cookie("sns", sns2);
-
-    if ($.cookie("age")) {
-      var age = $.cookie("age");
-      $("#age").val(age);
-    }
-    $.cookie("age", age2);
 
     setTimeout(function () {
       $("#scanFile").hide();
@@ -150,14 +149,21 @@ export default function main() {
 
       var e = document.getElementById("file");
       function indention(text) {
-        if (text.length > 32) {
-          var newtextA = text.substr(0, 16) + "\n";
-          var newtextB = text.substr(16, 32) + "\n";
-          var newtextC = text.substr(32, text.length);
+        if (text.length > 30) {
+          var newtextA = text.substr(0, 10) + "\n";
+          var newtextB = text.substr(10, 20) + "\n";
+          var newtextC = text.substr(20, 30) + "\n";
+          var newtextC = text.substr(30, text.length);
+
           return newtextA + newtextB + newtextC;
-        } else if (text.length >= 16) {
-          var newtextA = text.substr(0, 16) + "\n";
-          var newtextB = text.substr(16, text.length);
+        } else if (text.length > 20) {
+          var newtextA = text.substr(0, 10) + "\n";
+          var newtextB = text.substr(10, 20) + "\n";
+          var newtextC = text.substr(20, text.length);
+          return newtextA + newtextB + newtextC;
+        } else if (text.length >= 10) {
+          var newtextA = text.substr(0, 10) + "\n";
+          var newtextB = text.substr(10, text.length);
           return newtextA + newtextB;
         } else {
           return text;
@@ -170,21 +176,10 @@ export default function main() {
           var coment = indention($("#coment").val());
           var sns = indention($("#snsText").val());
           var name = indention($("#name").val());
-          var id2 = id;
-          var age2 = age;
-          var coment2 = coment;
-          var sns2 = sns;
-          var name2 = name;
-          $.cookie("id", id2);
-          $.cookie("name", name2);
-          $.cookie("age", age2);
-          $.cookie("coment", coment2);
-          $.cookie("sns", sns2);
           var comentif =
             coment == null || typeof coment == "undefined" || coment == "";
           var snsif = sns == null || typeof sns == "undefined" || sns == "";
           var ageif = age == null || typeof age == "undefined" || age == "";
-
           if (comentif && snsif && ageif) {
             var e = "NAME:\t" + name + "\nID: \t" + id;
           } else if (comentif && snsif) {
@@ -255,9 +250,9 @@ export default function main() {
               var fontSize = 100;
               var lineHeight = 0.5; // 行の高さ (フォントサイズに対する倍率)
             } else if (mode === "smt") {
-              var o = "50px";
+              var o = "25px";
               var fontSize = 100;
-              var lineHeight = 1; // 行の高さ (フォントサイズに対する倍率)
+              var lineHeight = 0.5; // 行の高さ (フォントサイズに対する倍率)
             }
             var x = 50; // 水平位置
             var y = 50; // 垂直位置
@@ -292,9 +287,27 @@ export default function main() {
                 cvs.drawImage(
                   a,
                   cavWidth / 3,
-                  cavHeight / 2.5,
+                  cavHeight / 1.5,
                   imgWidth * 2,
                   imgHeight * 2
+                );
+              }
+            } else if (pic === "/image/prof.png") {
+              if (mode === "default") {
+                cvs.drawImage(
+                  a,
+                  cavWidth - 300,
+                  cavHeight - 250,
+                  imgWidth,
+                  imgHeight
+                );
+              } else if (mode === "smt") {
+                cvs.drawImage(
+                  a,
+                  cavWidth / 8,
+                  cavHeight / 1.5,
+                  imgWidth * 1.5,
+                  imgHeight * 1.5
                 );
               }
             } else {
@@ -310,9 +323,9 @@ export default function main() {
                 cvs.drawImage(
                   a,
                   cavWidth / 3,
-                  cavHeight / 2.5,
-                  imgWidth / 2,
-                  imgHeight / 2
+                  cavHeight / 1.5,
+                  imgWidth / 1.5,
+                  imgHeight / 1.5
                 );
               }
             }
@@ -322,6 +335,7 @@ export default function main() {
           read(SMTprof, "smt");
           profPrev.src = prof.toDataURL();
           SMTprev.src = SMTprof.toDataURL();
+          setstrage();
         }, 50);
       };
       $(".EMBreset").click(function () {
@@ -370,7 +384,6 @@ export default function main() {
           if ($(this).val() === "input") {
             $("#textInputDiv").fadeIn(100);
             ifTextInput = true;
-            $("#textInput").click();
           } else {
             if ((ifTextInput = true)) {
               ifTextInput = false;
