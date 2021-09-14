@@ -22,199 +22,211 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 -->
 <!DOCTYPE html>
 <html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="keywords"
+      content="ゲーム,プロフィール,ウェブアプリ,プロフセンド,profsend"
+    />
+    <meta
+      name="description"
+      content="誰でもかんたんに使えるプロフィールエディター"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <link rel="apple-touch-icon" href="/image/icon-192.png" sizes="192x192" />
+    <title>プロフセンド</title>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="profsend" />
+    <meta
+      name="twitter:description"
+      content="誰でもかんたんに使えるプロフィールエディター"
+    />
+    <meta
+      name="twitter:image"
+      content="https://user-images.githubusercontent.com/42506694/97695415-56be1f00-1ae7-11eb-81f1-91c8a256306d.png"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/31d4cf3320.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="shortcut icon" href="/image/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/script/jquery.js"></script>
+    <script src="/script/dist/modules-build.js"></script>
+    <script src="/script/qrcode.min.js"></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="keywords" content="ゲーム,プロフィール,ウェブアプリ,プロフセンド,profsend" />
-  <meta name="description" content="誰でもかんたんに使えるプロフィールエディター" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <link rel="manifest" href="/manifest.json" />
-  <link rel="apple-touch-icon" href="/image/icon-192.png" sizes="192x192" />
-  <title>プロフセンド</title>
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="profsend" />
-  <meta name="twitter:description" content="誰でもかんたんに使えるプロフィールエディター" />
-  <meta name="twitter:image" content="https://user-images.githubusercontent.com/42506694/97695415-56be1f00-1ae7-11eb-81f1-91c8a256306d.png" />
-  <link rel="stylesheet" type="text/css" href="/css/style.css" />
-  <script src="https://kit.fontawesome.com/31d4cf3320.js" crossorigin="anonymous"></script>
-  <link rel="shortcut icon" href="/image/favicon.ico" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="/script/jquery.js"></script>
-  <script src="/script/modules-build.js"></script>
-</head>
+    <style>
+      .cropper-area img {
+        display: block;
+        max-width: 70%;
+      }
+    </style>
+  </head>
 
-<body>
-  <script>
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .register("/sw.js")
-        .then(function (registration) {
-          console.log(
-            "サービスワーカーの登録が完了しました: ",
-            registration.scope
-          );
-        })
-        .catch(function (err) {
-          console.log("サービスワーカーの登録に失敗しました: ", err);
-        });
-    }
-  </script>
-<!-- admax -->
-<div class="admax-ads" data-admax-id="e724881b4669809856b6ea50a226b807" style="display:inline-block;"></div>
-<script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "e724881b4669809856b6ea50a226b807",type: "banner"});</script>
-<script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
-<!-- admax -->  <form name="edit" id="editlicense" action="">
-    <div class="low">
-      <br />
-      <header>
-        <div id="nav-drawer">
-          <input id="nav-input" type="checkbox" class="nav-unshown" />
-          <label id="nav-open" for="nav-input"><span></span></label>
-          <a href="top.html"><img src="/image/prof2.png" alt="logo" width="233px" height="60px" class="wrap" /></a>
-          <a href="scaner.html"><i class="fab fa-searchengin fa-2x scaner"></i></a>
+  <body>
+    <br />
+    <header>
+      <div id="nav-drawer">
+        <input id="nav-input" type="checkbox" class="nav-unshown" />
+        <label id="nav-open" for="nav-input"><span></span></label>
+        <a href="top.html"
+          ><img
+            src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
+            alt="logo"
+            width="233px"
+            height="60px"
+            class="wrap"
+        /></a>
+        <a href="scaner"><i class="fab fa-searchengin fa-2x scaner"></i></a>
 
+        <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+        <div id="nav-content">
+          <ul>
+            <li>
+              <a href="top"
+                ><img
+                  src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
+                  alt="logo"
+                  width="233px"
+                  height="60px"
+                  class="wrap"
+              /></a>
+            </li>
+            <li>
+              <abolt
+                ><a href="about"
+                  ><strong>プロフセンドについて</strong></a
+                ></abolt
+              >
+            </li>
+            <li>
+              <a href="13update">
+                <strong>13アップデートに関わる大切なお知らせ</strong>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/gutsmine/profsend"
+                class="wrap"
+                target="blank"
+                ><i class="fab fa-github fa-2x source"></i
+              ></a>
 
-          <label class="nav-unshown" id="nav-close" for="nav-input"></label>
-          <div id="nav-content">
-            <ul>
-              <li>
-                <a href="top.ejs"><img src="/image/ja_prof.png" alt="logo" width="100px" height="100px"
-                    class="wrap" /></a>
-              </li>
-              <li>
-                <toku><a href="#" onclick="pic = '/image/toku.png';" id="toku"><img src="/image/toku.png" width="50"
-                      height="50" id="toku" /></a></toku>
-              </li>
-              <li>
-                <abolt><a href="about.html"><strong>プロフセンドについて</strong></a></abolt>
-              </li>
-              <li>
-                <a href="13update.pwa.html">
-                  <strong>13アップデートに関わる大切なお知らせ</strong>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/gutsmine/profsend" class="wrap" target="blank"><i
-                    class="fab fa-github fa-2x source"></i></a>
-
-                <a href="https://discord.gg/nxZFKkc" target="blank">
-                  <i class="fab fa-discord fa-2x discord"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://twitter.com/intent/tweet?text=あなたもプロフセンドでプロフィールを作りませんか？&url=https://profsend.herokuapp.com"
-                  class="twitter-button" target="blank"><i class="fab fa-twitter fa-2x twitter"></i></a>
-              </li>
-              <li>
-                <copy>
-                  <small>©︎ 2020 gumie</small>
-                </copy>
-              </li>
-            </ul>
-          </div>
+              <a href="https://discord.gg/nxZFKkc" target="blank">
+                <i class="fab fa-discord fa-2x discord"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://twitter.com/intent/tweet?text=あなたもプロフセンドでプロフィールを作りませんか？&url=https://profsend.herokuapp.com"
+                class="twitter-button"
+                target="blank"
+                ><i class="fab fa-twitter fa-2x twitter"></i
+              ></a>
+            </li>
+            <li>
+              <copy>
+                <small>©︎ 2020 gumie</small>
+              </copy>
+            </li>
+          </ul>
         </div>
-      </header>
-
-      <div class="subDatas">
-        <a href="#" class="back subData"><i class="fas fa-home"></i></a>
-        <a href="#" class="subData subData1">基本情報</a>
-        <a href="#" class="subData subData2">その他情報</a>
-        <a href="#" class="subData subData3">デザイン</a>
-        <a href="#" class="subData subData4">エンブレム</a>
       </div>
+    </header>
 
-      <div class="low">
-        <a href="13update.html">
-          <h4 class="link">
-            13アップデートに関わる大切なお知らせ
-          </h4>
+    <div class="subDatas">
+      <a href="#" class="back subData"><i class="fas fa-home"></i></a>
+      <a href="#" class="subData subData1">基本情報</a>
+      <a href="#" class="subData subData2">その他情報</a>
+      <a href="#" class="subData subData3">デザイン</a>
+      <a href="#" class="subData subData4">エンブレム</a>
+    </div>
+
+    <canvas id="prof" width="960" height="540"></canvas>
+    <img width="300" height="200" id="preview" />
+    <canvas id="SMTprof" width="540" height="960"></canvas>
+    <img id="SMTpreview" height="300" width="200" />
+    <br />
+    <strong>プレビューの切り替え</strong>
+    <select id="viewList">
+      <option value="default">PCサイズ</option>
+      <option value="smart">スマホサイズ</option>
+    </select>
+    <div class="dataBtns">
+      <div class="dataBtn" id="data1Btn">
+        <a href="#"
+          ><span>基本情報</span>
+          <p>ID、ユーザー名</p>
+          <i class="fas fa-angle-right fa-2x angle"></i>
         </a>
       </div>
-      <canvas id="prof" width="960" height="540"></canvas>
-      <img width="576" height="324" id="preview">
-      <img id="newImg" />
-      <div class="dataBtns">
-        <div class="dataBtn" id="data1Btn">
-          <a href="#"><span>基本情報</span>
-            <p>ID、ユーザー名</p>
-            <i class="fas fa-angle-right fa-2x angle"></i>
-          </a>
-        </div>
-
-        <div class="dataBtn" id="data2Btn">
-          <a href="#">
-            <span>その他情報</span>
-            <p>コメント、SNS情報</p>
-            <i class="fas fa-angle-right fa-2x angle"></i>
-          </a>
-        </div>
-
-        <div class="dataBtn" id="data3Btn">
-          <a href="#"> <span>デザイン</span>
-            <p>テキスト・背景の色・画像の変更・非表示</p>
-            <i class="fas fa-angle-right fa-2x angle"></i>
-          </a>
-        </div>
+      <div class="dataBtn" id="data2Btn">
+        <a href="#">
+          <span>その他情報</span>
+          <p>コメント、SNS情報</p>
+          <i class="fas fa-angle-right fa-2x angle"></i>
+        </a>
+      </div>
+      <div class="dataBtn" id="data3Btn">
+        <a href="#">
+          <span>デザイン</span>
+          <p>テキスト・背景の色・画像の変更・非表示</p>
+          <i class="fas fa-angle-right fa-2x angle"></i>
+        </a>
       </div>
       <div class="dataBtn" id="data4Btn">
-        <a href="#"> <span>エンブレム</span>
+        <a href="#">
+          <span>エンブレム</span>
           <p>エンブレムの変更・非表示</p>
           <i class="fas fa-angle-right fa-2x angle"></i>
         </a>
       </div>
     </div>
+    <a class="waves-effect waves-light btn" href="#" id="cookieClear"
+      >保存情報の削除</a
+    >
+    <a class="waves-effect waves-light btn" id="download" href="#"
+      >ダウンロード</a
+    >
+    <a class="waves-effect waves-light btn" id="windl" href="#"
+      >PC画面サイズでダウンロード</a
+    >
+    <a class="waves-effect waves-light btn" id="smtdl" href="#"
+      >スマホ画面サイズでダウンロード</a
+    >
 
-    <a class="waves-effect waves-light btn" href="#" id="cookieClear">保存情報の削除</a>
-    <a class="waves-effect waves-light btn" id="download" href="#">ダウンロード</a>
-    <a class="waves-effect waves-light btn" id="windl" href="#">PC画面サイズでダウンロード</a>
-    <a class="waves-effect waves-light btn" id="smtdl" href="#">スマホ画面サイズでダウンロード</a>
-
-    <div id="editor">
-
-
-      <br />
-      <div id="data1" class="datas">
-        <div class="input-field col s12">
-          <input type="text" name="formName" id="name" class="profelem" />
-          <label for="name">名前</label>
-          <a href="#" class="delete1"><i class="fas fa-times-circle delete"></i></a>
-        </div>
-
-        <br />
-        <div class="input-field col s12">
-          <div id="idtext">
-            <input type="text" name="formID" id="id" class="profelem" maxlength="25"
-              onkeyup="document.getElementById('id-leng').value=this.value.length" />
-            <label for="id">ID：</label>
-
-            <a href="#" class="delete2"><i class="fas fa-times-circle delete"></i></a>
-          </div>
-        </div>
-        <div class="input-field col s12">
-          <input type="text" id="id-leng" readonly />
-          <label for="id-leng">現在の文字数</label>
-        </div>
-        <div class="input-field col s12">
-          <select id="idtype">
-            <option value="25" selected>ゲーム未設定</option>
-            <option value="12">モンスト・スイッチ</option>
-            <option value="9">パズドラ</option>
-            <option value="10">ドッカンバトル</option>
-          </select>
-          <label> ゲームタイトル</label>
-        </div>
-
-        <a class="waves-effect waves-light btn" id="idset">桁数決定</a>
-
-        <h5>
-          <div id="idleng">現在の桁数は25です。</div>
-        </h5>
+    <br />
+    <div id="data1" class="datas">
+      <div class="input-field col s12">
+        <input
+          type="text"
+          name="formName"
+          id="name"
+          class="profelem"
+          maxlength="10"
+        />
+        <label for="name">名前</label>
       </div>
-    </div>
-    <div class="input-field col s12">
+
       <br />
-    </div>
+      <div class="input-field col s12">
+        <input
+          type="text"
+          name="formID"
+          id="id"
+          class="profelem"
+          maxlength="20"
+        />
+        <label for="id">ID：</label>
+      </div>
     </div>
     <div id="data2" class="datas">
       <div class="input-field col s12">
@@ -232,81 +244,136 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
       </div>
       <div class="input-field col s12">
         <br />
-        <input name="formComent" cols="25" id="coment" class="profelem" />
-        <a href="#" class="delete3"><i class="fas fa-times-circle delete"></i></a>
 
+        <textarea class="profelem" id="coment"> </textarea>
         <label for="coment">コメント：</label>
       </div>
       <div id="snsData"></div>
-      <a id="snsDataBtn" class="waves-effect waves-light btn">sns情報欄を追加</a>
+      <a id="snsDataBtn" class="waves-effect waves-light btn"
+        >sns情報欄を追加</a
+      >
     </div>
 
     <div id="data3" class="datas">
       <div class="input-field col s12">
         <select id="colors">
-          <option value="#999" selected>グレー</option>
+          <option value="#999">グレー</option>
+          <option value="#fff">ホワイト</option>
           <option value="#ff0000">レッド</option>
           <option value="#0010bf">ブルー</option>
           <option value="#f8fc5e">イエロー</option>
           <option value="#04b700">グリーン</option>
           <option value="#e719e4">パープル</option>
+          <option value="input" selected>自分で選ぶ</option>
         </select>
         <label for="colors">背景の色</label>
+        <input type="file" id="cropFile1" />
+        <div class="crop1">
+          <img id="cropImg1" />
+          <a href="#" class="waves-effect waves-light btn cropBtn1">切り取る</a>
+        </div>
+        <div id="colorInputDiv">
+          <strong>背景カラーピッカー</strong>
+          <input type="color" id="colorInput" value="#999" />
+        </div>
       </div>
 
       <div class="input-field col s12">
         <select id="textColor">
-          <option value="#000" selected>ブラック</option>
+          <option value="#000">ブラック</option>
           <option value="#fff">ホワイト</option>
           <option value="#888">グレー</option>
+          <option value="input" selected>自分で選ぶ</option>
         </select>
         <label for="textColor">テキストの色</label>
+        <div id="textInputDiv">
+          <strong>テキストカラーピッカー</strong>
+          <input type="color" id="textInput" value="#999" />
+        </div>
       </div>
     </div>
     <div class="datas" id="data4">
-
       <div class="library" id="library">
-        <a href="#library"> <span>エンブレムライブラリー</span>
+        <a href="#library">
+          <span>エンブレムライブラリー</span>
           <i class="fas fa-angle-right fa-2x angle"></i>
         </a>
       </div>
 
       <div class="library" id="library">
-
-        <span><a href="#" class="envls"><img src="/image/prof.png" alt="profLogo" height="100" width="100"></a></span>
-        <span><a href="#" class="envls"><img src="/image/Tspin.png" alt="Tspin" height="100" width="100"></a></span>
-        <span><a href="#" class="envls"><img src="/image/bomb.png" alt="bomb" height="100" width="100"></a></span>
-        <span><a href="#" class="envls"><img src="/image/sword.png" alt="sword" height="100" width="100"></a></span>
-        <span><a href="#" class="envls"><img src="/image/shield.png" alt="shield" height="100" width="100"></a></span>
-
-
+        <span
+          ><a href="#" class="envls"
+            ><img
+              src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png"
+              alt="profLogo"
+              height="100"
+              width="200"/></a
+        ></span>
+        <span
+          ><a href="#" class="envls"
+            ><img
+              src="/image/Tspin.png"
+              alt="Tspin"
+              height="100"
+              width="100"/></a
+        ></span>
+        <span
+          ><a href="#" class="envls"
+            ><img src="/image/bomb.png" alt="bomb" height="100" width="100"/></a
+        ></span>
+        <span
+          ><a href="#" class="envls"
+            ><img
+              src="/image/sword.png"
+              alt="sword"
+              height="100"
+              width="100"/></a
+        ></span>
+        <span
+          ><a href="#" class="envls"
+            ><img
+              src="/image/shield.png"
+              alt="shield"
+              height="100"
+              width="100"/></a
+        ></span>
+        <span
+          ><toku
+            ><a href="#" id="envls"
+              ><img
+                src="/image/toku.png"
+                width="100"
+                height="100"/></a></toku
+        ></span>
+        <h5>QRコードエンブレム</h5>
+        <input type="text" id="qrURL" />
+        <div id="qrValue"></div>
+        <a href="#" class="waves-effect waves-light btn qrBtn">QRコード化</a>
       </div>
 
-      <a id="picdel" class="waves-effect waves-light btn" onclick="pic = '';">エンブレムを非表示</a>
+      <a id="picdel" class="waves-effect waves-light btn EMBhide"
+        >エンブレムを非表示</a
+      >
 
-      <a id="reset" class="waves-effect waves-light btn" onclick="pic = '/image/img-1.png';">エンブレムをリセット</a>
+      <a id="reset" class="waves-effect waves-light btn EMBreset"
+        >エンブレムをリセット</a
+      >
       <br />
       <label for="file">
         <strong>エンブレム画像のアップロード</strong>
         <input type="file" name="file" id="file" />
       </label>
     </div>
-    </div>
 
     <br />
 
     <small>©︎ 2020 gumie</small>
-  </form>
-  <script type="text/javascript" src="/script/scripts-build.js"></script>
-  <script>
-    var pic = "/image/img-1.png";
-    var color = "#999";
-    var text = "#000000";
-    document.addEventListener("DOMContentLoaded", function () {
-      var elems = document.querySelectorAll("select");
-      var instances = M.FormSelect.init(elems);
-    });
-  </script>
-</body>
-
+    <script type="text/javascript" src="/script/dist/scripts-build.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var elems = document.querySelectorAll("select");
+        var instances = M.FormSelect.init(elems);
+      });
+    </script>
+  </body>
 </html>

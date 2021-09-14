@@ -24,26 +24,18 @@ SOFTWARE.
 
 export default function sub() {
   $(function () {
-    var div = $("#snsData");
-    var elems = '<div class="input-field col s12">' +
+    var elems =
       '<input type="text" name="formSNS" id="snsText" class="profelem"  maxlength="25" placeholder="">' +
-      '<label for="snsText">SNS情報：</label>' +
-      "</div>";
-    div.html(elems);
-    div.hide();
+      '<label for="snsText">SNS情報：</label>';
+    $("#snsData").html(elems);
+    $("#snsData").hide();
     $(".profelem").on({
       "keydown": window.i,
       "chenge": window.i,
     });
 
     $("#snsDataBtn").click(function () {
-      if (document.getElementById("snsText")) {
-        div.fadeIn;
-      } else {
-        div.fadeOut;
-      }
-      i();
-
+        $("#snsData").fadeToggle(100);
       return false;
     });
   });
