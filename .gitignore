@@ -10,3 +10,4 @@ koala-config.json
 lint-html.log
 .htmllintrc
 !/public/css/style.css.map
+.DS_Store
