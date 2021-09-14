@@ -26,8 +26,7 @@
     "webpack-fix-style-only-entries": "^0.6.1"
   },
   "scripts": {
-    "start": "NODE_ENV=production forever ./",
-    "dev": "nodemon -e js,ejs start ./"
+    "start": "node app.js"
   },
   "devDependencies": {
     "nodemon": "^2.0.12",
