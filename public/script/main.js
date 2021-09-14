@@ -303,23 +303,20 @@ export default function main() {
                   imgHeight * 2
                 );
               }
-            } else if (
-              pic ===
-              "https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png"
-            ) {
+            } else if (pic === "/image/prof.png") {
               if (mode === "default") {
                 cvs.drawImage(
                   a,
-                  cavWidth - 300,
+                  cavWidth - 500,
                   cavHeight - 250,
-                  imgWidth,
-                  imgHeight
+                  imgWidth * 2,
+                  imgHeight * 2
                 );
               } else if (mode === "smt") {
                 cvs.drawImage(
                   a,
-                  cavWidth / 8,
-                  cavHeight / 1.5,
+                  cavWidth / 4.5,
+                  cavHeight / 2,
                   imgWidth * 1.5,
                   imgHeight * 1.5
                 );
@@ -337,8 +334,8 @@ export default function main() {
                 cvs.drawImage(
                   a,
                   cavWidth / 3,
-                  cavHeight / 1.5,
-                  imgWidth / 1.5,
+                  cavHeight / 3,
+                  imgWidth / 2.5,
                   imgHeight / 1.5
                 );
               }
