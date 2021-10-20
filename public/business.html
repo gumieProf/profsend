@@ -51,12 +51,10 @@ SOFTWARE.
     />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/css/ui.css" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+    <script
+      src="https://kit.fontawesome.com/31d4cf3320.js"
       crossorigin="anonymous"
-    />
+    ></script>
     <link rel="shortcut icon" href="/image/favicon.ico" />
 
     <script src="/script/jquery.js"></script>
@@ -78,7 +76,7 @@ SOFTWARE.
             height="60px"
             class="wrap"
         /></a>
-        <a href="/business"><i class="fab fa-briefcase fa-2x business"></i></a>
+        <a href="scaner"><i class="fab fa-searchengin fa-2x scaner"></i></a>
 
         <label class="nav-unshown" id="nav-close" for="nav-input"></label>
         <div id="nav-content">
@@ -157,21 +155,21 @@ SOFTWARE.
       <div class="dataBtn" id="data1Btn">
         <a href="#"
           ><span>基本情報</span>
-          <p>ID、ユーザー名</p>
+          <p>名前、役職</p>
           <i class="fas fa-angle-right fa-2x angle"></i>
         </a>
       </div>
       <div class="dataBtn" id="data2Btn">
         <a href="#">
           <span>その他情報</span>
-          <p>コメント、SNS情報</p>
+          <p>一言、メールなど</p>
           <i class="fas fa-angle-right fa-2x angle"></i>
         </a>
       </div>
       <div class="dataBtn" id="data3Btn">
         <a href="#">
           <span>デザイン</span>
-          <p>テキスト・背景の色・画像の変更・非表示</p>
+          <p>テキスト・背景の色の変更</p>
           <i class="fas fa-angle-right fa-2x angle"></i>
         </a>
       </div>
@@ -183,13 +181,11 @@ SOFTWARE.
         </a>
       </div>
     </div>
-    <div id="importLog"></div>
-    <a class="PSUI" id="import" href="#">プロフィールのインポート</a>
     <a class="PSUI" href="#" id="cookieClear">保存情報の削除</a>
     <a class="PSUI" id="download" href="#">ダウンロード</a>
     <a class="PSUI" id="windl" href="#">PC画面サイズでダウンロード</a>
     <a class="PSUI" id="smtdl" href="#">スマホ画面サイズでダウンロード</a>
-    <input type="file" id="importFile" />
+
     <br />
     <div id="data1" class="datas">
       <div class="input-field col s12">
@@ -199,8 +195,8 @@ SOFTWARE.
           id="name"
           class="profelem PSUI PSdata1"
           maxlength="10"
-          data-tag="名前"
           placeholder="名前"
+          data-tag=""
         />
       </div>
 
@@ -209,56 +205,51 @@ SOFTWARE.
         <input
           type="text"
           name="formID"
-          id="id"
+          id="job"
           class="profelem PSUI PSdata2"
-          maxlength="20"
-          placeholder="ID"
-          data-tag="ID"
+          maxlength="30"
+          placeholder="役職"
+          data-tag=""
         />
       </div>
     </div>
     <div id="data2" class="datas">
       <div class="input-field col s12">
-        <br />
-
-        <select
-          name="formAge"
-          id="age"
-          class="profelem PSUI PSdata3"
-          data-tag="年齢"
-        >
-          <option>10代</option>
-          <option>20代</option>
-          <option>30代</option>
-          <option>40代</option>
-          <option>50代</option>
-          <option value="" selected>非公開</option>
-        </select>
-      </div>
-      <div class="input-field col s12">
-        <br />
-
-        <textarea
-          class="profelem PSUI PSdata4"
-          id="coment"
-          placeholder="コメント"
-          data-tag="コメント"
-        ></textarea>
-      </div>
-      <div id="snsData">
         <input
           type="text"
-          name="formSNS"
-          id="snsText"
-          class="profelem PSUI PSdata5"
-          maxlength="25"
-          placeholder="SNS"
-          data-tag="SNS"
+          name="age"
+          id="age"
+          placeholder="年齢"
+          class="PSUI profelem PSdata3"
+          data-tag=""
         />
       </div>
-      <a id="snsDataBtn" class="PSUI">sns情報欄を追加</a>
+      <br />
+      <div class="input-field col s12">
+        <textarea
+          class="profelem PSdata4"
+          id="coment"
+          placeholder="一言"
+          data-tag=""
+        >
+        </textarea>
+      </div>
+      <textarea
+        id="locale"
+        placeholder="住所"
+        class="profelem PSdata5"
+        data-tag=""
+      >
+      </textarea>
+      <br />
+      <input
+        type="text"
+        id="email"
+        class="PSUI profelem data4"
+        placeholder="メールアドレス"
+        data-tag=""
+      />
     </div>
-
     <div id="data3" class="datas">
       <div class="input-field col s12">
         <label for="colors">背景の色</label>
@@ -296,7 +287,7 @@ SOFTWARE.
             type="color"
             id="textInput"
             class="PSUI"
-            value="#999999"
+            value="#000000"
             list="textList"
           />
           <datalist id="textList">

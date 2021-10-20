@@ -32,6 +32,8 @@ router.get("/13update.html", csrfProtection, function (req, res) {
 router.get("/scaner", csrfProtection, function (req, res) {
   res.sendFile("scaner.html", { root: __dirname + "/public/" });
 });
-
+router.get("/business", csrfProtection, function (req, res) {
+  res.sendFile("business.html", { root: __dirname + "/public/" });
+});
 
 module.exports = router;

@@ -27,5 +27,33 @@ module.exports = {
     // 出力先のパス（絶対パスを指定する必要がある）
     path: path.join(__dirname, "public/script/dist/"),
   },
+  module: {
+    rules: [
+      {
+        test: /\.css/,
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "css-loader",
+          },
+        ],
+      },
+      {
+        test: /\.(ttf|eot|woff|woff2|svg)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "./font",
+              publicPath: "../font",
+            },
+          },
+        ],
+      },
+    ],
+  },
   plugins: [new FixStyleOnlyEntries(), new BomPlugin(true)],
 };
