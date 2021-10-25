@@ -40,7 +40,6 @@ SOFTWARE.
     <title>PROFSEND(プロフセンド)</title>
     <link rel="manifest" href="/manifest.json" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="/css/ui.css" />
     <script
       src="https://kit.fontawesome.com/31d4cf3320.js"
       crossorigin="anonymous"
@@ -52,55 +51,58 @@ SOFTWARE.
   <body>
     <header>
       <div id="nav-drawer">
-        <input id="nav-input" type="checkbox" class="nav-unshown" />
-        <label id="nav-open" for="nav-input"><span></span></label>
-        <a href="top.html"
+        <input class="nav-unshown" id="nav-input" type="checkbox" />
+        <label for="nav-input" id="nav-open"><span></span></label>
+        <a href="/top"
           ><img
-            src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
             alt="logo"
-            width="233px"
-            height="60px"
             class="wrap"
+            height="60px"
+            src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
+            width="233px"
         /></a>
-
-        <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+        <label class="nav-unshown" for="nav-input" id="nav-close"></label>
         <div id="nav-content">
           <ul>
             <li>
-              <a href="top"
+              <a href="/top"
                 ><img
-                  src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
                   alt="logo"
-                  width="233px"
-                  height="60px"
                   class="wrap"
+                  height="60px"
+                  src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
+                  width="233px"
               /></a>
             </li>
-
             <li>
-              <abolt
-                ><a href="about"
-                  ><i class="fas fa-question fa-2x about"></i
-                  >プロフセンドについて</a
-                ></abolt
+              <a class="PSUI" href="about"><small>本アプリについて</small></a>
+            </li>
+            <li>
+              <a class="PSUI" href="13update"
+                ><small
+                  >13アップデートに関わる<br />
+                  大切なお知らせ</small
+                ></a
               >
             </li>
             <li>
-              <a href="13update"> 13アップデートに関わる大切なお知らせ </a>
+              <a
+                class="wrap"
+                href="https://github.com/gumieprof/profsend"
+                target="blank"
+                ><i class="fab fa-github fa-2x source"></i
+              ></a>
             </li>
-            <li>
-              <a href="scaner">
-                <i class="fab fa-searchengin"></i>
-                <strong>プロフィールスキャン</strong>
-              </a>
-            </li>
-            <li>
-              <copy>
-                <h5>2019 GUTSMINE c</h5>
-              </copy>
-            </li>
+            <li><small>©︎ 2020 gumieprof</small></li>
           </ul>
         </div>
+      </div>
+      <div class="subDatas">
+        <a class="back subData" href="#">トップ</a>
+        <a class="subData subData1" href="#">基本情報</a>
+        <a class="subData subData2" href="#">その他情報</a>
+        <a class="subData subData3" href="#">デザイン</a>
+        <a class="subData subData4" href="#">エンブレム</a>
       </div>
     </header>
 
@@ -117,7 +119,7 @@ SOFTWARE.
     </div>
     <br />
 
-    <a href="top" class="PSbtn">トップページに戻る</a>
+    <a href="top" class="PSUI">モード選択に<br />戻る</a>
 
     <h4>©2021 gumieprof</h4>
   </body>

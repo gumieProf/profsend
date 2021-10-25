@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-@import url("ui.css");
+@import url("/css/ui.css");
 @font-face {
   font-family: "Boku2";
   src: url(/font/Boku2-Bold.otf);
@@ -31,14 +31,11 @@ body {
   text-align: center;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
 }
-
 header {
-  padding: 10px;
   background: #777777;
-}
-#nav-drawer {
-  position: relative;
+  width: 100%;
 }
 
 .nav-unshown {
@@ -46,7 +43,7 @@ header {
 }
 
 #nav-open {
-  margin: 10px;
+  margin: 15px;
   float: left;
   width: 30px;
   height: 30px;
@@ -105,7 +102,7 @@ header {
   left: 0;
   z-index: 9999;
   width: 90%;
-  max-width: 250px;
+  max-width: 500px;
   height: 100%;
   background: #fff;
   -webkit-transition: 0.3s ease-in-out;
@@ -118,7 +115,9 @@ header {
   display: block;
   opacity: 0.5;
 }
-
+#nav-content > ul {
+  list-style: none;
+}
 #nav-input:checked ~ #nav-content {
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
@@ -371,15 +370,15 @@ nof .link {
 
 .dataBtn {
   display: block;
-  height: 70px;
-  width: 70%;
-  margin: 5px;
+  width: 50%;
+  margin: 5px auto;
   border-radius: 15px;
   background-color: black;
 }
 
 .dataBtn > a {
   text-decoration: none;
+  color: white;
 }
 
 .dataBtn span {
@@ -417,38 +416,42 @@ nof .link {
 }
 
 .subDatas {
+  list-style: none;
   position: relative;
-  background-color: #777;
+  background-color: #999999;
   width: 100%;
   height: 50px;
   text-align: center;
-  border-radius: 0 0 10px 10px;
 }
-
 .subData {
   border: none;
   background-color: #000;
   border-radius: 15px;
   color: #fff;
   width: 70%;
+  height: 5px;
   position: relative;
   bottom: 0;
   text-decoration: none;
 }
 
 .discord {
-  color: #000;
+  color: #000000;
 }
 
 .twitter {
-  color: #fff;
+  color: #000000;
 }
 .datas {
   display: table;
   width: 100%;
   text-decoration: none;
 }
-.business {
+.change {
   color: #ffffff;
+  float: right;
+  margin: 15px;
+  vertical-align: middle;
+  font-size: 30px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -13,15 +13,13 @@ a.PSUI {
   font-family: "Boku2";
   appearance: none;
   -webkit-appearance: none;
-  height: 30px;
-  max-width: 150px;
-  margin: 10px;
+  height: 50px;
+  max-width: 300px;
+  margin: 5px auto;
   display: block;
   background-color: black;
-  border: solid 15px black;
   border-radius: 10px;
   color: white;
-  margin: 10px auto;
   text-decoration: none;
 }
 a:focus.PSUI {
@@ -39,10 +37,6 @@ input[type="text"].PSUI {
   color: white;
   appearance: none;
 }
-input[type="text"]:focus.PSUI {
-  outline: 0;
-  box-shadow: 0 0 0 5px #999999 inset;
-}
 input[type="color"].PSUI {
   height: 50px;
   width: 100px;
@@ -51,10 +45,11 @@ input[type="color"].PSUI {
 }
 input[type="text"]::placeholder.PSUI {
   color: #999999;
+  font-family: "Boku2";
 }
 input[type="color"]:focus.PSUI {
   outline: 0;
-  box-shadow: 0 0 0 5px #999999 inset;
+  background-color: #999999;
 }
 select.PSUI {
   font-family: "Boku2";
@@ -76,4 +71,5 @@ textarea.PSUI {
 }
 textarea::placeholder.PSUI {
   color: #999999;
+  font-family: "Boku2";
 }

@@ -50,7 +50,6 @@ SOFTWARE.
       content="https://user-images.githubusercontent.com/42506694/97695415-56be1f00-1ae7-11eb-81f1-91c8a256306d.png"
     />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="/css/ui.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -68,80 +67,61 @@ SOFTWARE.
     <br />
     <header>
       <div id="nav-drawer">
-        <input id="nav-input" type="checkbox" class="nav-unshown" />
-        <label id="nav-open" for="nav-input"><span></span></label>
-        <a href="top.html"
+        <input class="nav-unshown" id="nav-input" type="checkbox" />
+        <label for="nav-input" id="nav-open"><span></span></label>
+        <a href="/gaming"
           ><img
-            src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
             alt="logo"
-            width="233px"
-            height="60px"
             class="wrap"
+            height="60px"
+            src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
+            width="233px"
         /></a>
-        <a href="/business"><i class="fab fa-briefcase fa-2x business"></i></a>
-
-        <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+        <a class="change" href="/business"><i class="fas fa-gamepad"></i></a>
+        <label class="nav-unshown" for="nav-input" id="nav-close"></label>
         <div id="nav-content">
           <ul>
             <li>
-              <a href="top"
+              <a href="gaming"
                 ><img
-                  src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
                   alt="logo"
-                  width="233px"
-                  height="60px"
                   class="wrap"
+                  height="60px"
+                  src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
+                  width="233px"
               /></a>
             </li>
             <li>
-              <abolt
-                ><a href="about"
-                  ><strong>プロフセンドについて</strong></a
-                ></abolt
+              <a class="PSUI" href="about"><small>本アプリについて</small></a>
+            </li>
+            <li>
+              <a class="PSUI" href="13update"
+                ><small
+                  >13アップデートに関わる<br />
+                  大切なお知らせ</small
+                ></a
               >
             </li>
             <li>
-              <a href="13update">
-                <strong>13アップデートに関わる大切なお知らせ</strong>
-              </a>
-            </li>
-            <li>
               <a
-                href="https://github.com/gutsmine/profsend"
                 class="wrap"
+                href="https://github.com/gumieprof/profsend"
                 target="blank"
                 ><i class="fab fa-github fa-2x source"></i
               ></a>
-
-              <a href="https://discord.gg/nxZFKkc" target="blank">
-                <i class="fab fa-discord fa-2x discord"></i>
-              </a>
             </li>
-            <li>
-              <a
-                href="https://twitter.com/intent/tweet?text=あなたもプロフセンドでプロフィールを作りませんか？&url=https://profsend.herokuapp.com"
-                class="twitter-button"
-                target="blank"
-                ><i class="fab fa-twitter fa-2x twitter"></i
-              ></a>
-            </li>
-            <li>
-              <copy>
-                <small>©︎ 2020 gumie</small>
-              </copy>
-            </li>
+            <li><small>©︎ 2020 gumieprof</small></li>
           </ul>
         </div>
       </div>
+      <div class="subDatas">
+        <a class="back subData" href="#">トップ</a>
+        <a class="subData subData1" href="#">基本情報</a>
+        <a class="subData subData2" href="#">その他情報</a>
+        <a class="subData subData3" href="#">デザイン</a>
+        <a class="subData subData4" href="#">エンブレム</a>
+      </div>
     </header>
-
-    <div class="subDatas">
-      <a href="#" class="back subData"><i class="fas fa-home"></i></a>
-      <a href="#" class="subData subData1">基本情報</a>
-      <a href="#" class="subData subData2">その他情報</a>
-      <a href="#" class="subData subData3">デザイン</a>
-      <a href="#" class="subData subData4">エンブレム</a>
-    </div>
 
     <canvas id="prof" width="960" height="540"></canvas>
     <img width="300" height="200" id="preview" />
@@ -184,11 +164,11 @@ SOFTWARE.
       </div>
     </div>
     <div id="importLog"></div>
-    <a class="PSUI" id="import" href="#">プロフィールのインポート</a>
+    <a class="PSUI" id="import" href="#">プロフィールの <br />インポート</a>
     <a class="PSUI" href="#" id="cookieClear">保存情報の削除</a>
     <a class="PSUI" id="download" href="#">ダウンロード</a>
-    <a class="PSUI" id="windl" href="#">PC画面サイズでダウンロード</a>
-    <a class="PSUI" id="smtdl" href="#">スマホ画面サイズでダウンロード</a>
+    <a class="PSUI" id="windl" href="#">PC画面サイズで<br />ダウンロード</a>
+    <a class="PSUI" id="smtdl" href="#">スマホ画面サイズで<br />ダウンロード</a>
     <input type="file" id="importFile" />
     <br />
     <div id="data1" class="datas">

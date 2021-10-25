@@ -25,57 +25,38 @@ SOFTWARE.
 export default function download() {
   $(function () {
     $("#download").click(function () {
-      var name = $("#name").val();
-      $("#name, #id, #age, #coment").on("keyup", function () {
-        var name = $("#name").val();
-      });
-
-      if (name == null || name == "") {
-        alert("名前が抜けています。");
-      } else {
-        let canvas = document.getElementById("prof");
-        let link = document.createElement("a");
-        link.href = canvas.toDataURL("image/png");
-        link.download = "prof.png";
-        link.click();
-      }
+      let canvas = document.getElementById("prof");
+      let link = document.createElement("a");
+      link.href = canvas.toDataURL("image/png");
+      link.download = "prof.png";
+      link.click();
       return false;
     });
     $("#windl").click(function () {
-      var name = $("#name").val();
-      if (name === null || name === "") {
-        alert("名前が抜けています。");
-      } else {
-        var canv = document.getElementById("prof");
-        var dlcanv = document.createElement("canvas");
-        dlcanv.width = 1920;
-        dlcanv.height = 1080;
-        var dlctx = dlcanv.getContext("2d");
-        var dlimg = new Image();
-        dlimg.src = canv.toDataURL("image/png");
-        dlctx.drawImage(dlimg, 0, 0, 960, 540, 0, 0, 1920, 1080);
-        setTimeout(() => {
-          let link = document.createElement("a");
-          link.href = dlcanv.toDataURL("image/png");
-          link.download = "prof-window.png";
-          link.click();
-        }, 50);
-      }
+      var canv = document.getElementById("prof");
+      var dlcanv = document.createElement("canvas");
+      dlcanv.width = 1920;
+      dlcanv.height = 1080;
+      var dlctx = dlcanv.getContext("2d");
+      var dlimg = new Image();
+      dlimg.src = canv.toDataURL("image/png");
+      dlctx.drawImage(dlimg, 0, 0, 960, 540, 0, 0, 1920, 1080);
+      setTimeout(() => {
+        let link = document.createElement("a");
+        link.href = dlcanv.toDataURL("image/png");
+        link.download = "prof-window.png";
+        link.click();
+      }, 50);
       return false;
     });
     $("#smtdl").click(function () {
-      var name = $("#name").val();
-      if (name === null || name === "") {
-        alert("名前が抜けています。");
-      } else {
-        var dlcanv = document.getElementById("SMTprof");
-        setTimeout(() => {
-          let link = document.createElement("a");
-          link.href = dlcanv.toDataURL("image/png");
-          link.download = "prof-smart.png";
-          link.click();
-        }, 50);
-      }
+      var dlcanv = document.getElementById("SMTprof");
+      setTimeout(() => {
+        let link = document.createElement("a");
+        link.href = dlcanv.toDataURL("image/png");
+        link.download = "prof-smart.png";
+        link.click();
+      }, 50);
       return false;
     });
   });

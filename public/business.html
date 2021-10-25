@@ -26,128 +26,100 @@ SOFTWARE.
   <head>
     <meta charset="UTF-8" />
     <meta
-      name="keywords"
       content="ゲーム,プロフィール,ウェブアプリ,プロフセンド,profsend"
+      name="keywords"
     />
     <meta
+      content="誰でもかんたんに使えるプロフィールエディター"
       name="description"
-      content="誰でもかんたんに使えるプロフィールエディター"
     />
     <meta
-      name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
+      name="viewport"
     />
-    <link rel="apple-touch-icon" href="/image/icon-192.png" sizes="192x192" />
+    <link href="/image/icon-192.png" rel="apple-touch-icon" sizes="192x192" />
     <title>プロフセンド</title>
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="profsend" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="profsend" name="twitter:title" />
     <meta
-      name="twitter:description"
       content="誰でもかんたんに使えるプロフィールエディター"
+      name="twitter:description"
     />
     <meta
-      name="twitter:image"
       content="https://user-images.githubusercontent.com/42506694/97695415-56be1f00-1ae7-11eb-81f1-91c8a256306d.png"
+      name="twitter:image"
     />
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="/css/ui.css" />
-    <script
-      src="https://kit.fontawesome.com/31d4cf3320.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="shortcut icon" href="/image/favicon.ico" />
-
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/31d4cf3320.js"></script>
+    <link href="/image/favicon.ico" rel="shortcut icon" />
     <script src="/script/jquery.js"></script>
     <script src="/script/dist/modules-build.js"></script>
     <script src="/script/qrcode.min.js"></script>
   </head>
-
   <body>
-    <br />
     <header>
       <div id="nav-drawer">
-        <input id="nav-input" type="checkbox" class="nav-unshown" />
-        <label id="nav-open" for="nav-input"><span></span></label>
-        <a href="top.html"
+        <input class="nav-unshown" id="nav-input" type="checkbox" />
+        <label for="nav-input" id="nav-open"><span></span></label>
+        <a href="business"
           ><img
-            src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
             alt="logo"
-            width="233px"
-            height="60px"
             class="wrap"
+            height="60px"
+            src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
+            width="233px"
         /></a>
-        <a href="scaner"><i class="fab fa-searchengin fa-2x scaner"></i></a>
-
-        <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+        <a class="change" href="/gaming"><i class="fas fa-gamepad"></i></a>
+        <label class="nav-unshown" for="nav-input" id="nav-close"></label>
         <div id="nav-content">
           <ul>
             <li>
-              <a href="top"
+              <a href="gaming"
                 ><img
-                  src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
                   alt="logo"
-                  width="233px"
-                  height="60px"
                   class="wrap"
+                  height="60px"
+                  src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
+                  width="233px"
               /></a>
             </li>
             <li>
-              <abolt
-                ><a href="about"
-                  ><strong>プロフセンドについて</strong></a
-                ></abolt
+              <a class="PSUI" href="about"><small>本アプリについて</small></a>
+            </li>
+            <li>
+              <a class="PSUI" href="13update"
+                ><small
+                  >13アップデートに関わる<br />
+                  大切なお知らせ</small
+                ></a
               >
             </li>
             <li>
-              <a href="13update">
-                <strong>13アップデートに関わる大切なお知らせ</strong>
-              </a>
-            </li>
-            <li>
               <a
-                href="https://github.com/gutsmine/profsend"
                 class="wrap"
+                href="https://github.com/gumieprof/profsend"
                 target="blank"
                 ><i class="fab fa-github fa-2x source"></i
               ></a>
-
-              <a href="https://discord.gg/nxZFKkc" target="blank">
-                <i class="fab fa-discord fa-2x discord"></i>
-              </a>
             </li>
-            <li>
-              <a
-                href="https://twitter.com/intent/tweet?text=あなたもプロフセンドでプロフィールを作りませんか？&url=https://profsend.herokuapp.com"
-                class="twitter-button"
-                target="blank"
-                ><i class="fab fa-twitter fa-2x twitter"></i
-              ></a>
-            </li>
-            <li>
-              <copy>
-                <small>©︎ 2020 gumie</small>
-              </copy>
-            </li>
+            <li><small>©︎ 2020 gumieprof</small></li>
           </ul>
         </div>
       </div>
+      <div class="subDatas">
+        <a class="back subData" href="#">トップ</a>
+        <a class="subData subData1" href="#">基本情報</a>
+        <a class="subData subData2" href="#">その他情報</a>
+        <a class="subData subData3" href="#">デザイン</a>
+        <a class="subData subData4" href="#">エンブレム</a>
+      </div>
     </header>
-
-    <div class="subDatas">
-      <a href="#" class="back subData"><i class="fas fa-home"></i></a>
-      <a href="#" class="subData subData1">基本情報</a>
-      <a href="#" class="subData subData2">その他情報</a>
-      <a href="#" class="subData subData3">デザイン</a>
-      <a href="#" class="subData subData4">エンブレム</a>
-    </div>
-
-    <canvas id="prof" width="960" height="540"></canvas>
-    <img width="300" height="200" id="preview" />
-    <canvas id="SMTprof" width="540" height="960"></canvas>
-    <img id="SMTpreview" height="300" width="200" />
-    <br />
+    <canvas height="540" id="prof" width="960"></canvas
+    ><img height="200" id="preview" width="300" />
+    <canvas height="960" id="SMTprof" width="540"></canvas
+    ><img height="300" id="SMTpreview" width="200" /><br />
     <strong>プレビューの切り替え</strong>
-    <select id="viewList" class="PSUI">
+    <select class="PSUI" id="viewList">
       <option value="default">PCサイズ</option>
       <option value="smart">スマホサイズ</option>
     </select>
@@ -156,116 +128,110 @@ SOFTWARE.
         <a href="#"
           ><span>基本情報</span>
           <p>名前、役職</p>
-          <i class="fas fa-angle-right fa-2x angle"></i>
-        </a>
+          <i class="fas fa-angle-right fa-2x angle"></i
+        ></a>
       </div>
       <div class="dataBtn" id="data2Btn">
-        <a href="#">
-          <span>その他情報</span>
+        <a href="#"
+          ><span>その他情報</span>
           <p>一言、メールなど</p>
-          <i class="fas fa-angle-right fa-2x angle"></i>
-        </a>
+          <i class="fas fa-angle-right fa-2x angle"></i
+        ></a>
       </div>
       <div class="dataBtn" id="data3Btn">
-        <a href="#">
-          <span>デザイン</span>
+        <a href="#"
+          ><span>デザイン</span>
           <p>テキスト・背景の色の変更</p>
-          <i class="fas fa-angle-right fa-2x angle"></i>
-        </a>
+          <i class="fas fa-angle-right fa-2x angle"></i
+        ></a>
       </div>
       <div class="dataBtn" id="data4Btn">
-        <a href="#">
-          <span>エンブレム</span>
+        <a href="#"
+          ><span>エンブレム</span>
           <p>エンブレムの変更・非表示</p>
-          <i class="fas fa-angle-right fa-2x angle"></i>
-        </a>
+          <i class="fas fa-angle-right fa-2x angle"></i
+        ></a>
       </div>
     </div>
     <a class="PSUI" href="#" id="cookieClear">保存情報の削除</a>
-    <a class="PSUI" id="download" href="#">ダウンロード</a>
-    <a class="PSUI" id="windl" href="#">PC画面サイズでダウンロード</a>
-    <a class="PSUI" id="smtdl" href="#">スマホ画面サイズでダウンロード</a>
-
-    <br />
-    <div id="data1" class="datas">
+    <a class="PSUI" href="#" id="download">ダウンロード</a>
+    <a class="PSUI" href="#" id="windl">PC画面サイズでダウンロード</a>
+    <a class="PSUI" href="#" id="smtdl">スマホ画面サイズでダウンロード</a><br />
+    <div class="datas" id="data1">
       <div class="input-field col s12">
         <input
-          type="text"
-          name="formName"
-          id="name"
           class="profelem PSUI PSdata1"
-          maxlength="10"
-          placeholder="名前"
           data-tag=""
+          id="name"
+          maxlength="10"
+          name="formName"
+          placeholder="名前"
+          type="text"
         />
       </div>
-
       <br />
       <div class="input-field col s12">
         <input
-          type="text"
-          name="formID"
-          id="job"
           class="profelem PSUI PSdata2"
-          maxlength="30"
-          placeholder="役職"
           data-tag=""
+          id="job"
+          maxlength="30"
+          name="formID"
+          placeholder="役職"
+          type="text"
         />
       </div>
     </div>
-    <div id="data2" class="datas">
+    <div class="datas" id="data2">
       <div class="input-field col s12">
         <input
-          type="text"
-          name="age"
-          id="age"
-          placeholder="年齢"
           class="PSUI profelem PSdata3"
           data-tag=""
+          id="age"
+          name="age"
+          placeholder="年齢"
+          type="text"
         />
       </div>
       <br />
       <div class="input-field col s12">
         <textarea
           class="profelem PSdata4"
+          data-tag=""
           id="coment"
           placeholder="一言"
-          data-tag=""
-        >
-        </textarea>
+        ></textarea>
       </div>
       <textarea
-        id="locale"
-        placeholder="住所"
         class="profelem PSdata5"
         data-tag=""
-      >
-      </textarea>
-      <br />
+        id="locale"
+        placeholder="住所"
+      ></textarea
+      ><br />
       <input
-        type="text"
-        id="email"
         class="PSUI profelem data4"
-        placeholder="メールアドレス"
         data-tag=""
+        id="email"
+        placeholder="メールアドレス"
+        type="text"
       />
     </div>
-    <div id="data3" class="datas">
+    <div class="datas" id="data3">
       <div class="input-field col s12">
         <label for="colors">背景の色</label>
-        <input type="file" id="cropFile1" />
+        <input id="cropFile1" type="file" />
         <div class="crop1">
-          <img id="cropImg1" />
-          <a href="#" class="PSUI cropBtn1">切り取る</a>
+          <img id="cropImg1" /> <a class="PSUI cropBtn1" href="#">切り取る</a>
         </div>
         <div id="colorInputDiv">
           <strong>背景カラーピッカー</strong>
           <input
-            type="color"
-            id="colorInput"
             class="PSUI"
-            value="#999999"
+            id="colorInput"
             list="colorlist"
+            type="color"
+            value="#999999"
           />
           <datalist id="colorList">
             <option value="#999999"></option>
@@ -278,17 +244,16 @@ SOFTWARE.
           </datalist>
         </div>
       </div>
-
       <div class="input-field col s12">
         <label for="textColor">テキストの色</label>
         <div id="textInputDiv">
           <strong>テキストカラーピッカー</strong>
           <input
-            type="color"
-            id="textInput"
             class="PSUI"
-            value="#000000"
+            id="textInput"
             list="textList"
+            type="color"
+            value="#000000"
           />
           <datalist id="textList">
             <option value="#000000"></option>
@@ -300,77 +265,70 @@ SOFTWARE.
     </div>
     <div class="datas" id="data4">
       <div class="library" id="library">
-        <a href="#library">
-          <span>エンブレムライブラリー</span>
-          <i class="fas fa-angle-right fa-2x angle"></i>
-        </a>
+        <a href="#library"
+          ><span>エンブレムライブラリー</span>
+          <i class="fas fa-angle-right fa-2x angle"></i
+        ></a>
       </div>
-
       <div class="library" id="library">
         <span
-          ><a href="#" class="envls"
+          ><a class="envls" href="#"
             ><img
-              src="/image/prof.png"
               alt="profLogo"
               height="100"
+              src="/image/prof.png"
               width="200" /></a
         ></span>
         <span
-          ><a href="#" class="envls"
+          ><a class="envls" href="#"
             ><img
-              src="/image/Tspin.png"
               alt="Tspin"
               height="100"
+              src="/image/Tspin.png"
               width="100" /></a
         ></span>
         <span
-          ><a href="#" class="envls"
+          ><a class="envls" href="#"
             ><img
-              src="/image/bomb.png"
               alt="bomb"
               height="100"
+              src="/image/bomb.png"
               width="100" /></a
         ></span>
         <span
-          ><a href="#" class="envls"
+          ><a class="envls" href="#"
             ><img
-              src="/image/sword.png"
               alt="sword"
               height="100"
+              src="/image/sword.png"
               width="100" /></a
         ></span>
         <span
-          ><a href="#" class="envls"
+          ><a class="envls" href="#"
             ><img
-              src="/image/shield.png"
               alt="shield"
               height="100"
+              src="/image/shield.png"
               width="100" /></a
         ></span>
         <span
-          ><toku
-            ><a href="#" id="envls"
-              ><img src="/image/toku.png" width="100" height="100" /></a></toku
+          ><a href="#" id="envls"
+            ><img height="100" src="/image/toku.png" width="100" /></a
         ></span>
         <h5>QRコードエンブレム</h5>
-        <input type="text" id="qrURL" class="PSUI" />
+        <input class="PSUI" id="qrURL" type="text" />
         <div id="qrValue"></div>
-        <a href="#" class="PSUI qrBtn">QRコード化</a>
+        <a class="PSUI qrBtn" href="#">QRコード化</a>
       </div>
-
-      <a id="picdel" class="PSUI EMBhide">エンブレムを非表示</a>
-
-      <a id="reset" class="PSUI EMBreset">エンブレムをリセット</a>
-      <br />
-      <label for="file">
-        <strong>エンブレム画像のアップロード</strong>
-        <input type="file" name="file" id="file" />
-      </label>
+      <a class="PSUI EMBhide" id="picdel">エンブレムを非表示</a>
+      <a class="PSUI EMBreset" id="reset">エンブレムをリセット</a><br />
+      <label for="file"
+        ><strong>エンブレム画像のアップロード</strong>
+        <input id="file" name="file" type="file"
+      /></label>
     </div>
-
     <br />
-
     <small>©︎ 2020 gumieprof</small>
-    <script type="text/javascript" src="/script/dist/scripts-build.js"></script>
+    <script src="/script/dist/scripts-build.js" type="text/javascript"></script>
   </body>
 </html>
