@@ -45,9 +45,10 @@ export default function main() {
     var pic = "/image/img-1.png";
     var color = "#999";
     var text = "#000000";
-    var ifTextInput = false;
-    var ifColorInput = false;
     var e;
+    var textSize = 50;
+    var fontSize = 100;
+    var lineHeight = 0.5;
     function setstrage() {
       for (let i = 1; i <= 5; i++) {
         if (location.pathname === "/" || location.pathname === "/top") {
@@ -154,7 +155,7 @@ export default function main() {
       var i = function () {
         setTimeout(function () {
           e = "";
-          for (let i = 1; i <= 5; i++) {
+          for (let i = 1; i <= 7; i++) {
             if ($(".PSdata" + i).val()) {
               e =
                 e +
@@ -178,18 +179,9 @@ export default function main() {
             cvs.lineWidth = 8;
             cvs.strokeStyle = text;
             cvs.stroke();
-            if (mode === "default") {
-              var o = "50px";
-              var fontSize = 100;
-              var lineHeight = 0.5; // 行の高さ (フォントサイズに対する倍率)
-            } else if (mode === "smt") {
-              var o = "25px";
-              var fontSize = 100;
-              var lineHeight = 0.5; // 行の高さ (フォントサイズに対する倍率)
-            }
             var x = 50; // 水平位置
             var y = 50; // 垂直位置
-            cvs.font = "bold " + o + " Boku2";
+            cvs.font = "bold " + textSize + "px Boku2";
             for (
               var lines = e.split("\n"), i = 0, l = lines.length;
               l > i;
@@ -408,6 +400,18 @@ export default function main() {
           i();
           setstrage();
         });
+      });
+      $(".textPlus").click(function () {
+        textSize += 10;
+        fontSize += 10;
+        i();
+        return false;
+      });
+      $(".textMinus").click(function () {
+        textSize -= 10;
+        fontSize -= 10;
+        i();
+        return false;
       });
     });
   });

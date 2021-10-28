@@ -77,7 +77,7 @@ SOFTWARE.
             src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
             width="233px"
         /></a>
-        <a class="change" href="/business"><i class="fas fa-gamepad"></i></a>
+        <a class="change" href="/business"><i class="fas fa-briefcase"></i></a>
         <label class="nav-unshown" for="nav-input" id="nav-close"></label>
         <div id="nav-content">
           <ul>
@@ -240,52 +240,42 @@ SOFTWARE.
     </div>
 
     <div id="data3" class="datas">
-      <div class="input-field col s12">
-        <label for="colors">背景の色</label>
-        <input type="file" id="cropFile1" />
-        <div class="crop1">
-          <img id="cropImg1" />
-          <a href="#" class="PSUI cropBtn1">切り取る</a>
-        </div>
-        <div id="colorInputDiv">
-          <strong>背景カラーピッカー</strong>
-          <input
-            type="color"
-            id="colorInput"
-            class="PSUI"
-            value="#999999"
-            list="colorlist"
-          />
-          <datalist id="colorList">
-            <option value="#999999"></option>
-            <option value="#ffffff"></option>
-            <option value="#ff0000"></option>
-            <option value="#0010bf"></option>
-            <option value="#f8fc5e"></option>
-            <option value="#04b700"></option>
-            <option value="#e719e4"></option>
-          </datalist>
-        </div>
-      </div>
+      <label for="colors">背景の色</label>
+      <strong>背景カラーピッカー</strong>
+      <input
+        type="color"
+        id="colorInput"
+        class="PSUI"
+        value="#999999"
+        list="colorlist"
+      />
+      <datalist id="colorList">
+        <option value="#999999"></option>
+        <option value="#ffffff"></option>
+        <option value="#ff0000"></option>
+        <option value="#0010bf"></option>
+        <option value="#f8fc5e"></option>
+        <option value="#04b700"></option>
+        <option value="#e719e4"></option>
+      </datalist>
 
-      <div class="input-field col s12">
-        <label for="textColor">テキストの色</label>
-        <div id="textInputDiv">
-          <strong>テキストカラーピッカー</strong>
-          <input
-            type="color"
-            id="textInput"
-            class="PSUI"
-            value="#999999"
-            list="textList"
-          />
-          <datalist id="textList">
-            <option value="#000000"></option>
-            <option value="#ffffff"></option>
-            <option value="#888888"></option>
-          </datalist>
-        </div>
-      </div>
+      <label for="textColor">テキストの色</label>
+      <strong>テキストカラーピッカー</strong>
+      <input
+        type="color"
+        id="textInput"
+        class="PSUI"
+        value="#999999"
+        list="textList"
+      />
+      <datalist id="textList">
+        <option value="#000000"></option>
+        <option value="#ffffff"></option>
+        <option value="#888888"></option>
+      </datalist>
+      <h4>文字の大きさ</h4>
+      <a href="#" class="textPlus"><i class="fas fa-plus fa-2x"></i></a>
+      <a href="#" class="textMinus"><i class="fas fa-minus fa-2x"></i></a>
     </div>
     <div class="datas" id="data4">
       <div class="library" id="library">

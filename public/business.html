@@ -158,34 +158,40 @@ SOFTWARE.
     <a class="PSUI" href="#" id="windl">PC画面サイズでダウンロード</a>
     <a class="PSUI" href="#" id="smtdl">スマホ画面サイズでダウンロード</a><br />
     <div class="datas" id="data1">
-      <div class="input-field col s12">
-        <input
-          class="profelem PSUI PSdata1"
-          data-tag=""
-          id="name"
-          maxlength="10"
-          name="formName"
-          placeholder="名前"
-          type="text"
-        />
-      </div>
+      <input
+        class="profelem PSUI PSdata1"
+        data-tag=""
+        id="name"
+        maxlength="10"
+        name="formName"
+        placeholder="名前"
+        type="text"
+      />
       <br />
-      <div class="input-field col s12">
-        <input
-          class="profelem PSUI PSdata2"
-          data-tag=""
-          id="job"
-          maxlength="30"
-          name="formID"
-          placeholder="役職"
-          type="text"
-        />
-      </div>
+      <input
+        class="profelem PSUI PSdata2"
+        data-tag=""
+        id="Department"
+        maxlength="30"
+        name="formID"
+        placeholder="部署"
+        type="text"
+      />
+      <br />
+      <input
+        class="profelem PSUI PSdata3"
+        data-tag=""
+        id="job"
+        maxlength="30"
+        name="formID"
+        placeholder="役職"
+        type="text"
+      />
     </div>
     <div class="datas" id="data2">
       <div class="input-field col s12">
         <input
-          class="PSUI profelem PSdata3"
+          class="PSUI profelem PSdata4"
           data-tag=""
           id="age"
           name="age"
@@ -196,21 +202,21 @@ SOFTWARE.
       <br />
       <div class="input-field col s12">
         <textarea
-          class="profelem PSdata4"
+          class="profelem PSdata5"
           data-tag=""
           id="coment"
           placeholder="一言"
         ></textarea>
       </div>
       <textarea
-        class="profelem PSdata5"
+        class="profelem PSdata6"
         data-tag=""
         id="locale"
         placeholder="住所"
       ></textarea
       ><br />
       <input
-        class="PSUI profelem data4"
+        class="PSUI profelem PSdata7"
         data-tag=""
         id="email"
         placeholder="メールアドレス"
@@ -218,49 +224,41 @@ SOFTWARE.
       />
     </div>
     <div class="datas" id="data3">
-      <div class="input-field col s12">
-        <label for="colors">背景の色</label>
-        <input id="cropFile1" type="file" />
-        <div class="crop1">
-          <img id="cropImg1" /> <a class="PSUI cropBtn1" href="#">切り取る</a>
-        </div>
-        <div id="colorInputDiv">
-          <strong>背景カラーピッカー</strong>
-          <input
-            class="PSUI"
-            id="colorInput"
-            list="colorlist"
-            type="color"
-            value="#999999"
-          />
-          <datalist id="colorList">
-            <option value="#999999"></option>
-            <option value="#ffffff"></option>
-            <option value="#ff0000"></option>
-            <option value="#0010bf"></option>
-            <option value="#f8fc5e"></option>
-            <option value="#04b700"></option>
-            <option value="#e719e4"></option>
-          </datalist>
-        </div>
-      </div>
-      <div class="input-field col s12">
-        <label for="textColor">テキストの色</label>
-        <div id="textInputDiv">
-          <strong>テキストカラーピッカー</strong>
-          <input
-            class="PSUI"
-            id="textInput"
-            list="textList"
-            type="color"
-            value="#000000"
-          />
-          <datalist id="textList">
-            <option value="#000000"></option>
-            <option value="#ffffff"></option>
-            <option value="#888888"></option>
-          </datalist>
-        </div>
+      <label for="colors">背景の色</label>
+      <strong>背景カラーピッカー</strong>
+      <input
+        class="PSUI"
+        id="colorInput"
+        list="colorlist"
+        type="color"
+        value="#999999"
+      />
+      <datalist id="colorList">
+        <option value="#999999"></option>
+        <option value="#ffffff"></option>
+        <option value="#ff0000"></option>
+        <option value="#0010bf"></option>
+        <option value="#f8fc5e"></option>
+        <option value="#04b700"></option>
+        <option value="#e719e4"></option>
+      </datalist>
+      <label for="textColor">テキストの色</label>
+      <div id="textInputDiv">
+        <strong>テキストカラーピッカー</strong>
+        <input
+          class="PSUI"
+          id="textInput"
+          list="textList"
+          type="color"
+          value="#000000"
+        />
+        <datalist id="textList">
+          <option value="#000000"></option>
+          <option value="#ffffff"></option>
+          <option value="#888888"></option>
+        </datalist>
+        <a href="#" class="textPlus"><i class="fas fa-plus fa-2x"></i></a>
+        <a href="#" class="textMinus"><i class="fas fa-minus fa-2x"></i></a>
       </div>
     </div>
     <div class="datas" id="data4">
