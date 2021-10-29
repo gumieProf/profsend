@@ -27,7 +27,8 @@
     "webpack-fix-style-only-entries": "^0.6.1"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "webpack & npm start"
   },
   "devDependencies": {
     "nodemon": "^2.0.14",

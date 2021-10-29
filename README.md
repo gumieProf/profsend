@@ -1,15 +1,8 @@
-# profsend-source
+# profsend
 
 Overview
 
-縺薙・繧ｵ繝ｼ繝薙せ縺ｯ縲√ご繝ｼ繝繝励Ο繝輔ぅ繝ｼ繝ｫ繧貞錐蛻ｺ縺ｮ繧医≧縺ｪ逕ｻ蜒上→縺励※
-
-sns 縺ｪ縺ｩ縺ｫ謚慕ｨｿ縺ｧ縺阪ｋ迥ｶ諷九↓縺ｧ縺阪ｋ繧ゅ・縺ｧ縺吶・
-<br>
-
-## Description
-
-縺薙・繝ｪ繝昴ず繝医Μ縺ｯ[profsend](https://github.com/gutsmine/profsend)縺ｮ html 驛ｨ蛻・〒縺吶・
+プロフセンドはゲームを楽しむ方や、会社で働く方をターゲットにした web アプリです。
 <br>
 
 ## Requirement
@@ -20,58 +13,49 @@ sns 縺ｪ縺ｩ縺ｫ謚慕ｨｿ縺ｧ縺阪ｋ迥ｶ諷九↓縺ｧ縺阪ｋ�
 
 ## Install
 
-1 git 繝ｪ繝昴ず繝医Μ繧・clone
+1 git リポジトリを clone する
 
     git clone  git@github.com:gutsmine/profsend-source
 
-2 npm 繝代ャ繧ｱ繝ｼ繧ｸ繧偵う繝ｳ繧ｹ繝医・繝ｫ
+2 npm または yarn でパッケージをインストール
 
     npm install
 
-or
 
     yarn install
 
-3 繧ゅ＠縲）s 鬘槭ｒ邱ｨ髮・＠縺溘ｉ...
+3 npm か yarn で dev スクリプトを実行
 
-    npm run build
+    npm run dev
 
-or
-yarn build
+    yarn dev
+
+この時に webpack のバンドル化と express の web サーバーの起動が行われます。
 
 <br>
 
 ## Contribution
 
-1 繝ｪ繝昴ず繝医Μ繧偵ヵ繧ｩ繝ｼ繧ｯ縺吶ｋ
+1 日本に在住する方であること
 
-2 繝悶Λ繝ｳ繝√ｒ菴懈・
+2 gumiepProf や共同開発者と優しく話せる方であること
 
-3 繧ｳ繝溘ャ繝医ｒ菴懈・
-
-4 繧ｳ繝溘ャ繝医ｒ繝励ャ繧ｷ繝･
-
-5 PR 繧帝√ｋ
+3 JavaScript、CSS、HTML、Node.js が理解できる方であること
 
 <br>
 
 ## Notes
 
-莉･荳九・繝輔ぃ繧､繝ｫ縺ｯ邱ｨ髮・＠縺ｦ縺ｯ縺・￠縺ｾ縺帙ｓ縲・
+web サーバー処理が記述されています
+
 - app.js
+- router.js
 
-  webpack 縺ｮ繧ｨ繝ｳ繝医Μ繝ｼ繝昴う繝ｳ繝・
-- webpack.config.js
+本サービスのサイトデータが含まれています。
 
-webpack 縺ｮ險ｭ螳・
-- sw.js
-- manifest.json
+- public/
 
-pwa 縺ｮ繧ｵ繝ｼ繝薙せ繝ｯ繝ｼ繧ｫ繝ｼ縺ｨ險ｭ螳壹ヵ繧｡繧､繝ｫ
-
-- image 繝・ぅ繝ｬ繧ｯ繝医Μ
-
-pwa 縺ｮ逕ｻ蜒上ｒ蜷ｫ繧
+詳しくは Trees.md をご覧ください。
 
  <br>
 
@@ -81,4 +65,4 @@ pwa 縺ｮ逕ｻ蜒上ｒ蜷ｫ繧
 
 ## Author
 
-[gutsmine](https://github.com/gutsmine)
+[gumieProf](https://github.com/gumieProf)
