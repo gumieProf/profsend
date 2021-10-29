@@ -12,7 +12,7 @@ public/
 
     font/
 
-        Boku2-Bold.otf [僕たちのゴシック2](https://fontopo.com/?p=98)のフォントファイルです
+        Boku2-Bold.otf [僕たちのゴシック2](https://fontopo.com/?p=98) のフォントファイルです
 
         LICENSE.txt 前者のライセンスファイルです。
 
