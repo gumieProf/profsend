@@ -133,6 +133,7 @@ SOFTWARE.
       <option value="default">PCサイズ</option>
       <option value="smart">スマホサイズ</option>
     </select>
+    <div id="importLog"></div>
     <div class="dataBtns">
       <div class="dataBtn" id="data1Btn">
         <a href="#"
@@ -163,7 +164,6 @@ SOFTWARE.
         </a>
       </div>
     </div>
-    <div id="importLog"></div>
     <a class="PSUI" id="import" href="#">プロフィールの <br />インポート</a>
     <a class="PSUI" href="#" id="cookieClear">保存情報の削除</a>
     <a class="PSUI" id="download" href="#">ダウンロード</a>
@@ -326,14 +326,15 @@ SOFTWARE.
               height="100"
               width="100" /></a
         ></span>
-        <span
-          ><toku
-            ><a href="#" id="envls"
-              ><img
-                src="/image/emblem/toku.png"
-                width="100"
-                height="100" /></a></toku
-        ></span>
+        <span>
+          <a href="#" class="envls"
+            ><img
+              src="/image/emblem/toku.png"
+              alt="toku"
+              width="100"
+              height="100"
+          /></a>
+        </span>
         <h5>QRコードエンブレム</h5>
         <input type="text" id="qrURL" class="PSUI" />
         <div id="qrValue"></div>

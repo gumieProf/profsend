@@ -42,7 +42,7 @@ export default function main() {
     var coment = $("#coment").val();
     var sns = $("#snsText").val();
     var name = $("#name").val();
-    var pic = "/image/img-1.png";
+    var pic = "/image/emblem/img-1.png";
     var color = "#999";
     var text = "#000000";
     var e;
@@ -70,17 +70,6 @@ export default function main() {
             $(".PSdata" + i).val(localStorage.getItem("Bdata" + i));
         }
       }
-    }
-    function savePic(img) {
-      var canvas = document.createElement("canvas");
-      canvas.width = pic.width;
-      canvas.height = pic.height;
-      // Draw Image
-      var ctx = canvas.getContext("2d");
-      ctx.drawImage(img, 0, 0);
-      // To Base64
-      localStorage.setItem("image", canvas.toDataURL("image/png"));
-      return canvas.toDataURL("image/png");
     }
     setTimeout(function () {
       $("#scanFile").hide();
@@ -199,7 +188,7 @@ export default function main() {
             a.src = pic;
             var imgHeight = a.height;
             var imgWidth = a.width;
-            if (pic === "/image/img-1.png") {
+            if (pic === "/image/emblem/img-1.png") {
               if (mode === "default") {
                 cvs.drawImage(
                   a,
@@ -217,22 +206,40 @@ export default function main() {
                   imgHeight * 2
                 );
               }
-            } else if (pic === "/image/prof.png") {
+            } else if (pic === "/image/emblem/prof.png") {
+              if (mode === "default") {
+                cvs.drawImage(
+                  a,
+                  cavWidth - 400,
+                  cavHeight - 125,
+                  imgWidth * 1.5,
+                  imgHeight * 1.5
+                );
+              } else if (mode === "smt") {
+                cvs.drawImage(
+                  a,
+                  cavWidth / 5,
+                  cavHeight / 1.5,
+                  imgWidth * 1.5,
+                  imgHeight * 1.5
+                );
+              }
+            } else if (pic === "/image/emblem/toku.png") {
               if (mode === "default") {
                 cvs.drawImage(
                   a,
                   cavWidth - 300,
                   cavHeight - 250,
-                  imgWidth,
-                  imgHeight
+                  imgWidth / 3.5,
+                  imgHeight / 4
                 );
               } else if (mode === "smt") {
                 cvs.drawImage(
                   a,
-                  cavWidth / 8,
+                  cavWidth / 3,
                   cavHeight / 1.5,
-                  imgWidth * 1.5,
-                  imgHeight * 1.5
+                  imgWidth / 4,
+                  imgHeight / 4
                 );
               }
             } else {
@@ -247,7 +254,7 @@ export default function main() {
               } else if (mode === "smt") {
                 cvs.drawImage(
                   a,
-                  cavWidth / 3,
+                  cavWidth / 3.5,
                   cavHeight / 1.5,
                   imgWidth / 1.5,
                   imgHeight / 1.5
@@ -359,8 +366,12 @@ export default function main() {
             tesseract
               .recognize(e.target.result, "jpn", {
                 logger: (p) =>
-                  $("#importLog").text(
-                    p.status + ":" + Math.round(p.progress * 100) + "%"
+                  $("#importLog").html(
+                    "インポート中...<br />" +
+                      p.status +
+                      ":" +
+                      Math.round(p.progress * 100) +
+                      "%"
                   ),
               })
               .then((result) => {
@@ -369,30 +380,33 @@ export default function main() {
                 var listB = ris.match(
                   /[ |名|前|I|D|年|齢|コ|メ|ン|ト|S|N|S]{2,5}.[A-Za-z0-9あ-んア-ン㐀-鿿]{1,30}/gm
                 );
+
                 console.log(listB);
                 for (let i = 0; i < listB.length; i++) {
-                  if (listB[i].match(/ *名 *前 */g)) {
-                    var datas = listB[i].substr(listB[i].lastIndexOf("前") + 1);
+                  var listC = listB[i].replace(/\s+/g, "");
+                  if (listC.match(/ *名 *前 */g)) {
+                    var datas = listC.substr(listC.lastIndexOf("前") + 1);
                     $("#name").val(datas);
                   }
-                  if (listB[i].match(/ *I *D */g)) {
-                    var datas = listB[i].substr(listB[i].lastIndexOf("D") + 1);
+                  if (listC.match(/ *I *D */g)) {
+                    var datas = listC.substr(listC.lastIndexOf("D") + 1);
                     $("#id").val(datas);
                   }
-                  if (listB[i].match(/ *年 *齢 */g)) {
-                    var datas = listB[i].substr(listB[i].lastIndexOf("齢") + 1);
+                  if (listC.match(/ *年 *齢 */g)) {
+                    var datas = listC.substr(listC.lastIndexOf("齢") + 1);
                     $("#age").val(datas);
                   }
-                  if (listB[i].match(/ *コ *メ *ン *ト */g)) {
-                    var datas = listB[i].substr(listB[i].lastIndexOf("ト") + 1);
+                  if (listC.match(/ *コ *メ *ン *ト */g)) {
+                    var datas = listC.substr(listC.lastIndexOf("ト") + 1);
                     $("#coment").val(datas);
                   }
-                  if (listB[i].match(/ *S * N *S */g)) {
-                    var datas = listB[i].substr(listB[i].lastIndexOf("S") + 1);
+                  if (listC.match(/ *S * N *S */g)) {
+                    var datas = listC.substr(listC.lastIndexOf("S") + 1);
                     $("#snsText").val(datas);
                   }
 
                   console.log(datas);
+                  $("#importLog").html("");
                 }
               });
           };
