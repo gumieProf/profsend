@@ -1,7 +1,7 @@
 ﻿/*
 MIT License
 
-Copyright (c) 2020 gumie
+Copyright (c) 2021 gumieProf
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,9 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 export default function main() {
-  $(function() {
-    if (location.href === "https://profsend.glitch.me/") {
-      location.href = "https://profsend.net";
+  var tesseract = require("tesseract.js");
+  var $ = require("jquery");
+  $(function () {
+    if (
+      location.href === "https://profsend.glitch.me/" ||
+      location.href === "profsend.net"
+    ) {
+      location.href = "https://prof.gumieprof.com";
     }
     getStrage();
     $("#prof").hide();
@@ -37,59 +42,36 @@ export default function main() {
     var coment = $("#coment").val();
     var sns = $("#snsText").val();
     var name = $("#name").val();
-    var pic = "/image/img-1.png";
+    var pic = "/image/emblem/img-1.png";
     var color = "#999";
     var text = "#000000";
-    var ifTextInput = false;
-    var ifColorInput = false;
+    var e;
+    var textSize = 50;
+    var fontSize = 100;
+    var lineHeight = 0.5;
     function setstrage() {
-      localStorage.setItem("id", $("#id").val());
-      localStorage.setItem("name", $("#name").val());
-      localStorage.setItem("age", $("#age").val());
-      if (!localStorage.setItem("coment", $("#coment").val()) === "") {
-        localStorage.setItem("coment", $("#coment").val());
+      for (let i = 1; i <= 5; i++) {
+        if (location.pathname === "/" || location.pathname === "/top") {
+          if ($(".PSdata" + i).val())
+            localStorage.setItem("Gdata" + i, $(".PSdata" + i).val());
+        } else if (location.pathname === "/business") {
+          if ($(".PSdata" + i).val())
+            localStorage.setItem("Bdata" + i, $(".PSdata" + i).val());
+        }
       }
-
-      localStorage.setItem("sns", $("#snsText").val());
-      localStorage.setItem("image", pic);
     }
     function getStrage() {
-      if (localStorage.getItem("id")) {
-        id = localStorage.getItem("id");
-        $("#id").val(id);
-      }
-
-      if (localStorage.getItem("name")) {
-        name = localStorage.getItem("name");
-        $("#name").val(name);
-      }
-
-      if (localStorage.getItem("age")) {
-        age = localStorage.getItem("age");
-        $("#age").val(age);
-      }
-
-      if (localStorage.getItem("coment")) {
-        coment = localStorage.getItem("coment");
-        $("#coment").val(coment);
-      }
-      if (localStorage.getItem("sns")) {
-        sns = localStorage.getItem("sns");
-        $("#sns").val(sns);
+      for (let i = 1; i <= 5; i++) {
+        if (location.pathname === "/" || location.pathname === "/top") {
+          if (localStorage.getItem("Gdata" + i))
+            localStorage.getItem("Gdata" + i);
+        } else if (location.pathname === "/business") {
+          if (localStorage.getItem("Bdata" + i))
+            $(".PSdata" + i).val(localStorage.getItem("Bdata" + i));
+        }
       }
     }
-    function savePic(img) {
-      var canvas = document.createElement("canvas");
-      canvas.width = pic.width;
-      canvas.height = pic.height;
-      // Draw Image
-      var ctx = canvas.getContext("2d");
-      ctx.drawImage(img, 0, 0);
-      // To Base64
-      localStorage.setItem("image", canvas.toDataURL("image/png"));
-      return canvas.toDataURL("image/png");
-    }
-    setTimeout(function() {
+    setTimeout(function () {
       $("#scanFile").hide();
       $(".datas").hide();
       $("#cropFile1").hide();
@@ -99,29 +81,30 @@ export default function main() {
       $("#SMTpreview").hide();
       $(".comentDiv2").hide();
       $(".comentDiv3").hide();
-      $(".delete1").click(function() {
+      $("#importFile").hide();
+      $(".delete1").click(function () {
         $("#name").val("");
         i();
         return false;
       });
-      $(".delete2").click(function() {
+      $(".delete2").click(function () {
         $("#id").val("");
         i();
         return false;
       });
-      $(".delete3").click(function() {
+      $(".delete3").click(function () {
         $("#coment").val("");
         i();
         return false;
       });
 
-      $("#data1Btn,.subData1").click(function() {
+      $("#data1Btn,.subData1").click(function () {
         $(".datas").hide();
         $("#data1").fadeIn();
         $(".dataBtn").hide();
         return false;
       });
-      $("#data2Btn,.subData2").click(function() {
+      $("#data2Btn,.subData2").click(function () {
         $(".datas").hide();
 
         $("#data2").fadeIn();
@@ -129,7 +112,7 @@ export default function main() {
 
         return false;
       });
-      $("#data3Btn,.subData3").click(function() {
+      $("#data3Btn,.subData3").click(function () {
         $(".datas").hide();
 
         $("#data3").fadeIn();
@@ -137,7 +120,7 @@ export default function main() {
 
         return false;
       });
-      $("#data4Btn,.subData4").click(function() {
+      $("#data4Btn,.subData4").click(function () {
         $(".datas").hide();
 
         $("#data4").fadeIn();
@@ -145,12 +128,12 @@ export default function main() {
 
         return false;
       });
-      $(".back").click(function() {
+      $(".back").click(function () {
         $(".datas").hide();
         $(".dataBtn").show();
         return false;
       });
-      $(".envls").click(function() {
+      $(".envls").click(function () {
         var img = $(this).find("img");
         var imgsrc = img.attr("src");
         pic = imgsrc;
@@ -158,91 +141,20 @@ export default function main() {
         return false;
       });
 
-      var e = document.getElementById("file");
-      function indention(text) {
-        if (text.length > 30) {
-          var newtextA = text.substr(0, 10) + "\n";
-          var newtextB = text.substr(10, 20) + "\n";
-          var newtextC = text.substr(20, 30) + "\n";
-          var newtextC = text.substr(30, text.length);
-
-          return newtextA + newtextB + newtextC;
-        } else if (text.length > 20) {
-          var newtextA = text.substr(0, 10) + "\n";
-          var newtextB = text.substr(10, 20) + "\n";
-          var newtextC = text.substr(20, text.length);
-          return newtextA + newtextB + newtextC;
-        } else if (text.length >= 10) {
-          var newtextA = text.substr(0, 10) + "\n";
-          var newtextB = text.substr(10, text.length);
-          return newtextA + newtextB;
-        } else {
-          return text;
-        }
-      }
-      var i = function() {
-        setTimeout(function() {
-          var coment = $("#coment").val();
-          var id = indention($("#id").val());
-          var age = indention($("#age").val());
-          var sns = indention($("#snsText").val());
-          var name = indention($("#name").val());
-          var comentif =
-            coment == null || typeof coment == "undefined" || coment == "";
-          var snsif = sns == null || typeof sns == "undefined" || sns == "";
-          var ageif = age == null || typeof age == "undefined" || age == "";
-          if (comentif && snsif && ageif) {
-            var e = "名前:\t" + name + "\nID: \t" + id;
-          } else if (comentif && snsif) {
-            var e = "名前:\t" + name + "\nID: \t" + id + "\n 年齢: \t" + age;
-          } else if (ageif && snsif) {
-            var e =
-              "名前:\t" + name + "\nID: \t" + id + "\nコメント: \n" + coment;
-          } else if (ageif && comentif) {
-            var e = "名前:\t" + name + "\nID: \t" + id + "\nSNS: \t" + sns;
-          } else if (ageif) {
-            var e =
-              "名前:\t" +
-              name +
-              "\nID: \t" +
-              id +
-              "\nコメント: \n" +
-              coment +
-              "\nSNS: \t" +
-              sns;
-          } else if (comentif) {
-            var e =
-              "名前:\t" +
-              name +
-              "\nID: \t" +
-              id +
-              "\n 年齢: \t" +
-              age +
-              "\nSNS: \t" +
-              sns;
-          } else if (snsif) {
-            var e =
-              "名前:\t" +
-              name +
-              "\nID: \t" +
-              id +
-              "\n 年齢: \t" +
-              age +
-              "\nコメント: \n" +
-              coment;
-          } else {
-            var e =
-              "名前:\t" +
-              name +
-              "\nID: \t" +
-              id +
-              "\n年齢: \t" +
-              age +
-              "\nコメント: \n" +
-              coment +
-              "\nSNS: \t" +
-              sns;
+      var i = function () {
+        setTimeout(function () {
+          e = "";
+          for (let i = 1; i <= 7; i++) {
+            if ($(".PSdata" + i).val()) {
+              e =
+                e +
+                $(".PSdata" + i).data("tag") +
+                " " +
+                $(".PSdata" + i).val() +
+                "\n";
+            }
           }
+
           function read(cav, mode) {
             var cavHeight = cav.height;
             var cavWidth = cav.width;
@@ -256,18 +168,9 @@ export default function main() {
             cvs.lineWidth = 8;
             cvs.strokeStyle = text;
             cvs.stroke();
-            if (mode === "default") {
-              var o = "50px";
-              var fontSize = 100;
-              var lineHeight = 0.5; // 行の高さ (フォントサイズに対する倍率)
-            } else if (mode === "smt") {
-              var o = "25px";
-              var fontSize = 100;
-              var lineHeight = 0.5; // 行の高さ (フォントサイズに対する倍率)
-            }
             var x = 50; // 水平位置
             var y = 50; // 垂直位置
-            cvs.font = "bold " + o + " Boku2";
+            cvs.font = "bold " + textSize + "px Boku2";
             for (
               var lines = e.split("\n"), i = 0, l = lines.length;
               l > i;
@@ -285,7 +188,7 @@ export default function main() {
             a.src = pic;
             var imgHeight = a.height;
             var imgWidth = a.width;
-            if (pic === "/image/img-1.png") {
+            if (pic === "/image/emblem/img-1.png") {
               if (mode === "default") {
                 cvs.drawImage(
                   a,
@@ -303,22 +206,40 @@ export default function main() {
                   imgHeight * 2
                 );
               }
-            } else if (pic === "/image/prof.png") {
+            } else if (pic === "/image/emblem/prof.png") {
               if (mode === "default") {
                 cvs.drawImage(
                   a,
-                  cavWidth - 500,
-                  cavHeight - 250,
-                  imgWidth * 2,
-                  imgHeight * 2
+                  cavWidth - 400,
+                  cavHeight - 125,
+                  imgWidth * 1.5,
+                  imgHeight * 1.5
                 );
               } else if (mode === "smt") {
                 cvs.drawImage(
                   a,
-                  cavWidth / 4.5,
-                  cavHeight / 2,
+                  cavWidth / 5,
+                  cavHeight / 1.5,
                   imgWidth * 1.5,
                   imgHeight * 1.5
+                );
+              }
+            } else if (pic === "/image/emblem/toku.png") {
+              if (mode === "default") {
+                cvs.drawImage(
+                  a,
+                  cavWidth - 300,
+                  cavHeight - 250,
+                  imgWidth / 3.5,
+                  imgHeight / 4
+                );
+              } else if (mode === "smt") {
+                cvs.drawImage(
+                  a,
+                  cavWidth / 3,
+                  cavHeight / 1.5,
+                  imgWidth / 4,
+                  imgHeight / 4
                 );
               }
             } else {
@@ -333,9 +254,9 @@ export default function main() {
               } else if (mode === "smt") {
                 cvs.drawImage(
                   a,
-                  cavWidth / 3,
-                  cavHeight / 3,
-                  imgWidth / 2.5,
+                  cavWidth / 3.5,
+                  cavHeight / 1.5,
+                  imgWidth / 1.5,
                   imgHeight / 1.5
                 );
               }
@@ -349,12 +270,12 @@ export default function main() {
           setstrage();
         }, 100);
       };
-      $(".EMBreset").click(function() {
+      $(".EMBreset").click(function () {
         pic = "/image/img-1.png";
         i();
         return false;
       });
-      $(".EMBhide").click(function() {
+      $(".EMBhide").click(function () {
         pic = "";
         i();
         return false;
@@ -365,91 +286,61 @@ export default function main() {
       i();
 
       $(document).on(".profelem,#coment", {
-        keydown: function(event) {
+        keydown: function (event) {
           if (event.keyCode === 13) {
             i();
           } else {
             i();
           }
         },
-        chenge: i
+        chenge: i,
       });
       $(document).on(
         {
           keydown: i,
-          chenge: i
+          chenge: i,
         },
         ".profelem,#coment"
       );
-      $("#colors").change(function() {
-        if ($(this).val() === "input") {
-          $("#colorInputDiv").fadeIn(100);
-          ifColorInput = true;
-        } else if ($(this).val() === "img") {
-          $("#cropFile1").click();
-        } else {
-          if ((ifColorInput = true)) {
-            $("#colorInputDiv").fadeIn(100);
-            ifColorInput = false;
-            $("#colorInput").click();
-          }
-
-          color = $(this).val();
-        }
+      $("#colorInput").change(function () {
+        color = $(this).val();
         i();
-      }),
-        $("#textColor").change(function() {
-          if ($(this).val() === "input") {
-            $("#textInputDiv").fadeIn(100);
-            ifTextInput = true;
-          } else {
-            if ((ifTextInput = true)) {
-              ifTextInput = false;
-            }
-            text = $(this).val();
-          }
-          i();
-        }),
-        $("#colorInput").change(function() {
-          if (ifColorInput === true) {
-            color = $(this).val();
-          }
-          i();
-        });
-      $("#textInput").change(function() {
-        if (ifTextInput === true) {
-          text = $(this).val();
-        }
-        i();
+        setstrage();
       });
-      $(".qrBtn").click(function() {
+      $("#textInput").change(function () {
+        text = $(this).val();
+        i();
+        setstrage();
+      });
+      $(".qrBtn").click(function () {
         var value = $("#qrURL").val();
         $("#qrValue").empty();
         new QRCode("qrValue", {
           text: value,
           width: 300,
           height: 300,
-          correctLevel: QRCode.CorrectLevel.H
+          correctLevel: QRCode.CorrectLevel.H,
         });
         $("#qrValue")
           .find("img")
-          .on("load", function() {
+          .on("load", function () {
             pic = $(this).attr("src");
             i();
           });
         return false;
       });
-      e.addEventListener("change", function(e) {
-        var t = e.target.files[0];
+      var ex = document.getElementById("file");
+      ex.addEventListener("change", function (e) {
+        var t = ex.target.files[0];
         if (t.type.match("image.*")) {
           var n = new FileReader();
-          (n.onload = function() {
+          (n.onload = function () {
             (pic = n.result), i();
           }),
             n.readAsDataURL(t);
         } else alert("画像を選択してください");
       });
-      $("#viewList").change(function() {
+      $("#viewList").change(function () {
         if ($(this).val() === "default") {
           $("#SMTpreview").fadeOut(100);
           $("#preview").fadeIn(100);
@@ -459,12 +350,81 @@ export default function main() {
         }
       });
 
-      $("#cookieClear").click(function() {
+      $("#cookieClear").click(function () {
         localStorage.setItem("id", "");
         localStorage.setItem("name", "");
         localStorage.setItem("age", "");
         localStorage.setItem("coment", "");
         localStorage.setItem("sns", "");
+        return false;
+      });
+      $("#import").click(function () {
+        $("#importFile").click();
+        $("#importFile").change(function (e) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            tesseract
+              .recognize(e.target.result, "jpn", {
+                logger: (p) =>
+                  $("#importLog").html(
+                    "インポート中...<br />" +
+                      p.status +
+                      ":" +
+                      Math.round(p.progress * 100) +
+                      "%"
+                  ),
+              })
+              .then((result) => {
+                var ris = result.data.text;
+                console.log(ris);
+                var listB = ris.match(
+                  /[ |名|前|I|D|年|齢|コ|メ|ン|ト|S|N|S]{2,5}.[A-Za-z0-9あ-んア-ン㐀-鿿]{1,30}/gm
+                );
+
+                console.log(listB);
+                for (let i = 0; i < listB.length; i++) {
+                  var listC = listB[i].replace(/\s+/g, "");
+                  if (listC.match(/ *名 *前 */g)) {
+                    var datas = listC.substr(listC.lastIndexOf("前") + 1);
+                    $("#name").val(datas);
+                  }
+                  if (listC.match(/ *I *D */g)) {
+                    var datas = listC.substr(listC.lastIndexOf("D") + 1);
+                    $("#id").val(datas);
+                  }
+                  if (listC.match(/ *年 *齢 */g)) {
+                    var datas = listC.substr(listC.lastIndexOf("齢") + 1);
+                    $("#age").val(datas);
+                  }
+                  if (listC.match(/ *コ *メ *ン *ト */g)) {
+                    var datas = listC.substr(listC.lastIndexOf("ト") + 1);
+                    $("#coment").val(datas);
+                  }
+                  if (listC.match(/ *S * N *S */g)) {
+                    var datas = listC.substr(listC.lastIndexOf("S") + 1);
+                    $("#snsText").val(datas);
+                  }
+
+                  console.log(datas);
+                  $("#importLog").html("");
+                }
+              });
+          };
+          reader.readAsDataURL(e.target.files[0]);
+          i();
+          setstrage();
+        });
+      });
+      $(".textPlus").click(function () {
+        textSize += 10;
+        fontSize += 10;
+        i();
+        return false;
+      });
+      $(".textMinus").click(function () {
+        textSize -= 10;
+        fontSize -= 10;
+        i();
         return false;
       });
     });

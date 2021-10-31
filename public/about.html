@@ -1,7 +1,7 @@
 ﻿<!--
 MIT License
 
-Copyright (c) 2020 gumie
+Copyright (c) 2021 gumieProf
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,6 +19,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 -->
 <!DOCTYPE html>
 <html lang="ja">
@@ -29,15 +30,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <link href="/css/all.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
     <script src="/script/jquery.js"></script>
-    <link rel="stylesheet" href="/css/materialize.css" />
-    <script src="/script/materialize.js"></script>
     <link rel="shortcut icon" href="/image/favicon.ico" />
 
     <title>プロフセンドについて</title>
     <link rel="manifest" href="/manifest.json" />
-    <link href="/css/bootstrap-4.3.1.css" rel="stylesheet" />
     <style type="text/css">
       @import url("/css/style.css");
     </style>
@@ -46,77 +49,58 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   <body>
     <header>
       <div id="nav-drawer">
-        <input id="nav-input" type="checkbox" class="nav-unshown" />
-        <label id="nav-open" for="nav-input"><span></span></label>
-        <a href="top.html"
+        <input class="nav-unshown" id="nav-input" type="checkbox" />
+        <label for="nav-input" id="nav-open"><span></span></label>
+        <a href="/top"
           ><img
-            src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
             alt="logo"
-            width="233px"
-            height="60px"
             class="wrap"
+            height="60px"
+            src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
+            width="233px"
         /></a>
-
-        <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+        <label class="nav-unshown" for="nav-input" id="nav-close"></label>
         <div id="nav-content">
           <ul>
             <li>
-              <a href="top"
+              <a href="/top"
                 ><img
-                  src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
                   alt="logo"
-            width="233px"
-            height="60px"
                   class="wrap"
+                  height="60px"
+                  src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
+                  width="233px"
               /></a>
             </li>
-
             <li>
-              <abolt
-                ><a href="about"
-                  ><i class="fas fa-question fa-2x about"></i
-                  >プロフセンドについて</a
-                ></abolt
+              <a class="PSUI" href="about"><small>本アプリについて</small></a>
+            </li>
+            <li>
+              <a class="PSUI" href="13update"
+                ><small
+                  >13アップデートに関わる<br />
+                  大切なお知らせ</small
+                ></a
               >
             </li>
             <li>
-              <sc>
-                <p>
-                  <a href="https://github.com/gutsmine/profsend" class="wrap"
-                    ><i class="fab fa-github fa-2x source"></i>ソースコード</a
-                  >
-                </p>
-              </sc>
+              <a
+                class="wrap"
+                href="https://github.com/gumieprof/profsend"
+                target="blank"
+                ><i class="fab fa-github fa-2x source"></i
+              ></a>
             </li>
-            <li>
-              <mit>
-                <p>
-                  <a
-                    href="https://github.com/gutsmine/profsend/blob/master/LICENSE"
-                    class="wrap"
-                    ><i class="fas fa-file fa-2x license"></i>ライセンス</a
-                  >
-                </p>
-              </mit>
-            </li>
-            <li>
-              <a href="13update">
-                13アップデートに関わる大切なお知らせ
-              </a>
-            </li>
-            <li>
-              <a href="scaner">
-                <i class="fab fa-searchengin"></i>
-                <strong>プロフィールスキャン</strong>
-              </a>
-            </li>
-            <li>
-              <copy>
-                <small>©2021 gumieprof</small>
-              </copy>
-            </li>
+            <li><small>©︎ 2020 gumieprof</small></li>
           </ul>
         </div>
+      </div>
+      <div class="subDatas">
+        <a class="back subData" href="#">トップ</a>
+        <a class="subData subData1" href="#">基本情報</a>
+        <a class="subData subData2" href="#">その他情報</a>
+        <a class="subData subData3" href="#">デザイン</a>
+        <a class="subData subData4" href="#">エンブレム</a>
       </div>
     </header>
 
@@ -125,18 +109,25 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     <br />
 
     <h3>profsendとは</h3>
-    <h5>profsendは、ゲームのプロフィールを作り、</h5>
-    <h4>SNSなどに投稿することができる、</h4>
-    <h3>プロフィール編集サービスです。</h3>
+    <h4>
+      profsendは、ゲームのプロフィールを作り、
+      <br />SNSなどに投稿することができる、 <br />プロフィール編集サービスです。
+    </h4>
 
     <br />
 
     <h3>使い方</h3>
-    <h5>① ユーザーネーム、ID、年齢、コメントを入力。</h5>
-    <h4>② 色や画像を変える</h4>
-    <h4>③ 書き出す（png形式）</h4>
-    <a href="top" class="waves-effect waves-light btn"
-      >トップページに戻る</a
-    >
+    <h4>
+      ① ユーザーネーム、ID、年齢、コメントなどを入力。 <br />
+      ② 色やエンブレムを変える <br />③
+      書き出す（スマホサイズやPCサイズもあります！）
+    </h4>
+
+    <h4>
+      またプロフィールをインポートを押せば、
+      <br />
+      過去に作ったプロフィールを作り直すこともできます！
+    </h4>
+    <a href="top" class="PSUI">モード選択に<br />戻る</a>
   </body>
 </html>

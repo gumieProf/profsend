@@ -1,0 +1,336 @@
+<!--
+MIT License
+
+Copyright (c) 2021 gumieProf
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      content="ゲーム,プロフィール,ウェブアプリ,プロフセンド,profsend"
+      name="keywords"
+    />
+    <meta
+      content="誰でもかんたんに使えるプロフィールエディター"
+      name="description"
+    />
+    <meta
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+      name="viewport"
+    />
+    <link href="/image/icon-192.png" rel="apple-touch-icon" sizes="192x192" />
+    <title>プロフセンド</title>
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="profsend" name="twitter:title" />
+    <meta
+      content="誰でもかんたんに使えるプロフィールエディター"
+      name="twitter:description"
+    />
+    <meta
+      content="https://user-images.githubusercontent.com/42506694/97695415-56be1f00-1ae7-11eb-81f1-91c8a256306d.png"
+      name="twitter:image"
+    />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/31d4cf3320.js"></script>
+    <link href="/image/favicon.ico" rel="shortcut icon" />
+    <script src="/script/jquery.js"></script>
+    <script src="/script/dist/modules-build.js"></script>
+    <script src="/script/qrcode.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div id="nav-drawer">
+        <input class="nav-unshown" id="nav-input" type="checkbox" />
+        <label for="nav-input" id="nav-open"><span></span></label>
+        <a href="business"
+          ><img
+            alt="logo"
+            class="wrap"
+            height="60px"
+            src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
+            width="233px"
+        /></a>
+        <a class="change" href="/gaming"><i class="fas fa-gamepad"></i></a>
+        <label class="nav-unshown" for="nav-input" id="nav-close"></label>
+        <div id="nav-content">
+          <ul>
+            <li>
+              <a href="gaming"
+                ><img
+                  alt="logo"
+                  class="wrap"
+                  height="60px"
+                  src="https://cdn.glitch.com/13d4cb39-b24e-4ab4-a56b-f7ded519d574%2Fv3-2-logov2.png?v=1631061179412"
+                  width="233px"
+              /></a>
+            </li>
+            <li>
+              <a class="PSUI" href="about"><small>本アプリについて</small></a>
+            </li>
+            <li>
+              <a class="PSUI" href="13update"
+                ><small
+                  >13アップデートに関わる<br />
+                  大切なお知らせ</small
+                ></a
+              >
+            </li>
+            <li>
+              <a
+                class="wrap"
+                href="https://github.com/gumieprof/profsend"
+                target="blank"
+                ><i class="fab fa-github fa-2x source"></i
+              ></a>
+            </li>
+            <li><small>©︎ 2020 gumieprof</small></li>
+          </ul>
+        </div>
+      </div>
+      <div class="subDatas">
+        <a class="back subData" href="#">トップ</a>
+        <a class="subData subData1" href="#">基本情報</a>
+        <a class="subData subData2" href="#">その他情報</a>
+        <a class="subData subData3" href="#">デザイン</a>
+        <a class="subData subData4" href="#">エンブレム</a>
+      </div>
+    </header>
+    <canvas height="540" id="prof" width="960"></canvas
+    ><img height="200" id="preview" width="300" />
+    <canvas height="960" id="SMTprof" width="540"></canvas
+    ><img height="300" id="SMTpreview" width="200" /><br />
+    <strong>プレビューの切り替え</strong>
+    <select class="PSUI" id="viewList">
+      <option value="default">PCサイズ</option>
+      <option value="smart">スマホサイズ</option>
+    </select>
+    <div class="dataBtns">
+      <div class="dataBtn" id="data1Btn">
+        <a href="#"
+          ><span>基本情報</span>
+          <p>名前、役職、会社名など...</p>
+          <i class="fas fa-angle-right fa-2x angle"></i
+        ></a>
+      </div>
+      <div class="dataBtn" id="data2Btn">
+        <a href="#"
+          ><span>その他情報</span>
+          <p>一言、メールなど...</p>
+          <i class="fas fa-angle-right fa-2x angle"></i
+        ></a>
+      </div>
+      <div class="dataBtn" id="data3Btn">
+        <a href="#"
+          ><span>デザイン</span>
+          <p>テキスト・背景の色の変更など...</p>
+          <i class="fas fa-angle-right fa-2x angle"></i
+        ></a>
+      </div>
+      <div class="dataBtn" id="data4Btn">
+        <a href="#"
+          ><span>エンブレム</span>
+          <p>エンブレムの変更・非表示</p>
+          <i class="fas fa-angle-right fa-2x angle"></i
+        ></a>
+      </div>
+    </div>
+    <a class="PSUI" href="#" id="cookieClear">保存情報の削除</a>
+    <a class="PSUI" href="#" id="download">ダウンロード</a>
+    <a class="PSUI" href="#" id="windl">PC画面サイズでダウンロード</a>
+    <a class="PSUI" href="#" id="smtdl">スマホ画面サイズでダウンロード</a><br />
+    <div class="datas" id="data1">
+      <input
+        class="profelem PSUI PSdata1"
+        data-tag=""
+        id="name"
+        maxlength="10"
+        name="formName"
+        placeholder="名前"
+        type="text"
+      />
+      <br />
+      <input
+        class="profelem PSUI PSdata2"
+        data-tag=""
+        id="Department"
+        maxlength="30"
+        name="formID"
+        placeholder="会社名"
+        type="text"
+      />
+      <br />
+      <input
+        class="profelem PSUI PSdata3"
+        data-tag=""
+        id="job"
+        maxlength="30"
+        name="formID"
+        placeholder="部署"
+        type="text"
+      />
+    </div>
+    <div class="datas" id="data2">
+      <div class="input-field col s12">
+        <input
+          class="PSUI profelem PSdata4"
+          data-tag=""
+          id="age"
+          name="age"
+          placeholder="年齢"
+          type="text"
+        />
+      </div>
+      <br />
+      <div class="input-field col s12">
+        <textarea
+          class="profelem PSdata5"
+          data-tag=""
+          id="coment"
+          placeholder="一言"
+        ></textarea>
+      </div>
+      <textarea
+        class="profelem PSdata6"
+        data-tag=""
+        id="locale"
+        placeholder="住所"
+      ></textarea
+      ><br />
+      <input
+        class="PSUI profelem PSdata7"
+        data-tag=""
+        id="email"
+        placeholder="メールアドレス"
+        type="text"
+      />
+    </div>
+    <div class="datas" id="data3">
+      <label for="colors">背景の色</label>
+      <strong>背景カラーピッカー</strong>
+      <input
+        class="PSUI"
+        id="colorInput"
+        list="colorlist"
+        type="color"
+        value="#999999"
+      />
+      <datalist id="colorList">
+        <option value="#999999"></option>
+        <option value="#ffffff"></option>
+        <option value="#ff0000"></option>
+        <option value="#0010bf"></option>
+        <option value="#f8fc5e"></option>
+        <option value="#04b700"></option>
+        <option value="#e719e4"></option>
+      </datalist>
+      <label for="textColor">テキストの色</label>
+      <div id="textInputDiv">
+        <strong>テキストカラーピッカー</strong>
+        <input
+          class="PSUI"
+          id="textInput"
+          list="textList"
+          type="color"
+          value="#000000"
+        />
+        <datalist id="textList">
+          <option value="#000000"></option>
+          <option value="#ffffff"></option>
+          <option value="#888888"></option>
+        </datalist>
+        <a href="#" class="textPlus"><i class="fas fa-plus fa-2x"></i></a>
+        <a href="#" class="textMinus"><i class="fas fa-minus fa-2x"></i></a>
+      </div>
+    </div>
+    <div class="datas" id="data4">
+      <div class="library" id="library">
+        <a href="#library"
+          ><span>エンブレムライブラリー</span>
+          <i class="fas fa-angle-right fa-2x angle"></i
+        ></a>
+      </div>
+      <div class="library" id="library">
+        <span
+          ><a href="#" class="envls"
+            ><img
+              src="/image/emblem/prof.png"
+              alt="profLogo"
+              height="100"
+              width="200" /></a
+        ></span>
+        <span
+          ><a href="#" class="envls"
+            ><img
+              src="/image/emblem/Tspin.png"
+              alt="Tspin"
+              height="100"
+              width="100" /></a
+        ></span>
+        <span
+          ><a href="#" class="envls"
+            ><img
+              src="/image/emblem/bomb.png"
+              alt="bomb"
+              height="100"
+              width="100" /></a
+        ></span>
+        <span
+          ><a href="#" class="envls"
+            ><img
+              src="/image/emblem/sword.png"
+              alt="sword"
+              height="100"
+              width="100" /></a
+        ></span>
+        <span
+          ><a href="#" class="envls"
+            ><img
+              src="/image/emblem/shield.png"
+              alt="shield"
+              height="100"
+              width="100" /></a
+        ></span>
+        <span
+          ><toku
+            ><a href="#" id="envls"
+              ><img
+                src="/image/emblem/toku.png"
+                width="100"
+                height="100" /></a></toku
+        ></span>
+        <h5>QRコードエンブレム</h5>
+        <input class="PSUI" id="qrURL" type="text" />
+        <div id="qrValue"></div>
+        <a class="PSUI qrBtn" href="#">QRコード化</a>
+      </div>
+      <a class="PSUI EMBhide" id="picdel">エンブレムを非表示</a>
+      <a class="PSUI EMBreset" id="reset">エンブレムをリセット</a><br />
+      <label for="file"
+        ><strong>エンブレム画像のアップロード</strong>
+        <input id="file" name="file" type="file"
+      /></label>
+    </div>
+    <br />
+    <small>©︎ 2020 gumieprof</small>
+    <script src="/script/dist/scripts-build.js" type="text/javascript"></script>
+  </body>
+</html>
