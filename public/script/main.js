@@ -25,12 +25,6 @@ export default function main() {
   var tesseract = require("tesseract.js");
   var $ = require("jquery");
   $(function () {
-    if (
-      location.href === "https://profsend.glitch.me/" ||
-      location.href === "profsend.net"
-    ) {
-      location.href = "https://prof.gumieprof.com";
-    }
     getStrage();
     $("#prof").hide();
     var prof = document.getElementById("prof");
