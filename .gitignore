@@ -11,3 +11,4 @@ lint-html.log
 .htmllintrc
 !/public/css/style.css.map
 .DS_Store
+.glitch-assets
