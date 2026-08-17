@@ -14,11 +14,11 @@
   },
   "homepage": "https://gumieprof.myportfolio.com",
   "dependencies": {
-    "cookie-parser": "^1.4.6",
+    "cookie-parser": "^1.4.7",
     "express": "^5.1.0",
     "express-session": "^1.18.2",
     "helmet": "^8.1.0",
-    "jquery": "^3.6.0",
+    "jquery": "^3.6.4",
     "qrcodejs": "^1.0.0",
     "tesseract.js": "^6.0.1",
     "webpack-cli": "^6.0.1",
